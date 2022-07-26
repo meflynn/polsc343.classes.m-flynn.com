@@ -1,0 +1,36 @@
+---
+title: "Michael Flynn"
+image: "images/profile-pic.png"
+color1: "#FFFFFF"
+color2: "#000000"
+links:
+  - label: Personal Page
+    url: "https://m-flynn.com"
+  - label: GitHub
+    url: "https://github.com/meflynn"
+  - label: Email
+    url: "mailto:meflynn@ksu.edu"
+output:
+  postcards::trestles
+---
+
+## Instructor Information
+
+My research focuses on the political economy of US foreign policy, the influence of domestic politics on foreign policy, and the causes and consequences of US military deployments overseas. 
+
+
+##  Interests
+- US Foreign Policy
+- Political Economy of Security
+- Military Deployments
+- Statistical Research Methods
+- Bayesian Modeling
+- Multilevel Modeling  
+
+  
+
+## Education
+
+- PhD in Political Science, Binghamton University, 2013
+- MA in Political Science, Binghamton University, 2009
+- BA in Politics; BA in History, SUNY Potsdam, 2006

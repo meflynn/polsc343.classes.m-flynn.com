@@ -1,0 +1,29 @@
+name: "US Foreign Policy"
+title: "US Foreign Policy"
+description: |
+  This classes focuses on the interests and institutions that shape US foreign policy over time.
+base_url: https://polsc343.classes.m-flynn.com
+output_dir: "docs"
+theme: sitetheme.css
+collections:
+  syllabi-old:
+    categories: true
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Instructor"
+      href: about.html
+    - text: "Blog"
+      href: gallery.html
+    - text: "Syllabus"
+      href: syllabus-current.html
+    - text: "Archives"
+      menu:
+        - text: "Syllabi Archive"
+          href: syllabi-old.html
+        - text: "Lecture Archive"
+          href: lectures.html
+        - text: "YouTube Channel"
+          href: https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw
+output: distill::distill_article

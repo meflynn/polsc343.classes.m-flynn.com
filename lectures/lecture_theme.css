@@ -1,0 +1,168 @@
+
+/* Set main header fonts */
+
+h1, h2, h3 {
+  font-family: 'Arial';
+  font-weight: normal;
+}
+
+body { 
+    font-family: 'Arial', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', 'Palatino', 'Microsoft YaHei', 'Songti SC', serif; 
+    line-height: 1.5;
+    height: 92%;
+    font-size: 22;
+}
+
+
+
+/* Title slide edits */
+.title-slide {
+    background-image: url(ksu-seal.png);
+    background-size: 600px;
+    background-attachment: relative;
+    background-position: 800px 250px ;
+}
+.title-slide h1,
+.section h1 {
+    font-size: 70px;
+    line-height: 0.5;
+    padding: 0;
+}
+.title-slide h2,
+.section h2 {
+    font-size: 45px;
+    max-width: 75%;
+    line-height: 1.0;
+    padding: 0;
+}
+.title-slide h3,
+.section h3 {
+    font-size: 20px;
+    line-height: 0.5;
+    padding:0;
+}
+.section .remark-slide-number { display: none; }
+
+.section {
+  counter-increment: slide;
+  content: counter(slide);
+}
+
+/* Change font size for word, sentence, or slide */
+.large { font-size: 130% }
+.medium { font-size: 90% }
+.small { font-size: 70% }
+
+/* Set inverse slide font colors */
+
+.inverse {
+  background-color: #512888;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+
+/* Images, video, etc. */
+img, video, iframe {
+  max-width: 80%;
+  max-height: 60%;
+}
+
+img {
+    padding-bottom: 5px;
+    position: relative; /* Declared position allows for location changes */
+}
+
+.iframe{
+  text-align: center;
+}
+
+/*
+img {
+border: 2px solid black;
+}
+*/
+
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 25%;
+  height: 90%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 75%;
+  height: 90%;
+  float: right;
+  padding-top: 1em;
+}
+.pull-left {
+  float: left;
+  width: 47%;
+  height:100%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+  height: 100%;
+}
+.pull-right ~ * {
+}
+
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #512888;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+figure {
+  display: inline-block;
+  float: center;
+  text-align: let;
+  margin: 5px; /* adjust as needed */
+}
+figure img {
+  vertical-align: top;
+}
+figcaption {
+  font-size: 18px;
+  text-shadow: none;
+  margin: 0;
+  color: black;
+  height: auto;
+  word-wrap: break-word;
+  text-align: left;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 90%;
+  caption-side: bottom;
+}
+
+
+/* Image grid */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 20%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 3px;
+  vertical-align: middle;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>US Foreign Policy</title>
+    <link>https://polsc343.classes.m-flynn.com</link>
+    <atom:link href="https://polsc343.classes.m-flynn.com/gallery.xml" rel="self" type="application/rss+xml"/>
+    <description>This classes focuses on the interests and institutions that shape US foreign policy over time.
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Fri, 03 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>What's the difference?</title>
+      <dc:creator>Michael Flynn</dc:creator>
+      <link>https://polsc343.classes.m-flynn.com/posts/2021-09-03-whats-the-difference</link>
+      <description>In the social sciences we talk a lot about differences across space and time. But how do we know which differences are meaningful?</description>
+      <guid>https://polsc343.classes.m-flynn.com/posts/2021-09-03-whats-the-difference</guid>
+      <pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://polsc343.classes.m-flynn.com/posts/2021-09-03-whats-the-difference/whats-the-difference_files/figure-html5/vote-example-1-1.png" medium="image" type="image/png" width="5200" height="3200"/>
+    </item>
+    <item>
+      <title>A note on terminology</title>
+      <dc:creator>Michael Flynn</dc:creator>
+      <link>https://polsc343.classes.m-flynn.com/posts/2021-08-24-a-note-on-terminology</link>
+      <description>There can be a lot of overlap in the language used in popular discourse and by political scientists. It can be helpful to think about distinguishing between the casual and technical uses of these terms.</description>
+      <guid>https://polsc343.classes.m-flynn.com/posts/2021-08-24-a-note-on-terminology</guid>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://polsc343.classes.m-flynn.com/posts/2021-08-24-a-note-on-terminology/a-note-on-terminology_files/figure-html5/height-sim1-1.png" medium="image" type="image/png" width="1152" height="1152"/>
+    </item>
+    <item>
+      <title>Pro forma introductory post</title>
+      <dc:creator>Michael Flynn</dc:creator>
+      <link>https://polsc343.classes.m-flynn.com/posts/2021-08-18-test-post</link>
+      <description>A short description of the post.</description>
+      <guid>https://polsc343.classes.m-flynn.com/posts/2021-08-18-test-post</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://polsc343.classes.m-flynn.com/posts/2021-08-18-test-post/test-post_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="5200" height="3200"/>
+    </item>
+  </channel>
+</rss>

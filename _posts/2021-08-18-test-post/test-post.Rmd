@@ -1,0 +1,29 @@
+---
+title: "Pro forma introductory post"
+description: |
+  A short description of the post.
+author:
+  - name: Michael Flynn
+date: 08-18-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+This is a test. I'll use this blog to post announcements and supplemental material that expands on readings, lectures, discussions, etc.
+
+Here's some R code:
+
+```{r, dpi = 400, echo = FALSE}
+library(ggplot2)
+library(viridis)
+
+df <- data.frame(x = rnorm(1e4, 0, 3),
+                 y = rgamma(1e4, 1, 2))
+
+ggplot(df, aes(x = x, y = y, color = y + x)) +
+  geom_point() +
+  viridis::scale_color_viridis() +
+  theme_minimal()
+
+```

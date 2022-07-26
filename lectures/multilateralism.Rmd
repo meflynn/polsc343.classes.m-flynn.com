@@ -1,0 +1,644 @@
+---
+title: "US Foreign Policy"
+subtitle: "Multilateralism in US Foreign Policy"
+author: "Michael E. Flynn"
+institute: "Kansas State University"
+date: "Updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "lecture_theme.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+      titleSlideClass: [left, middle, inverse]
+---
+```{r setup, include = FALSE, echo = FALSE}
+library(tidyverse)
+library(xaringan)
+library(wbstats)
+library(tidyquant)
+library(plotly)
+library(pdftables)
+library(pdftools)
+library(scales)
+library(here)
+library(Hmisc)
+library(kableExtra)
+library(knitr)
+library(lubridate)
+library(rgdal) # used to read world map data
+library(rgeos) 
+library(rvest)
+library(maptools)
+library(ggmap)
+library(colorRamps)
+library(RColorBrewer)
+
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=300) 
+
+emissions <- wb(indicator = c("EN.CO2.TRAN.MT", "EN.CO2.MANF.MT", "EN.ATM.CO2E.PC", "NV.AGR.TOTL.ZS"), startdate = 1990, enddate = 2020)
+
+emissions.2 <- emissions %>% 
+  filter(indicatorID == "EN.ATM.CO2E.PC") %>% 
+filter(country == "High income" | country == "Middle income" | country == "Low income") %>% 
+  mutate(country = forcats::fct_relevel(country, "High income", "Middle income", "Low income"))
+
+sysfonts::font_add_google("Oswald", family = "oswald")
+showtext::showtext_auto()
+
+basesize <- 12
+scale <- 4.5
+
+# Regular plot theme
+theme_flynn <- function(){ 
+  
+      theme_linedraw(base_size = basesize*scale, base_family = "oswald") %+replace% 
+        
+        theme(plot.title = element_text(face = "bold", size = basesize*scale*1.3, hjust = 0, 
+                                        margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
+              plot.subtitle = element_text(size = basesize*scale, hjust = 0, 
+                                           margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
+              plot.caption = element_text(face = "italic", 
+                                          size = basesize*scale*0.6, 
+                                          hjust = 1, lineheight = 0.35, 
+                                          margin = margin(t = 0.2, b = 0, l = 0, r = 0, unit = "cm")),
+              strip.background = element_rect(fill = "gray80", color = "black", size = 0.3),
+              strip.text = element_text(color = "black", face = "bold", hjust = 0, margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
+              panel.grid.major = element_line(color = "gray70", size = 0.15),
+              panel.grid.minor = element_line(color = "gray90", size = 0.1),
+              axis.title = element_text(face = "bold", size = basesize*scale),
+              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
+              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
+              axis.ticks = element_line(size = 0.2),
+              axis.ticks.length = unit(0.2, "cm"),
+              panel.border = element_rect(fill = NA, size = 0.3),
+              plot.margin = margin(0.5, 0.5, 0.5, 0.5, unit = "cm"),
+              legend.title = element_text(face = "bold", hjust = 0, margin = margin(t = 0, b = -0.5, l = 0, r = 0, unit = "cm")),
+              legend.margin=margin(t=0, b=0, r=0, l=0),
+              legend.box.margin=margin(t=-10, b=-10, l=-10, r=-10))
+  }
+
+
+```
+
+
+# Lecture Overview
+
+1. Defining multilateralism
+
+2. Historical review of multilateralism in US foreign policy
+
+3. Costs and benefits
+
+4. Why Multilateralism?
+
+
+
+---
+class: left, top
+
+# Key Questions
+
+1. What are the costs and benefits of cooperation?
+
+2. When are countries more or less likely to cooperate?
+
+3. How has the emphasis on multilateralism changed throughout US history?
+
+
+???
+
+# Opening Exercise
+
+1. Take a moment to write down a list of some of the major foreign policy issues that the US faces.
+
+2. Which of these policy areas requires multilateral cooperation? In which policy areas can the US effectively pursue unilateral action?
+
+
+
+
+---
+class: center, middle, inverse
+
+# Defining Multilateralism
+
+
+
+---
+class: left, top
+
+# Defining Multilateralism
+
+> **Multilateralism** refers to efforts to coordinate behavior between three or more actors.
+
+
+
+---
+class: center, middle, inverse
+
+# Historical Overview
+
+
+
+
+
+---
+class: left, top
+
+# Historical Overview
+
+Multilateralism in US foreign policy
+
+- For the most part, US foreign policy is mostly characterized by unilateralism through World War I
+
+- World War I marks a slight turn towards multilateralism, but there's a lot of resistance
+
+- After World War II multilateralism becomes a central component of US foreign policy
+
+
+
+
+---
+class: left, top
+
+# Historical Overview
+
+Multilateralism in security, diplomatic, and economic affairs
+
+- North Atlantic Treaty Organization (NATO)
+
+- United Nations (UN)
+
+- General Agreement on Tariffs and Trade (GATT)
+
+- International Monetary Fund (IMF)
+
+- World Bank
+
+
+
+
+---
+class: center, middle, inverse
+
+# Costs and Benefits
+
+
+
+
+---
+class: top, left
+
+# Costs and Benefits
+
+Multilateralism has a range of shorter-term benefits
+
+- Pooling resources
+
+- Distribute costs
+
+- Enhanced legitimacy
+
+--
+
+But there are also costs
+
+- Decreased autonomy/constraints on behavior
+
+- Possible costs via side payments 
+
+- More diffuse policy benefits
+
+
+---
+class: center, middle
+
+```{r}
+
+fat.data <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
+  mutate(NonUS = Total - US) %>% 
+  select(Year, War, US, NonUS) %>% 
+  pivot_longer(cols = c(3,4),
+               names_to = "country",
+               values_to = "deaths")
+
+ggplot(fat.data, aes(x = Year, y = deaths, fill = country)) +
+  geom_bar(stat = "identity", position = "stack", color = "black", size = 0.1) +
+  facet_wrap(. ~ War) +
+  theme_flynn() +
+  scale_fill_brewer(palette = "Set2") +
+  labs(x = "Year",
+       y = "Count",
+       fill = "Country",
+       title = "Coalition deaths in Afghanistan and Iraq, 2001-2020",
+       caption = "Data obtained from icasualties.org")
+
+
+```
+
+
+???
+
+# Notes
+
+- Example of burden sharing in AFghanistan and comparison case of Iraq
+- In Afghanistan US endured majority of casualties, but coalition partners also took on a sizeable share of casualties
+- In Iraq the US went in with relatively few partner states dedicated to combat operations
+- Note this doesn't include other areas of burden sharing like financial support
+
+
+
+
+
+---
+class: center, middle
+
+```{r coalition fatalities percent}
+
+fat.perc <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
+  mutate(percent = US/Total)
+
+ggplot(fat.perc, aes(x = Year, y = percent, color = War, linetype = War)) +
+  geom_line(size = 1.5) +
+  theme_flynn() +
+  scale_color_brewer(palette = "Set2") +
+  scale_y_continuous(labels = percent_format()) +
+  guides(linetype = FALSE) +
+  labs(x = "Year",
+       y = "Percent",
+       color = "Conflict",
+       title = "US fatalities as a percentage of total coalition fatalities",
+       subtitle = "Coalition warfighting can spread risk to many states.",
+       caption = "Data obtained from icasualties.org")
+```
+
+
+???
+
+# Notes
+
+- Another example from Iraq and Afghanistan
+- US fatalities consistently high as a percentage of total fatalities in Iraq
+- In Afghanistan allied states suffered a much higher proportion of the total casualties over time, particularly during the "surge" years around 2009 and 2010.
+
+
+
+
+---
+class: top, left
+
+# Costs and Benefits
+
+But even short-term tradeoffs can have long-term benefits
+
+The US was the dominant military and economic power following the War, but how best to wield that power?
+
+- A retreat from engagement to unilateralism like after World War I?
+  
+- Assert dominant power to control other countries?
+  
+- Something else?
+
+>**Liberal Hegemony**: A term coined by John Ikenberry to describe the nature of the international order that obtained following World War II where the US acted as the dominant power presiding over a rules-based international system to which it subordinated itself (at least in part).
+
+
+
+---
+class: left, top
+
+# Costs and Benefits
+
+Multilateralism was part of a strategy to balance and advance multiple objectives
+
+- Secure Western allies
+
+- Deter Soviet aggression
+
+- Perpetuate the United States' dominant position for the long-term
+
+Liberal Hegemony entailed a few key components
+
+- US sacrificed some autonomy, binding itself to a set of rules-based arrangements in different policy areas
+
+- By binding itself the US obtained the buy-in from other countries, increasing the legitimacy and long-term viability of US-led projects
+
+
+
+
+---
+class: center, middle, inverse
+
+# Why Multilateralism?
+
+
+
+---
+class: left, top
+
+# Why Multilateralism?
+
+Lots of different and important issues, but what do they have in common?
+
+--
+
+Well, there's a shared, fundamental problem underlying these issues
+
+--
+
+Collective action and coordination problems
+
+
+
+
+---
+class: left, top
+
+# Basic problems
+
+
+
+>**Collective Action Problems:** Interactions where individuals/groups would all benefit from cooperating to produce some good, but where individual players have an incentive to defect.
+
+
+>**Coordination Problems**: Coordination therefore, is the orderly arrangement of group effort, to provide unity of action in the pursuit of a common purpose. (Mooney 1947)
+
+> ALSO
+
+> [A] coordination problem exists if achievement of a particular organizational goal requires that each actor select the appropriate action, and the goal is not fully achieved if all members of the group do not select goal-fulfilling actions. (Camerer and Knez 1997)
+
+
+
+
+
+---
+class: center, middle
+
+
+```{r}
+
+pd.table <-data.frame(`Cooperate` = c("4,4", "5,1"),
+                      `Defect` = c("1,5", "2,2"))
+
+rownames(pd.table) <- c("Cooperate", "Defect")
+
+kable(pd.table, caption = "Prisoner's Dilemma Example", booktabs = TRUE, "html",
+               align = c("c", "c"),
+      escape = FALSE) %>% 
+  kable_styling() %>% 
+  row_spec(0, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(1, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(2, width = "3cm") %>% 
+  column_spec(3, width = "3cm")
+
+```
+
+
+
+---
+class: center, middle
+
+```{r}
+
+# For some reason the escale=FALSE line is required below to get the cell_spec coloring to work.
+
+pd.table <-data.frame(`Cooperate` = c("4,4", "5,1"),
+                      `Defect` = c("1,5", "2,2"))  %>% 
+  mutate(`Cooperate` = cell_spec(`Cooperate`, "html", color = ifelse(`Cooperate` == "5,1", "red", "black")))
+
+rownames(pd.table) <- c("Cooperate", "Defect")
+
+
+kable(pd.table, caption = "Prisoner's Dilemma Example", booktabs = TRUE, "html",
+               align = c("c", "c"),
+      escape = FALSE) %>% 
+  kable_styling() %>% 
+  row_spec(0, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(1, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(2, width = "3cm") %>% 
+  column_spec(3, width = "3cm") 
+
+```
+
+
+
+---
+class: center, middle
+
+```{r}
+
+# For some reason the escale=FALSE line is required below to get the cell_spec coloring to work.
+
+pd.table <-data.frame(`Cooperate` = c("4,4", "5,1"),
+                      `Defect` = c("1,5", "2,2"))  %>% 
+  mutate(`Defect` = cell_spec(`Defect`, "html", color = ifelse(`Defect` == "1,5", "red", "black")))
+
+rownames(pd.table) <- c("Cooperate", "Defect")
+
+
+kable(pd.table, caption = "Prisoner's Dilemma Example", booktabs = TRUE, "html",
+               align = c("c", "c"),
+      escape = FALSE) %>% 
+  kable_styling() %>% 
+  row_spec(0, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(1, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(2, width = "3cm") %>% 
+  column_spec(3, width = "3cm") 
+
+```
+
+
+
+
+---
+class: center, middle
+
+```{r}
+
+# For some reason the escale=FALSE line is required below to get the cell_spec coloring to work.
+
+pd.table <-data.frame(`Cooperate` = c("4,4", "5,1"),
+                      `Defect` = c("1,5", "2,2")) %>% 
+  mutate(`Defect` = cell_spec(`Defect`, "html", color = ifelse(`Defect` == "2,2", "red", "black")))
+
+rownames(pd.table) <- c("Cooperate", "Defect")
+
+
+kable(pd.table, caption = "Prisoner's Dilemma Example", booktabs = TRUE, "html",
+               align = c("c", "c"),
+      escape = FALSE) %>% 
+  kable_styling() %>% 
+  row_spec(0, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(1, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(2, width = "3cm") %>% 
+  column_spec(3, width = "3cm") 
+
+```
+
+
+
+
+
+---
+class: left, top
+
+# Why Multilateralism?
+
+1. Responding to adversaries
+
+2. Trade and investment policy
+
+3. Peacekeeping
+
+4. Human rights and trafficking
+
+5. Global climate change
+
+
+
+
+
+
+
+---
+class: center, middle
+
+```{r}
+
+data.temp.anom <- read_csv(here("../../../Data Files/NOAA Data/1880-2016.csv"), skip = 3) %>% 
+  mutate(group = ifelse(Value > 0, "Positive", "Negative"))
+
+data.temp <- readxl::read_xls(here("../../../Data Files/US Government Files/EPA/vostok.1999.temp.dat.xls"), skip = 0)
+colnames(data.temp)[2] <- "time"
+colnames(data.temp)[4] <- "temp"
+data.temp <- data.temp %>% 
+  mutate(time = as.numeric(0 - time),
+         value = as.numeric(temp),
+         group = as.factor("Temp")) %>% 
+  subset(select = c("time", "value", "group"))
+
+
+# Time variable had to be converted from factor to numeric
+# Have to use paste function
+data.ice <- read_csv(here("../../../Data Files/US Government Files/EPA/ghg-concentrations_fig-1.csv"), skip = 7)
+colnames(data.ice)[1] <- "time"
+data.ice <- data.ice %>% 
+  mutate(co2 = apply(., 1, max, na.rm = TRUE),
+         time = as.numeric(paste(time)),
+         value = as.numeric(co2),
+         group = as.factor("CO2")) %>% 
+  subset(select = c("time", "group", "value"))
+
+data.combined <- rbind(data.ice, data.temp)
+
+
+# The second scale was tricky. You have to reverse what you do for the rescaling in the geom_line section
+# Also note that, since you multiply by 10 BEFORE adding 250, you have to divide by 10 and subtract 25
+ggplot() +
+  geom_line(data = subset(data.combined, group == "CO2"), aes(x = time, y = value, group = group, colour = group)) +
+  geom_line(data = subset(data.combined, group == "Temp"), aes(x = time, y = ((value * 10) + 250), group = group, colour = group), alpha = .6) +
+  geom_hline(yintercept = 250) +
+  scale_y_continuous(breaks = seq(150, 400, 50), limits = c(150, 400), sec.axis = sec_axis(~./10 - 25, name = "Temperature Anomaly (°C)", breaks = seq(-10, 16, 2))) +
+  scale_x_continuous(breaks = seq(-800000, 0, 100000), labels = scales::comma) +
+  theme_flynn() +
+  theme(legend.position = "bottom",
+        legend.margin = margin(t = -0.5, b = 0.5, unit = "cm"),
+        panel.grid.major = element_line(colour = "gray70", size = .1),
+        panel.grid.minor = element_line(colour = "gray80", size = .1)) +
+  scale_color_brewer(palette = "Set1") +
+  labs(colour = "Measure",
+       title = "Global temperature anamoly and atmospheric CO2 levels",
+       subtitle = "CO2 levels and temperature anomalies track one another closely over the last 400,000 years",
+       y = "CO2 (ppm)",
+       x = "Time",
+       caption = "Ice core temperature data obtained from:
+       http://cdiac.ess-dive.lbl.gov/ftp/trends/temp/vostok/vostok.1999.temp.dat
+       CO2 data obtained from: https://www.epa.gov/sites/production/files/2016-08/ghg-concentrations_fig-1.csv
+       Note: Temperature data ends 2000 years prior to present day.") 
+
+
+
+
+```
+
+
+
+
+---
+class: center, middle
+
+```{r CO2 emissions, warning=FALSE, echo = FALSE, error=FALSE}
+
+
+ggplot(data = emissions.2) +
+  geom_area(aes(x = as.numeric(date), y = value, group = country, fill = country), colour = "black", size = 0.1) +
+  theme_flynn() +
+  labs(x = "Year",
+       y = "Metric tons per capita",
+       fill = "Group",
+       title = "CO2 emissions by income group, 1990-2016",
+       subtitle = "How does the distribution of wealth and emissions affect responsibility to reduce emissions?",
+       caption = "Data obtained from World Bank data series EN.ATM.CO2E.PC") +
+  scale_fill_brewer(palette = "Spectral") +
+  scale_x_continuous(breaks = seq(1990,2020,5))
+
+
+```
+
+
+
+
+
+---
+class: center, middle
+
+```{r Adirondack suflate levels}
+
+# Note I had to rename a complicated column here. Basic rename didn't work, had to use col number.
+data <- read_csv(here("../../../Data Files/Adirondack Lake Survey/2016-1992_ALTM_WEB.csv"), skip = 11)
+colnames(data)[6] <- "Sample Date"
+colnames(data)[8] <- "Sulfate"
+colnames(data)[4] <- "Station"
+colnames(data)[5] <- "Depth"
+
+# The date conversation is tricky here
+# The format part has to match the existing format from the imported data (here it's a ".")
+# The sep line tells it what to convert the separator to
+data <- data %>% 
+  subset(`Station` == 1) %>% 
+  mutate(`Sample Date` = as.Date(`Sample Date`, format = "%Y.%m.%d", sep = "-", origin = "1970-01-01"))
+
+data.1 <- data %>% 
+  subset(select = c("Sample Date", "Sulfate"))
+
+data.2 <- read_csv(here("../../../Data Files/Adirondack Lake Survey/ALS_SUMMER_SURFACE_CHEM_1984-87.csv"), skip = 3)
+colnames(data.2)[3] <- "Sample Date"
+colnames(data.2)[6] <- "Sulfate"
+colnames(data.2)[4] <- "long"
+colnames(data.2)[5] <- "lat"
+data.2 <- data.2 %>% 
+  subset(select = c("Sample Date", "Sulfate")) %>% 
+  mutate(`Sample Date` = as.Date(`Sample Date`, format = "%m/%d/%y", sep = "-", origin = "1970-01-01"))
+
+data.combined <- rbind(data.1, data.2)
+
+
+# Combined Point data
+ggplot(data = data.combined, aes(x = `Sample Date`, y = Sulfate)) +
+  geom_point(alpha = .2) +
+  geom_smooth(method = "lm", formula = y ~ splines::bs(x, 3), se = FALSE) +
+  geom_vline(xintercept = as.Date("1990-11-15"), colour = "red") +
+  annotate("text", x = as.Date("1992-01-01"), y = 16, label = "1990 Clean Air Act \nammendments signed", hjust = 0, size = basesize, lineheight = 0.4) +
+  theme_flynn() +
+  labs(title = "Sulfate levels in Adirondack lakes, 1984-2016",
+       subtitle = "Public policy can help to mitigate or even reverse problems resulting from pollution",
+       y = "Sulfate Concentration (mg/L)",
+       caption = "Data obtained from the Adirondack Lakes Survey Corporation: \n http://www.adirondacklakessurvey.org/data/complete/1992-2016_ALTM_Chemistry.zip \nhttp://www.adirondacklakessurvey.org/data/sumsurf/sumsurf_chem/ALS_Summer_surface_chem_1984-87.zip \nGraph depicts surface sample values only.") +
+  scale_x_date(breaks = seq(as.Date("1984-01-01"), as.Date("2017-01-01"), by = "4 years"), 
+                            labels = date_format("%b %Y"),
+               limits = c(as.Date("1984-01-01"), as.Date("2017-01-01")))
+
+
+```
