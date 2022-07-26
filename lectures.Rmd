@@ -3,7 +3,7 @@ title: "Lecture Archive"
 output: distill::distill_article
 ---
 
-This page contains lectures delievered throughout the semester. You can click on the links below to access the slides. Additional information can be found on my [YouTube Channel](https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw). Please note that I don't update these video versions regularly, so there may be a disconnect between what you find below and the video content on the channel.
+This page contains lectures delivered throughout the semester. You can click on the links below to access the slides. Additional information can be found on my [YouTube Channel](https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw). Please note that I don't update these video versions regularly, so there may be a disconnect between what you find below and the video content on the channel.
 
 ## Lecture Slides
 
