@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-mon <- as.Date("2020-08-2")
+mon <- as.Date("2022-08-22")
 
 advdate <- function(obj, adv){
   tmon <- obj + 7*(adv - 1)
@@ -60,35 +60,17 @@ prescribing what policy *should* be (though this is also an important considerat
 The course will be part lecture and part student participation. I encourage students to ask questions if the readings of lecture materials are unclear. In addition to class lectures students will be responsible for keeping up with readings and other class-related material as the semester progresses.
 
 
-## Covid-19 Planning and Contingencies 
-
-As you may have noticed, we're still in the middle of a pandemic. The Delta variant spreads much easier and more quickly than earlier variants of the virus and poses a real risk to our ability to continue in-person instruction this year. We have three primary tools to help us continue in-person instruction, because, frankly, online learning isn't fun for anyone:
-
-1. Vaccination
-2. Masking
-3. Ventilation 
-
-**Vaccines**: Vaccination remains our best option to help prevent the spread of, and mitigate the worst effects of, COVID-19. I will not ask your vaccination status at any point, but I strongly urge students who are not currently vaccinated and who are able to talk to your physicians about getting vaccinated. It's safe, effective, and free. You can find information and/or make an appointment at [Lafene Health Center](https://www.k-state.edu/covid-19/vaccine/), [The Riley County Health Department](https://www.rileycountyks.gov/1916/Vaccine-Information), local pharmacies, or your primary care physician.  
-
-**Masks**: All students are expected to comply with K-State’s face mask policy. As of August 2, 2021, everyone must wear face masks over their mouths and noses in all indoor spaces on university property, including while attending in-person classes. This policy is subject to change at the university’s discretion.
-
-To state the obvious, this includes students attending lectures. Also please note that some masks are better than others---N95, KN95, FFP2, and similar types of masks offer strong protection against transmission (for example, see [here](https://www.sciencedirect.com/science/article/pii/S0196655320310439?casa_token=3QaMU4BJHh0AAAAA:luVTg-SgOeHvQl3F7_vj54R8RvbEWIwVjLLbs4L6JG7QkbCHfYVRPRiQmfHcRzZDfzOcm5-br4o) and [here](https://www.tandfonline.com/doi/full/10.1080/02786826.2020.1862409)). Gaiters also don't offer as much protection as higher quality masks. Face shields do effectively nothing on their own. You can find more information [here on Emergency Use Authorizations](https://www.fda.gov/medical-devices/coronavirus-disease-2019-covid-19-emergency-use-authorizations-medical-devices/personal-protective-equipment-euas) for various mask types,
-
-**Ventilation**: In addition to personal preventative measures, ventilation and air filtration are enormously important in helping to reduce individuals' exposure to the virus. K-State has conducted a review of campus rooms over the last year to determine which rooms needed upgrades to their ventilation systems to ensure proper air flow. 
-
----
-
-**A Personal Note**: I and my spouse are fully vaccinated, but we have two children under the age of 12 (including one newborn) who are currently ineligible for the vaccine. While the vaccines are effective at preventing transmission the situation is continuously evolving and  I appreciate everyone's help in minimizing the risks to my family, and any members of your families, who may be more vulnerable. 
-
----
-
 ### Modality Changes
 
 So what happens if we have to revert back to remote learning because of COVID? Ultimately my goal is to structure the course in a way to preserve our flexibility to the fullest extent possible. I have pre-recorded lectures available on my [YouTube channel](https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw). In the event that we need to move to online only learning students can still view the lectures corresponding to each of the topics we're going to cover this semester. We will also use Zoom where needed to facilitate continued discussion. 
 
-## Required Readings 
+## Required Books 
 
-Normally I would assign a few books for us to read over the course of the semester, but these are trying times and finances are tight all around. Accordingly the readings for this course will all be available through K-State libraries for free. See the schedule below. 
+There are three required books and several required articles (listed below in the course schedule).  You can view the full citation in the reference list at the end of hover your cursor over the citation below for a preview of the full title.
+
+- @Karlin2022
+- @GeorgeRishikof2017
+- @Norris2021
 
 
 ## Additional Readings
@@ -110,17 +92,17 @@ Students should also make an effort to stay informed on current events. Below ar
 
 1. _Collaborative Discussion: 30%_
 
-While the course has a heavy lecture component students will also spend time reflecting on class materials and discussing that material with classmates. We will follow a Think-Pair-Share format---Students will have an opportunity to reflect on the course material independently, discuss the material with a classmate, and then communicate a summation of that discussion with the rest of the class. This format should help to reduce the number of contacts individual students have to have for class discussions, and allow us the flexibility to move online if the need arises. Students will then submit the notes from their discussion for review and grading. Accordingly, use the notes to keep track of the content of the discussion, ideas that emerge, and any lingering questions that might arise.
+While the course has a heavy lecture component students will also spend time reflecting on class materials and discussing that material with classmates. We will use a combination of small group discussions and a Think-Pair-Share format---Students will have an opportunity to reflect on the course material independently, discuss the material with a classmate, and then communicate a summation of that discussion with the rest of the class. Students will then submit the notes from their discussion for review and grading. Accordingly, use the notes to keep track of the content of the discussion, ideas that emerge, and any lingering questions that might arise.
+
 
 2. _Content Quizzes: 20%_
 
 There will be 6-8 content quizzes throughout the semester and they will cover material we have already reviewed through readings, lectures, and discussion. I will announce these ahead of time. All quizzes are open book and open note assignments and will be completed through Canvas. I will also identify the appropriate readings corresponding to each quiz so you do not have to worry about guessing. 
 
 
-
 3. _Photo Blog Journal: 20%_
 
-Students will be required to keep a photo blog. You will be required to complete **4 posts** over the course of the semester. The goal of this assignment is to help students to develop a fuller appreciation for the ways in which their local community connects to the outside world. Here's the gist of the assignment:
+Students will be required to keep a photo blog. You will be required to complete **3 posts** over the course of the semester. The goal of this assignment is to help students to develop a fuller appreciation for the ways in which their local community connects to the outside world. Here's the gist of the assignment:
 
   - Identify something around campus, in town, or in the nearby region that connects to US foreign policy and world politics. 
   - Take a picture of it!
@@ -132,7 +114,7 @@ Students will be required to keep a photo blog. You will be required to complete
     - Share their posts with other students in the class
     - The post must include hyperlink citations or parenthetical references with full citation information where appropriate.
     
-Remember, you must complete **4 posts** throughout the semester. You must also complete approximately **1 post per month!** These assignments require some thought, so I don't want students scrambling in December to complete all four entries. I will not accept late posts.
+Remember, you must complete **3 posts** throughout the semester. You must also complete approximately **1 post per month!** These assignments require some thought, so plan accordingly. I will not accept late posts.
     
 Be creative! There's really no right or wrong here, but it's on you to clearly explain how the subject of your photo ties into the course's subject matter. 
   
@@ -155,20 +137,19 @@ This will serve as your final project. Accordingly, I expect the final content t
 
 Deadlines: 
 
-- September 10: Song/album choices due (2.5%)
-- September 24: Final song/album selection due (2.5%)
-- October 29: Annotated bibliography due (10%)
-- November 19: Wiki draft due  (5%)
-- December 10: Final Wiki page due (10%)
-  
+- September 9: Song/album choices due (2.5%)
+- September 23: Final song/album selection due (2.5%)
+- October 28: Annotated bibliography due (10%)
+- November 18: Wiki draft due  (5%)
+- December 9: Final Wiki page due (10%)
   
   
   
 ## Classroom Policies
 
-1. Be kind. This might seem like an odd thing to list first, but I want to emphasize that this is not a normal class environment---this is a time of unparalleled stress for many of us. We're still in the middle of a global pandemic, many of us are still very much worried about our own health and safety, and many of us are very much worried about the health and safety of our coworkers, friends, and families. Zoom fatigue is also a thing, so please be patient with one another. Let's try to be cognizant of the fact that many of us (if not all) are going to be struggling at various points, and let's work together to make this semester as educational and enjoyable as possible. 
+1. Be kind. This might seem like an odd thing to list first, but I want to emphasize that this is not a normal class environment---this is still a time of unparalleled stress for many of us. We're still in the middle of a global pandemic, many of us are still very much worried about our own health and safety, and many of us are very much worried about the health and safety of our coworkers, friends, and families. Let's try to be cognizant of the fact that many of us (if not all) are going to be struggling at various points, and let's work together to make this semester as educational and enjoyable as possible. 
 
-2. Be professional. While we don't have a traditional classroom environment this semester, please try to treat your interactions with everyone as professionally as you would during a normal on-campus experience. This includes not watching TV or playing video games when you are video conferencing with the instructor or your classmates. Everyone's living situation may look a little different this year, and there may be certain things that we can't control about our environments, but let's do what we can to respect one another during our shared time. 
+2. Be professional. We're all here to learn, and many of the issues that we discuss have real-world impacts that affect people we know, or in our broader community. We're here to work together to develop a better understanding of these issues. 
 
 3. Study guides and extra credit. The class is the study guide. I do not offer extra credit.
 
@@ -294,6 +275,8 @@ you in any way that I can. With advance notice accommodations can be made prior 
 Please note, however, that special consideration will not be granted afterwards as a means of addressing a
 grade you do not like.
 
+
+
 ## Contacting the Instructor
 
 The best way to get in touch with me is through email. Please do not hesitate to contact me if you have any questions about course content or your abiliy to complete the assigned material.
@@ -322,9 +305,17 @@ F: 0–59.99
 
 ```{r course calendar, dpi = 400, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.pos="center"}
 
-library(ggplot2)
+pacman::p_load(
+  "ggplot2",
+  "showtext"
+)
+
+# Add custom fonts
+#sysfonts::font_add_google("Roboto", family = "oswald")
+#showtext::showtext_auto()
+
 # Create base data frame
-dfr <- data.frame(date=seq(as.Date('2021-08-01'), as.Date('2021-12-31'), by = 1))
+dfr <- data.frame(date=seq(as.Date('2022-08-01'), as.Date('2022-12-31'), by = 1))
 dfr$day <- factor(strftime(dfr$date,format="%a"), levels=c("Sun","Mon","Tue","Wed","Thu","Fri","Sat"))
 dfr$week <- factor(strftime(dfr$date,format="%U"))
 dfr$month <- factor(strftime(dfr$date,format="%B"),levels=c("August","September","October", "November", "December"))
@@ -332,22 +323,21 @@ dfr$ddate <- factor(strftime(dfr$date,format="%d"))
 
 # Label dates
 dfr$comment <- "Available"
-dfr$comment[dfr$date < as.Date("2021-08-23") | dfr$date>as.Date("2021-12-10")] <- NA
-dfr$comment[dfr$date==as.Date("2021-09-10")] <- "Song/album choice due"
-dfr$comment[dfr$date==as.Date("2021-09-24")] <- "Final song/album choice due"
-dfr$comment[dfr$date==as.Date("2021-10-29")] <- "Annotated bibliography due"
-dfr$comment[dfr$date==as.Date("2021-11-19")] <- "Wiki draft due"
-dfr$comment[dfr$date==as.Date("2021-12-10")] <- "Final Wiki due"
+dfr$comment[dfr$date < as.Date("2022-08-22") | dfr$date>as.Date("2021-12-09")] <- NA
+dfr$comment[dfr$date==as.Date("2022-09-09")] <- "Song/album choice due"
+dfr$comment[dfr$date==as.Date("2022-09-23")] <- "Final song/album choice due"
+dfr$comment[dfr$date==as.Date("2022-10-28")] <- "Annotated bibliography due"
+dfr$comment[dfr$date==as.Date("2022-11-18")] <- "Wiki draft due"
+dfr$comment[dfr$date==as.Date("2022-12-09")] <- "Final Wiki due"
 
 # Photo blogs
-dfr$comment[dfr$date==as.Date("2021-09-03")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2021-09-17")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2021-10-08")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2021-11-12")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2022-09-30")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2022-10-31")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2022-11-30")] <- "Blog post due"
 
 
 # Thanksgiving
-dfr$comment[dfr$date >= as.Date("2021-11-22") & dfr$date <= as.Date("2021-11-26")] <- "Thanksgiving Break"
+dfr$comment[dfr$date >= as.Date("2022-11-21") & dfr$date <= as.Date("2022-11-25")] <- "Thanksgiving Break"
 
 dfr$week <- as.numeric(dfr$week) - min(as.numeric(dfr$week) - 1)
 dfr$comment <- factor(dfr$comment, levels=c("Blog post due", "Song/album choice due", "Final song/album choice due", "Annotated bibliography due", "Wiki draft due", "Thanksgiving Break", "Final Wiki due"))
@@ -363,6 +353,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
         axis.text.x = element_text(size = 10, color = "black"),
         axis.text.y = element_text(size = 10, color = "white"),
         strip.text.x = element_text(size = 13, face = "bold", hjust = 0),
+        strip.text = element_text(size = 16, face = "bold", margin = margin(b = 0.2, unit = "cm")),
         title = element_text(face = "bold")) +
   guides(fill=guide_legend(ncol=2)) +
   scale_fill_brewer(palette = "Set2", na.translate = FALSE) +
@@ -381,11 +372,13 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 1. Watch video on [how to read a social science research paper](https://www.youtube.com/watch?v=pZq6c_shco0)
 2. Set up your blog!
 
+
 ## `r advdate(mon, 2)`: Historical background
 
 ### Readings and Assignments: 
 
 - Read @fordham2019
+
 
 
 ## `r advdate(mon, 3)`: The Cold War and US Hegemony
@@ -408,16 +401,15 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @bryan2021
+- Read @GeorgeRishikof2017[Chapter 13]
 - Read @lupton2017
-
 
 
 ## `r advdate(mon, 6)`: The Policymaking Process
 
 ### Readings and Assignments:
 
-- Read @marsh2014
+- Read @GeorgeRishikof2017[Chapters 1 and 2]
 - Read @miller2016
 
 
@@ -427,7 +419,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ### Readings and Assignments:
 
 - Read @keane2015
-- Read @zegart2011
+- Read @GeorgeRishikof2017[Chapter 4]
 
 
 
@@ -435,7 +427,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @brooks2016
+- Read @Karlin2022
 
 
 
@@ -448,23 +440,23 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 
 
-## `r advdate(mon, 10)`: Alliance Relationships
+## `r advdate(mon, 10)`: Security Cooperation
 
 ### Readings and Assignments:
 
-1. Read @beckley2015
-2. Read [Flynn, Allen, and Martinez Machain (2019)](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
-
-
-## `r advdate(mon, 11)`: Military Deployments
-
-### Readings and Assignments:
-
-- Read @Allenetal2020
+- Read @beckley2015
+- Read [Flynn, Allen, and Martinez Machain (2019)](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
 - Read @moon2009
 
 
-## `r advdate(mon, 12)`: Trade, Immigration, Finance, and Monetary Policy
+## `r advdate(mon, 11)`: Trade, Immigration, Finance, and Monetary Policy
+
+### Readings and Assignments:
+
+- Read @Oneil2022
+
+
+## `r advdate(mon, 12)`: Trade, Immigration, Finance, and Monetary Policy (cont.)
 
 ### Readings and Assignments:
 
@@ -472,8 +464,9 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 
 
-## `r advdate(mon, 13)`: Trade, Immigration, Finance, and Monetary Policy (cont.)
+## `r advdate(mon, 13)`: Foreign Aid
 
+- Read @Norris2021
 
 
 ## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
