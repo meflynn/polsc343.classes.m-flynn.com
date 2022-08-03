@@ -442,6 +442,10 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ## `r advdate(mon, 10)`: Security Cooperation
 
+#### Guest Lecture: 
+- Lieutenant Commander Jean Anne Kim, USN on US alliance relations in the Asia-Pacific region.
+- Friday, October 28
+
 ### Readings and Assignments:
 
 - Read @beckley2015
