@@ -33,6 +33,7 @@ library(rgdal) # used to read world map data
 library(rgeos) 
 library(sf)
 library(rvest)
+library(maps)
 library(maptools)
 library(viridis)
 library(ggmap)
@@ -1127,7 +1128,7 @@ class: left, top
 
 # Transition
 
-## World War I
+### World War I
 
 War breaks out in Europe in 1914
 
@@ -1159,7 +1160,7 @@ class: left, top
 
 # Transition
 
-## World War I
+### World War I
 
 Sources extend back further:
 
@@ -1177,7 +1178,7 @@ class: left, top
 
 # Transition
 
-## World War I
+### World War I
 
 United States enters the war in 1917
 
