@@ -18,6 +18,7 @@ output:
 ```{r setup, include = FALSE}
 library(dagitty)
 library(ggdag)
+library(tidyverse)
 library(viridis)
 library(scales)
 library(dplyr)
@@ -104,7 +105,7 @@ We want to start thinking about events in a different way
 .pull-right[
 ```{r, dpi = 400, echo = FALSE, warning = FALSE}
 
-dag.df <- dagitty(' dag{
+dag.df <- dagitty('dag{
                   "x" [exposure]
                   "y" [outcome]
                   

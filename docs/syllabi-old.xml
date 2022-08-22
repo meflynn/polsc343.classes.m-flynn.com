@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>US Foreign Policy</title>
+    <link>https://polsc343.classes.m-flynn.com</link>
+    <atom:link href="https://polsc343.classes.m-flynn.com/syllabi-old.xml" rel="self" type="application/rss+xml"/>
+    <description>This classes focuses on the interests and institutions that shape US foreign policy over time.
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>US Foreign Policy</title>
+      <link>https://polsc343.classes.m-flynn.com/syllabi-old</link>
+      <description>Fall 2021 Course syllabus</description>
+      <guid>https://polsc343.classes.m-flynn.com/syllabi-old</guid>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://polsc343.classes.m-flynn.com/syllabi-old/distill-preview.png" medium="image" type="image/png" width="5600" height="7200"/>
+    </item>
+  </channel>
+</rss>
