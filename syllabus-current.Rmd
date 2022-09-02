@@ -470,7 +470,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ### Readings and Assignments:
 
 - Read @Oneil2022
-- Read @ScheveSlaughter2018
+- Read @rosellacappellazielinski2022
 
 
 ## `r advdate(mon, 12)`: Trade, Immigration, Finance, and Monetary Policy (cont.)
@@ -478,6 +478,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ### Readings and Assignments:
 
 - Read @goldstein2014
+- Read @ScheveSlaughter2018
 
 
 
