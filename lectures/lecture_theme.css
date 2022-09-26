@@ -76,15 +76,17 @@ remark-slide, h3 {
 img, video, iframe {
   max-width: 80%;
   max-height: 60%;
+  margin: auto;
 }
 
 img {
     padding-bottom: 5px;
-    position: relative; /* Declared position allows for location changes */
+    margin: auto;
 }
 
 .iframe{
   text-align: center;
+  margin: auto;
 }
 
 /*
@@ -135,16 +137,16 @@ blockquote {
 figure {
   display: inline-block;
   float: center;
-  text-align: left;
-  margin: 5px; /* adjust as needed */
+  margin: auto; /* adjust as needed */
 }
 figure img {
   vertical-align: top;
+  margin: auto;
 }
 figcaption {
   font-size: 18px;
   text-shadow: none;
-  margin: 0;
+  margin: auto;
   color: black;
   height: auto;
   word-wrap: break-word;
