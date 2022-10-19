@@ -96,7 +96,7 @@ class: center, middle, inverse
 
 # Notes:
 
-- Talk about generla misperceptions of what constitutes military force
+- Talk about general misconceptions of what constitutes military force
 - We typically think of big cases, but most are small.
 - If it pops into your mind, it's probably a bad representative case.
 
@@ -889,6 +889,14 @@ Some key factors:
 ---
 class: center, middle
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y2TLJmIF220" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+---
+class: center, middle
+
 
 <figure>
 <img src="../images/bikini-atoll.jpg" style="width:700px; height:400px;">
@@ -924,7 +932,7 @@ What will allies do?
 
 - Allied leaders may press for limits on the scope of conflict
 
-- They might withold capabilities
+- They might withhold capabilities
 
 - They might limit mission types in which their troops can participate
 
