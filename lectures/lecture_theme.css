@@ -72,6 +72,19 @@ remark-slide, h3 {
   text-shadow: 0 0 20px #333;
 }
 
+
+/* Custom Font Color for Highlights */
+.font-color-red {
+  font-weight: bold;
+  color: red;
+}
+
+.font-color-blue {
+  font-weight: bold;
+  color: blue;
+}
+
+
 /* Images, video, etc. */
 img, video, iframe {
   max-width: 80%;
