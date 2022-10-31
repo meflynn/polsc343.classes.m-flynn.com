@@ -42,8 +42,8 @@ remark-slide, h3 {
 .section h2 {
     font-size: 45px;
     max-width: 75%;
-    line-height: 0.5;
-    padding: 0;
+    line-height: 1.1;
+    padding: 1;
 }
 .title-slide h3,
 .section h3 {

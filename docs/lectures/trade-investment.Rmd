@@ -34,26 +34,14 @@ library(ggmap)
 library(colorRamps)
 library(RColorBrewer)
 
+#devtools::install_github("meflynn/flynnprojects", force = TRUE)
+library(flynnprojects)
+
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
 
+sysfonts::font_add_google("Oswald", family = "oswald")
+showtext::showtext_auto()
 
-
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = 12, base_family = "Arial") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = 18, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = 12, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = 8, hjust = 1, margin = margin(t = 0.2, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black"),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = 12),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", hjust = 0))
-}
 
 ```
 
@@ -93,17 +81,12 @@ class: top, left
 
 
 
----
-class: center, middle, inverse
-
-# Terminology
-
 
 
 ---
 class: left, top
 
-# Terminology
+# Key concepts and terms
 
 ### Trade
 
@@ -119,7 +102,7 @@ Aggregation: We can talk about how to group different businesses or products (sp
 
 # Notes
 
-Example of aggregation: North American Industry Classification System Item #311111: Dog and cat food (e.g., canned, dry, frozen, semimoist), manufacturing.
+Example of aggregation: North American Industry Classification System Item #311111: Dog and cat food (e.g., canned, dry, frozen, semi-moist), manufacturing.
 
 Another: 311330 Cocoa, powdered, mixed with other ingredients, made from purchased chocolate
 
@@ -129,7 +112,7 @@ Another: 311330 Cocoa, powdered, mixed with other ingredients, made from purchas
 ---
 class: left, top
 
-# Terminology
+# Terminology Key concepts and terms
 
 ### Finance and Monetary Policy
 
@@ -139,7 +122,7 @@ Finance: Refers to the flow of capital (cash) within and across borders
   - Sovereign Lending
   - Foreign Direct Investment (FDI)
 
-Monetary Policy: Refers to the supply and valuation of currenty
+Monetary Policy: Refers to the supply and valuation of currency
 
   - Interest rates
   - Money supply
@@ -199,9 +182,9 @@ Trade after 1934
 
 
 ---
-class: left, top
+class: center, middle
 
-<img src="../images/hiscox-1999-figure.png" style="width:650px; height:850px; left:180px; top:-150px;">
+<img src="../images/hiscox-1999-figure.png" style="width:650px; height:760px; margin-top:-80px;">
 
 
 
@@ -239,8 +222,9 @@ gdp <- read_delim(here("../../../Data Files/expgdpv6.0/gdpv6.txt"), delim = "\t"
   subset(statenum == 2)
 
 cpi <- read_csv(here("../../../Data Files/US Government Files/BLS/cpi_1913_2015.csv")) %>% 
-  subset(year >= 1950, select = c(year, annualavg)) %>% 
-  mutate(cpi = annualavg/236.736)
+  filter(year >= 1950) |> 
+  dplyr::select(year, annualavg) |> 
+  dplyr::mutate(cpi = annualavg/236.736)
 
 us.consumption <- trade.national %>% 
   group_by(ccode, year) %>% 
@@ -249,12 +233,12 @@ us.consumption <- trade.national %>%
   group_by(year) %>% 
   mutate(total.exports = sum(exports, na.rm = TRUE),
          us.cons = imports/(total.exports-exports)) %>% 
-  subset(ccode == 2 & year >= 1946)
+  filter(ccode == 2 & year >= 1946)
 
 
 us.trade.gdp <- trade.national %>% 
   filter(ccode == 2) %>% 
-  subset(year >= 1950) %>%
+  filter(year >= 1950) %>%
   group_by(year) %>% 
   mutate(imports = imports, na.rm = TRUE,
          exports = exports, na.rm = TRUE) %>% 
@@ -266,15 +250,15 @@ us.trade.gdp <- trade.national %>%
   mutate(exports.gdp = ((exports.con/realgdp)),
         imports.gdp = ((imports.con/realgdp))) %>% 
   as.data.frame() %>% 
-  rename("Exports" = "exports.gdp", "Imports" = "imports.gdp", "Exports (Constant)" = "exports.con", "Imports (Constant)" = "imports.con", "Deficit" = "deficit") %>% 
+  dplyr::rename("Exports" = "exports.gdp", "Imports" = "imports.gdp", "Exports (Constant)" = "exports.con", "Imports (Constant)" = "imports.con", "Deficit" = "deficit") %>% 
   pivot_longer(cols = c("Exports", "Imports", "Exports (Constant)", "Imports (Constant)", "Deficit", "realgdp"))
 
 
 
 # US exports and imports over time
-ggplot(data = subset(us.trade.gdp, name == "Exports (Constant)" | name == "Imports (Constant)"), aes(x = year, y = value/1000, group = name, colour = name)) +
+ggplot(data = us.trade.gdp |> filter(name == "Exports (Constant)" | name == "Imports (Constant)"), aes(x = year, y = value/1000, group = name, colour = name)) +
   geom_line(size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   labs(x = "Year",
        y = "Billions of 2014 Dollars",
        title = "US imports and exports, 1950-2014",
@@ -282,7 +266,7 @@ ggplot(data = subset(us.trade.gdp, name == "Exports (Constant)" | name == "Impor
        caption = "Data obtained from the Correlates of War Data's National Trade Data (v4.0)") +
   scale_y_continuous(labels = dollar) +
   scale_x_continuous(breaks = seq(1950,2015,5)) +
-  viridis::scale_color_viridis(option = "magma", discrete = TRUE, guide_colourbar(title = "Group"))
+  viridis::scale_color_viridis(option = "magma", begin = 0.1, end = 0.9, discrete = TRUE, guide_colourbar(title = "Group"))
 
 
 ```
@@ -298,7 +282,7 @@ class: center, middle
 # Trade as percent of US GDP
 ggplot(data = subset(us.trade.gdp, name == "Exports" | name == "Imports"), aes(x = year, y = value, group = name, color = name)) +
   geom_line(size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   labs(x = "Year",
        y = "",
        title = "Trade as a percent of US GDP, 1950-2014",
@@ -457,7 +441,7 @@ gdp.2019 <- gdp.2019 %>%
 ggplot(gdp.2019, aes(x = reorder(`Country Name`, GDP), y = GDP)) +
   geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = 0.1) +
   coord_flip() +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_y_continuous(labels = scales::dollar_format()) +
   labs(x = "",
        y = "2019 US Dollars",
@@ -475,7 +459,7 @@ class: center, middle
 ggplot(gdp.2019, aes(x = reorder(`Country Name`, GDP), y = GDPPC)) +
   geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = 0.1) +
   coord_flip() +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_y_continuous(labels = scales::dollar_format()) +
   labs(x = "",
        y = "2019 US Dollars",
@@ -493,7 +477,7 @@ class: center, middle
 
 ggplot(data = us.consumption, aes(x = year, y = us.cons)) +
   geom_area(fill = "dodgerblue1", colour = "black", size = .1, alpha = .8) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1946, 2014, 5), limits = c(1946, 2014)) +
   scale_y_continuous(labels = percent_format()) +
   labs(x = "Year",
@@ -529,7 +513,7 @@ growth.comparison <- us.trade.gdp %>%
 ggplot(data = subset(growth.comparison, name == "Deficit"), aes(x = year, y = value, fill = value>0)) +
   geom_bar(stat = "identity", alpha = .8, colour = "black", size = .1) +
   geom_hline(yintercept = 0) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_y_continuous(labels = dollar) +
   scale_x_continuous(breaks = seq(1950,2015,5)) +
   scale_fill_brewer(palette = "Set1") +  
@@ -611,21 +595,21 @@ class: center, middle
 ```{r sugar quota}
 
 us <- read_csv(here("../../../Data Files/US Government Files/USDA/Table04.csv"), skip = 3) %>% 
-  subset(select = c(X1, X20)) %>% 
-  filter(!is.na(X20)) %>% 
-  mutate(Year = as.numeric(paste(X1)),
+  dplyr::select(`...1`, `...20`) %>% 
+  filter(!is.na(`...20`)) %>% 
+  mutate(Year = as.numeric(paste(`...1`)),
          Group = "US") %>% 
-  rename("Rate" = "X20") %>% 
-  subset(select = c(Year, Rate, Group))
+  dplyr::rename("Rate" = `...20`) %>% 
+  dplyr::select(Year, Rate, Group)
 
 
 world <- read_csv(here("../../../Data Files/US Government Files/USDA/TABLE03a.csv"), skip = 2) %>%   
-  subset(select = c(X1, X18)) %>% 
-  filter(!is.na(X18)) %>% 
-  mutate(Year = as.numeric(paste(X1)),
+  dplyr::select(`...1`, `...18`) %>% 
+  filter(!is.na(`...18`)) %>% 
+  mutate(Year = as.numeric(paste(`...1`)),
          Group = "World") %>% 
-  rename("Rate" = "X18") %>% 
-  subset(select = c(Year, Rate, Group))
+  rename("Rate" = `...18`) %>% 
+  dplyr::select(Year, Rate, Group)
 
 # Need to finish this. Index isn't right. 
 combined <- data.frame(bind_rows(us,world)) %>% 
@@ -636,10 +620,10 @@ combined <- data.frame(bind_rows(us,world)) %>%
 # Sugar prices over time
 ggplot(data = combined, aes(x = Year, y = Rate, group = Group, colour = Group)) +
   geom_line(size = 2, alpha = 0.8) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1960,2015,5), limits = c(1960,2010)) +
-  scale_y_continuous(breaks = seq(0,40,10), limits = c(0,40)) +
-  scale_color_brewer(palette = "Set1") +
+  scale_y_continuous(breaks = seq(0,50,10), limits = c(0,50)) +
+  viridis::scale_color_viridis(discrete = 1, option = "magma", begin = 0.1, end = 0.9) +
   labs(y = "Cents per pound",
        title = "Average raw sugar price on US versus world markets, 1960-2010",
        subtitle = "US prices are generally higher than the world market prices due to trade protection", 
@@ -683,7 +667,7 @@ sugar.data <- sugar.data %>%
 
 ggplot(sugar.data, aes(y = reorder(country, tons), x = tons)) +
   geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = 0.1) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_continuous(label = comma_format()) +
   labs(x = "Metric Tons",
        y = "",
@@ -750,7 +734,7 @@ farm.subsidies <- tq_get("L312041A027NBEA",
 # Farm subsidies
 ggplot(data = farm.subsidies, aes(x = date, y = price)) +
   geom_area(fill = "deepskyblue", colour = "black", size = .2, alpha = .8) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2021-01-01"), by = "5 years"), date_labels = "%Y",
                limits = c(as.Date("1960-01-01"), as.Date("2021-01-01"))) +
   scale_y_continuous(labels = dollar_format()) +
@@ -818,7 +802,7 @@ man.index <- tq_get("IPMAN",
 
 ggplot(data = man.index) +
   geom_line(aes(x = date, y = price), size = 1.2) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_date(breaks = "5 years") +
   labs(x = "Date",
        y = "Index (2012 = 100)",
@@ -847,7 +831,7 @@ ggplot(man.com, aes(x = date, y = index, color = group)) +
   geom_line(size = 2, alpha = 0.8) +
   geom_vline(xintercept = as.Date("2018-03-01"), linetype = "dotted") +
   annotate("text", x = as.Date("2008-01-01"), y = 130, size = 3, label = "Trump announces tariffs\non steel and aluminum\nMarch 2, 2018", hjust = 0) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_date() +
   scale_color_brewer(palette = "Set1") +
   labs(x = "Date",
@@ -894,7 +878,7 @@ industry.com <- bind_rows(index.alum, index.steel) %>%
 # Steel and aluminum production
 ggplot(data = industry.com, aes(x = date, y = index, color = industry)) +
   geom_line(size = 1, alpha = 0.8) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_date(breaks = seq(as.Date("1972-01-01"), as.Date("2019-01-01"), by = "5 years"), date_labels = "%Y") +
   scale_y_continuous(breaks = seq(50, 200, 50), limits = c(50, 200)) +
   scale_color_brewer(palette = "Set1") +
@@ -931,7 +915,7 @@ ggplot(data = soy.data, aes(x = date, y = settle/100)) +
   annotate("text", x = as.Date("2018-03-27"), y = 10.85, size = 2.75, hjust = 0, label = "US tariffs on Chinese goods,\nsteel, and aluminum take effect \nMarch 22-23, 2018") +
   annotate("text", x = as.Date("2018-06-03"), y = 10.45, size = 2.75, hjust = 0, label = "US-Chinese talks break down \nMay 29, 2018") +
   annotate("text", x = as.Date("2018-07-10"), y = 9.95, size = 2.75, hjust = 0, label = "US tariffs on Chinese goods \nand Chinese tariffs on US goods \ntake effect \nJuly 6, 2018") +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_x_date(breaks = seq(as.Date("2018-01-01"), as.Date("2019-03-29"), by = "2 months"), date_labels = "%b %Y",
                limits = c(as.Date("2018-01-01"), as.Date("2019-03-29"))) +
   scale_y_continuous(breaks = seq(8, 11, 1), 
@@ -1001,7 +985,7 @@ m2stock <- tq_get("M2",
 
 ggplot(m2stock, aes(x = date, y = price)) +
   geom_area(fill = "dodgerblue1", color = "black", size = 0.1, alpha = 0.8) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_y_continuous(labels = dollar_format()) +
   labs(x = "Date", 
        y = "Billions of Dollars",
@@ -1038,7 +1022,7 @@ forex.data <- subset(forex.data, `Country Name` == "World") %>%
 
 ggplot(data = subset(forex.data, Currency == "Dollar" | Currency == "Euro" | Currency == "Yen" | Currency == "Pound"), aes(x = year, y = percent, group = Currency, fill = Currency)) +
   geom_area(alpha = .7, colour = "black", size = .1) +
-  theme_flynn() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
   scale_fill_brewer(palette = "Spectral") +
   scale_y_continuous(breaks = seq(0, 100, 20), limits = c(0, 100)) +
   labs(x = "Year",
@@ -1103,7 +1087,7 @@ ggplot(rate.com, aes(x = date, y = rate/100, color = country, linetype = country
   geom_step(size = 1.5, alpha = 0.9) +
   annotate("rect", xmin = as.Date("1919-01-01"), xmax = as.Date("1925-01-01"), ymin=-Inf, ymax = Inf, alpha = 0.2) +
   scale_y_continuous(labels = percent_format()) +
-  theme_flynn() + 
+  theme_flynn(base_size = 11, base_family = "oswald") + 
   scale_color_brewer(palette = "Set1") +
   guides(linetype = FALSE) +
   labs(x = "Date",
