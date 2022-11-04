@@ -1,0 +1,212 @@
+---
+title: "US Foreign Policy"
+subtitle: "Multilateralism in US Foreign Policy"
+author: 
+  - Michael Flynn
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date:  "Last Updated `r Sys.Date()`"
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    #css: quarto-lecture-theme.css
+    slide-number: true
+    chalkboard: true
+    height: 700
+    width: 1050
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 40%
+    data-background-position: bottom -30% right -15%
+---
+
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(here)
+library(flynnprojects)
+library(scales)
+library(kableExtra)
+
+knitr::opts_chunk$set(fig.width=9, fig.height=5, fig.align="center", fig.pos = "middle", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
+
+basesize <- 11
+
+
+```
+
+
+
+## Lecture Overview
+
+1. Defining multilateralism
+
+2. Historical review of multilateralism in US foreign policy
+
+3. Costs and benefits
+
+4. Why Multilateralism?
+
+
+
+
+
+
+## Key Questions
+
+1. What are the costs and benefits of cooperation?
+
+2. When are countries more or less likely to cooperate?
+
+3. How has the emphasis on multilateralism changed throughout US history?
+
+
+:::{.notes}
+## Opening Exercise
+
+1. Take a moment to write down a list of some of the major foreign policy issues that the US faces.
+
+2. Which of these policy areas requires multilateral cooperation? In which policy areas can the US effectively pursue unilateral action?
+
+:::
+
+
+
+# Defining Multilateralism
+
+
+
+
+
+
+## Defining Multilateralism
+
+
+
+> **Multilateralism** refers to efforts to coordinate behavior between three or more actors.
+
+
+
+
+
+# Historical Overview
+
+
+
+
+
+
+
+
+## Historical Overview
+
+Multilateralism in US foreign policy
+
+- For the most part, US foreign policy is mostly characterized by unilateralism through World War I
+
+- World War I marks a slight turn towards multilateralism, but there's a lot of resistance
+
+- After World War II multilateralism becomes a central component of US foreign policy
+
+
+
+
+
+
+
+## Historical Overview
+
+Multilateralism in security, diplomatic, and economic affairs
+
+- North Atlantic Treaty Organization (NATO)
+
+- United Nations (UN)
+
+- General Agreement on Tariffs and Trade (GATT)
+
+- International Monetary Fund (IMF)
+
+- World Bank
+
+
+
+
+
+
+# Costs and Benefits
+
+
+
+
+
+
+## Costs and Benefits
+
+Multilateralism has a range of shorter-term benefits
+
+- Pooling resources
+
+- Distribute costs
+
+- Enhanced legitimacy
+
+But there are also costs
+
+- Decreased autonomy/constraints on behavior
+
+- Possible costs via side payments 
+
+- More diffuse policy benefits
+
+
+
+---
+
+```{r, fig.align='center', fig.pos="middle"}
+
+fat.data <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
+  mutate(NonUS = Total - US) %>% 
+  select(Year, War, US, NonUS) %>% 
+  pivot_longer(cols = c(3,4),
+               names_to = "country",
+               values_to = "deaths")
+
+ggplot(fat.data, aes(x = Year, y = deaths, fill = country)) +
+  geom_bar(stat = "identity", position = "stack", color = "black", size = 0.1) +
+  facet_wrap(. ~ War) +
+  theme_flynn() +
+  scale_fill_brewer(palette = "Set2") +
+  labs(x = "Year",
+       y = "Count",
+       fill = "Country",
+       title = "Coalition deaths in Afghanistan and Iraq, 2001-2020",
+       caption = "Data obtained from icasualties.org")
+
+
+```
+
+
+
+---
+
+```{r coalition fatalities percent}
+
+fat.perc <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
+  mutate(percent = US/Total)
+
+ggplot(fat.perc, aes(x = Year, y = percent, color = War, linetype = War)) +
+  geom_line(size = 1.5) +
+  theme_flynn() +
+  scale_color_brewer(palette = "Set2") +
+  scale_y_continuous(labels = percent_format()) +
+  guides(linetype = FALSE) +
+  labs(x = "Year",
+       y = "Percent",
+       color = "Conflict",
+       title = "US fatalities as a percentage of total coalition fatalities",
+       subtitle = "Coalition warfighting can spread risk to many states.",
+       caption = "Data obtained from icasualties.org")
+```
+
+
