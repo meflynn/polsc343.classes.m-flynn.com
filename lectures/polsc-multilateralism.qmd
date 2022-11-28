@@ -3,17 +3,25 @@ title: "US Foreign Policy"
 subtitle: "Multilateralism in US Foreign Policy"
 author: 
   - Michael Flynn
+<<<<<<< HEAD
 institute:
   - Department of Political Science
   - 011C Calvin Hall
   - meflynn@ksu.edu
 date: "Last Updated `r Sys.Date()`"
+=======
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date:  "Last Updated `r Sys.Date()`"
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 format:
   revealjs:
     theme: [quarto-lecture-theme.scss, default]
     #css: quarto-lecture-theme.css
     slide-number: true
     chalkboard: true
+<<<<<<< HEAD
     height: 900
     width: 1600
     #incremental: true
@@ -21,6 +29,14 @@ title-slide-attributes:
     data-background-image: "ksu-seal.png"
     data-background-size: 45%
     data-background-position: bottom -38% right -19%
+=======
+    height: 700
+    width: 1050
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 40%
+    data-background-position: bottom -30% right -15%
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 ---
 
 
@@ -35,6 +51,10 @@ knitr::opts_chunk$set(fig.width=9, fig.height=5, fig.align="center", fig.pos = "
 
 basesize <- 11
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 ```
 
 
@@ -211,6 +231,7 @@ ggplot(fat.perc, aes(x = Year, y = percent, color = War, linetype = War)) +
 ```
 
 
+<<<<<<< HEAD
 
 
 
@@ -378,3 +399,5 @@ ggplot() +
 ```
 
 
+=======
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
