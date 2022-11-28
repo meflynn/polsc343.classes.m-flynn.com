@@ -46,7 +46,7 @@ sysfonts::font_add_google("Oswald", family = "oswald")
 showtext::showtext_auto()
 
 basesize <- 12
-scale <- 4.5
+scale <- 1.5
 
 # Regular plot theme
 theme_flynn <- function(){ 
