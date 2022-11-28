@@ -1,0 +1,74 @@
+
+/* Set main header fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* Set the basic heading font and weight */
+h1, h2, h3 {
+  font-family: 'Oswald';
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+.h2 {
+  margin-top: 20%;
+  margin-bottom: 40px;
+}
+
+#title-slide {
+  text-align: left;
+  font-family: "Oswald";
+  margin-top: 30px;
+  margin-left: -20px;
+}
+
+blockquote {
+  margin-top: auto;
+  margin-bottom: autoff;
+}
+
+/* this handles the size of the title on the titlepage and intervening title pages */
+.reveal h1 {
+  font-size: 2.6em;
+  margin-top: 20px;
+}
+
+.reveal h2 {
+  font-size: 1.6em;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+
+p.subtitle {
+  font-family: "Oswald";
+  font-size: 1.5em;
+  text-align: left;
+}
+
+/* Need these next two blocks to move the author name and info to the left and be flush with the title and subtitle.*/
+.reveal .quarto-title-block .quarto-title-authors {
+    justify-content: left;
+    line-height: 1.1;
+    font-size: 0.7em;
+    margin: 0;
+    display: block;
+    padding: 1px;
+}
+
+.reveal .quarto-title-block .quarto-title-authors .quarto-title-author {
+    padding-left: 0em;
+    padding-right: 0em;
+}
+
+p.date {
+  font-family: "Oswald";
+  font-size: 0.7em;
+  line-height: 0.8;
+  text-align: left;
+}
+
+
