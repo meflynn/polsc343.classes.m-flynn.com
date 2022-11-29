@@ -18,17 +18,23 @@ $link-color: #268bd2 !default;
 $selection-bg: #d33682 !default;
 $input-panel-bg: rgba(233, 236, 239, 0.2) !default;
 
+<<<<<<< HEAD
 // ksu seal;
 $ksu-seal: "ksu-seal.png";
 
 
+=======
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 // headings
 $presentation-heading-font: "Oswald", sans-serif !default;
 $presentation-body-font: "Roboto", sans-serif, !default;
 //$presentation-heading-text-transform: uppercase !default;
 
+<<<<<<< HEAD
 // font sizes;
 $title-author-font-size: 24px;
+=======
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 
 
 
@@ -39,7 +45,11 @@ $title-author-font-size: 24px;
 /* T his first one does the default fonts */
 .reveal p {
   font-family: $presentation-body-font;
+<<<<<<< HEAD
   font-size: 0.9em;
+=======
+  font-size: 0.85em;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
   line-height: 1.1;
   margin-bottom: 5px;
   padding-bottom: 5px;
@@ -48,7 +58,11 @@ $title-author-font-size: 24px;
 /* This one handles the bulleted lists */
 .reveal .slide  {
   font-family: $presentation-body-font;
+<<<<<<< HEAD
   font-size: 0.9em;
+=======
+  font-size: 0.85em;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
   line-height: 1;
   margin-top: 1px;
 }
@@ -62,7 +76,11 @@ html * {
 .slide-background:first-child {
   background-color: #512888;
   font-family: $presentation-heading-font;
+<<<<<<< HEAD
   font-size: 1.4em;
+=======
+  font-size: 1.3em;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 }
 
 .slide-background > .level1 {
@@ -87,11 +105,17 @@ h1, h2, h3 {
 h2 {
   margin-top: 20%;
   margin-bottom: 35px;
+<<<<<<< HEAD
   padding: 15px;
   border-bottom: 2px solid #512888;
   border-bottom-width: 95%;
   color: #FFFFFF;
   background-color: $ksu-purple;
+=======
+  padding-bottom: 15px;
+  border-bottom: 2px solid #512888;
+  border-bottom-width: 95%;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 }
 
 #title-slide {
@@ -114,22 +138,37 @@ h2 {
 
 /* this handles the size of the title on the titlepage and intervening title pages */
 .reveal h1 {
+<<<<<<< HEAD
   font-size: 2.8em;
+=======
+  font-size: 2.6em;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
   margin-top: 20px;
 }
 
 .reveal h2 {
+<<<<<<< HEAD
   font-size: 2em;
   margin-top: 15px;
   margin-bottom: 40px;
   font-weight: 800;
   color: #FFFFFF;
+=======
+  font-size: 1.6em;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-weight: 800;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 }
 
 
 p.subtitle {
   font-family: $presentation-heading-font;
+<<<<<<< HEAD
   font-size: 1.6em;
+=======
+  font-size: 1.4em;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
   text-align: left;
 }
 
@@ -137,9 +176,15 @@ p.subtitle {
 .reveal .quarto-title-block .quarto-title-authors {
     justify-content: left;
     line-height: 1.1;
+<<<<<<< HEAD
     font-size: $title-author-font-size;
     margin-top: -10px;
     margin-bottom: 10px;
+=======
+    font-size: 0.7em;
+    margin: 0;
+    margin-top: -10px;
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
     display: block;
     padding: 1px;
 }
@@ -151,6 +196,7 @@ p.subtitle {
 
 p.date {
   font-family: $presentation-heading-font;
+<<<<<<< HEAD
   font-size: $title-author-font-size;
   line-height: 1.1;
   text-align: left;
@@ -185,6 +231,15 @@ p.quarto-title-affiliation {
   margin-bottom: 2px;
   margin-top: 2px;
 }
+=======
+  font-size: 0.7em;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 2px;
+}
+
+
+>>>>>>> f8dcfccfb129613a870e44b481caae42aecc9b32
 /* I set this to push figures vertically towards the center, but I may want to revisit this later. Quarto should have page specific settings I can use to do this. But the question is if I want to set it every time I create a new slide since I use A LOT of dataviz */
 .reveal img {
   margin: 5%;
