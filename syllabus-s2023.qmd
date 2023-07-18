@@ -1,5 +1,5 @@
 ---
-title: "World Politics"
+title: "US Foreign Policy"
 description: "Course syllabus"
 date: "`r Sys.Date()`"
 bibliography: ../../classrefs.bib
