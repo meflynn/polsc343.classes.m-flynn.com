@@ -1,0 +1,11 @@
+---
+title: POLSC 145 World Politics Class Blog
+listing: 
+  contents: posts
+  type: default
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, author, reading-time]
+page-layout: full
+title-block-banner: true
+---

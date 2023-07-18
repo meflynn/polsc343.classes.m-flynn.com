@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+  lib-dir: library
+  render:
+    - "*.qmd"
+    - "!lectures/"
+  resources:
+    - "files/"
+    - "lectures/*.html"
+    - "lectures/*.scss"
+    - "lectures/*.css"
+    - "lectures/*_files/"
+    - "lectures/libs/"
+    - "lectures/*.png"
+
+website:
+  title: "US Foreign Policy"
+  description: "Course page for POLSC 343 US Foreign Policy"
+  navbar:
+    background: "#512888"
+    right:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: Instructor
+      - href: posts.qmd
+        text: Blog
+      - href: syllabus-s2023.qmd
+        text: Syllabus
+      - text: "Archives"
+        menu:
+          - href: syllabi-archive.qmd
+            text: Syllabi Archive
+          - href: lectures.qmd
+            text: Lecture Archive
+          - href: https://www.youtube.com/@michaelflynn4243/featured
+            text: YouTube Channel
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    page-layout: article
+
+editor: source
+
+execute:
+  freeze: auto

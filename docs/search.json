@@ -1,0 +1,296 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Michael Flynn",
+    "section": "",
+    "text": "Greetings! My name is Michael Flynn. My research focuses on the political economy of US foreign policy, the influence of domestic politics on foreign policy, and the causes and consequences of US military deployments overseas.\nMy research interests cover a number of areas, including US Foreign Policy, the Political Economy of Security, Military Deployments, Statistical Research Methods, Bayesian Modeling, and Multilevel Modeling.\n\n\nPhD in Political Science | Binghamton University | 2013\nMA in Political Science | Binghamton University | 2009\nBA in Politics | BA in History | SUNY Potsdam | 2006"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Michael Flynn",
+    "section": "",
+    "text": "PhD in Political Science | Binghamton University | 2013\nMA in Political Science | Binghamton University | 2009\nBA in Politics | BA in History | SUNY Potsdam | 2006"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "US Foreign Policy",
+    "section": "",
+    "text": "Welcome, this page will serve as the homepage for POLSC 343 US foreign policy."
+  },
+  {
+    "objectID": "index.html#course-summary",
+    "href": "index.html#course-summary",
+    "title": "US Foreign Policy",
+    "section": "Course Summary",
+    "text": "Course Summary\nThis course focuses on the development of US foreign policy over the course of the twentieth and twenty-first centuries. It will provide a brief background on the history of US foreign policy before 1900, but will focus primarily on the developments and issues occurring from 1900 through the present. The historical content of the course will be supplemented by introducing students to political science literature that can help to identify and explain key events and trends in US foreign policy during this time period."
+  },
+  {
+    "objectID": "index.html#course-objectives",
+    "href": "index.html#course-objectives",
+    "title": "US Foreign Policy",
+    "section": "Course Objectives",
+    "text": "Course Objectives\n\nThe overarching goal is to develop an understanding of the systematic forces that shape US foreign policymaking. Please note that this is different than prescribing what policy should be (though this is also an important consideration when considering our motivations for studying the topic and reading course materials.\nIdentify the key actors that influence foreign policy.\nUnderstand how and when the influence of actors varies (e.g. across time, issue area, etc.).\nIdentify the key issues confronting policymakers and society.\nIdentify general trends in US foreign policy over time.\n\nWhat’s changed?\nWhat stays the same?\nWhen and why do we see changes in behavior or policies?\n\nStudents should develop a familiarity with social science research processes, practices. Specifically, students should have:\n\nA basic understanding of how to read social scientific research articles.\nA basic understanding of research design considerations\nA basic understanding of what the scope and limitations of research articles"
+  },
+  {
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "This pages contains links to the various lecture slides used throughout the semester.\nThis page contains lectures delivered throughout the semester. You can click on the links below to access the slides. Additional information can be found on my YouTube Channel. Please note that I don’t update these video versions regularly, so there may be a disconnect between what you find below and the video content on the channel."
+  },
+  {
+    "objectID": "lectures.html#lecture-slides",
+    "href": "lectures.html#lecture-slides",
+    "title": "Lectures",
+    "section": "Lecture Slides",
+    "text": "Lecture Slides\n\nCourse Introduction\nHistorical Background\nThe Cold War in International Affairs\nThe Cold War in Domestic Politics\nThe Policymaking Process\nCongress and the Presidency\nBureaucracy and the State Department\nThe Defense Department and the Military\nThe Use of Military Force\nSecurity Cooperation\nTrade and Investment\nHuman Rights\nMultilateralism"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "POLSC 145 World Politics Class Blog",
+    "section": "",
+    "text": "What’s the difference?\n\n\n\n\n\n\n\n\n\nSep 3, 2021\n\n\nMichael Flynn\n\n\n10 min\n\n\n\n\n\n\n  \n\n\n\n\nA note on terminology\n\n\n\n\n\n\n\n\n\nAug 24, 2021\n\n\nMichael Flynn\n\n\n11 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/a-note-on-terminology/a-note-on-terminology.html",
+    "href": "posts/a-note-on-terminology/a-note-on-terminology.html",
+    "title": "A note on terminology",
+    "section": "",
+    "text": "In class the other day I made note of the fact that we sometimes use terms in political science that might have a different meaning as compared to how those same terms are used when we talk about politics in a less technical setting.\n\nBias\nA good example of this is the concept of bias. In more casual settings we typically hear the term bias used as a way of discrediting a source of information. Usually this is because that source is viewed as selectively presenting information, or framing it in such a way, so as to advance a particular political agenda.\nIn political science when we use the term bias we are often referring to characteristics of a sample or measurement. More specifically, bias is usually used to refer to the gap between the information we have and the “true” underlying value that we’re interested in.\nFor example, if we’re interested in estimating the average height of a population we might begin by taking a sample of people from that population. Let’s say that we have a population of 1,000 people—then we might sample 100 people from that population and take their average height. We could then use this to estimate the average height of the entire population. Let’s take a look:\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\nWarning in geom_vline(xintercept = mean(sample$sample), linetype = \"dashed\", :\nIgnoring unknown parameters: `label`\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nSimulated height values in inches.\n\n\n\n\nFigure 1 shows 1000 simulated height values (in inches). We have a mean of 69 inches and a standard deviation of 3 inches. We’ll set aside whether this is accurate or not for the time being, but it’s close enough for present purposes. The purple values show 20 sample values taken from the population. We’ll also assume for present purposes that our selection process only targets a particularly young portion of the population who are between 12 and 25 years of age, and so many of the people we’ve selected are not fully grown yet. Finally, the dashed line shows the mean height of the sample group and the solid line is the mean value of the population.\nA couple of details emerge. First, the size of the sample is necessarily smaller than the population. This is obvious as we only chose 20 out of 1000 people. That’s why we call it a sample! Second, and most importantly for present purposes, you can see that there is a gap between the two mean values—this is the bias in our estimate!\nBias like this can result from a variety of sources. Using height as an example, we might find bias in our sample if the people we sample are all professional basketball players (more likely to be taller), or are all under the age of 25 (younger people are more likely to be shorter). That’s what we did in this example. We could easily do the same thing with another measure like age. If we’re interested in estimating the average age of people in a county or state, and if we only sampled individuals by drawing on people within primary and secondary schools, then our estimate of age would be biased. In this case a biased sample would produce a biased estimate.\nNo matter what measure you choose to focus on, you have to be cognizant of the potential sources of bias—the things that can lead you to estimate a quantity of interest that is different from the actual underlying value in which you are interested. To be clear, there will almost always be a difference—the question is how close are we to the actual value we’re interested in. Often times these problems can be lessened or even remedied by ensuring that our sample matches the characteristics of the population and/or by collecting more data (i.e. by collecting a larger sample).\nIn this first example you can see that most of our sampled observations are close to the mean, but this is because this is still where most of the probability mass of the distribution is located. Next, let’s see what happens if we broaden our sampling procedure to ensure we’re sampling from the entire population:\n\n\nWarning in geom_vline(xintercept = mean(sample$sample), linetype = \"dashed\", :\nIgnoring unknown parameters: `label`\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nSimulated height values in inches.\n\n\n\n\nThere’s still some bias, but the line moves closer to the population mean because we’ve altered our sampling procedure to ensure we’re not just targeting younger people in the population. Now we’re sampling from the entire population. But now our sample mean is above the population mean instead of below. This is a result of the small sample we’ve chosen. Smaller samples are more likely to yield noise. Now let’s see what happens when we keep everything the same but simply increase the size of the sample 10 times:\n\n\nWarning in geom_vline(xintercept = mean(sample$sample), linetype = \"dashed\", :\nIgnoring unknown parameters: `label`\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nSimulated height values and a sample of 200 individuals\n\n\n\n\nThe lines moved closer together, just by increasing the size of the sample! Accordingly, we have reduced the bias of our estimate. Importantly, though, there is still going to be some amount of bias. It is often not something we can ever completely eliminate, but we can try to reduce it.\n\n\nAccuracy and Validity\nTwo other terms that we’ll use that have more technical meaning are accuracy and validity. These are maybe less at odds with popular useage than bias, but it’s good to review them just to make sure we’re on the same page.\nWhen we’re collecting data we’re often trying to measure some phenomenon of interest. This is true whether we’re talking about qualitative data collection or quantitative data collection. Validity refers to how close a measure is to the concept that we’re interested in measuring. Reliability refers to how consistent our attempts to measure that concept or phenomenon are.\nFigure 3 captures this concept. If we imagine a dart board or a target, validity refers to how close to the bulls eye we get when we try to measure the thing of interest. Similarly, reliability refers to our target grouping. If we’re hitting the bulls eye, or close to it, every time we throw a dart then we’d say that our measurement has a high degree of validity and reliability. If our darts tend to center around the bulls eye but are evenly scattered around the board then then we’d say our measurement instrument is valid, but not very reliable. If our attempts to measure the thing of interest aren’t near the bulls eye and are scattered around, then we’d say our measurement instrument are neither valid nor reliable. ultimately, validity and reliability can both be high, low, or some combination of the two.\n\n\nWarning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` in the `default_aes` field and elsewhere instead.\n\n\n\n\n\nAccuracy and validity\n\n\n\n\nThese concepts matter in real life in a wide range of situations. If we want to know how the public feels about a particular policy then the way we phrase a question on a survey instrument can have a huge impact on the quality of the responses with respect to the views we’re trying to tap into. If we have a medical test designed to test for the presence of a particular disease then we want to make sure that the test going to detect that disease with a high rate of success, while also minimizing the chances that it detects other diseases that we’re not interested in."
+  },
+  {
+    "objectID": "posts/whats-the-difference/whats-the-difference.html",
+    "href": "posts/whats-the-difference/whats-the-difference.html",
+    "title": "What’s the difference?",
+    "section": "",
+    "text": "In the social sciences we talk a lot about groups being different from one another. We might also talk about things like spending on certain programs going up or down over time. While this can seem direct, comparing quantities of interest can often be made complicated by a variety of factors. Below I’ll provide an overview of some of the issues I want you to be aware of as we begin to read journal articles and other readings that will invariably discuss inter-group and inter-temporal differences."
+  },
+  {
+    "objectID": "posts/whats-the-difference/whats-the-difference.html#comparing-two-groups",
+    "href": "posts/whats-the-difference/whats-the-difference.html#comparing-two-groups",
+    "title": "What’s the difference?",
+    "section": "Comparing two groups",
+    "text": "Comparing two groups\nComparing group behaviors can be complicated because in addition to differences between the groups, there is also variation in how the individual members of those groups tend to behave. Let’s imagine that we want to compare bipartisanship in US foreign policy. There are different metrics we could use, but we’ll settle for Congressional voting patterns. We might want to know if Democrats are more or less bipartisan than Republicans. We could imagine that we’re going to sample votes taken by members of Congress where each member of Congress votes on a series of votes during each year—let’s say 100 votes—and we could code those votes as bipartisan (1) or not (0). Rather than collecting data on every vote we decide to just sample from one year. At the end we might end up with a distribution of bipartisan votes that looks like this:\n\n\nSaving 7 x 5 in image\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nThe figure shows the distribution of the percentage of the 100 votes each legislator makes that are bipartisan—A value of 60 means that 60 of the 100 votes, or 60% of the 100 votes, a given legislator makes are bipartisan and 40% are not. We’ll focus on the raw count of votes rather than percent for now, but the 100 vote total simplifies this to make these voting totals more intuitive for present purposes. Dealing with proportional measures can get more complicated, but we’ll set some of that aside for now."
+  },
+  {
+    "objectID": "posts/whats-the-difference/whats-the-difference.html#statistical-methods-for-determining-differences-between-groups",
+    "href": "posts/whats-the-difference/whats-the-difference.html#statistical-methods-for-determining-differences-between-groups",
+    "title": "What’s the difference?",
+    "section": "Statistical methods for determining differences between groups",
+    "text": "Statistical methods for determining differences between groups\nSo are Republicans and Democrats different? Are they meaningfully different? How can we tell? The idea here is that when we’re dealing with data of the kind shown in the above example, we want to understand if the differences between two groups are 1) systematic or are they the result of chance, and 2) how big or substantively meaningful are the differences we observe? Making these sorts of judgements by looking at this figure alone is difficult.\nFor example, a simple comparison of the mean values of the two parties suggests that Democrats have a higher rate of bipartisanship than do Republicans. But the data shown above are also very noisy, they represent just a sample from a broader set of votes, and there’s quite a bit of overlap between members of each group, so we can’t be sure from casual observation that the differences we think we observe are accurate representations of broader differences between the two groups. This is where we turn to some basic statistical methods that can help us to estimate if and how two or more groups might be different from one another with respect to some outcome of interest.\n\nDifference of Means Tests\nThe sorts of statistical methods used by researchers vary quite a bit depending on the question at hand, but for this basic example we can start with something really simple called a difference of means test, or a t test. This test allows us to look at the values of two continuous variables and compare their mean values. Another way to think of this is to compare the values of a given variable across two groups. In our example we’re interested in comparing the mean number of bipartisan votes for Republican and Democratic legislators. So political party represents our grouping variable and the outcome of interest is the count of the number of bipartisan votes.\n\n\n\n\nDifference of means test of bipartisan voting\n\n\nParameter1\nParameter2\nMean_1\nMean_2\nDiff\nCI\nCI_low\nCI_high\nt\ndf_error\np\nMethod\nAlternative\n\n\n\n\nRepublican\nDemocrat\n44.88\n50.51\n-5.63\n0.95\n-6.6\n-4.67\n-11.47\n406.57\n0\nWelch Two Sample t-test\ntwo.sided\n\n\n\n\n\n\n\n\nThe output in @ref(tab:t-test-example) resembles the output for a regression model that we’ll discuss below, but is much simpler. It tells us the names of the two groups, the mean score for each of the two groups, the difference between those mean scores, and the confidence interval, confidence interval limit values, and the test statistic or t value. There is also more information contained in the table about the type of t test and the direction of the test. Sometimes you might want to look at whether or not a group has a score that is higher or lower than another group, meaning that you have some specific direction in mind. In our case we’re content to just look at a non-directional test to see if the means of the two groups are different without hypothesizing the direction of that difference in advance. For now our basic hypothesis is that the groups are different, and our null hypothesis is that there is no difference between the two groups.\nSo is there a difference in the bipartisan voting behavior of the two parties? The t test shows that the Republican score is indeed lower than the Democratic score, and that this difference is statistically significant at the 0.95 level. The Democratic score is 5.63 higher than the Republican score as can be seen in the “Diff” column, and the test yields a test statistic of -11.17. This translates to a very low p value, which indicates the probability of seeing a test statistic greater than or equal to the observed test statistic of the null hypothesis were true. This is a lot, I know, but the important point is that researchers generally want low p values.\nSo this result is statistically significant, but is it substantively significant? That’s up to the researcher and requires some knowledge of the specific topic and/or broader domain expertise. In this example we see that, on average, Republican legislators case a bipartisan vote about 45% of the time and Democratic legislators case a bipartisan vote about 50% of the time. This this case we’re looking at a difference of approximately 5 percentage points. Again, whether or not this is substantively meaningful requires a lot of additional context, and my purpose here is less to tell you the answer to that specific question for this hypothetical and more to help you to learn to be thoughtful and cautious when consuming statistical analyses.\n\n\nRegression Models\nThe t test represents a very simple approach to analyzing the differences between two groups. While this can be useful, sometimes our data and the relationships between variables of interest are too complicated for a simple t test. In some cases we might want to know how groups compare when taking into account a number of other factors. Regression models are a broad class of statistical tools that allow us to model more complex relationships among various predictor and outcome variables. A fuller treatment of regression models is more than I want to get into for the purposes of this class, but there are a couple of points I want to highlight.\n\n\n\nLinear Regression Predicting Bipartisan Votes\n\n\n\nModel 1\n\n\n\n\nRepublicans\n−5.634***\n\n\n\n(0.487)\n\n\nIntercept\n50.509***\n\n\n\n(0.331)\n\n\nNum.Obs.\n434\n\n\nR2\n0.236\n\n\nR2 Adj.\n0.234\n\n\nAIC\n2643.2\n\n\nBIC\n2655.4\n\n\nLog.Lik.\n−1318.600\n\n\nF\n133.598\n\n\nRMSE\n5.05\n\n\n\n + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001\n\n\n\n\n\n\n\n\n\nFirst, Table @ref(tab:linear-regression-example) shows the results of a regression model where we model bipartisan votes as a function of party identification. There’s a lot here but we’re only going to focus on a couple of points.\nFirst, the higlighted row with the red text is really what we’re interested in when comparing the two parties as we discuss above. The left column shows us the name of the variable—in this case it’s the group we’re interested in, which is the political party of the observed legislator. The right column shows us the correlation coefficient. Basically this tells us how big the difference is between the Democratic legislators (the reference group here) and the Republican legislators. Note that the number listed here, -5.634, is the same as the number listed in the t test above!\nThe asterisks next to the coefficient represent the level of statistical significance associated with that coefficient. This is often used as a marker of importance, but for reasons we’ve discussed briefly above, this isn’t always a great basis on which to judge the substantive significance of a result.\nWhere do these stars come from? Well, the number in the parentheses below the coefficient is the standard error of the coefficient. Basically, you divide the coefficient value by the standard error (i.e. \\(-5.64/0.48\\)) and (according to some arbitrarily defined conventions) a coefficient earns another asterisk every time that resulting ratio crosses a particular threshold. Don’t worry about that too much right now.\nThe Intercept represents the expected value of the outcome when the other predictor variables are set to 0. In this case the intercept represented the mean value of the bipartisan voting indicator (our outcome) when the Republican variable is set to 0. In other words, this is the mean score for the Democrats! See above in the t test table to check it out (there’s some minor rounding)!\nThere are other details here that can be useful, like the “N” or the number of observations. This tells you how many times we’re observing the phenomenon of interest. We often want more information, but a larger N doesn’t solve all our problems if there are other serious flaws with our measurement strategy or research design.\nAt the bottom of the table you can often find a listing of the significance thresholds. Each symbol corresponds to a particular p value. Remember that we derive these p values from the coefficient and the standard error. You can have very very small p values for coefficients with very very small substantive effects, so this is not equivalent to the importance of a coefficient. I can’t say that enough!"
+  },
+  {
+    "objectID": "syllabi-archive.html",
+    "href": "syllabi-archive.html",
+    "title": "POLSC 343 Syllabus Archive",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "syllabus-s2023.html",
+    "href": "syllabus-s2023.html",
+    "title": "World Politics",
+    "section": "",
+    "text": "This course is designed to give undergraduate students an introduction to the topics and methods associated with the study of world politics and international relations. Over the past several centuries the type and frequency of interactions between peoples and governments have increased exponentially. These interactions range from the peaceful—trade, investment, athletics, tourism, study abroad, etc.—to the conflictual and tragic—famine, pandemics, human rights violations, and more. Furthermore, the proliferation of communications technology has allowed us to watch events unfold. in real time from almost anywhere on the globe.\nGiven that such events—whether social, political, or economic—are increasingly relevant for individuals around the world, it is imperative that we develop a solid foundation for understanding the actors, incentives, and processes that drive them. Accordingly, this course will focus on basic facts and key concepts related to the study of international relations. We will also focus on how to develop mental models that can help us to understand broader patterns of behavior in world affairs, and to analyze the casual processes underpinning events of interest."
+  },
+  {
+    "objectID": "syllabus-s2023.html#course-summary",
+    "href": "syllabus-s2023.html#course-summary",
+    "title": "World Politics",
+    "section": "",
+    "text": "This course is designed to give undergraduate students an introduction to the topics and methods associated with the study of world politics and international relations. Over the past several centuries the type and frequency of interactions between peoples and governments have increased exponentially. These interactions range from the peaceful—trade, investment, athletics, tourism, study abroad, etc.—to the conflictual and tragic—famine, pandemics, human rights violations, and more. Furthermore, the proliferation of communications technology has allowed us to watch events unfold. in real time from almost anywhere on the globe.\nGiven that such events—whether social, political, or economic—are increasingly relevant for individuals around the world, it is imperative that we develop a solid foundation for understanding the actors, incentives, and processes that drive them. Accordingly, this course will focus on basic facts and key concepts related to the study of international relations. We will also focus on how to develop mental models that can help us to understand broader patterns of behavior in world affairs, and to analyze the casual processes underpinning events of interest."
+  },
+  {
+    "objectID": "syllabus-s2023.html#course-objectives",
+    "href": "syllabus-s2023.html#course-objectives",
+    "title": "World Politics",
+    "section": "Course Objectives",
+    "text": "Course Objectives\n\nDevelop an understanding of some of the key issues in world politics.\nIdentify some of the most important actors as they relate to these key issues.\nDevelop an understanding of evidence-based research as it relates to these issues and actors:\n\nDevelop an understanding of the relationship between observation, theory, evidence, and analysis.\nIdentify questions, problems, or puzzles in world politics.\nThink about how we can develop theoretical models to help us analyze these issues.\nThink about how we can structure research to analyze these questions.\nThink about how we can collect different types of data to help us answer these questions.\nThink about how we can evaluate evidence to draw conclusions and generate insights.\n\nLearn to think about issues in world politics in terms of correlation, causation, and evidence."
+  },
+  {
+    "objectID": "syllabus-s2023.html#course-format",
+    "href": "syllabus-s2023.html#course-format",
+    "title": "World Politics",
+    "section": "Course Format",
+    "text": "Course Format\nThe course will be primarily lecture, thought students are encouraged to participate and ask questions where appropriate. I encourage students to ask questions if the readings of lecture materials are unclear and to reach out if they need help. In addition to class lectures students will be responsible for keeping up with readings and other class-related material as the semester progresses."
+  },
+  {
+    "objectID": "syllabus-s2023.html#required-readings",
+    "href": "syllabus-s2023.html#required-readings",
+    "title": "World Politics",
+    "section": "Required Readings",
+    "text": "Required Readings\nFrieden, Lake, and Schultz (2021)"
+  },
+  {
+    "objectID": "syllabus-s2023.html#additional-readings",
+    "href": "syllabus-s2023.html#additional-readings",
+    "title": "World Politics",
+    "section": "Additional Readings",
+    "text": "Additional Readings\nStudents should also make an effort to stay informed on current events. Below are a some examples of good sources for keeping up with global events. Please note that some of these publications may be pay-walled, but you should have access through the university library.\n\nBBC News\nThe Monkey Cage\nPolitical Violence @ a Glance\nForeign Affairs\nForeign Policy Magazine\nThe Washington Post\nThe New York Times\nThe Economist\nThe Financial Times"
+  },
+  {
+    "objectID": "syllabus-s2023.html#course-requirements",
+    "href": "syllabus-s2023.html#course-requirements",
+    "title": "World Politics",
+    "section": "Course Requirements",
+    "text": "Course Requirements\n\nExams: 70%: Your grade will largely be determined by a series of four tests. These are designed to assess your knowledge of basic ideas and concepts that we will cover throughout the course. All tests will be open book/note, and will be administered online. They will cover material from the text book, in-class lectures, discussions, podcasts, and/or any additional assigned readings. For each test you will have 75 minutes to answer \\(\\approx\\) 35 questions. There are no separate mid-term or final exams.\nHomework: 30%: You will have several homework assignments that are designed to provide you with deeper exposure to the course concepts. There will be approximately 6 homework assignments throughout the semester. All require students to complete various exercises and submit their work to the instructor. Some of these exercises will be completed outside of class and will be turned in through Canvas. Other activities will be completed in class and will be submitted to the instructor at the end of the class session."
+  },
+  {
+    "objectID": "syllabus-s2023.html#course-policies",
+    "href": "syllabus-s2023.html#course-policies",
+    "title": "World Politics",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nBe kind. The past three years have been a time of unparalleled stress for many of us. We’re still in the middle of a global pandemic, many of us are still very much worried about our own health and safety, and many of us are very much worried about the health and safety of our coworkers, friends, and families. Zoom fatigue is also a thing, so please be patient with one another. Let’s try to be cognizant of the fact that some of us (if not all) may still be struggling at various points, and let’s work together to make this semester as educational and enjoyable as possible.\nBe professional. Please try to treat your interactions with everyone as professionally as you would in a workplace environment.\nStudy guides and extra credit. The class is the study guide. I do not offer extra credit.\nGrade Appeals. If you believe that I have given you an incorrect grade on an exam, you may submit a written appeal. All appeals must be in writing (they may not be made in person) and must contain an explanation for why the grade is incorrect. I will also require you to wait 24 hours after receiving a grade to submit a written appeal. Please note that even if your appeal is granted, I reserve the right to regrade the assignment in its entirety, meaning that your grade may go up or down depending on my reevaluation of the assignment.\nMissing Assignments and Makeup Work. I will allow students to make up work that they miss do to a University-excused absence or event. In such cases students should provide two weeks notice and documentation provided by The Office of Student Life. Students who miss assignments due to illness may make up assignments provided they have documentation from Student Health Services.\nThe Syllabus. The syllabus is a living document that can and will be altered throughout the duration of the course based both on need and design. Generally, this may mean readings will be removed or added as needed. All changes will be listed on K-State Online, so make sure to check announcements for any such change. Additionally, I maintain the right to all of my own intellectual property presented in this course, whether it is the course lectures or this syllabus. Materials from this course ought not to be reproduced without my expressed permission.\nContacting the Instructor. The best way to contact me is via email. I will usually respond within two business days, but if it takes a little longer do not hesitate to send a reminder email. I do not respond to emails over the weekend.\nIf you wish to make an appointment you can use the Calendly link below to find an available time. Given how hectic everyone’s schedules are I will assume that these meetings will be Zoom based unless otherwise requested.\nEmail: meflynn@ksu.edu\nAppointments: Make an appointment here"
+  },
+  {
+    "objectID": "syllabus-s2023.html#statement-for-copyright-notification",
+    "href": "syllabus-s2023.html#statement-for-copyright-notification",
+    "title": "World Politics",
+    "section": "Statement for Copyright Notification",
+    "text": "Statement for Copyright Notification\nCopyright 2023 (Michael Flynn) as to this syllabus and all lectures. During this course students are prohibited from selling notes to or being paid for taking notes by any person or commercial firm without the express written permission of the professor teaching this course. In addition, students in this class are not authorized to provide class notes or other class-related materials to any other person or entity, other than sharing them directly with another student taking the class for purposes of studying, without prior written permission from the professor teaching this course."
+  },
+  {
+    "objectID": "syllabus-s2023.html#citation-and-style",
+    "href": "syllabus-s2023.html#citation-and-style",
+    "title": "World Politics",
+    "section": "Citation and Style",
+    "text": "Citation and Style\nAll written work is expected to adhere to professional standards. As described above, citing previous work is key. If you have any questions regarding the appropriate citation style please consult the American Political Science Association style guide."
+  },
+  {
+    "objectID": "syllabus-s2023.html#university-syllabi-statements",
+    "href": "syllabus-s2023.html#university-syllabi-statements",
+    "title": "World Politics",
+    "section": "University Syllabi Statements",
+    "text": "University Syllabi Statements\n\nAcademic Honesty and Plagiarism\nAll work turned in as a part of this class must be original work by the student.\nKansas State University has an Honor and Integrity System based on personal integrity, which is presumed to be sufficient assurance that, in academic matters, one’s work is performed honestly and without unauthorized assistance. Undergraduate and graduate students, by registration, acknowledge the jurisdiction of the Honor and Integrity System. The policies and procedures of the Honor and Integrity System apply to all full and part-time students enrolled in undergraduate and graduate courses on-campus, off-campus, and via distance learning. A component vital to the Honor and Integrity System is the inclusion of the Honor Pledge which applies to all assignments, examinations, or other course work undertaken by students. The Honor Pledge is implied, whether or not it is stated: “On my honor, as a student, I have neither given nor received unauthorized aid on this academic work.” A grade of XF can result from a breach of academic honesty. The F indicates failure in the course; the X indicates the reason is an Honor Pledge violation.\nFor more information, visit the Honor & Integrity System home web page. All work is expected to adhere to the standards outlined by the Kansas State University Handbook. All written work is subject to online plagiarism checks and will be required for all reaction papers as well as the final paper. Any cases of plagiarism will receive an automatic failure for the assignment, possible failure in the course, and will be pursued further through the university for additional punishment.\nThe Kansas State University Handbook (2008, Appendix F) defines plagiarism as follows:\n\nPlagiarism is taking credit for someone else’s ideas, work, or words. In a university setting, it means submitting academic, scholarly, or literary work in which you either claim or imply the material to be your own, when that is not the case.\n\nThe Handbook also provides examples of plagiarism, and steps students can take to avoid it:\n[P]lagiarism could include:\n\nBuying a term paper, or copying another person’s paper, even if she or he gives you permission.\nCutting and pasting information from the internet into your own paper without properly identifying it as a quotation and properly attributing the source.\nUsing someone else’s concept and presenting it as if it is your own original creativity, without acknowledging the source of the idea.\n\nWhile some acts of plagiarism are obvious attempts to deceive, like buying a term paper, others result from sloppy scholarship or failure to follow proper format for crediting sources. For example:\n\nIf you copy directly from another source and acknowledge it in your bibliography or list of works cited, yet fail to put it in quotation marks, this is plagiarism. The reason is that, although you have indicated that the idea is someone else’s, the lack of quotation marks implies that the words are your own.\nParaphrasing is summarizing a source so that you have rewritten the material in your own words but maintained the original author’s ideas. When you paraphrase, you do not need to put the words in quotation marks, but you do need to properly attribute the original source. Paraphrasing does not mean simply changing one or two words, or leaving out a sentence, while the rest remains the same. Even if you identify the original author, but have used faulty paraphrasing that retains too much of the original, the result is inadvertent plagiarism.\nIf you use another researcher’s specific methodology, you should acknowledge doing so. While some research protocols are widespread and general enough to need no citation, if the protocol, analysis, or technique can be attributed to a specific publication it should be cited.\nWorks of visual art and design, and images of the work, cannot be misrepresented as original work by another. Such images cannot be used in part or whole without permission of the artist.\n\nAlso note that using papers previously written for another assignment in this, or in any other class, without the express permission of the professor is grounds for failing an assignment. Using your own material in this way, and not citing it, is also technically plagiarism and can be treated as such. If you have concerns regarding any of these issues please do not hesitate to contact me.\n\n\nStudents with Disabilities\nAt K-State it is important that every student has access to course content and the means to demonstrate course mastery. Students with disabilities may benefit from services including accommodations provided by the Student Access Center. Disabilities can include physical, learning, executive functions, and mental health. You may register at the Student Access Center or to learn more contact:\nManhattan/Olathe/Global Campus – Student Access Center\naccesscenter@k-state.edu 785-532-6441\nK-State Salina Campus – Julie Rowe; Student Success Coordinator jarowe@k-state.edu 785-820-7908\nStudents already registered with the Student Access Center please request your Letters of Accommodation early in the semester to provide adequate time to arrange your approved academic accommodations. Once SAC approves your Letter of Accommodation it will be e-mailed to you, and your instructor(s) for this course. Please follow up with your instructor to discuss how best to implement the approved accommodations.\n\n\nClassroom conduct\nAll student activities in the University, including this course, are governed by the Student Judicial Conduct Code as outlined in the Student Governing Association By Laws, Article V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may be asked to leave the class.\n\n\nStatement on Mutual Respect and Inclusion in K-State Teaching and Learning Spaces\nAt K-State, faculty and staff are committed to creating and maintaining an inclusive and supportive learning environment for students from diverse backgrounds and perspectives. K-State courses, labs, and other virtual and physical learning spaces promote equitable opportunity to learn, participate, contribute, and succeed, regardless of age, race, color, ethnicity, nationality, genetic information, ancestry, disability, socioeconomic status, military or veteran status, immigration status, Indigenous identity, gender identity, gender expression, sexuality, religion, culture, as well as other social identities.\nFaculty and staff are committed to promoting equity and believe the success of an inclusive learning environment relies on the participation, support, and understanding of all students. Students are encouraged to share their views and lived experiences as they relate to the course or their course experience, while recognizing they are doing so in a learning environment in which all are expected to engage with respect to honor the rights, safety, and dignity of others in keeping with the K-State Principles of Community.\nIf you feel uncomfortable because of comments or behavior encountered in this class, you may bring it to the attention of your instructor, advisors, and/or mentors. If you have questions about how to proceed with a confidential process to resolve concerns, please contact the Student Ombudsperson Office. Violations of the student code of conduct can be reported using the Code of Conduct Reporting Form. You can also report discrimination, harassment or sexual harassment, if needed.\n\n\nStatement Regarding Wearing of Face Coverings\nKansas State University strongly encourages, but does not require, that everyone wear masks while indoors on university property, including while attending in-person classes. For additional information and the latest updates, see K-State’s face covering policy.\n\n\nStatement Regarding Discrimination, Harassment, and Sexual Harassment\nKansas State University is committed to maintaining academic, housing, and work environments that are free of discrimination, harassment, and sexual harassment. Instructors support the University’s commitment by creating a safe learning environment during this course, free of conduct that would interfere with your academic opportunities. Instructors also have a duty to report any behavior they become aware of that potentially violates the University’s policy prohibiting discrimination, harassment, and sexual harassment, as outlined by PPM 3010.\nIf a student is subjected to discrimination, harassment, or sexual harassment, they are encouraged to make a non-confidential report to the University’s Office for Institutional Equity (OIE) using the online reporting form. Incident disclosure is not required to receive resources at K-State. Reports that include domestic and dating violence, sexual assault, or stalking, should be considered for reporting by the complainant to the Kansas State University Police Department or the Riley County Police Department. Reports made to law enforcement are separate from reports made to OIE. A complainant can choose to report to one or both entities. Confidential support and advocacy can be found with the K-State Center for Advocacy, Response, and Education (CARE). Confidential mental health services can be found with Lafene Counseling and Psychological Services (CAPS). Academic support can be found with the Office of Student Life (OSL). OSL is a non-confidential resource. OIE also provides a comprehensive list of resources on their website. If you have questions about non-confidential and confidential resources, please contact OIE at equity@ksu.edu or (785) 532–6220."
+  },
+  {
+    "objectID": "syllabus-s2023.html#final-grades",
+    "href": "syllabus-s2023.html#final-grades",
+    "title": "World Politics",
+    "section": "Final Grades",
+    "text": "Final Grades\nA: 90+ B: 80–89.99 C: 70–79.99 D: 60–69.99 F: 0–59.99\nTentative course schedule begins on next page"
+  },
+  {
+    "objectID": "syllabus-s2023.html#tentative-course-schedule",
+    "href": "syllabus-s2023.html#tentative-course-schedule",
+    "title": "World Politics",
+    "section": "Tentative Course Schedule",
+    "text": "Tentative Course Schedule"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-01-0116-0120-course-introduction",
+    "href": "syllabus-s2023.html#week-01-0116-0120-course-introduction",
+    "title": "World Politics",
+    "section": "Week 01, 01/16 – 01/20: Course Introduction",
+    "text": "Week 01, 01/16 – 01/20: Course Introduction\n\nTopics:\n\nTuesday: Review the Syllabus. Discuss motivations for the course.\nThursday: The state in the modern era I\nRead: Chapter 1 - What shaped our world?"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-02-0123-0127-background-and-approach",
+    "href": "syllabus-s2023.html#week-02-0123-0127-background-and-approach",
+    "title": "World Politics",
+    "section": "Week 02, 01/23 – 01/27: Background and Approach",
+    "text": "Week 02, 01/23 – 01/27: Background and Approach\n\nTopics:\n\nTuesday: State and the modern era II\nThursday: Social scientific theories and methods I\nRead: Chapter 2 - Understanding interests, interactions, and institutions"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-03-0130-0203-background-and-approach",
+    "href": "syllabus-s2023.html#week-03-0130-0203-background-and-approach",
+    "title": "World Politics",
+    "section": "Week 03, 01/30 – 02/03: Background and Approach",
+    "text": "Week 03, 01/30 – 02/03: Background and Approach\n\nTopics:\n\nTuesday: Social scientific theories and methods II\nThursday: Slack day"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-04-0206-0210-international-conflict",
+    "href": "syllabus-s2023.html#week-04-0206-0210-international-conflict",
+    "title": "World Politics",
+    "section": "Week 04, 02/06 – 02/10: International Conflict",
+    "text": "Week 04, 02/06 – 02/10: International Conflict\n\nTopics:\n\nTuesday: War as an empirical phenomenon\nThursday: War as a bargaining process\nRead: Chapter 3: Why are there wars?"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-05-0213-0217-international-conflict",
+    "href": "syllabus-s2023.html#week-05-0213-0217-international-conflict",
+    "title": "World Politics",
+    "section": "Week 05, 02/13 – 02/17: International Conflict",
+    "text": "Week 05, 02/13 – 02/17: International Conflict\n\nTopics:\n\nTuesday: Domestic politics and war\nThursday: Domestic politics and war\nRead Chapter 4 - Domestic Politics and War"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-06-0220-0224-international-institutions-and-conflict",
+    "href": "syllabus-s2023.html#week-06-0220-0224-international-institutions-and-conflict",
+    "title": "World Politics",
+    "section": "Week 06, 02/20 – 02/24: International Institutions and Conflict",
+    "text": "Week 06, 02/20 – 02/24: International Institutions and Conflict\n\nTopics:\n\nTuesday: Alliances\nThursday: Collective security\n\nGuest Lecture: Lieutenant Commander Jean Anne Kim, USN.\n\nRead: Chapter 5 - International Institutions and War"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-07-0227-0303-civil-war-and-non-state-actors",
+    "href": "syllabus-s2023.html#week-07-0227-0303-civil-war-and-non-state-actors",
+    "title": "World Politics",
+    "section": "Week 07, 02/27 – 03/03: Civil War and non-state actors",
+    "text": "Week 07, 02/27 – 03/03: Civil War and non-state actors\n\nTopics:\n\nTuesday: Primer on civil wars\nThursday: Explaining rebel movements and civil conflict\nRead: Chapter 6 - Violence by nonstate Actors, pages 246–277"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-08-0306-0310-terrorism",
+    "href": "syllabus-s2023.html#week-08-0306-0310-terrorism",
+    "title": "World Politics",
+    "section": "Week 08, 03/06 – 03/10: Terrorism",
+    "text": "Week 08, 03/06 – 03/10: Terrorism\n\nTopics:\n\nTuesday: Primer on terrorism\nThursday: Understanding terrorism\nRead: Chapter 6 - Violence by nonstate actors, pages 278–301"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-09-0313-0317-spring-break",
+    "href": "syllabus-s2023.html#week-09-0313-0317-spring-break",
+    "title": "World Politics",
+    "section": "Week 09, 03/13 – 03/17: Spring Break",
+    "text": "Week 09, 03/13 – 03/17: Spring Break\n\nTopics:\n\nTuesday: No class\nThursday: No class"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-10-0320-0324-international-trade",
+    "href": "syllabus-s2023.html#week-10-0320-0324-international-trade",
+    "title": "World Politics",
+    "section": "Week 10, 03/20 – 03/24: International Trade",
+    "text": "Week 10, 03/20 – 03/24: International Trade\n\nTopics:\n\nTuesday: Thinking about international trade\nThursday: Theoretical models of international trade\nRead: Chapter 7 - International Trade"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-11-0327-0331-international-financial-relations",
+    "href": "syllabus-s2023.html#week-11-0327-0331-international-financial-relations",
+    "title": "World Politics",
+    "section": "Week 11, 03/27 – 03/31: International Financial Relations",
+    "text": "Week 11, 03/27 – 03/31: International Financial Relations\n\nTopics:\n\nTuesday: Primer on international finance\nThursday: Theoretical models of international finance\nRead: Chapter 8 - International Financial Relations"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-12-0403-0407-international-monetary-relations",
+    "href": "syllabus-s2023.html#week-12-0403-0407-international-monetary-relations",
+    "title": "World Politics",
+    "section": "Week 12, 04/03 – 04/07: International Monetary Relations",
+    "text": "Week 12, 04/03 – 04/07: International Monetary Relations\n\nTopics:\n\nTuesday: Primer and mechanics of Monetary Policy\nThursday: In-class homework exercise on monetary policy\nRead: Chapter 9 - International Monetary Relations"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-13-0410-0414-international-development",
+    "href": "syllabus-s2023.html#week-13-0410-0414-international-development",
+    "title": "World Politics",
+    "section": "Week 13, 04/10 – 04/14: International Development",
+    "text": "Week 13, 04/10 – 04/14: International Development\n\nTopics:\n\nTuesday: Primer on international development\nThursday: Understanding how other topics in IPE shape development\nRead: Chapter 10: Causes of the wealth and poverty of nations"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-14-0417-0421-human-rights",
+    "href": "syllabus-s2023.html#week-14-0417-0421-human-rights",
+    "title": "World Politics",
+    "section": "Week 14, 04/17 – 04/21: Human Rights",
+    "text": "Week 14, 04/17 – 04/21: Human Rights\n\nTopics:\n\nTuesday: Historical background\nThursday: Trends in human rights conditions\nRead: Chapter 12: Human rights"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-15-0424-0428-global-environmental-politics",
+    "href": "syllabus-s2023.html#week-15-0424-0428-global-environmental-politics",
+    "title": "World Politics",
+    "section": "Week 15, 04/24 – 04/28: Global Environmental Politics",
+    "text": "Week 15, 04/24 – 04/28: Global Environmental Politics\n\nTopics:\n\nTuesday: Basic issues in environmental politics\nThursday: Interests and cooperation in environmental politics\nRead: Chapter 13 - The global environment"
+  },
+  {
+    "objectID": "syllabus-s2023.html#week-16-0501-0505-challenges-to-the-global-order",
+    "href": "syllabus-s2023.html#week-16-0501-0505-challenges-to-the-global-order",
+    "title": "World Politics",
+    "section": "Week 16, 05/01 – 05/05: Challenges to the Global Order",
+    "text": "Week 16, 05/01 – 05/05: Challenges to the Global Order\n\nTopics:\n\nTuesday: Emerging issues and challenges to global governance\nThursday: Review day"
+  }
+]

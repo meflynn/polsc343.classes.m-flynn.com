@@ -1,0 +1,428 @@
+---
+title: "US Foreign Policy"
+subtitle: "Class Introduction"
+author: "Michael E. Flynn"
+institute: "Kansas State University"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "lecture_theme.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+      titleSlideClass: [middle, left, inverse]
+---
+
+```{r setup, include = FALSE}
+library(dagitty)
+library(ggdag)
+library(tidyverse)
+library(viridis)
+library(scales)
+library(dplyr)
+knitr::opts_chunk$set(dpi = 400, fig.align = "center", fig.height = 5, fig.width = 8)
+
+```
+
+
+# Welcome!
+
+Why this class matters: 
+
+- International relations affects your day to day life in so many ways
+
+- Trade, migration, and investment
+
+- War and conflict
+
+- Global governance 
+
+
+---
+class: center, middle
+
+.pull-left[
+<br>
+<br>
+<br>
+<br>
+```{r, dpi = 400, fig.align='center', fig.height=5, fig.width=5, echo=FALSE, fig.cap="mRNA Vaccines", out.width="100%"}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/b/b0/Moderna_COVID-19_vaccine.jpg")
+```
+]
+
+.pull-right[
+<br>
+<br>
+<br>
+<br>
+```{r, dpi = 400, fig.align='center',  fig.height=5, fig.width=5, echo = FALSE, fig.cap="N95 Masks", out.width="100%"}  
+knitr::include_graphics("https://www.nj.com/resizer/b0dKI3wPKS7LAo2-ba-ur9dljVk=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/RHPJJZNT4ZAA7GJ4CBTKPIL6VA.JPG")
+```
+]
+
+
+
+---
+class: left, top
+
+# But also...
+.pull-left[
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+]
+
+.pull-right[
+
+]
+
+---
+class: left, top
+
+# But also...
+.pull-left[
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+
+]
+
+
+.pull-right[
+```{r, dpi = 400, echo = FALSE, warning = FALSE}
+
+dag.df <- dagitty('dag{
+                  "x" [exposure]
+                  "y" [outcome]
+                  
+                  "x" [pos="1,1"]
+                  "y" [pos="2,1"]
+                  "z" [pos="1.5,2"]
+                  
+                  "x" -> "y"
+                  "y" <- "z" -> "x"
+}') %>% 
+  tidy_dagitty()
+
+
+
+ggplot(dag.df %>% filter(name != "z"), aes(x = x, xend = xend, y = y, yend = yend)) +
+  geom_dag_point(aes(color = name), show.legend = FALSE, size = 20) +
+  geom_dag_edges() +  
+  geom_text(aes(label = name), color = "white", size = 10, parse = TRUE) +
+  theme_dag() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.9) 
+
+```
+]
+
+---
+class: left, top
+
+# But also...
+.pull-left[
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+- Or complicated
+]
+
+.pull-right[
+```{r, dpi = 400, echo = FALSE, warning=FALSE}
+
+dag.df <- dagitty(' dag{
+                  "x" [exposure]
+                  "y" [outcome]
+                  
+                  "x" [pos="1,1"]
+                  "y" [pos="2,1"]
+                  "z" [pos="1.5,2"]
+                  
+                  "x" -> "y"
+                  "y" <- "z" -> "x"
+}') %>% 
+  tidy_dagitty()
+
+
+
+ggplot(dag.df, aes(x = x, xend = xend, y = y, yend = yend)) +
+  geom_dag_point(aes(color = name), show.legend = FALSE, size = 20) +
+  geom_dag_edges(size = 10) +  
+  geom_text(aes(label = name), color = "white", size = 10, parse = TRUE) +
+  theme_dag() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.9) 
+
+```
+]
+
+---
+class: left, top
+
+
+# But also...
+.pull-left[
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+- Or **really** complicated
+
+]
+
+.pull-right[
+```{r, dpi = 400, echo = FALSE, warning=FALSE}
+
+# Prettier DAG for public consumption in text
+
+dag.pretty <- dagitty(' dag{
+                    "Troops[t]" [exposure]
+                    "Protest[t]" [outcome]
+                    
+                    "Protest[t]" [pos="1,1"]
+                    "Troops[t]" [pos = "0,0"]
+                    "Z[t]" [pos="0,2"]
+                    
+                    "Protest[t-1]" [pos="-1,1"]
+                    "Troops[t-1]" [pos = "-2,0"]
+                    "Z[t-1]" [pos="-2,2"]
+
+                    "Protest[t-1]" -> "Protest[t]"
+                    "Troops[t]" -> "Protest[t]"
+                    "Troops[t-1]" -> "Troops[t]"
+                    "Troops[t-1]" -> "Protest[t-1]"
+                    "Z[t-1]" -> "Z[t]"
+                    "Z[t]" -> "Troops[t]"
+                    
+                    "Troops[t-1]" -> "Protest[t]"
+                    "Z[t-1]" -> "Troops[t-1]"
+                    "Z[t-1]" -> "Protest[t-1]"
+                    "Z[t]" -> "Protest[t]"
+
+                    }') 
+
+
+dag.pretty.tidy <- tidy_dagitty(dag.pretty) %>% 
+  dplyr::mutate(.$data, 
+         vartype = case_when(
+           name == "Troops[t]" ~ "Exposure",
+           name == "Protest[t]" ~ "Outcome",
+           grepl("Z", name) ~ "Confounders",
+           name == "Troops[t-1]" ~ "Lagged Treatment",
+           name == "Protest[t-1]" ~ "Lagged Outcome"
+
+         )) %>% 
+  dag_label(labels = c("Troops[t]" = "Troops[t]", "Troops[t-1]" = "Troops[t-1]", "Protest[t-1]" = "Protest[t-1]",
+                       "Protest[t]" = "Protest[t]", "Z[t]" = "Z[t]", "Z[t-1]" = "Z[t-1]")) 
+
+ 
+ggplot(dag.pretty.tidy, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point(aes(color = vartype), size = 20) +
+  geom_dag_edges(size = 10) +
+  geom_dag_label_repel(aes(label = label), parse = TRUE, size = 7) +
+  theme_dag_blank() +
+  guides(color = FALSE) +
+  scale_color_manual(values = c("orange",  "#009E73", muted("dodgerblue1"), muted("009E73"), "dodgerblue1"))
+
+
+```
+]
+
+
+---
+class: middle, center, inverse
+
+# Boilerplate Stuff
+
+
+---
+class:left, top
+
+# Details 
+
+
+Class info:
+
+- Class: US Foreign Policy
+
+- Me: Michael Flynn
+
+- Location: Calvin 116
+
+- Time: MWF 1:30-2:20
+
+- Office hours: By appointment only (Zoom)
+
+- Email! [meflynn@ksu.edu](mailto:meflynn@ksu.edu)
+
+
+???
+
+- Course Materials: [See the course page on my website](http://polsc343.classes.m-flynn.com)
+
+
+
+
+
+
+
+
+---
+class: left, top
+
+# Contacting Me
+
+- The best way to contact me is email! (You can also schedule in-person appointments)
+
+- Please, email me!
+
+- Don't wait!
+
+- If I don't respond in 48 hours send me another!
+
+- That's a lot of exclamation points!
+
+
+
+---
+class: left, top
+
+# Contacting Me
+
+Some things to think about:
+
+- All correspondence should be professional in tone (I'm not your "bro")
+
+- Please address emails to "Professor Flynn" (Or something similar)
+
+- Protip-All faculty and staff appreciate your efforts to be respectful and are *much* more likely to go the extra mile to help you out.
+
+
+---
+class: inverse, center, middle
+
+# Stuff you need
+
+
+
+---
+class: left, top
+
+# Stuff You Need
+
+The syllabus---Read it!
+
+Class format is both lecture and discussion
+
+Required readings:
+
+  - There are multiple articles that we'll be reading this semester. 
+  
+  - You'll need to access them through K-State Libraries website
+
+
+---
+class: left, top
+
+# Requirements
+
+<br>
+
+```{r grade_breakdown, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+requirements <- tibble(`Grade Item` = c("Discussion", "Content Quizzes", "Photo Blog", "Music of Foreign Policy Wiki"),
+                       `Percent` = c("30%", "20%", "20%", "30%"))
+
+knitr::kable(requirements, 'html', align = c("l", "c")) %>% 
+  kable_styling(full_width=TRUE) %>% 
+  column_spec(1, width_min = "10cm") %>%
+  column_spec(2, width_min = "5cm") %>% 
+  row_spec(0, bold = T, color = "white", background = "#512888")
+
+
+
+
+```
+
+
+---
+class:left, top
+
+# Academic Dishonesty and Plagiarism
+
+Things to know:
+
+- Don't do it
+
+- Yes, we can tell
+
+- You will fail the assignment
+
+  - Possible the whole course
+
+    - Maybe suspension, too
+    
+- See the syllabus for more information
+
+- Also see [K-State's student handbook](https://www.k-state.edu/disclosures/handbooks.html) online
+
+
+---
+class: left, top
+
+# Classroom Conduct
+
+1. Be Kind
+
+2. Please make sure your questions and comments pertain to course materials
+
+3. Be respectful of one another in your discussions
+
+4. Reach out if you need help, and reach out early
+
+
+---
+class: inverse, center, middle
+
+# Big Picture Preview
+
+
+---
+class: left, top
+
+# Myths of US Foreign Policy
+
+1. The "national interest"
+
+2. Politics stops at the water's edge
+
+3. Isolationism vs. internationalism
+
+4. "Grand strategy" 
+

@@ -1,0 +1,36 @@
+---
+title: "Lectures"
+---
+
+This pages contains links to the various lecture slides used throughout the semester. 
+
+
+This page contains lectures delivered throughout the semester. You can click on the links below to access the slides. Additional information can be found on my [YouTube Channel](https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw). Please note that I don't update these video versions regularly, so there may be a disconnect between what you find below and the video content on the channel.
+
+## Lecture Slides
+
+1. [Course Introduction](lectures/introduction.html)
+
+2. [Historical Background](lectures/historical-background.html)
+
+3. [The Cold War in International Affairs](lectures/cold-war-international.html)
+
+4. [The Cold War in Domestic Politics](lectures/cold-war-domestic.html)
+
+5. [The Policymaking Process](lectures/policymaking.html)
+
+6. [Congress and the Presidency](lectures/congress-and-presidency.html)
+
+7. [Bureaucracy and the State Department](lectures/bureaucracy.html)
+
+8. [The Defense Department and the Military](lectures/defense-military.html)
+
+9. [The Use of Military Force](lectures/military-force.html)
+
+10. [Security Cooperation](lectures/security-cooperation.html)
+
+11. [Trade and Investment](lectures/trade-investment.html)
+
+12. [Human Rights](lectures/human-rights.html)
+
+13. [Multilateralism](lectures/multilateralism.html)

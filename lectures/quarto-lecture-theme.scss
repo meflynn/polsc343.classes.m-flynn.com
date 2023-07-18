@@ -1,0 +1,207 @@
+/*-- scss:defaults --*/
+
+@import url(./fonts/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* First define variables and values that we can use for different parameters throughout */
+// fonts
+$font-family-sans-serif: Lato, sans-serif !default;
+
+// colors
+$body-bg: #FFFFFF !default;
+$body-color: black !default;
+$ksu-purple: #512888;
+$ksu-gray: #E5E4E2;
+$text-muted: $body-color !default;
+$link-color: #268bd2 !default;
+$selection-bg: #d33682 !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+
+// ksu seal;
+$ksu-seal: "ksu-seal.png";
+
+
+// headings
+$presentation-heading-font: "Oswald", sans-serif !default;
+$presentation-body-font: "Roboto", sans-serif, !default;
+//$presentation-heading-text-transform: uppercase !default;
+
+// font sizes;
+$title-author-font-size: 24px;
+
+
+
+/*-- scss:rules --*/
+
+/* Next two blocks shrink the font size for the main text slightly. The default is a little bulky */
+
+/* T his first one does the default fonts */
+.reveal p {
+  font-family: $presentation-body-font;
+  font-size: 0.9em;
+  font-size: 0.85em;
+  line-height: 1.1;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+/* This one handles the bulleted lists */
+.reveal .slide  {
+  font-family: $presentation-body-font;
+  font-size: 0.9em;
+  font-size: 0.85em;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+
+.slide-background:first-child {
+  background-color: #512888;
+  font-family: $presentation-heading-font;
+  font-size: 1.4em;
+  font-size: 1.3em;
+}
+
+.slide-background > .level1 {
+  background-color: $ksu-purple;
+  line-height: 1;
+}
+
+.slide-background > .title-slide {
+  background-color: $ksu-purple;
+}
+
+
+/* Set the basic heading font and weight */
+h1, h2, h3 {
+  font-family: $presentation-heading-font;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Adding some flair to the slide titles with a border underneath them!*/
+h2 {
+  margin-top: 20%;
+  margin-bottom: 35px;
+  padding: 15px;
+  border-bottom: 2px solid #512888;
+  border-bottom-width: 95%;
+  color: #FFFFFF;
+  background-color: $ksu-purple;
+  padding-bottom: 15px;
+}
+
+#title-slide {
+  text-align: left;
+  font-family: $presentation-heading-font;
+  margin-top: 30px;
+  margin-left: -20px;
+}
+
+
+/* Edit blockquote characteristics to make a bold purple line on the left and a light gray background */
+.reveal blockquote {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: $body-color;
+  border-left: 12px solid $ksu-purple ;
+  background-color: $ksu-gray;
+
+}
+
+/* this handles the size of the title on the titlepage and intervening title pages */
+.reveal h1 {
+  font-size: 2.8em;
+  margin-top: 20px;
+}
+
+.reveal h2 {
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  color: #FFFFFF;
+  font-size: 1.6em;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+
+p.subtitle {
+  font-family: $presentation-heading-font;
+  font-size: 1.4em;
+  text-align: left;
+}
+
+/* Need these next two blocks to move the author name and info to the left and be flush with the title and subtitle.*/
+.reveal .quarto-title-block .quarto-title-authors {
+    justify-content: left;
+    line-height: 1.1;
+    font-size: $title-author-font-size;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin: 0;
+    display: block;
+    padding: 1px;
+}
+
+.reveal .quarto-title-block .quarto-title-authors .quarto-title-author {
+    padding-left: 0em;
+    padding-right: 0em;
+}
+
+p.date {
+  font-family: $presentation-heading-font;
+  font-size: $title-author-font-size;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 0px;
+}
+
+
+// These two chunks handle the author affiliation stuff.
+.quarto-title-author-name {
+  font-size: 1.3em;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.reveal .quarto-title-block .quarto-title-authors .quarto-title-author .quarto-title-author-name {
+    margin-bottom: 4px;
+}
+
+
+.reveal .quarto-title-block .quarto-title-authors .quarto-title-author .quarto-title-affiliation {
+    font-size: 1.3em;
+    line-height: 1.1;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+p.quarto-title-affiliation {
+  font-family: $presentation-heading-font;
+  font-size: 1.3em;
+  line-height: 1.1;
+  text-align: left;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-size: 0.7em;
+  line-height: 1.1;
+  text-align: left;
+}
+
+
+/* I set this to push figures vertically towards the center, but I may want to revisit this later. Quarto should have page specific settings I can use to do this. But the question is if I want to set it every time I create a new slide since I use A LOT of dataviz */
+.reveal img {
+  margin: 5%;
+}
+
+
+

@@ -1,0 +1,404 @@
+---
+title: "US Foreign Policy"
+subtitle: "Multilateralism in US Foreign Policy"
+author: 
+  - Michael Flynn
+institute:
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date:  "Last Updated `r Sys.Date()`"
+format:
+  revealjs:
+    mermaid: 
+      theme: default
+    theme: [quarto-lecture-theme.scss, default]
+    #css: quarto-lecture-theme.css
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    #incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45%
+    data-background-position: bottom -38% right -19%
+    height: 700
+    width: 1050
+---
+
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(here)
+library(flynnprojects)
+library(scales)
+library(kableExtra)
+
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
+
+knitr::opts_chunk$set(fig.width=9, fig.height=5, fig.align="center", fig.pos = "middle", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
+
+basesize <- 11
+```
+
+
+## Test
+
+<iframe src="https://embed.polleverywhere.com/free_text_polls/XgtaEAPQQA3sVpJ9qicjv?controls=none&short_poll=true" width="800px" height="600px"></iframe>
+
+
+## Diagram Test
+
+```{mermaid}
+%%| fig-width: 6.5
+
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+
+```
+
+
+
+## Lecture Overview
+
+1. Defining multilateralism
+
+2. Historical review of multilateralism in US foreign policy
+
+3. Costs and benefits
+
+4. Why Multilateralism?
+
+
+
+
+
+
+## Key Questions
+
+1. What are the costs and benefits of cooperation?
+
+2. When are countries more or less likely to cooperate?
+
+3. How has the emphasis on multilateralism changed throughout US history?
+
+
+:::{.notes}
+## Opening Exercise
+
+1. Take a moment to write down a list of some of the major foreign policy issues that the US faces.
+
+2. Which of these policy areas requires multilateral cooperation? In which policy areas can the US effectively pursue unilateral action?
+
+:::
+
+
+
+# Defining Multilateralism
+
+
+
+
+
+
+## Defining Multilateralism
+
+
+
+> **Multilateralism** refers to efforts to coordinate behavior between three or more actors.
+
+
+
+
+
+# Historical Overview
+
+
+
+
+
+
+
+
+## Historical Overview
+
+Multilateralism in US foreign policy
+
+- For the most part, US foreign policy is mostly characterized by unilateralism through World War I
+
+- World War I marks a slight turn towards multilateralism, but there's a lot of resistance
+
+- After World War II multilateralism becomes a central component of US foreign policy
+
+
+
+
+
+
+
+## Historical Overview
+
+Multilateralism in security, diplomatic, and economic affairs
+
+- North Atlantic Treaty Organization (NATO)
+
+- United Nations (UN)
+
+- General Agreement on Tariffs and Trade (GATT)
+
+- International Monetary Fund (IMF)
+
+- World Bank
+
+
+
+
+
+
+# Costs and Benefits
+
+
+
+
+
+
+## Costs and Benefits
+
+Multilateralism has a range of shorter-term benefits
+
+- Pooling resources
+
+- Distribute costs
+
+- Enhanced legitimacy
+
+But there are also costs
+
+- Decreased autonomy/constraints on behavior
+
+- Possible costs via side payments 
+
+- More diffuse policy benefits
+
+
+
+---
+
+```{r, fig.align='center', fig.pos="middle"}
+
+fat.data <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
+  mutate(NonUS = Total - US) %>% 
+  select(Year, War, US, NonUS) %>% 
+  pivot_longer(cols = c(3,4),
+               names_to = "country",
+               values_to = "deaths")
+
+ggplot(fat.data, aes(x = Year, y = deaths, fill = country)) +
+  geom_bar(stat = "identity", position = "stack", color = "black", size = 0.1) +
+  facet_wrap(. ~ War) +
+  theme_flynn() +
+  scale_fill_brewer(palette = "Set2") +
+  labs(x = "Year",
+       y = "Count",
+       fill = "Country",
+       title = "Coalition deaths in Afghanistan and Iraq, 2001-2020",
+       caption = "Data obtained from icasualties.org")
+
+
+```
+
+
+
+---
+
+```{r coalition fatalities percent}
+
+fat.perc <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
+  mutate(percent = US/Total)
+
+ggplot(fat.perc, aes(x = Year, y = percent, color = War, linetype = War)) +
+  geom_line(size = 1.5) +
+  theme_flynn() +
+  scale_color_brewer(palette = "Set2") +
+  scale_y_continuous(labels = percent_format()) +
+  guides(linetype = FALSE) +
+  labs(x = "Year",
+       y = "Percent",
+       color = "Conflict",
+       title = "US fatalities as a percentage of total coalition fatalities",
+       subtitle = "Coalition warfighting can spread risk to many states.",
+       caption = "Data obtained from icasualties.org")
+```
+
+
+
+
+
+## Costs and Benefits
+
+But even short-term tradeoffs can have long-term benefits
+
+The US was the dominant military and economic power following the War, but how best to wield that power?
+
+- A retreat from engagement to unilateralism like after World War I?
+  
+- Assert dominant power to control other countries?
+  
+- Something else?
+
+>**Liberal Hegemony**: A term coined by John Ikenberry to describe the nature of the international order that obtained following World War II where the US acted as the dominant power presiding over a rules-based international system to which it subordinated itself (at least in part).
+
+
+
+
+
+# Costs and Benefits
+
+Multilateralism was part of a strategy to balance and advance multiple objectives
+
+- Secure Western allies
+
+- Deter Soviet aggression
+
+- Perpetuate the United States' dominant position for the long-term
+
+Liberal Hegemony entailed a few key components
+
+- US sacrificed some autonomy, binding itself to a set of rules-based arrangements in different policy areas
+
+- By binding itself the US obtained the buy-in from other countries, increasing the legitimacy and long-term viability of US-led projects
+
+
+
+
+# Why Multilateralism?
+
+
+
+
+
+## Why Multilateralism?
+
+
+Lots of different and important issues, but what do they have in common?
+
+:::{.incremental}
+
+- Well, there's a shared, fundamental problem underlying these issues
+
+- Collective action and coordination problems
+:::
+
+
+
+
+## Basic problems
+
+>**Collective Action Problems:** Interactions where individuals/groups would all benefit from cooperating to produce some good, but where individual players have an incentive to defect.
+
+
+>**Coordination Problems**: Coordination therefore, is the orderly arrangement of group effort, to provide unity of action in the pursuit of a common purpose. (Mooney 1947)
+
+> ALSO
+
+> [A] coordination problem exists if achievement of a particular organizational goal requires that each actor select the appropriate action, and the goal is not fully achieved if all members of the group do not select goal-fulfilling actions. (Camerer and Knez 1997)
+
+
+
+
+---
+
+::: {layout-valign="center"}
+```{r table-1}
+#| output-location: slide
+
+pd.table <-data.frame(`Cooperate` = c("4,4", "5,1"),
+                      `Defect` = c("1,5", "2,2"))
+
+rownames(pd.table) <- c("Cooperate", "Defect")
+
+kable(pd.table, caption = "Prisoner's Dilemma Example", booktabs = TRUE, "html",
+               align = c("c", "c"),
+      escape = FALSE) %>% 
+  kable_styling() %>% 
+  row_spec(0, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(1, bold = TRUE, color = "white", background = "#512888") %>% 
+  column_spec(2, width = "3cm") %>% 
+  column_spec(3, width = "3cm")
+
+```
+:::
+
+
+## Why Multilateralism?
+
+1. Responding to adversaries
+2. Trade and investment policy
+3. Peacekeeping
+4. Human rights and trafficking
+5. Global climate change
+
+
+
+---
+
+```{r global temperatures over time}
+
+data.temp.anom <- read_csv(here("../../../Data Files/NOAA Data/1880-2016.csv"), skip = 3) %>% 
+  mutate(group = ifelse(Value > 0, "Positive", "Negative"))
+
+data.temp <- readxl::read_xls(here("../../../Data Files/US Government Files/EPA/vostok.1999.temp.dat.xls"), skip = 0)
+colnames(data.temp)[2] <- "time"
+colnames(data.temp)[4] <- "temp"
+data.temp <- data.temp %>% 
+  mutate(time = as.numeric(0 - time),
+         value = as.numeric(temp),
+         group = as.factor("Temp")) %>% 
+  subset(select = c("time", "value", "group"))
+
+
+# Time variable had to be converted from factor to numeric
+# Have to use paste function
+data.ice <- read_csv(here("../../../Data Files/US Government Files/EPA/ghg-concentrations_fig-1.csv"), skip = 7)
+colnames(data.ice)[1] <- "time"
+data.ice <- data.ice %>% 
+  mutate(co2 = apply(., 1, max, na.rm = TRUE),
+         time = as.numeric(paste(time)),
+         value = as.numeric(co2),
+         group = as.factor("CO2")) %>% 
+  subset(select = c("time", "group", "value"))
+
+data.combined <- rbind(data.ice, data.temp)
+
+
+# The second scale was tricky. You have to reverse what you do for the rescaling in the geom_line section
+# Also note that, since you multiply by 10 BEFORE adding 250, you have to divide by 10 and subtract 25
+ggplot() +
+  geom_line(data = subset(data.combined, group == "CO2"), aes(x = time, y = value, group = group, colour = group)) +
+  geom_line(data = subset(data.combined, group == "Temp"), aes(x = time, y = ((value * 10) + 250), group = group, colour = group), alpha = .6) +
+  geom_hline(yintercept = 250) +
+  scale_y_continuous(breaks = seq(150, 400, 50), limits = c(150, 400), sec.axis = sec_axis(~./10 - 25, name = "Temperature Anomaly (°C)", breaks = seq(-10, 16, 2))) +
+  scale_x_continuous(breaks = seq(-800000, 0, 100000), labels = scales::comma) +
+  theme_flynn() +
+  theme(legend.position = "bottom",
+        legend.margin = margin(t = -0.5, b = 0.5, unit = "cm"),
+        panel.grid.major = element_line(colour = "gray70", size = .1),
+        panel.grid.minor = element_line(colour = "gray80", size = .1)) +
+  scale_color_brewer(palette = "Set1") +
+  labs(colour = "Measure",
+       title = "Global temperature anamoly and atmospheric CO2 levels",
+       subtitle = "CO2 levels and temperature anomalies track one another closely over the last 400,000 years",
+       y = "CO2 (ppm)",
+       x = "Time",
+       caption = "Ice core temperature data obtained from:
+       http://cdiac.ess-dive.lbl.gov/ftp/trends/temp/vostok/vostok.1999.temp.dat
+       CO2 data obtained from: https://www.epa.gov/sites/production/files/2016-08/ghg-concentrations_fig-1.csv
+       Note: Temperature data ends 2000 years prior to present day.") 
+
+```
+
+
+
