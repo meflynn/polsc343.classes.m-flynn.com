@@ -13,6 +13,8 @@ project:
     - "lectures/*_files/"
     - "lectures/libs/"
     - "lectures/*.png"
+    - "bib/*.csl"
+    - "bib/*.bib"
 
 website:
   title: "US Foreign Policy"
@@ -26,7 +28,7 @@ website:
         text: Instructor
       - href: posts.qmd
         text: Blog
-      - href: syllabus-s2023.qmd
+      - href: syllabus-f2023.qmd
         text: Syllabus
       - text: "Archives"
         menu:
