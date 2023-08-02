@@ -1,0 +1,119 @@
+---
+title: "US Foreign Policy"
+description: "University Syllabus Statements"
+date: "`r Sys.Date()`"
+---
+
+## Academic Honesty and Plagiarism
+  
+All work turned in as a part of this class must be original.
+
+Kansas State University has an Honor & Integrity System based on personal integrity which is presumed to be sufficient assurance in academic matters one’s work is performed honestly and without unauthorized assistance. Undergraduate and graduate students, by registration, acknowledge the jurisdiction of the Honor Integrity System. The policies and procedures of the Honor System apply to all full and part time
+students enrolled in undergraduate and graduate courses on-campus, off-campus, and via distance
+learning.
+
+A component vital to the Honor & Integrity System is the inclusion of the Honor Pledge which applies to all
+assignments, examinations, or other course work undertaken by students. The Honor Pledge is implied,
+whether or not it is stated: “On my honor, as a student, I have neither given nor received unauthorized aid
+on this academic work.”
+
+The default in this class is that ALL work will be accomplished individually, UNLESS my permission is given
+in advance of an assignment/quiz/exam/take-home exam/final. If you are in doubt, please ask.
+
+A grade of XF can result from a breach of academic honesty. The F indicates failure in the course; the X
+indicates the reason is an Honor Pledge violation.
+
+For more information, visit the [Honor & Integrity System home web page](http://www.k-state.edu/honor/).
+All work is expected to adhere to the standards outlined by the Kansas State University Handbook. All
+written work is subject to online plagiarism checks and will be required for all reaction papers as well as the
+final paper. Any cases of plagiarism will receive an automatic failure for the assignment, possible failure in
+the course, and will be pursued further through the university for additional punishment.
+
+The Kansas State University Handbook (2008, Appendix F) defines plagiarism as follows:
+
+> Plagiarism is taking credit for someone else’s ideas, work, or words. In a university setting, it
+means submitting academic, scholarly, or literary work in which you either claim or imply the
+material to be your own, when that is not the case.
+
+The Handbook also provides examples of plagiarism, and steps students can take to avoid it:
+
+[P]lagiarism could include:
+
+  - Buying a term paper, or copying another person’s paper, even if she or he gives you permission.
+  - Cutting and pasting information from the internet into your own paper without properly
+identifying it as a quotation and properly attributing the source.
+  - Using someone else’s concept and presenting it as if it is your own original creativity, without
+acknowledging the source of the idea.
+
+While some acts of plagiarism are obvious attempts to deceive, like buying a term paper, others
+result from sloppy scholarship or failure to follow proper format for crediting sources. For
+example:
+
+  - If you copy directly from another source and acknowledge it in your bibliography or list of
+works cited, yet fail to put it in quotation marks, this is plagiarism. The reason is that,
+although you have indicated that the idea is someone else’s, the lack of quotation marks
+implies that the words are your own.
+  - Paraphrasing is summarizing a source so that you have rewritten the material in your own
+words but maintained the original author’s ideas. When you paraphrase, you do not need to
+put the words in quotation marks, but you do need to properly attribute the original source.
+Paraphrasing does not mean simply changing one or two words, or leaving out a sentence,
+while the rest remains the same. Even if you identify the original author, but have used faulty
+paraphrasing that retains too much of the original, the result is inadvertent plagiarism.
+  - If you use another researcher’s specific methodology, you should acknowledge doing so.
+While some research protocols are widespread and general enough to need no citation, if
+the protocol, analysis, or technique can be attributed to a specific publication it should be
+cited.
+  - Works of visual art and design, and images of the work, cannot be misrepresented as
+original work by another. Such images cannot be used in part or whole without permission
+of the artist.
+
+Also note that using papers previously written for another assignment in this, or in any other class, without
+the express permission of the professor is grounds for failing an assignment. Using your own material in
+this way, and not citing it, is also technically plagiarism and can be treated as such. If you have concerns
+regarding any of these issues please do not hesitate to contact me.
+
+
+## Statement on Mutual Respect and Inclusion in K-State Teaching and Learning Spaces
+
+At K-State, faculty and staff are committed to creating and maintaining an inclusive and supportive learning environment for students from diverse backgrounds and perspectives. K-State courses, labs, and other virtual and physical learning spaces promote equitable opportunity to learn, participate, contribute, and succeed, regardless of age, race, color, ethnicity, nationality, genetic information, ancestry, disability, socioeconomic status, military or veteran status, immigration status, Indigenous identity, gender identity, gender expression, sexuality, religion, culture, as well as other social identities.
+
+Faculty and staff are committed to promoting equity and believe the success of an inclusive learning environment relies on the participation, support, and understanding of all students. Students are encouraged to share their views and lived experiences as they relate to the course or their course experience, while recognizing they are doing so in a learning environment in which all are expected to engage with respect to honor the rights, safety, and dignity of others in keeping with the K-State Principles of Community https://www.k-state.edu/about/values/community/.
+
+If you feel uncomfortable because of comments or behavior encountered in this class, you may bring it to the attention of your instructor, advisors, and/or mentors. If you have questions about how to proceed with a confidential process to resolve concerns, please contact the Student Ombudsperson Office. Violations of the student code of conduct can be reported here [https://www.k-state.edu/sga/judicial/student-code-of-conduct.html](https://www.k-state.edu/sga/judicial/student-code-of-conduct.html). If you experience bias or discrimination, it can be reported here [https://www.k-state.edu/report/discrimination/](https://www.k-state.edu/report/discrimination/).
+
+
+## Statement Regarding Wearing of Face Coverings
+
+Kansas State University strongly encourages, but does not require, that everyone wear masks while indoors on university property, including while attending in-person classes. For additional information and the latest on K-State’s face covering policy, see https://www.k-state.edu/covid-19/guidance/health/face-covering.html
+
+
+## Statement Regarding Discrimination, Harassment, and Sexual Harassment
+
+Kansas State University is committed to maintaining academic, housing, and work environments that are free of discrimination, harassment, and sexual harassment. Instructors support the University’s commitment by creating a safe learning environment during this course, free of conduct that would interfere with your academic opportunities. Instructors also have a duty to report any behavior they become aware of that potentially violates the University’s policy prohibiting discrimination, harassment, and sexual harassment (PPM 3010).  
+
+If a student is subjected to discrimination, harassment, or sexual harassment, they are encouraged to make a non-confidential report to the University’s Office for Institutional Equity (OIE) using the online reporting form. Incident disclosure is not required to receive resources at K-State. Reports that include domestic and dating violence, sexual assault, or stalking, should be considered for reporting by the complainant to the Kansas State University Police Department or the Riley County Police Department. Reports made to law enforcement are separate from reports made to OIE. A complainant can choose to report to one or both entities. Confidential support and advocacy can be found with the K-State Center for Advocacy, Response, and Education (CARE). Confidential mental health services can be found with Lafene Counseling and Psychological Services (CAPS). Academic support can be found with the Office of Student Life (OSL). OSL is a non-confidential resource. A comprehensive list of resources is available here. If you have questions about non-confidential and confidential resources, please contact OIE at [equity@ksu.edu](mailto:equity@ksu.edu) or (785) 532–6220. 
+
+
+## Citation and Style
+
+All written work is expected to adhere to professional standards. As described above, citing previous work is
+key. If you have any questions regarding the appropriate citation style please consult the American Political
+Science Association style guide.
+
+
+## Students with Disabilities
+
+Students with disabilities who need classroom accommodations, access to technology, or information about
+emergency building/campus evacuation processes should contact the Student Access Center and/or their
+instructor. Services are available to students with a wide range of disabilities including, but not limited to,
+physical disabilities, medical conditions, learning disabilities, attention deficit disorder, depression, and anxiety.
+If you are a student enrolled in campus/online courses through the Manhattan or Olathe campuses,
+contact the Student Access Center at [accesscenter@k-state.edu](accesscenter@k-state.edu), 785-532-6441; for Salina campus, contact
+the Academic and Career Advising Center at acac@k-state.edu, 785-826-2649.
+
+If you have any special conditions or needs that will affect your ability to complete the required assignments
+outlined herein, please contact the instructor as soon as possible to discuss your needs. I am happy to help
+you in any way that I can. With advance notice accommodations can be made prior to deadlines and tests.
+Please note, however, that special consideration will not be granted afterwards as a means of addressing a
+grade you do not like.
+

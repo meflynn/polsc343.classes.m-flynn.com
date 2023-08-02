@@ -28,15 +28,19 @@ website:
         text: Instructor
       - href: posts.qmd
         text: Blog
-      - href: syllabus-f2023.qmd
-        text: Syllabus
+      - text: "Syllabus"
+        menu:
+          - href: syllabus-f2023.qmd
+            text: "Syllabus"
+          - href: syllabus-boilerplate-stuff.qmd
+            text: "University Syllabus Statements"
       - text: "Archives"
         menu:
           - href: syllabi-archive.qmd
             text: Syllabi Archive
           - href: lectures.qmd
             text: Lecture Archive
-          - href: https://www.youtube.com/@michaelflynn4243/featured
+          - href: https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw
             text: YouTube Channel
 format:
   html:
