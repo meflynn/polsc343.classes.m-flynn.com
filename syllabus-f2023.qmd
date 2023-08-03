@@ -100,7 +100,7 @@ Each DAG assignment will consist of the following parts:
 1. **Question:** After reading one of our in-class reading assignments (article, book, etc.) students will identify a new research question.
 2. **Objective:** What is the objective of the research question? Students should clearly describe the goal and the scope of the proposed question/analysis.
 3. **Estimand:** Borrowing from @Lundbergetal2021, the estimand consists of 1) a unit-specific quantity, and 2) a description of the target population. Importantly, you must explain how this estimand relates to your research question. Is it an appropriate measure given your question?
-4. **DAG:** Using the [Dagitty web platform](https://www.dagitty.net/dags.html)
+4. **DAG:** Using the [Dagitty web platform](https://www.dagitty.net/dags.html) draw the DAG outlining the relationships between the outcome of interest, key predictor variable, and other relevant variables (e.g. confounders).
 
 
   
