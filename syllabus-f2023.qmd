@@ -354,6 +354,8 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ## `r advdate(mon, 13)`: Foreign Aid
 
 - Read @GeorgeRishikof2017[Chapter 5]
+- Read @PEPFARat20
+- Read @Fidler2023
 
 
 ## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
@@ -370,7 +372,9 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @Power2001 
+- Read @Fajardo-Heyward2015
+- Read @Ballve2009
+- Read @Diamond2023
 
 
 ## `r advdate(mon, 16)`: Multilateralism and global governance

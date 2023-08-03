@@ -28,6 +28,7 @@ $presentation-body-font: "Roboto", sans-serif, !default;
 //$presentation-heading-text-transform: uppercase !default;
 
 // font sizes;
+$body-font-size: 34px;
 $title-author-font-size: 24px;
 
 
@@ -39,8 +40,7 @@ $title-author-font-size: 24px;
 /* T his first one does the default fonts */
 .reveal p {
   font-family: $presentation-body-font;
-  font-size: 0.9em;
-  font-size: 0.85em;
+  font-size: $body-font-size;
   line-height: 1.1;
   margin-bottom: 5px;
   padding-bottom: 5px;
@@ -49,8 +49,7 @@ $title-author-font-size: 24px;
 /* This one handles the bulleted lists */
 .reveal .slide  {
   font-family: $presentation-body-font;
-  font-size: 0.9em;
-  font-size: 0.85em;
+  font-size: $body-font-size;
   line-height: 1;
   margin-top: 1px;
 }
@@ -62,14 +61,14 @@ html * {
 }
 
 .slide-background:first-child {
-  background-color: #512888;
+  background-color: $ksu-purple;
   font-family: $presentation-heading-font;
   font-size: 1.4em;
   font-size: 1.3em;
 }
 
 .slide-background > .level1 {
-  background-color: $ksu-purple;
+  background-color: $ksu-purple ;
   line-height: 1;
 }
 
@@ -77,6 +76,9 @@ html * {
   background-color: $ksu-purple;
 }
 
+.inverse{
+  background-color: $ksu-purple !important;
+}
 
 /* Set the basic heading font and weight */
 h1, h2, h3 {
@@ -138,31 +140,24 @@ p.subtitle {
   font-family: $presentation-heading-font;
   font-size: 1.4em;
   text-align: left;
+  max-width: 70%;
 }
 
 /* Need these next two blocks to move the author name and info to the left and be flush with the title and subtitle.*/
 .reveal .quarto-title-block .quarto-title-authors {
-    justify-content: left;
-    line-height: 1.1;
-    font-size: $title-author-font-size;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    margin: 0;
-    display: block;
-    padding: 1px;
-}
+  justify-content: left;
+  line-height: 1.1;
+  font-size: $title-author-font-size;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin: 0;
+  display: block;
+  padding: 1px;
+  }
 
 .reveal .quarto-title-block .quarto-title-authors .quarto-title-author {
-    padding-left: 0em;
-    padding-right: 0em;
-}
-
-p.date {
-  font-family: $presentation-heading-font;
-  font-size: $title-author-font-size;
-  line-height: 1.1;
-  text-align: left;
-  margin-top: 0px;
+  padding-left: 0em;
+  padding-right: 0em;
 }
 
 
@@ -174,16 +169,16 @@ p.date {
 }
 
 .reveal .quarto-title-block .quarto-title-authors .quarto-title-author .quarto-title-author-name {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 
 .reveal .quarto-title-block .quarto-title-authors .quarto-title-author .quarto-title-affiliation {
-    font-size: 1.3em;
-    line-height: 1.1;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding-bottom: 2px;
+  font-size: 1.3em;
+  line-height: 1.1;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
 }
 p.quarto-title-affiliation {
   font-family: $presentation-heading-font;
@@ -197,6 +192,14 @@ p.quarto-title-affiliation {
   text-align: left;
 }
 
+p.date {
+  font-family: $presentation-heading-font;
+  font-size: 0.8em;
+  line-height: 1.1;
+  text-align: left;
+  margin-top: 1px;
+}
+
 
 /* I set this to push figures vertically towards the center, but I may want to revisit this later. Quarto should have page specific settings I can use to do this. But the question is if I want to set it every time I create a new slide since I use A LOT of dataviz */
 .reveal img {
@@ -204,4 +207,6 @@ p.quarto-title-affiliation {
 }
 
 
-
+.small {
+  font-size: .8em;
+}

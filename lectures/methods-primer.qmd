@@ -1,0 +1,37 @@
+---
+title: "US Foreign Policy"
+subtitle: "Research Methods Primer"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    #css: quarto-lecture-theme.css
+    auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    #incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    #data-background-size: 750px 750px
+    #data-background-position: 1000px 370px
+    #data-background-position: 115% 150%
+    #data-background-position: 115% 140%
+    #data-background-position: 19em 8em
+    #height: 700
+    #width: 1050
+---
+
+
+
+# Test {.inverse}
