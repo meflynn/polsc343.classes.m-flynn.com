@@ -8,10 +8,10 @@
 <link href="methods-primer_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="methods-primer_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="methods-primer_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.288">
+  <meta name="generator" content="quarto-1.4.303">
 
   <meta name="author" content="Michael Flynn">
-  <meta name="dcterms.date" content="2023-08-07">
+  <meta name="dcterms.date" content="2023-08-08">
   <title>US Foreign Policy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -352,7 +352,7 @@ Michael Flynn
     </div>
 </div>
 
-  <p class="date">2023-08-07</p>
+  <p class="date">2023-08-08</p>
 </section>
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
@@ -421,17 +421,247 @@ Michael Flynn
 </section>
 <section id="common-methods" class="slide level2">
 <h2>Common Methods</h2>
+<p>We use lots of different methods in the social sciences, but let’s look at a few key approaches/tools:</p>
+<ul>
+<li>Statistical modeling and regressional analysis</li>
+<li>Formal (mathematical) modeling</li>
+<li>Experimental methods</li>
+<li>Case studies</li>
+<li>Field work</li>
+<li>Surveys</li>
+<li>Archival research</li>
+</ul>
 </section></section>
 <section id="interpretation" class="title-slide slide level1 inverse center">
 <h1>Interpretation</h1>
 
 </section>
 
+<section>
 <section id="sources-of-bias" class="title-slide slide level1 inverse center">
 <h1>Sources of Bias</h1>
 
 </section>
+<section id="whats-bias" class="slide level2">
+<h2>What’s “Bias”?</h2>
+<p>First, we should clear some things up:</p>
+<ul>
+<li><p><strong>Bias</strong> can mean a couple of things:</p>
+<ul>
+<li>Noun: The degree to which our estimates deviate from some “true” or “accurate” value.</li>
+<li>Verb: The action of causing our estimates to deviate from some “true” or “accurate” value.</li>
+</ul></li>
+<li><p>What it’s not:</p>
+<ul>
+<li>Presenting “one side”</li>
+<li>“Bias” in the colloquial cable news meaning of “Anything I don’t like” or “Unflattering coverage of people and things I do like.”</li>
+</ul></li>
+</ul>
+</section>
+<section id="confounding" class="slide level2">
+<h2>Confounding</h2>
+<div class="columns">
+<div class="column">
+<p>What is confounding?</p>
+<ul>
+<li><p>Confounding is when the predictor (i.e.&nbsp;X) and the outcome (i.e.&nbsp;Y) share a common ancestor (i.e.&nbsp;Z).</p></li>
+<li><p>If we don’t take into account the relationship between Z and the other variables, our estimates of X are biased.</p></li>
+<li><p>The most common way to do this is to include Z into our model</p></li>
+</ul>
+<p><span class="math display">\[\begin{align}
+Y &amp; = \alpha + \beta_1 X_i + \epsilon_i \\
+vs \\
+Y &amp; = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i
+\end{align}\]</span></p>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="methods-primer_files/figure-revealjs/confounding-example-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="simpsons-paraox" class="slide level2">
+<h2>Simpson’s Paraox</h2>
+<p>What is it and why does it matter?</p>
+<ul>
+<li><p>Simpson’s Paradox is a special case of confounding</p></li>
+<li><p>Simple bivariate relationship between X and Y may appear to show one thing</p></li>
+<li><p>But when we adjust for other relevant variables (i.e.&nbsp;Z) the apparent relationship between X and Y reverses</p></li>
+<li><p>Common in lots of fields of study</p></li>
+</ul>
+</section>
+<section id="simpsons-paradox" class="slide level2">
+<h2>Simpson’s Paradox</h2>
+<div class="columns">
+<div class="column">
+<p>Example:</p>
+<ul>
+<li><p>Imagine we have data on the exercise activity and cholesterol of a few hundred adults</p></li>
+<li><p>We plot the individuals’ cholesterol levels against their level of exercise (we’ll assume we directly observe this and it’s not self-reported)</p></li>
+<li><p>In the plot we see that exercise appears to correlate positively with cholesterol levels. A simple regression model supports this eyeball estimate.</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x, data = data2)
 
+Coefficients:
+(Intercept)            x  
+    183.072        1.952  </code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/simpsons-paradox-1-1.png" style="width:6in;height:5in"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="simpsons-paradox-1" class="slide level2">
+<h2>Simpson’s Paradox</h2>
+<div class="columns">
+<div class="column">
+<p>Example:</p>
+<ul>
+<li><p>But what if we’re omitting some key variables?</p></li>
+<li><p>It’s possible for results to reverse if we’re omitting a variable that could also affect cholesterol levels</p></li>
+<li><p>Another way to say this is that the effect of exercise might be <strong>biased</strong> because we’re leaving other important things out of the model.</p></li>
+<li><p>One good variable would be patient age, so let’s see what that looks like</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x + age, data = data2)
+
+Coefficients:
+(Intercept)            x     ageAge 2     ageAge 3     ageAge 4     ageAge 5  
+   193.5396      -0.7182       4.0509       7.7261      11.2530      14.9049  </code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/simpsons-paradox-2-1.png" style="width:6in;height:5in"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="another-version-of-simpsons-paradox" class="slide level2">
+<h2>Another version of Simpson’s Paradox</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/simpsons-car-1.png" style="width:8in;height:5in"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = speed ~ pedal_pressure, data = cardata)
+
+Coefficients:
+   (Intercept)  pedal_pressure  
+       70.1311         -0.0024  </code></pre>
+</div>
+</div>
+</section>
+<section id="another-version-of-simpsons-paradox-1" class="slide level2">
+<h2>Another version of Simpson’s Paradox</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/simpsons-car-2-1.png" style="width:8in;height:5in"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = speed ~ pedal_pressure + incline, data = cardata)
+
+Coefficients:
+   (Intercept)  pedal_pressure         incline  
+        44.765           1.262          -1.514  </code></pre>
+</div>
+</div>
+</section>
+<section id="collider-bias" class="slide level2">
+<h2>Collider Bias</h2>
+<div class="columns">
+<div class="column">
+<p>What is collider bias?</p>
+<ul>
+<li><p>Collider bias can be introduced by adjusting for a common effect.</p></li>
+<li><p>It can also be a form of selection bias.</p></li>
+<li><p>Similar to Simpson’s Paradox it can make effects appear to be the opposite of what they are, but also depends on the population of interest.</p></li>
+<li><p>In this example Z is a collider because both X and Y cause Z.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-1-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="collider-bias-1" class="slide level2">
+<h2>Collider Bias</h2>
+<div class="columns">
+<div class="column">
+<p>Example: College Admissions</p>
+<ul>
+<li><p>Let’s assume we’re interested in looking at students who have been admitted to college to see what the relationship is between their high school extracurricular activities and GPA</p></li>
+<li><p>We collect data on college freshman and compare their extracurricular activities in high school with their GPA.</p></li>
+<li><p>Surprisingly, we find a negative relationship. That’s sad.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-1-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="collider-bias-2" class="slide level2">
+<h2>Collider Bias</h2>
+<div class="columns">
+<div class="column">
+<p>Example: College Admissions</p>
+<ul>
+<li><p>But wait!</p></li>
+<li><p>If we’re looking at students who have already been admitted to college we’re implicitly conditioning on a collider variable (i.e.&nbsp;acceptance/admission status)</p></li>
+<li><p>If we step back and look at the entire population of high school students we find something different</p></li>
+<li><p>Students who have better grades and/or better extracurricular activities are more likely to be admitted to college in the first place.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
 <section id="role-of-theory" class="title-slide slide level1 inverse center">
 <h1>Role of Theory</h1>
 <div class="footer footer-default">
@@ -650,6 +880,44 @@ Michael Flynn
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -31,6 +31,19 @@ title-slide-attributes:
     #height: 700
     #width: 1050
 ---
+```{r setup}
+#devtools::install_github("meflynn/flynnprojects")
+#devtools::install_github("MatthewBJane/theme_park")
+library(tidyverse)
+library(ggdag)
+library(dagitty)
+library(flynnprojects)
+library(ThemePark)
+
+sysfonts::font_add_google("Oswald", "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
+```
 
 ##  Overview
 
@@ -96,6 +109,16 @@ How you _should_ read it:
 
 ## Common Methods
 
+We use lots of different methods in the social sciences, but let's look at a few key approaches/tools:
+
+- Statistical modeling and regressional analysis
+- Formal (mathematical) modeling
+- Experimental methods
+- Case studies
+- Field work
+- Surveys
+- Archival research
+
 
 
 # Interpretation {.inverse}
@@ -105,6 +128,377 @@ How you _should_ read it:
 
 
 # Sources of Bias {.inverse}
+
+## What's "Bias"?
+
+First, we should clear some things up:
+
+- **Bias** can mean a couple of things:
+
+  - Noun: The degree to which our estimates deviate from some "true" or "accurate" value.
+  - Verb: The action of causing our estimates to deviate from some "true" or "accurate" value.
+  
+- What it's not:
+
+  - Presenting "one side"
+  - "Bias" in the colloquial cable news meaning of "Anything I don't like" or "Unflattering coverage of people and things I do like."
+
+
+
+
+## Confounding
+
+::::{.columns}
+:::{.column}
+What is confounding?
+
+- Confounding is when the predictor (i.e. X) and the outcome (i.e. Y) share a common ancestor (i.e. Z).
+
+- If we don't take into account the relationship between Z and the other variables, our estimates of X are biased.
+
+- The most common way to do this is to include Z into our model
+
+\begin{align}
+Y & = \alpha + \beta_1 X_i + \epsilon_i \\
+vs \\
+Y & = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i
+\end{align}
+:::
+
+:::{.column}
+```{r confounding-example}
+#|echo: false
+#|dpi: 300
+#|width: 50%
+library(dagitty)
+library(ggdag)
+library(tidyverse)
+library(viridis)
+
+dag.df <- dagitty(' dag{
+                  "x" [exposure]
+                  "y" [outcome]
+                  
+                  "x" [pos="1,1"]
+                  "y" [pos="2,1"]
+                  "z" [pos="1.5,2"]
+                  
+                  "x" -> "y"
+                  "y" <- "z" -> "x"
+}') %>% 
+  tidy_dagitty()
+
+
+
+ggplot(dag.df, aes(x = x, xend = xend, y = y, yend = yend)) +
+  geom_dag_point(aes(color = name), show.legend = FALSE, size = 20) +
+  geom_dag_edges(size = 10) +  
+  geom_text(aes(label = name), color = "white", size = 10, parse = TRUE) +
+  theme_dag() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.9) 
+
+```
+:::
+::::
+
+
+## Simpson's Paraox
+
+What is it and why does it matter?
+
+- Simpson's Paradox is a special case of confounding
+
+- Simple bivariate relationship between X and Y may appear to show one thing
+
+- But when we adjust for other relevant variables (i.e. Z) the apparent relationship between X and Y reverses
+
+- Common in lots of fields of study
+
+
+## Simpson's Paradox
+
+::::{.columns}
+:::{.column}
+Example:
+
+- Imagine we have data on the exercise activity and cholesterol of a few hundred adults
+
+- We plot the individuals' cholesterol levels against their level of exercise (we'll assume we directly observe this and it's not self-reported)
+
+- In the plot we see that exercise appears to correlate positively with cholesterol levels. A simple regression model supports this eyeball estimate.
+
+```{r}
+# Set sample size. 1000 is a nice number that doesn't give too much away via
+# high density plotting.
+N <- 1e4
+
+# Make up some simulated data
+# Focus is on the relationship between cholesterol and exercise
+# But age is a confounder
+data2 <- data.frame(x = rnorm(N, mean = 8, sd = 3)) |>
+  mutate(y = 130 + 10 * x + rnorm(N, mean = 0, sd = 10)) |>
+  filter(x^2 + y^2 < 42000 & x^2 + y^2 > 35000) |>  # Eliminate some outliers so it looks more rounded with less harsh slopes at edges
+  mutate(sum = x + y,
+         age = ntile(x = sum,
+                     n = 5),
+         age = factor(age,
+                      labels = c("Age 1", "Age 2", "Age 3", "Age 4", "Age 5")))
+
+lm(y ~ x, data = data2)
+```
+
+:::
+
+:::{.column}
+```{r simpsons-paradox-1, out.width = "6in", out.height="5in", fig.pos="center", dpi=400}
+#|echo: false
+
+
+# Plot the data without grouping to show positive correlation
+# between exercise and cholesterol
+ggplot(data2, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_x_continuous(breaks = seq(round(min(data2$x),0), round(max(data2$x), 0), 1),
+                     limits = c(round(min(data2$x),0), round(max(data2$x), 0))) +
+  theme_simpsons() +
+  theme(plot.title = element_text(size = 22)) +
+  labs(x = "Exercise",
+       y = "Cholesterol",
+       title = "Relationship between exercise and cholesterol",
+       subtitle = "How could cholesterol increase with more exercise?")
+
+```
+:::
+::::
+
+
+
+## Simpson's Paradox
+
+::::{.columns}
+:::{.column}
+Example:
+
+- But what if we're omitting some key variables?
+
+- It's possible for results to reverse if we're omitting a variable that could also affect cholesterol levels
+
+- Another way to say this is that the effect of exercise might be **biased** because we're leaving other important things out of the model.
+
+- One good variable would be patient age, so let's see what that looks like
+
+```{r}
+lm(y ~ x + age, data = data2)
+```
+
+:::
+
+:::{.column}
+```{r simpsons-paradox-2, out.width = "6in", out.height="5in", fig.pos="center", dpi=400}
+#|echo: false
+
+# Set sample size. 1000 is a nice number that doesn't give too much away via
+# high density plotting.
+
+# Plot grouped data to show how exercise correlations negatively once
+# we take into account the influence of age.
+ggplot(data2, aes(x = x, y = y, color = age)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_manual(values = c("hotpink1", "red3", "blue2", "green3", "purple2")) +
+  scale_x_continuous(breaks = seq(round(min(data2$x),0), round(max(data2$x), 0), 1),
+                     limits = c(round(min(data2$x),0), round(max(data2$x), 0))) +  
+  theme_simpsons() +
+  theme(plot.title = element_text(size = 22)) +
+  labs(x = "Exercise",
+       y = "Cholesterol",
+       color = "Age",
+       title = "Relationship between exercise and cholesterol",
+       subtitle = "But what about when we take age into consideration?")
+
+```
+:::
+::::
+
+
+
+## Another version of Simpson's Paradox
+
+```{r simpsons-car, fig.pos="center", out.height="5in", out.width="8in"}
+N <- 1e3
+#"0°", "5°", "10°", "15°", "20°"
+cardata <- data.frame(incline = runif(n = N, min = 0, max = 45)) |> 
+  mutate(pedal_pressure = 20 + incline * 1.2 + rnorm(n = N, mean = 0, sd = 0.4),
+         speed = 45 + 1.25*pedal_pressure - 1.50*incline + rnorm(n = N, mean = 0, sd = 0.2)) 
+
+ggplot(cardata, aes(x = pedal_pressure, y = speed)) +
+  geom_point() +
+  theme_flynn(base_family = "oswald") +
+  viridis::scale_color_viridis(option = "magma") +
+  labs(x = "Pedal Pressure",
+       y = "Speed (mph)",
+       title = "Car speed and pedal pressure",
+       subtitle = "We should expect cars to go faster as we apply more pressure, so what gives?")
+
+lm(speed ~ pedal_pressure, data = cardata)
+```
+
+
+## Another version of Simpson's Paradox
+
+```{r simpsons-car-2, fig.pos="center", out.height="5in", out.width="8in"}
+
+ggplot(cardata, aes(x = pedal_pressure, y = speed, color = incline)) +
+  geom_point() +
+  theme_flynn(base_family = "oswald") +
+  viridis::scale_color_viridis(option = "magma") +
+  labs(x = "Pedal Pressure",
+       y = "Speed (mph)",
+       color = "Incline",
+       title = "Car speed and pedal pressure",
+       subtitle = "We should expect cars to go faster as we apply more pressure, so what gives?")
+
+lm(speed ~ pedal_pressure + incline, data = cardata)
+
+```
+
+
+
+## Collider Bias
+
+::::{.columns}
+:::{.column}
+What is collider bias?
+
+- Collider bias can be introduced by adjusting for a common effect.
+
+- It can also be a form of selection bias.
+
+- Similar to Simpson's Paradox it can make effects appear to be the opposite of what they are, but also depends on the population of interest.
+
+- In this example Z is a collider because both X and Y cause Z.
+:::
+
+:::{.column}
+```{r collider-example-1}
+#|echo: false
+#|dpi: 300
+#|width: 50%
+
+
+dag.df <- dagitty(' dag{
+                  "x" [exposure]
+                  "y" [outcome]
+                  
+                  "x" [pos="1,1"]
+                  "y" [pos="2,1"]
+                  "z" [pos="1.5,2"]
+                  
+                  "x" -> "y"
+                  "y" -> "z" <- "x"
+}') %>% 
+  tidy_dagitty()
+
+
+
+ggplot(dag.df, aes(x = x, xend = xend, y = y, yend = yend)) +
+  geom_dag_point(aes(color = name), show.legend = FALSE, size = 20) +
+  geom_dag_edges(size = 10) +  
+  geom_text(aes(label = name), color = "white", size = 10, parse = TRUE) +
+  theme_dag() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.9) 
+
+```
+:::
+::::
+
+
+
+## Collider Bias
+
+::::{.columns}
+:::{.column}
+Example: College Admissions
+
+- Let's assume we're interested in looking at students who have been admitted to college to see what the relationship is between their high school extracurricular activities and GPA
+
+- We collect data on college freshman and compare their extracurricular activities in high school with their GPA.
+
+- Surprisingly, we find a negative relationship. That's sad.
+
+:::
+
+:::{.column}
+```{r collider-example-plot-1}
+#|echo: false
+#|dpi: 300
+#|width: 50%
+
+N <- 1e4
+
+collider.data <- data.frame(effort = rnorm(N, mean = 0, sd = 1)) |> 
+  mutate(gpa = rnorm(N, mean = 0, sd = 1),
+         admitted = ifelse(gpa + effort > 2.5, "Admitted", "Rejected"))
+
+
+ggplot(collider.data |> filter(admitted == "Admitted"), aes(x = effort, y = gpa)) +
+  coord_equal() +
+  geom_point(alpha = 0.5, position = position_jitter()) +
+  geom_smooth(method = "lm") +
+  theme_flynn(base_family = "oswald") + 
+  labs(x = "Extracurriculars",
+       y = "GPA",
+       title = "Collider Bias",
+       subtitle = "Why do students who are more active with extracurriculars have poorer grades?")
+
+```
+:::
+::::
+
+
+
+
+## Collider Bias
+
+::::{.columns}
+:::{.column}
+Example: College Admissions
+
+- But wait!
+
+- If we're looking at students who have already been admitted to college we're implicitly conditioning on a collider variable (i.e. acceptance/admission status)
+
+- If we step back and look at the entire population of high school students we find something different
+
+- Students who have better grades and/or better extracurricular activities are more likely to be admitted to college in the first place.
+
+:::
+
+:::{.column}
+```{r collider-example-plot-2}
+#|echo: false
+#|dpi: 300
+#|width: 50%
+
+
+ggplot(collider.data, aes(x = effort, y = gpa, color = admitted)) +
+  geom_point(alpha = 0.5, position = position_jitter()) +
+  theme_flynn(base_family = "oswald") + 
+  coord_equal() +
+  viridis::scale_color_viridis(discrete = TRUE,
+                               option = "magma",
+                               end = 0.9) +
+  labs(x = "Extracurriculars",
+       y = "GPA",
+       color = "Admission Status",
+       title = "Collider Bias",
+       subtitle = "The relationship depends on what population we're examining!")
+
+```
+:::
+::::
+
 
 
 
