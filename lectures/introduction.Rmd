@@ -273,7 +273,7 @@ Class info:
 
 - Location: Calvin 116
 
-- Time: MWF 1:30-2:20
+- Time: MWF 12:30-1:20
 
 - Office hours: By appointment only (Zoom)
 
@@ -356,7 +356,10 @@ class: left, top
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-requirements <- tibble(`Grade Item` = c("Discussion", "Content Quizzes", "Photo Blog", "Music of Foreign Policy Wiki"),
+requirements <- tibble(`Grade Item` = c("Discussion", 
+                                        "Content Quizzes", 
+                                        "DAG Exercise", 
+                                        "Music of Foreign Policy Wiki"),
                        `Percent` = c("30%", "20%", "20%", "30%"))
 
 knitr::kable(requirements, 'html', align = c("l", "c")) %>% 

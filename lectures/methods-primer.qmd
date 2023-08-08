@@ -32,6 +32,82 @@ title-slide-attributes:
     #width: 1050
 ---
 
+##  Overview
+
+What do we want to get out of today's class?
+
+1. Learn how to read a research paper
+2. An understanding of some of the general methods we use in research
+3. Learn the basics of how to interpret statistical models
+4. Some of the different types of bias and ways that data can fool us
+5. Learn the importance of theory
 
 
-# Test {.inverse}
+# Reading Research {.inverse}
+
+## The Anatomy of a Research Paper
+
+::::{.columns}
+:::{.column}
+How you'll want to read it:
+
+1. Abstract
+2. Introduction
+3. Theory
+4. Research Design
+5. Results
+6. Conclusion
+:::
+
+:::{.column}
+
+:::
+::::
+
+
+## The Anatomy of a Research Paper
+
+::::{.columns}
+:::{.column}
+How you'll want to read it:
+
+1. Abstract
+2. Introduction
+3. Theory
+4. Research Design
+5. Results
+6. Conclusion
+:::
+
+:::{.column}
+How you _should_ read it:
+
+1. Abstract
+2. Introduction
+3. Conclusion
+4. Results
+5. Research Design
+6. Theory
+:::
+::::
+
+
+# Methods {.inverse}
+
+## Common Methods
+
+
+
+# Interpretation {.inverse}
+
+
+
+
+
+# Sources of Bias {.inverse}
+
+
+
+
+
+# Role of Theory {.inverse}
