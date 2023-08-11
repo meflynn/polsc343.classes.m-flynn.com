@@ -93,7 +93,7 @@ How you'll want to read it:
 :::
 
 :::{.column}
-How you _should_ read it:
+How you _should_ read it (as a rough guide):
 
 1. Abstract
 2. Introduction
@@ -111,7 +111,7 @@ How you _should_ read it:
 
 We use lots of different methods in the social sciences, but let's look at a few key approaches/tools:
 
-- Statistical modeling and regressional analysis
+- Statistical modeling and regression analysis
 - Formal (mathematical) modeling
 - Experimental methods
 - Case studies
@@ -123,6 +123,67 @@ We use lots of different methods in the social sciences, but let's look at a few
 
 # Interpretation {.inverse}
 
+
+## Interpreting and Assessing Statistical Models
+
+First, what are our goals?
+
+- Prediction?
+- Description?
+- Estimating causal effects?
+
+
+
+
+## Interpreting and Assessing Statistical Models
+
+::::{.columns}
+:::{.column width="33%"}
+**Prediction**
+
+- Overall model fit
+
+- In-sample fit?
+
+- Out-of-sample fit?
+:::
+
+:::{.column width="33%"}
+**Description**
+
+- Overall model fit
+
+- Individual coefficients
+
+- Associations between groups
+
+:::
+
+:::{.column width="33%"}
+**Causal Inference**
+
+- Focus on individual coefficients for causal effects
+:::
+
+::::
+
+
+
+## Interpreting and Assessing Statistical Models
+
+What is a coefficient?
+
+\begin{equation} 
+Y_i = \alpha + {\color{blue} \beta_1} X_i + {\color{blue}\beta_2} Z_i + \epsilon_i 
+\end{equation}
+
+- The correlation between $X$ and $Y$, conditional on other predictors and model
+
+- Typically denotes the magnitude of the change in $Y$ that corresponds to a one-unit change in $X$
+
+- In some cases this is direct and easy, less so in other cases
+
+- Different models and measurement schemes mean we need to be cautious in interpreting coefficients
 
 
 
@@ -137,6 +198,8 @@ First, we should clear some things up:
 
   - Noun: The degree to which our estimates deviate from some "true" or "accurate" value.
   - Verb: The action of causing our estimates to deviate from some "true" or "accurate" value.
+  
+> **Bias:** Systematic error of some sort that can affect our inferences and conclusions (Howard 2017, 151)
   
 - What it's not:
 
@@ -202,7 +265,71 @@ ggplot(dag.df, aes(x = x, xend = xend, y = y, yend = yend)) +
 ::::
 
 
-## Simpson's Paraox
+## Confounding Example
+
+::::{.columns}
+:::{.column}
+```{r}
+N <- 1e3
+#"0°", "5°", "10°", "15°", "20°"
+cardata <- data.frame(incline = runif(n = N, min = 0, max = 45)) |> 
+  mutate(pedal_pressure = 20 + incline * 1.2 + rnorm(n = N, mean = 0, sd = 0.4),
+         speed = 45 + 1.25*pedal_pressure - 1.50*incline + rnorm(n = N, mean = 0, sd = 0.2)) 
+
+lm(speed ~ pedal_pressure, data = cardata)
+```
+:::
+
+:::{.column}
+```{r confounding-car-1, fig.pos="center", out.height="5in", out.width="9in"}
+
+ggplot(cardata, aes(x = pedal_pressure, y = speed)) +
+  geom_point(size = 3.5, shape = 21, fill = "black") +
+  theme_flynn(base_family = "oswald") +
+  scale_x_continuous(breaks = seq(20, 100, 10)) +
+  viridis::scale_fill_viridis(option = "magma") +
+  labs(x = "Pedal Pressure",
+       y = "Speed (mph)",
+       title = "Car speed and pedal pressure",
+       subtitle = "We should expect cars to go faster as we apply more pressure, so what gives?")
+
+```
+:::
+::::
+
+## Confounding Example
+
+::::{.columns}
+:::{.column}
+```{r}
+lm(speed ~ pedal_pressure + incline, data = cardata)
+```
+
+:::
+
+:::{.column}
+```{r confounding-car-2, fig.pos="center", out.height="5in", out.width="9in"}
+
+ggplot(cardata, aes(x = pedal_pressure, y = speed, fill = incline)) +
+  geom_point(size = 3.5, shape = 21) +
+  theme_flynn(base_family = "oswald") +
+  scale_x_continuous(breaks = seq(20, 100, 10)) +
+  viridis::scale_fill_viridis(option = "magma") +
+  labs(x = "Pedal Pressure",
+       y = "Speed (mph)",
+       fill = "Incline",
+       title = "Car speed and pedal pressure",
+       subtitle = "We should expect cars to go faster as we apply more pressure, so what gives?")
+
+```
+:::
+::::
+
+
+
+
+
+## Simpson's Paradox
 
 What is it and why does it matter?
 
@@ -213,6 +340,8 @@ What is it and why does it matter?
 - But when we adjust for other relevant variables (i.e. Z) the apparent relationship between X and Y reverses
 
 - Common in lots of fields of study
+
+
 
 
 ## Simpson's Paradox
@@ -250,7 +379,7 @@ lm(y ~ x, data = data2)
 :::
 
 :::{.column}
-```{r simpsons-paradox-1, out.width = "6in", out.height="5in", fig.pos="center", dpi=400}
+```{r simpsons-paradox-1, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
 #|echo: false
 
 
@@ -295,7 +424,7 @@ lm(y ~ x + age, data = data2)
 :::
 
 :::{.column}
-```{r simpsons-paradox-2, out.width = "6in", out.height="5in", fig.pos="center", dpi=400}
+```{r simpsons-paradox-2, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
 #|echo: false
 
 # Set sample size. 1000 is a nice number that doesn't give too much away via
@@ -322,46 +451,6 @@ ggplot(data2, aes(x = x, y = y, color = age)) +
 ::::
 
 
-
-## Another version of Simpson's Paradox
-
-```{r simpsons-car, fig.pos="center", out.height="5in", out.width="8in"}
-N <- 1e3
-#"0°", "5°", "10°", "15°", "20°"
-cardata <- data.frame(incline = runif(n = N, min = 0, max = 45)) |> 
-  mutate(pedal_pressure = 20 + incline * 1.2 + rnorm(n = N, mean = 0, sd = 0.4),
-         speed = 45 + 1.25*pedal_pressure - 1.50*incline + rnorm(n = N, mean = 0, sd = 0.2)) 
-
-ggplot(cardata, aes(x = pedal_pressure, y = speed)) +
-  geom_point() +
-  theme_flynn(base_family = "oswald") +
-  viridis::scale_color_viridis(option = "magma") +
-  labs(x = "Pedal Pressure",
-       y = "Speed (mph)",
-       title = "Car speed and pedal pressure",
-       subtitle = "We should expect cars to go faster as we apply more pressure, so what gives?")
-
-lm(speed ~ pedal_pressure, data = cardata)
-```
-
-
-## Another version of Simpson's Paradox
-
-```{r simpsons-car-2, fig.pos="center", out.height="5in", out.width="8in"}
-
-ggplot(cardata, aes(x = pedal_pressure, y = speed, color = incline)) +
-  geom_point() +
-  theme_flynn(base_family = "oswald") +
-  viridis::scale_color_viridis(option = "magma") +
-  labs(x = "Pedal Pressure",
-       y = "Speed (mph)",
-       color = "Incline",
-       title = "Car speed and pedal pressure",
-       subtitle = "We should expect cars to go faster as we apply more pressure, so what gives?")
-
-lm(speed ~ pedal_pressure + incline, data = cardata)
-
-```
 
 
 
@@ -430,7 +519,7 @@ Example: College Admissions
 :::
 
 :::{.column}
-```{r collider-example-plot-1}
+```{r collider-example-plot-1, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
 #|echo: false
 #|dpi: 300
 #|width: 50%
@@ -439,12 +528,11 @@ N <- 1e4
 
 collider.data <- data.frame(effort = rnorm(N, mean = 0, sd = 1)) |> 
   mutate(gpa = rnorm(N, mean = 0, sd = 1),
-         admitted = ifelse(gpa + effort > 2.5, "Admitted", "Rejected"))
+         admitted = ifelse(gpa * effort > 2.0 & gpa>0 & effort>0, "Admitted", "Rejected"))
 
 
 ggplot(collider.data |> filter(admitted == "Admitted"), aes(x = effort, y = gpa)) +
-  coord_equal() +
-  geom_point(alpha = 0.5, position = position_jitter()) +
+  geom_point(alpha = 0.5) +
   geom_smooth(method = "lm") +
   theme_flynn(base_family = "oswald") + 
   labs(x = "Extracurriculars",
@@ -476,16 +564,15 @@ Example: College Admissions
 :::
 
 :::{.column}
-```{r collider-example-plot-2}
+```{r collider-example-plot-2, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
 #|echo: false
 #|dpi: 300
 #|width: 50%
 
 
 ggplot(collider.data, aes(x = effort, y = gpa, color = admitted)) +
-  geom_point(alpha = 0.5, position = position_jitter()) +
+  geom_point(alpha = 0.5) +
   theme_flynn(base_family = "oswald") + 
-  coord_equal() +
   viridis::scale_color_viridis(discrete = TRUE,
                                option = "magma",
                                end = 0.9) +
@@ -505,3 +592,28 @@ ggplot(collider.data, aes(x = effort, y = gpa, color = admitted)) +
 
 
 # Role of Theory {.inverse}
+
+
+## The Role of Theory
+
+What is theory?
+
+Let's start with what it's not
+
+- Not a hypothesis
+- Not a hunch
+- Not a guess
+- Just an idea with little or no supporting evidence
+
+
+## The Role of Theory 
+
+What is theory?
+
+- More accurately, theory is the story we tell about how variables are related. It both describes and explains how variables affect one another. 
+
+- It also allowsus to make predictions about what we sould expect to see in various scenarios
+
+> **Theory:** A tentative conjecture about the causes of some phenomenon of interest (Kellstedt and Whitten 2019, 22)
+
+> **Theory:** A logically consistent set of statements that explains a phenomenon of interest (Friden, Lake, and Schultz 2022, xxix)

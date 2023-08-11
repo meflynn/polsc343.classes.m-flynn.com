@@ -8,10 +8,10 @@
 <link href="methods-primer_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="methods-primer_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="methods-primer_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.303">
+  <meta name="generator" content="quarto-1.4.288">
 
   <meta name="author" content="Michael Flynn">
-  <meta name="dcterms.date" content="2023-08-08">
+  <meta name="dcterms.date" content="2023-08-11">
   <title>US Foreign Policy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -352,7 +352,7 @@ Michael Flynn
     </div>
 </div>
 
-  <p class="date">2023-08-08</p>
+  <p class="date">2023-08-11</p>
 </section>
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
@@ -402,7 +402,7 @@ Michael Flynn
 <li>Conclusion</li>
 </ol>
 </div><div class="column">
-<p>How you <em>should</em> read it:</p>
+<p>How you <em>should</em> read it (as a rough guide):</p>
 <ol type="1">
 <li>Abstract</li>
 <li>Introduction</li>
@@ -423,7 +423,7 @@ Michael Flynn
 <h2>Common Methods</h2>
 <p>We use lots of different methods in the social sciences, but let’s look at a few key approaches/tools:</p>
 <ul>
-<li>Statistical modeling and regressional analysis</li>
+<li>Statistical modeling and regression analysis</li>
 <li>Formal (mathematical) modeling</li>
 <li>Experimental methods</li>
 <li>Case studies</li>
@@ -432,11 +432,58 @@ Michael Flynn
 <li>Archival research</li>
 </ul>
 </section></section>
+<section>
 <section id="interpretation" class="title-slide slide level1 inverse center">
 <h1>Interpretation</h1>
 
 </section>
-
+<section id="interpreting-and-assessing-statistical-models" class="slide level2">
+<h2>Interpreting and Assessing Statistical Models</h2>
+<p>First, what are our goals?</p>
+<ul>
+<li>Prediction?</li>
+<li>Description?</li>
+<li>Estimating causal effects?</li>
+</ul>
+</section>
+<section id="interpreting-and-assessing-statistical-models-1" class="slide level2">
+<h2>Interpreting and Assessing Statistical Models</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><strong>Prediction</strong></p>
+<ul>
+<li><p>Overall model fit</p></li>
+<li><p>In-sample fit?</p></li>
+<li><p>Out-of-sample fit?</p></li>
+</ul>
+</div><div class="column" style="width:33%;">
+<p><strong>Description</strong></p>
+<ul>
+<li><p>Overall model fit</p></li>
+<li><p>Individual coefficients</p></li>
+<li><p>Associations between groups</p></li>
+</ul>
+</div><div class="column" style="width:33%;">
+<p><strong>Causal Inference</strong></p>
+<ul>
+<li>Focus on individual coefficients for causal effects</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="interpreting-and-assessing-statistical-models-2" class="slide level2">
+<h2>Interpreting and Assessing Statistical Models</h2>
+<p>What is a coefficient?</p>
+<p><span class="math display">\[\begin{equation}
+Y_i = \alpha + {\color{blue} \beta_1} X_i + {\color{blue}\beta_2} Z_i + \epsilon_i
+\end{equation}\]</span></p>
+<ul>
+<li><p>The correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, conditional on other predictors and model</p></li>
+<li><p>Typically denotes the magnitude of the change in <span class="math inline">\(Y\)</span> that corresponds to a one-unit change in <span class="math inline">\(X\)</span></p></li>
+<li><p>In some cases this is direct and easy, less so in other cases</p></li>
+<li><p>Different models and measurement schemes mean we need to be cautious in interpreting coefficients</p></li>
+</ul>
+</section></section>
 <section>
 <section id="sources-of-bias" class="title-slide slide level1 inverse center">
 <h1>Sources of Bias</h1>
@@ -451,6 +498,11 @@ Michael Flynn
 <li>Noun: The degree to which our estimates deviate from some “true” or “accurate” value.</li>
 <li>Verb: The action of causing our estimates to deviate from some “true” or “accurate” value.</li>
 </ul></li>
+</ul>
+<blockquote>
+<p><strong>Bias:</strong> Systematic error of some sort that can affect our inferences and conclusions (Howard 2017, 151)</p>
+</blockquote>
+<ul>
 <li><p>What it’s not:</p>
 <ul>
 <li>Presenting “one side”</li>
@@ -482,8 +534,64 @@ Y &amp; = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i
 </div>
 </div>
 </section>
-<section id="simpsons-paraox" class="slide level2">
-<h2>Simpson’s Paraox</h2>
+<section id="confounding-example" class="slide level2">
+<h2>Confounding Example</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = speed ~ pedal_pressure, data = cardata)
+
+Coefficients:
+   (Intercept)  pedal_pressure  
+     7.000e+01       4.109e-04  </code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/confounding-car-1-1.png" style="width:9in;height:5in"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="confounding-example-1" class="slide level2">
+<h2>Confounding Example</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = speed ~ pedal_pressure + incline, data = cardata)
+
+Coefficients:
+   (Intercept)  pedal_pressure         incline  
+        44.942           1.253          -1.504  </code></pre>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/confounding-car-2-1.png" style="width:9in;height:5in"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="simpsons-paradox" class="slide level2">
+<h2>Simpson’s Paradox</h2>
 <p>What is it and why does it matter?</p>
 <ul>
 <li><p>Simpson’s Paradox is a special case of confounding</p></li>
@@ -492,7 +600,7 @@ Y &amp; = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i
 <li><p>Common in lots of fields of study</p></li>
 </ul>
 </section>
-<section id="simpsons-paradox" class="slide level2">
+<section id="simpsons-paradox-1" class="slide level2">
 <h2>Simpson’s Paradox</h2>
 <div class="columns">
 <div class="column">
@@ -510,7 +618,7 @@ lm(formula = y ~ x, data = data2)
 
 Coefficients:
 (Intercept)            x  
-    183.072        1.952  </code></pre>
+    181.655        2.159  </code></pre>
 </div>
 </div>
 </div><div class="column">
@@ -518,7 +626,7 @@ Coefficients:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="methods-primer_files/figure-revealjs/simpsons-paradox-1-1.png" style="width:6in;height:5in"></p>
+<p><img data-src="methods-primer_files/figure-revealjs/simpsons-paradox-1-1.png" style="width:6in;height:4.5in"></p>
 </figure>
 </div>
 </div>
@@ -526,7 +634,7 @@ Coefficients:
 </div>
 </div>
 </section>
-<section id="simpsons-paradox-1" class="slide level2">
+<section id="simpsons-paradox-2" class="slide level2">
 <h2>Simpson’s Paradox</h2>
 <div class="columns">
 <div class="column">
@@ -545,7 +653,7 @@ lm(formula = y ~ x + age, data = data2)
 
 Coefficients:
 (Intercept)            x     ageAge 2     ageAge 3     ageAge 4     ageAge 5  
-   193.5396      -0.7182       4.0509       7.7261      11.2530      14.9049  </code></pre>
+   192.7019      -0.6022       4.1271       7.9315      11.4888      14.9767  </code></pre>
 </div>
 </div>
 </div><div class="column">
@@ -553,53 +661,11 @@ Coefficients:
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="methods-primer_files/figure-revealjs/simpsons-paradox-2-1.png" style="width:6in;height:5in"></p>
+<p><img data-src="methods-primer_files/figure-revealjs/simpsons-paradox-2-1.png" style="width:6in;height:4.5in"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="another-version-of-simpsons-paradox" class="slide level2">
-<h2>Another version of Simpson’s Paradox</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="methods-primer_files/figure-revealjs/simpsons-car-1.png" style="width:8in;height:5in"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = speed ~ pedal_pressure, data = cardata)
-
-Coefficients:
-   (Intercept)  pedal_pressure  
-       70.1311         -0.0024  </code></pre>
-</div>
-</div>
-</section>
-<section id="another-version-of-simpsons-paradox-1" class="slide level2">
-<h2>Another version of Simpson’s Paradox</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="methods-primer_files/figure-revealjs/simpsons-car-2-1.png" style="width:8in;height:5in"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = speed ~ pedal_pressure + incline, data = cardata)
-
-Coefficients:
-   (Intercept)  pedal_pressure         incline  
-        44.765           1.262          -1.514  </code></pre>
 </div>
 </div>
 </section>
@@ -636,7 +702,11 @@ Coefficients:
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-1-1.png" width="960"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-1-1.png" style="width:6in;height:4.5in"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -656,18 +726,49 @@ Coefficients:
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-2-1.png" width="960"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-2-1.png" style="width:6in;height:4.5in"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section></section>
+<section>
 <section id="role-of-theory" class="title-slide slide level1 inverse center">
 <h1>Role of Theory</h1>
+
+</section>
+<section id="the-role-of-theory" class="slide level2">
+<h2>The Role of Theory</h2>
+<p>What is theory?</p>
+<p>Let’s start with what it’s not</p>
+<ul>
+<li>Not a hypothesis</li>
+<li>Not a hunch</li>
+<li>Not a guess</li>
+<li>Just an idea with little or no supporting evidence</li>
+</ul>
+</section>
+<section id="the-role-of-theory-1" class="slide level2">
+<h2>The Role of Theory</h2>
+<p>What is theory?</p>
+<ul>
+<li><p>More accurately, theory is the story we tell about how variables are related. It both describes and explains how variables affect one another.</p></li>
+<li><p>It also allowsus to make predictions about what we sould expect to see in various scenarios</p></li>
+</ul>
+<blockquote>
+<p><strong>Theory:</strong> A tentative conjecture about the causes of some phenomenon of interest (Kellstedt and Whitten 2019, 22)</p>
+</blockquote>
+<blockquote>
+<p><strong>Theory:</strong> A logically consistent set of statements that explains a phenomenon of interest (Friden, Lake, and Schultz 2022, xxix)</p>
+</blockquote>
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
