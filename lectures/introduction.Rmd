@@ -356,11 +356,12 @@ class: left, top
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-requirements <- tibble(`Grade Item` = c("Discussion", 
+requirements <- tibble(`Grade Item` = c("Attendance",
+                                        "Discussion", 
                                         "Content Quizzes", 
                                         "DAG Exercise", 
                                         "Music of Foreign Policy Wiki"),
-                       `Percent` = c("30%", "20%", "20%", "30%"))
+                       `Percent` = c("10%", "20%", "20%", "20%", "30%"))
 
 knitr::kable(requirements, 'html', align = c("l", "c")) %>% 
   kable_styling(full_width=TRUE) %>% 

@@ -108,6 +108,16 @@ h2 {
 }
 
 
+/* indent ordered and unordered lists */
+.reveal .slide ol {
+  margin-left: 55px;
+}
+
+.reveal .slide ul {
+  margin-left: 55px;
+}
+
+
 /* Edit blockquote characteristics to make a bold purple line on the left and a light gray background */
 .reveal blockquote {
   margin-top: auto;
@@ -209,4 +219,8 @@ p.date {
 
 .small {
   font-size: .8em;
+}
+
+.blue-text {
+  color: #512888;
 }

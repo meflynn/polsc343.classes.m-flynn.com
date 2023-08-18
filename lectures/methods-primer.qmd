@@ -326,6 +326,101 @@ ggplot(cardata, aes(x = pedal_pressure, y = speed, fill = incline)) +
 ::::
 
 
+## Base Rate Fallacy
+
+```{r base-rate-fallacy}
+set.seed(12)
+
+N.1 <- 1e3
+N.2 <- 1e3
+
+mu.1 <- c(X  = -5, Y = 0)
+sigma.1 <- matrix(c(1, 0, 0, 1), ncol = 2)
+
+mu.2 <- c(X  = 5, Y = 0)
+sigma.2 <- matrix(c(1, 0, 0, 1), ncol = 2)
+
+
+baserate <- data.frame("Vaccinated" = MASS::mvrnorm(n = N.1, mu = mu.1, Sigma = sigma.1),
+                       "Unvaccinated" = MASS::mvrnorm(n = N.2, mu = mu.2, Sigma = sigma.2)) |> 
+  pivot_longer(cols = 1:4,
+               names_to = c("Group", "Var"),
+               names_sep = c("\\.")) |> 
+  pivot_wider(names_from = "Var") |> 
+  unnest() |> 
+  slice(-c(2000:1300)) |> 
+  group_by(Group) |> 
+  mutate(Hospitalized = case_when(
+    Group == "Vaccinated" ~ rbinom(n = length(.data$Group=="Vaccinated"), size = 1, prob = 0.05),
+    Group == "Unvaccinated" ~ rbinom(n = length(.data$Group=="Unvaccinated"), size = 1, prob = 0.10)
+  ),
+  Hospitalized = factor(Hospitalized,
+                        levels = c(0, 1),
+                        labels = c("Not Hospitalized", "Hospitalized")),
+  Group = factor(Group, 
+                 levels = c("Vaccinated" , "Unvaccinated"),
+                 labels = c("Vaccinated", "Unvaccinated")))
+  
+
+#table(baserate$Group, baserate$Hospitalized)
+
+ggplot(baserate |> filter(Hospitalized == "Hospitalized"), aes(x = Group, y = Y, fill = Group)) +
+  geom_point(size = 2.5, shape = 21, position = position_jitter(width = 0.2)) +
+  theme_flynn() +
+    theme(text = element_text(family = "oswald"),
+          axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
+  viridis::scale_fill_viridis(option = "magma", 
+                              discrete = TRUE,
+                              begin = 0.0,
+                              end = 0.9) +
+  labs(x = "",
+       y = "",
+       title = "Hospitalization Among Vaccinated and Unvaccinated Individuals",
+       subtitle = "How can the vaccine be protective if most hospitalized people are vaccinated?")
+
+
+```
+
+
+
+## Base Rate Fallacy
+
+```{r base-rate-fallacy-2}
+
+#prop.table(table(baserate$Group, baserate$Hospitalized))
+
+ggplot() +
+  geom_point(data = baserate |> filter(Hospitalized == "Not Hospitalized"), 
+             aes(x = Group, y = Y, fill = Hospitalized), 
+             size = 2.5, 
+             shape = 21, 
+             alpha = 0.6,
+             position = position_jitter(width = 0.2)) +
+  geom_point(data = baserate |> filter(Hospitalized == "Hospitalized"), 
+             aes(x = Group, y = Y, fill = Hospitalized), 
+             size = 2.5, 
+             shape = 21,
+             position = position_jitter(width = 0.2)) +
+  theme_flynn() +
+  viridis::scale_fill_viridis(option = "magma", 
+                              discrete = TRUE,
+                              begin = 0.0,
+                              end = 0.9) +
+  theme(text = element_text(family = "oswald"),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) +
+  labs(x = "",
+       y = "",
+       title = "Hospitalization Among Vaccinated and Unvaccinated Individuals",
+       subtitle = "How can the vaccine be protective if most hospitalized people are vaccinated?")
+
+
+```
 
 
 
