@@ -328,6 +328,8 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
+#### *Friday: Guest Lecture by Lt. Commander Jean Anne Kim, United States Navy.*
+
 - Watch [Restrepo](https://watchdocumentaries.com/restrepo/)
 - Read @sigar2019
 
