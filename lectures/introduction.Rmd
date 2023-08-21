@@ -43,6 +43,14 @@ Why this class matters:
 ---
 class: center, middle
 
+```{r, echo=FALSE, fig.cap="A soldier next to a destroyed tank in Ukraine.", out.width="60%"}
+knitr::include_graphics("https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220331-destroyed-russian-tank-ukraine-al-1304-a4a48d.jpg")
+```
+
+
+---
+class: center, middle
+
 .pull-left[
 <br>
 <br>
