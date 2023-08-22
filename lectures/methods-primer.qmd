@@ -9,6 +9,9 @@ institute:
   - 011C Calvin Hall
   - meflynn@ksu.edu
 date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
 format:
   revealjs:
     theme: [quarto-lecture-theme.scss, default]
@@ -44,6 +47,9 @@ sysfonts::font_add_google("Oswald", "oswald")
 showtext::showtext_auto()
 showtext::showtext_opts(dpi = 300)
 ```
+
+
+
 
 ##  Overview
 
@@ -120,6 +126,21 @@ We use lots of different methods in the social sciences, but let's look at a few
 - Archival research
 
 
+:::{.notes}
+Remember our goals:
+- Understand the world
+- Understand causal effects
+- Make better predictions
+- Maybe use this information to make better decisions/politics
+
+Buuuut...people are bad at assessing lots of complex information. 
+
+We can adopt different strategies to do this:
+
+- First we read a lot of substantive material and history to understand what the issues are
+- Next we need to figure out what the most basic and important moving parts are.
+:::
+
 
 # Interpretation {.inverse}
 
@@ -187,17 +208,15 @@ Y_i = \alpha + {\color{blue} \beta_1} X_i + {\color{blue}\beta_2} Z_i + \epsilon
 
 
 
+## Interpreting and Assessing Statistical Models
+
+![Example of a regression table from a research article](../images/regression-table-screenshot.jpg)
+
 
 # Sources of Bias {.inverse}
 
 ## What's "Bias"?
 
-First, we should clear some things up:
-
-- **Bias** can mean a couple of things:
-
-  - Noun: The degree to which our estimates deviate from some "true" or "accurate" value.
-  - Verb: The action of causing our estimates to deviate from some "true" or "accurate" value.
   
 > **Bias:** Systematic error of some sort that can affect our inferences and conclusions (Howard 2017, 151)
   
@@ -229,7 +248,7 @@ Y & = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i
 :::
 
 :::{.column}
-```{r confounding-example}
+```{r confounding-example, out.width="88%"}
 #|echo: false
 #|dpi: 300
 #|width: 50%
@@ -269,6 +288,13 @@ ggplot(dag.df, aes(x = x, xend = xend, y = y, yend = yend)) +
 
 ::::{.columns}
 :::{.column}
+
+
+Let's imagine we're interested in the relationship between gas pedal pressure and speed, so we collect data on
+
+- A few hundred drivers
+- Their speed in mph
+- How hard they press the pedal
 ```{r}
 N <- 1e3
 #"0°", "5°", "10°", "15°", "20°"
@@ -281,7 +307,7 @@ lm(speed ~ pedal_pressure, data = cardata)
 :::
 
 :::{.column}
-```{r confounding-car-1, fig.pos="center", out.height="5in", out.width="9in"}
+```{r confounding-car-1, fig.pos="center", out.width="88%"}
 
 ggplot(cardata, aes(x = pedal_pressure, y = speed)) +
   geom_point(size = 3.5, shape = 21, fill = "black") +
@@ -301,6 +327,11 @@ ggplot(cardata, aes(x = pedal_pressure, y = speed)) +
 
 ::::{.columns}
 :::{.column}
+Confounding can mask causal relationships
+
+- We need to understand the data generating process to help us make sense of results that may or may not themselves make sense
+
+- Adjusting for confounders in our model can reduce bias and help us better estimate causal relationships
 ```{r}
 lm(speed ~ pedal_pressure + incline, data = cardata)
 ```
@@ -308,7 +339,7 @@ lm(speed ~ pedal_pressure + incline, data = cardata)
 :::
 
 :::{.column}
-```{r confounding-car-2, fig.pos="center", out.height="5in", out.width="9in"}
+```{r confounding-car-2, fig.pos="center", out.width="88%"}
 
 ggplot(cardata, aes(x = pedal_pressure, y = speed, fill = incline)) +
   geom_point(size = 3.5, shape = 21) +
@@ -328,6 +359,13 @@ ggplot(cardata, aes(x = pedal_pressure, y = speed, fill = incline)) +
 
 ## Base Rate Fallacy
 
+::::{.columns}
+:::{.column}
+Vaccination status and hospitalization
+
+- Vaccines are effective at reducing risk of severe illness, hospitalization, etc.
+- And yet in some locations we see more hospital beds occupied by vaccinated people than non-vaccinated people
+- Huh? What gives?
 ```{r base-rate-fallacy}
 set.seed(12)
 
@@ -361,11 +399,21 @@ baserate <- data.frame("Vaccinated" = MASS::mvrnorm(n = N.1, mu = mu.1, Sigma = 
                  levels = c("Vaccinated" , "Unvaccinated"),
                  labels = c("Vaccinated", "Unvaccinated")))
   
+counts <- data.frame(status = c("Vaccinated", "Unvaccinated"),
+                     count =c(sum(baserate$Hospitalized=="Hospitalized" & baserate$Group=="Vaccinated"),
+                     sum(baserate$Hospitalized=="Hospitalized" & baserate$Group=="Unvaccinated")))
+```
+:::
 
-#table(baserate$Group, baserate$Hospitalized)
+:::{.column}
+
+```{r base-rate-fallacy-figure, fig.pos="center", out.width="88%"}
+library(gridExtra)
+library(ggpp)
 
 ggplot(baserate |> filter(Hospitalized == "Hospitalized"), aes(x = Group, y = Y, fill = Group)) +
   geom_point(size = 2.5, shape = 21, position = position_jitter(width = 0.2)) +
+  geom_table(data = counts, aes(x = 0.5, y = 2.5), label = list(counts)) +
   theme_flynn() +
     theme(text = element_text(family = "oswald"),
           axis.text.y = element_blank(),
@@ -383,14 +431,34 @@ ggplot(baserate |> filter(Hospitalized == "Hospitalized"), aes(x = Group, y = Y,
 
 
 ```
-
+:::
+::::
 
 
 ## Base Rate Fallacy
 
-```{r base-rate-fallacy-2}
+::::{.columns}
+:::{.column}
+The underlying population matters!
 
-#prop.table(table(baserate$Group, baserate$Hospitalized))
+- The **rate** of an event may vary across groups
+
+- Knowing something about the reference population is key
+
+- Another way to think of this is the symmetry/asymmetry of conditional probabilities
+
+$$Pr(H \mid V) \neq Pr(V \mid H)$$
+
+:::
+
+:::{.column}
+```{r base-rate-fallacy-2, fig.pos="center", out.width="88%"}
+
+counts2 <- data.frame(status = c("Vaccinated", "Unvaccinated"),
+                     count = c(sum(baserate$Hospitalized=="Hospitalized" & baserate$Group=="Vaccinated"),
+                     sum(baserate$Hospitalized=="Hospitalized" & baserate$Group=="Unvaccinated")),
+                     total = c(sum(baserate$Group=="Vaccinated"), sum(baserate$Group=="Unvaccinated"))) |> 
+  mutate(percent = (count/total)*100)
 
 ggplot() +
   geom_point(data = baserate |> filter(Hospitalized == "Not Hospitalized"), 
@@ -404,6 +472,7 @@ ggplot() +
              size = 2.5, 
              shape = 21,
              position = position_jitter(width = 0.2)) +
+  geom_table(data = counts2, aes(x = 0.5, y = 2.5), label = list(counts2)) +
   theme_flynn() +
   viridis::scale_fill_viridis(option = "magma", 
                               discrete = TRUE,
@@ -421,7 +490,8 @@ ggplot() +
 
 
 ```
-
+:::
+::::
 
 
 ## Simpson's Paradox
@@ -614,7 +684,7 @@ Example: College Admissions
 :::
 
 :::{.column}
-```{r collider-example-plot-1, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
+```{r collider-example-plot-1, out.width="88%", fig.pos="center", dpi=400}
 #|echo: false
 #|dpi: 300
 #|width: 50%
@@ -659,7 +729,7 @@ Example: College Admissions
 :::
 
 :::{.column}
-```{r collider-example-plot-2, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
+```{r collider-example-plot-2, out.width="88%", fig.pos="center", dpi=400}
 #|echo: false
 #|dpi: 300
 #|width: 50%
@@ -705,10 +775,12 @@ Let's start with what it's not
 
 What is theory?
 
-- More accurately, theory is the story we tell about how variables are related. It both describes and explains how variables affect one another. 
+- More accurately, theory is the story we tell about which variables are important and how those variables are related. 
 
-- It also allowsus to make predictions about what we sould expect to see in various scenarios
+- It both describes and explains how variables affect one another. 
+
+- It also allows us to make predictions about what we sould expect to see in various scenarios
 
 > **Theory:** A tentative conjecture about the causes of some phenomenon of interest (Kellstedt and Whitten 2019, 22)
 
-> **Theory:** A logically consistent set of statements that explains a phenomenon of interest (Friden, Lake, and Schultz 2022, xxix)
+> **Theory:** A logically consistent set of statements that explains a phenomenon of interest (Frieden, Lake, and Schultz 2022, xxix)

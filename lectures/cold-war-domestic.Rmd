@@ -16,6 +16,10 @@ output:
       titleSlideClass: [middle, left, inverse]
 ---
 ```{r setup, include = FALSE, echo = FALSE}
+#devtools::install_github("ropensci/tabulizer")
+#install.packages("tabulizer")
+remotes::install_github(c("ropensci/tabulizerjars", "ropensci/tabulizer"), INSTALL_opts = "--no-multiarch")
+
 library(tidyverse)
 library(tidyquant)
 library(plotly)
@@ -30,6 +34,7 @@ library(rgdal) # used to read world map data
 library(rgeos) 
 library(maptools)
 library(ggmap)
+library(tabulizer)
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
 
@@ -868,7 +873,7 @@ class: left, top
 class: left, top
 
 ```{r military spending map, dpi=400}
-library(tabulizer)
+#library(tabulizer)
 library(usmap)
 
 statespend <- here("../../../Data Files/US Government Files/DOD/FY2017_Defense_Spending_by_State_Report_Web_Version_20190315.pdf")
