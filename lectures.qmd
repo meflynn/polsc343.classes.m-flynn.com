@@ -10,26 +10,28 @@ This page contains lectures delivered throughout the semester. You can click on 
 
 1. [Course Introduction](lectures/introduction.html)
 
-2. [Historical Background](lectures/historical-background.html)
+2. [Methods Primer](lectures/methods-primer.html)
 
-3. [The Cold War in International Affairs](lectures/cold-war-international.html)
+3. [Historical Background](lectures/historical-background.html)
 
-4. [The Cold War in Domestic Politics](lectures/cold-war-domestic.html)
+4. [The Cold War in International Affairs](lectures/cold-war-international.html)
 
-5. [The Policymaking Process](lectures/policymaking.html)
+5. [The Cold War in Domestic Politics](lectures/cold-war-domestic.html)
 
-6. [Congress and the Presidency](lectures/congress-and-presidency.html)
+6. [The Policymaking Process](lectures/policymaking.html)
 
-7. [Bureaucracy and the State Department](lectures/bureaucracy.html)
+7. [Congress and the Presidency](lectures/congress-and-presidency.html)
 
-8. [The Defense Department and the Military](lectures/defense-military.html)
+8. [Bureaucracy and the State Department](lectures/bureaucracy.html)
 
-9. [The Use of Military Force](lectures/military-force.html)
+9. [The Defense Department and the Military](lectures/defense-military.html)
 
-10. [Security Cooperation](lectures/security-cooperation.html)
+10. [The Use of Military Force](lectures/military-force.html)
 
-11. [Trade and Investment](lectures/trade-investment.html)
+11. [Security Cooperation](lectures/security-cooperation.html)
 
-12. [Human Rights](lectures/human-rights.html)
+12. [Trade and Investment](lectures/trade-investment.html)
 
-13. [Multilateralism](lectures/multilateralism.html)
+13. [Human Rights](lectures/human-rights.html)
+
+14. [Multilateralism](lectures/multilateralism.html)
