@@ -361,8 +361,10 @@ ggplot(cardata, aes(x = pedal_pressure, y = speed, fill = incline)) +
 
 ::::{.columns}
 :::{.column}
-Vaccination status and hospitalization
+What is it and why does it matter?
 
+- Counts can be deceptive without information about population of interest
+- Example of vaccine status and hospitalization
 - Vaccines are effective at reducing risk of severe illness, hospitalization, etc.
 - And yet in some locations we see more hospital beds occupied by vaccinated people than non-vaccinated people
 - Huh? What gives?
@@ -494,6 +496,19 @@ ggplot() +
 ::::
 
 
+## Ecological Fallacy
+
+What is it and why does it matter?
+
+- The level at which our data are aggregated matters
+- Drawing inferences across levels of aggregation can be tricky
+- For example, income and voting behavior in US elections
+  - Wealthier states tend to break for Democratic candidates
+  - Wealthier individuals tend to break for Republican candidates
+
+
+
+
 ## Simpson's Paradox
 
 What is it and why does it matter?
@@ -544,7 +559,7 @@ lm(y ~ x, data = data2)
 :::
 
 :::{.column}
-```{r simpsons-paradox-1, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
+```{r simpsons-paradox-1, out.width="88%", fig.pos="center", dpi=300}
 #|echo: false
 
 
@@ -589,7 +604,7 @@ lm(y ~ x + age, data = data2)
 :::
 
 :::{.column}
-```{r simpsons-paradox-2, out.width = "6in", out.height="4.5in", fig.pos="center", dpi=400}
+```{r simpsons-paradox-2, out.width="88%", fig.pos="center", dpi=300}
 #|echo: false
 
 # Set sample size. 1000 is a nice number that doesn't give too much away via
