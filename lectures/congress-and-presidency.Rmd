@@ -32,27 +32,16 @@ library(maptools)
 library(ggmap)
 library(colorRamps)
 library(RColorBrewer)
+library(flynnprojects)
 
+sysfonts::font_add_google(name = "Oswald", family = "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpit = 300)
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
 
 
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = 12, base_family = "Arial") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = 18, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = 12, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = 8, hjust = 1, margin = margin(t = 0.2, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black"),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = 12),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", hjust = 0))
-  }
+
 ```
 
 
@@ -148,22 +137,24 @@ Conflicting institutions
 ---
 class: center, middle
 
-```{r institutional-control, fig.width=15, fig.height=5}
+```{r institutional-control, fig.width=12, fig.height=4}
 
 nom.data <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) %>%
   filter(congress >= 55) %>% 
   group_by(chamber, congress) %>% 
   summarise(demcount = n_distinct(icpsr[party_code==100]),
             repcount = n_distinct(icpsr[party_code==200])) %>% 
-  mutate(Party = ifelse(demcount > repcount, "Democrat", "Republican"))
+  mutate(Party = ifelse(demcount > repcount, "Democrat", "Republican"),
+         chamber = factor(chamber))
 
 plot.1 <- ggplot(data = nom.data, aes(x = congress, y = chamber, color = Party)) +
-  geom_point(size = 6, alpha = 0.6, shape = 15) +
+  geom_point(size = 4.5, alpha = 0.6, shape = 15) +
   annotate("rect", xmin = 64, xmax = 66, ymin = -Inf, ymax = Inf, color = "gray80", alpha = 0.4) +
   annotate("rect", xmin = 77, xmax = 81, ymin = -Inf, ymax = Inf, color = "gray80", alpha = 0.4) +
   annotate("rect", xmin = 88, xmax = 93, ymin = -Inf, ymax = Inf, color = "gray80", alpha = 0.4) +
-  theme_flynn() + 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme_flynn(base_size = 12, base_family = "oswald") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 14),
+        axis.text.y = element_text(size = 14)) +
   scale_color_brewer(palette = "Set1", direction = -1) +
   scale_x_continuous(breaks = seq(55, 115, 2)) +
   labs(x = "Congress",
@@ -315,7 +306,7 @@ getPalette <- colorRampPalette(brewer.pal(11, "Spectral"))
 # Legislative versus executive
 ggplot(data = data.leg, aes(x = year, y = value, group = name, fill = name)) +
   geom_area(position = "identity", alpha = .75, colour = "black", size = .1) +
-  theme_flynn() + 
+  theme_flynn(base_size = 12, base_family = "oswald") + 
   scale_fill_brewer(palette = "Spectral") +
   scale_x_continuous(breaks = seq(1940, 2015, 5)) +
   scale_y_continuous(breaks = seq(0, 3500, 500)) +
@@ -351,7 +342,7 @@ class: center, middle
 
 exec.emp <- ggplot(data = subset(data, name != "total" & name != "total_civilian"), aes(x = year, y = value, group = name, fill = name)) +
   geom_area(position = "stack", alpha = .75, colour = "black", size = .1) +
-  theme_flynn() + 
+  theme_flynn(base_size = 12, base_family = "oswald") + 
   scale_fill_manual(values = getPalette(colourCount)) +
   scale_x_continuous(breaks = seq(1940, 2015, 5)) +
   scale_y_continuous(breaks = seq(0, 3500, 500)) +
@@ -387,7 +378,7 @@ state.df <- readxl::read_xlsx(here::here("../../../Data Files/US Government File
 # state department size
 ggplot(data = subset(state.df, name != "Total" & Year >= 1790), aes(x = as.numeric(Year), y = value, group = name, fill = name)) +
   geom_area(position = "stack", alpha = .8, colour = "black", size = .1) +
-  theme_flynn() + 
+  theme_flynn(base_size = 12, base_family = "oswald") + 
   viridis::scale_fill_viridis(discrete = TRUE) +
   scale_x_continuous(breaks = seq(1790, 2020, 20)) +
   scale_y_continuous(breaks = seq(0, 20000, 4000), limits = c(0, 20000)) +
@@ -976,7 +967,7 @@ aumf.data <- readxl::read_xlsx(("../../../Data Files/US Government Files/CRS/aum
 
 ggplot(aumf.data, aes(x = Date, y = number)) +
   geom_point(aes(fill = aumf.authority), color = "black", size = 9.5, pch = 21) +
-  theme_flynn() + 
+  theme_flynn(base_size = 12, base_family = "oswald") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_fill_brewer(palette = "Set1", drop = FALSE) +
   labs(x = "Date",
@@ -988,7 +979,7 @@ ggplot(aumf.data, aes(x = Date, y = number)) +
 
 #ggplot(aumf.data, aes(x = Date, fill = aumf.authority)) +
 #  geom_dotplot(binaxis = "x",  stackgroups = TRUE, stackratio = 1.02, dotsize = 0.94) +
-#  theme_flynn() + 
+#  theme_flynn(base_size = 12, base_family = "oswald") + 
 #  theme(text = element_text(size = 16),
 #        axis.text.x = element_text(angle = 45, hjust = 1)) +
 #  scale_fill_brewer(palette = "Set1", drop = FALSE) +
@@ -1021,7 +1012,7 @@ class: center, middle
 
 ggplot(aumf.data, aes(x = Date, y = number.newact)) +
   geom_point(aes(fill = newact), color = "black", size = 9.5, pch = 21) +
-  theme_flynn() + 
+  theme_flynn(base_size = 12, base_family = "oswald") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_fill_brewer(palette = "Set1", drop = FALSE) +
   labs(x = "Date",
@@ -1148,7 +1139,7 @@ ggplot(oversight) +
   geom_line(aes(x  = year, y = hearings_defense_days, color = "Defense"), size = 2) +
   geom_line(aes(x = year, y = hearings_intaff_days, color = "International Affairs"), size = 2) +
   geom_line(aes(x = year, y = hearings_trade_days, color = "Trade"), size = 2) +
-  theme_flynn() + 
+  theme_flynn(base_size = 12, base_family = "oswald") + 
   theme(text = element_text(size = 16)) +
   scale_color_brewer(palette = "Set1") +
   scale_x_continuous(breaks = seq(1950, 2020, 10)) +

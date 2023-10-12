@@ -32,28 +32,13 @@ library(maptools)
 library(ggmap)
 library(colorRamps)
 library(RColorBrewer)
+library(flynnprojects)
 
-
+sysfonts::font_add_google(name = "Oswald", family = "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
-
-
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = 12, base_family = "Arial") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = 18, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = 12, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = 8, hjust = 1, margin = margin(t = 0.2, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black"),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = 12),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", hjust = 0))
-}
 
 
 ```
@@ -87,6 +72,8 @@ name: key-questions
 3. How have the economic interests of political parties affected their relationships with the branches of the military?
 
 4. In what ways is the military a political institution?
+
+5. What's the difference between non-political and non-partisan?
 
 
 
@@ -321,7 +308,7 @@ class: center, middle
 ---
 class: center, middle
 
-<img src="../images/dod-org-2019-senior.png">
+<img src="../images/dod-org-2023-senior.png">
 
 ???
 
@@ -460,67 +447,66 @@ class: center, middle
 ---
 class: center, middle
 
+<div class="row">
+
+<div class="column">
+<figure>
+<img src="../images/dod-cjcos.jpg" width="120px" height="150px">
+<figcaption>Charles Q. Brown Jr., Chair Joint Chiefs of Staff</figcaption>
+</figure>
+</div>
+
+<div class="column">
+<figure>
+<img src="../images/dod-vcjcos.jpg" width="120px" height="150px">
+<figcaption>Christopher W. Grady, Vice Chair Joint Chiefs of Staff</figcaption>
+</figure>
+</div>
+
+<div class="column">
+<figure>
+<img src="../images/dod-armychief.jpg" width="120px" height="150px">
+<figcaption>Randy A. George, Army Chief of Staff</figcaption>
+</figure>
+</div>
+
+<div class="column">
+<figure>
+<img src="../images/dod-afchief.jpg" width="120px" height="150px">
+<figcaption>David W. Allvin, (Acting) Air Force Chief of Staff</figcaption>
+</figure>
+</div>
+
+</div>
+
 
 <div class="row">
 
 <div class="column">
 <figure>
-<img src="../images/dod-cjcos.jpg" width="175px" height="200px">
-<figcaption>Mark Milley, Chair Joint Chiefs of Staff</figcaption>
+<img src="../images/dod-navycno.jpg" width="120px" height="150px">
+<figcaption>Lisa M. Franchetti, (Acting) Chief of Naval Operations</figcaption>
 </figure>
 </div>
 
 <div class="column">
 <figure>
-<img src="../images/dod-vcjcos.jpg" width="175px" height="200px">
-<figcaption>John Hyten, Vice Chair Joint Chiefs of Staff</figcaption>
+<img src="../images/dod-marinecomm.jpg" width="120px" height="150px">
+<figcaption>Eric M. Smith, Commandant of the Marine Corps</figcaption>
 </figure>
 </div>
 
 <div class="column">
 <figure>
-<img src="../images/dod-armychief.jpg" width="175px" height="200px">
-<figcaption>James McConville, Army Chief of Staff</figcaption>
+<img src="../images/dod-natguardchief.jpg" width="120px" height="150px">
+<figcaption>Daniel R. Hokanson, Chief of National Guard Bureau</figcaption>
 </figure>
 </div>
 
 <div class="column">
 <figure>
-<img src="../images/dod-afchief.jpg" width="175px" height="200px">
-<figcaption>David Goldfein, Air Force Chief of Staff</figcaption>
-</figure>
-</div>
-
-</div>
-
-
-<div class="row">
-
-<div class="column">
-<figure>
-<img src="../images/dod-navycno.jpg" width="175px" height="200px">
-<figcaption>Michael Gilday, Chief of Naval Operations</figcaption>
-</figure>
-</div>
-
-<div class="column">
-<figure>
-<img src="../images/dod-marinecomm.jpg" width="175px" height="200px">
-<figcaption>David Berger, Commandant of the Marine Corps</figcaption>
-</figure>
-</div>
-
-<div class="column">
-<figure>
-<img src="../images/dod-natguardchief.jpg" width="175px" height="200px">
-<figcaption>Joseph Lengyel, Chief of National Guard Bureau</figcaption>
-</figure>
-</div>
-
-<div class="column">
-<figure>
-<img src="../images/dod-spaceforcechief.jpg" width="175px" height="200px">
-<figcaption>John Raymond, Chief of Space Operations</figcaption>
+<img src="../images/dod-spaceforcechief.jpg" width="120px" height="150px">
+<figcaption>B. Chance Saltzman, Chief of Space Operations</figcaption>
 </figure>
 </div>
 
@@ -532,8 +518,16 @@ class: center, middle
 #Notes: 
 
 - Space command falls within the Department of the Air Force. Doesn't have it's own separate Department.
-- This is akin to how the Marne Corps falls within the Department of the Navy but is its own separate service. 
+- This is akin to how the Marine Corps falls within the Department of the Navy but is its own separate service. 
 - Air Force Secretary overseas both Air Force and Space Force
+
+- Currently two service chiefs are only serving in actinv capacity. 
+  - Alabama Senator Tommy Tuberville has placed a hold on military promotions to protest DoD policy of providing accommodations to service members who need to travel to seek an abortion. Troops and dependents are allowed to use time off and use official travel to get to other states to seek reproductive care. This can also include in vitro fertilization and other pregnancy aids. See [here](https://apnews.com/article/tuberville-military-holds-senate-officers-45c4230a8aee5222bf32b43823e29acc)
+  - DoD Policy is set by civilian leadership and administrations. 
+  - Promotions are voted on in a single omnibus vote. Senate had to break the chair of the joint chiefs, the commandant of the Marine Corps, and the Army Chief of Staff out into three separate individual votes. 
+  - Hundreds of other promotions are being held up, and it would take weeks to vote on all of them individually. 
+  - "The chairman of the Senate Armed Services Committee, Sen. Jack Reed, D-R.I., said this week that voting on the more than 260 military nominations through the regular procedure would take 27 days with the Senate working “around the clock” or 84 days if the Senate worked eight hours a day." See [AP Story](https://apnews.com/article/tuberville-military-holds-senate-officers-45c4230a8aee5222bf32b43823e29acc).
+  - This means some key roles don't have occupants or some officers are trying to perform two jobs at once. 
 
 
 ---
@@ -601,7 +595,7 @@ class: left, top
 
 # Organization of the Military
 
-### Joint Chiefs of Staff
+### Joint Chiefs of Staff and Joint Staff
 
 - Equip, train, and organization of individual service branches
 
@@ -611,7 +605,9 @@ class: left, top
   
   - Chairman is the highest ranking uniformed military officer
   
-- Guide the development of new eapons systems, technology, and force structure
+  - Joint Staff organized into different focus areas
+  
+- Guide the development of new weapons systems, technology, and force structure
 
 - Set routine administrative policies 
 
@@ -645,7 +641,7 @@ class: left, top
 ]
 
 .pull-right[
-<img src="../images/david-petraus.jpg" width="300px" height="400px" style="top:-100px; left:100px;">
+<img src="../images/david-petraus.jpg" width="250px" height="300px" style="margin-top:-45px; margin-left:100px;">
 ]
 
 
@@ -699,6 +695,10 @@ Long tradition of the US military being "apolitical", but what does this mean?
 
 --
 
+- A-political versus non-partisan
+
+--
+
 - But there's a puzzle: How do we "reconcile a military strong enough to do anything the civilians ask with a military subordinate enough to do only what civilians authorize?" (Feaver 2003, 2)
 
 --
@@ -717,8 +717,9 @@ Long tradition of the US military being "apolitical", but what does this mean?
 
 - The military is inherently political
 - How we manage it is inherently political
-- Keeping it "a-poltical" is a fundamentally political question
+- Keeping it "a-poltical" or more accurately "non-partisan" is a fundamentally political question.
 
+- civilian-military interactions happen at two levels: Elite policymakers and mass civilian/military levels.
 
 
 
@@ -988,4 +989,18 @@ class: center, middle
 </row>
 </rows>
 
-<figcaption>The current outcry over the "woke" US military. Top panel: An article published on Fox News online on October 11, 2022. Bottom panel: Results of the 2021 DoD Youth Survey.</figcaption>
+<figcaption>The outcry over the "woke" US military. Top panel: An article published on Fox News online on October 11, 2022. Bottom panel: Results of the 2021 DoD Youth Survey.</figcaption>
+
+
+???
+
+Notes:
+
+- In general, people don't have a good understanding of why people join the military
+
+- 43% of individuals surveyed list pay and benefits as a primary reason for joining.
+This is the largest single reason listed.
+
+- "Perhaps the survey’s most surprising finding is the large gulf between respondents with military experience in the AVF and their families. Veterans of the AVF and active-duty service members are more likely to acknowledge that the market matters in service members’ decisions to join the military, but their families are more prone to deny its role in these decisions." See [Krebs and Ralston 2020](https://doi.org/10.1177/0095327X20917166)
+
+- Does Diversity Equity and Inclusion training crowd out "more important" types of military training? Sergeant Major of the U.S. Army Michael Grinston reported in Congressional testimony on March 9, 2022: "As the sergeant major of the U.S. Army, Michael Grinston, stated in recent congressional testimony: “When I looked at it, there is one hour of equal opportunity training in basic training, and 92 hours of rifle marksmanship training.” He then added, “And if you go to [One Station Unit Training], there is 165 hours of rifle marksmanship training and still only one hour of equal opportunity training." See [Risa Brooks War on the Rocks article here](https://warontherocks.com/2023/04/how-the-anti-woke-campaign-against-the-u-s-military-damages-national-security/).

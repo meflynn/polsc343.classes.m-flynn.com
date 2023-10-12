@@ -29,26 +29,14 @@ library(rgdal) # used to read world map data
 library(rgeos) 
 library(maptools)
 library(ggmap)
+library(flynnprojects)
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
 
+sysfonts::font_add_google(name = "Oswald", family = "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
 
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = 12, base_family = "Arial") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = 18, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = 12, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = 8, hjust = 1, margin = margin(t = 0.2, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black"),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = 12),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", hjust = 0))
-  }
 ```
 
 
@@ -329,14 +317,16 @@ National Security Council:
 
 - President chairs all NSC meetings
 
-- Principals’ Committee
+- Statutory members:
 
   - President
   - Vice President
   - Secretary of State
   - Secretary of Defense
   - Secretary of Energy
-
+  - Secretary of the Treasury
+  - Director of the Office of Pandemic Preparedness and Response
+  - Such other officers of the United States Government as the President may designate
 
 ???
 ### Organization of the NSC
@@ -347,6 +337,8 @@ National Security Council:
   - Secretary of State
   - Secretary of Defense
   - Secretary of Energy
+  - Secretary of the Treasury
+  - Director of the Office of Pandemic Preparedness and Response
   - [See here for US Code](https://www.law.cornell.edu/uscode/text/50/3021)
   
 - Formerly included:
@@ -368,7 +360,7 @@ National Security Council:
   - US representative to the United Nations
   
 - Principals Committee is the primary senior inter-agency forum for NSC issues and planning. “The Principals Committee (PC) shall continue to serve as the Cabinet-level senior interagency forum for considering policy issues that affect the national security interests of the United States.” 
-- Was in the news a lot during the early Trump administration when Steve Bannon, the president’ chief political strategist, has been given a place on the NSC, and on the Principal’s Committee. Also because CJCOS has been removed as mandatory regular participant of NSC/PC. 
+- Was in the news a lot during the early Trump administration when Steve Bannon, the president’ chief political strategist, has been given a place on the NSC, and on the Principal’s Committee. Also because CJCOS has been removed as mandatory regular participant of NSC/PC. See [here](https://www.govinfo.gov/content/pkg/FR-2017-02-02/pdf/2017-02381.pdf#page=1) for memorandum outlining membership at the beginning of the Trump Administration. This was rescinded in April by another memo.
 - Deputies Committee is similar, but consists of agency deputies. 
 - Executive staff. NSC is broken down into a number of issue planning committees. Staff size has varied over time and current debates center around shrinking the size of the NSC. 
 
@@ -505,8 +497,8 @@ class: center, middle
 </figure>
 
 ???
-### Iran and the Shan
-- US embassy and CIA largely reliant on the Shan for intelligence. This presented them with a distorted view of domestic stability.
+### Iran and the Shah
+- US embassy and CIA largely reliant on the Shah for intelligence. This presented them with a distorted view of domestic stability.
 - Shah suppressed alternative sources.
 - Accounts suggest that Colin Powell was frozen out of the Bush administration’s deliberations. This prevents him from giving advice. 
 
@@ -560,7 +552,7 @@ cap.1 <- ggplot(data = cap.data %>% filter(year >= 1919 & year <= 1945 & ccode =
                                              year >= 1919 & year <= 1945 & ccode == 255),
                 aes(x = year, y = cinc, group = stateabb, color = stateabb, linetype = stateabb)) +
   geom_line(size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 12, base_family = "oswald") +
   theme(text = element_text(size = 16)) +
   scale_color_brewer(palette = "Set2") +
   guides(linetype = FALSE) +
@@ -593,7 +585,7 @@ cap.2 <- ggplot(data = cap.data %>% filter(year >= 1979 & ccode == 2 |
                                             year >= 1979 & ccode == 630),
                 aes(x = year, y = cinc, group = stateabb, color = stateabb, linetype = stateabb)) +
   geom_line(size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 12, base_family = "oswald") +
   theme(text = element_text(size = 16)) +
   scale_color_brewer(palette = "Set2") +
   guides(linetype = FALSE) +

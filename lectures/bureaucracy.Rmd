@@ -32,27 +32,18 @@ library(maptools)
 library(ggmap)
 library(colorRamps)
 library(RColorBrewer)
+library(flynnprojects)
+library(showtext)
+library(sysfonts)
 
+font_add_google(name = "Oswald", family = "oswald")
+showtext_auto()
+showtext_opts(dpi = 300)
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
 
 
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = 12, base_family = "Arial") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = 18, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = 12, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = 8, hjust = 1, margin = margin(t = 0.2, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black"),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = 12),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", hjust = 0))
-}
+
 
 ```
 
@@ -119,7 +110,7 @@ B <- readstata13::read.dta13(here("../../../Projects/Dissertation/Dissertation D
 
   ggplot(data = B) +
   geom_line(aes(x = year, y = bureaucrat), size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 12, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1950, 2010, 10)) +
     scale_y_continuous(breaks = seq(0, 20, 5)) +
     labs(x = "Year",
@@ -138,7 +129,7 @@ class: center, middle
 
 ggplot(data = B) +
   geom_line(aes(x = year, y = bur_prop), size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 12, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1950, 2010, 10)) +
     scale_y_continuous(breaks = seq(0, 1, 0.2)) +
     labs(x = "Year",
@@ -157,7 +148,7 @@ class: center, middle
 ```{r educ}
   ggplot(data = B) +
   geom_bar(aes(x = year, y = mode_education), stat = "identity", size = 0.1, fill = "deepskyblue", color = "black") +
-  theme_flynn() +
+  theme_flynn(base_size = 12, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1950, 2010, 10)) +
     scale_y_continuous(breaks = seq(0, 3, 1), labels = c("No College", "Bachelor's", "Master's", "Doctoral/JD")) +
     labs(x = "Year",
@@ -176,7 +167,7 @@ class: center, middle
 ```{r business-exp}
 ggplot(data = B) +
   geom_line(aes(x = year, y = business + financial), size = 2) +
-  theme_flynn() +
+  theme_flynn(base_size = 12, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1950, 2010, 10)) +
     scale_y_continuous(breaks = seq(0, 15, 5)) +
     labs(x = "Year",
