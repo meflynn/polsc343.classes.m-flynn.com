@@ -44,52 +44,15 @@ library(ggrepel)
 library(brms)
 library(tidybayes)
 library(ggdist)
+library(flynnprojects)
 
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
 
 sysfonts::font_add_google("Oswald", family = "oswald")
 showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
 
-basesize <- 40
-
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = basesize, base_family = "oswald") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = basesize*1.35, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = basesize * 1.2, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = basesize*0.9, hjust = 1, margin = margin(t = 0, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black", size = 0.15),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = basesize),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", size = basesize * 1.1, hjust = 0, margin = margin(b = 0, unit = "cm")),
-              legend.text = element_text(size = basesize, hjust = 0, margin = margin(l = -0.35, unit = "cm")))
-}
-
-theme_flynn_map <- function(){
-  
-  theme_void(base_size = basesize, base_family = "oswald") %+replace% 
-    
-    theme(plot.title = element_text(face = "bold", size = basesize*1.35, hjust = 0, margin = margin(t = 0, b = 0.1, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = basesize * 1.2, hjust = 0, margin = margin(t = 0, b = 0.0, l = 0, r = 0, unit = "cm")),
-              plot.caption = element_text(face = "italic", size = basesize*0.9, hjust = 1, margin = margin(t = 0, unit = "cm")),
-          strip.background = element_rect(fill = "gray80", color = "black"),
-          strip.text = element_text(size = basesize, color = "black", face = "bold"),
-          panel.grid.major = element_line(color = "white", size = 0),
-          panel.grid.minor = element_line(color = "white", size = 0),
-          #axis.title = element_text(face = "bold", size = 0),
-          #axis.title.y = element_text(margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-          #axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-          legend.title = element_text(face = "bold", lineheight = 1),
-          legend.position = "bottom",
-          legend.key.height = unit(0.6, "cm"),
-          legend.key.width = unit(2.5, "cm"))
-}
 
 ```
 
@@ -262,7 +225,7 @@ combined <- tibble(year = seq(1815, 2016)) %>%
 # US allies over time
 ggplot(data = combined, aes(x = year, y = allies)) +
   geom_line(size = 1.5) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(1815, 2016, 20)) +
   scale_y_continuous(breaks = seq(0, 70, 10), limits = c(0, 70)) +
   labs(x = "Year",
@@ -298,7 +261,7 @@ allydataregion <- read.csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_
 ggplot(allydataregion, aes(x = year, y = allycount, fill = region)) +
   geom_bar(position = "stack", stat = "identity", color = "black", size = 0.1) +
   scale_fill_brewer(palette = "Set2") +
-  theme_flynn() + 
+  theme_flynn(base_family = "oswald", base_size = 12) + 
   labs(x = "Year",
        y = "Count",
        title = "US defense pacts by geographic region, 1942-2016",
@@ -382,7 +345,7 @@ time.data <- troops.data %>%
 ggplot(data = subset(time.data, group == "Total Foreign" 
                      | group == "Total Worldwide"), aes(x = year, y = value, group = group, fill = group)) +
   geom_area(position = "identity", alpha = .8, color = "black", size = .1) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_y_continuous(breaks = seq(0, 3500000, 500000), labels = comma_format()) +
   scale_x_continuous(breaks = seq(1950, 2005, 5)) +
   scale_fill_brewer(palette = "Set2") +
@@ -408,7 +371,7 @@ class: center, middle
 # percent overseas
 ggplot(data = subset(time.data, group == "Percent Overseas"), aes(x = year, y = value/100, group = group, fill = group)) +
   geom_line(size = 1.5) + 
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_y_continuous(breaks = seq(.12, .32, .04), limits = c(.12, .32), labels = percent_format()) +
   scale_x_continuous(breaks = seq(1950, 2005, 5)) +
   labs(x = "Year",
@@ -447,7 +410,7 @@ treemap.plot <- ggplot(treeplot.data, aes(area = troops, fill = region, label = 
   geom_treemap() +
   geom_treemap_text() +
   facet_wrap(. ~ year) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   theme(legend.position = "bottom") +
   scale_fill_brewer(palette = "Spectral") +
   labs(fill = "Region")
@@ -482,12 +445,12 @@ alluvial.data <- peacesciencer::cow_alliance %>%
 alluvialplot <- ggplot(alluvial.data, aes(y = level, weight = level, axis1 = branch, axis2 = region, fill = branch)) +
   geom_alluvium(alpha = 0.5, width = 1/14) +
   geom_stratum(width = 1/12, fill = "gray80", color = "black", size = 0.1) +
-  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 1, after_stat(as.character(stratum)), NA), fill = branch, fontface = "bold"), size = basesize*.80, hjust = "left", nudge_x = -0.25, direction = "x", point.padding = 0, box.padding = 0.1, label.padding = 0.15, max.iter = Inf, show.legend = FALSE, alpha = 0.6) +
-  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 2, after_stat(as.character(stratum)), NA), fontface = "bold"), fill = "white", size = basesize*.80, hjust = "right", nudge_x = 0.38, direction = "y", point.padding = 0, box.padding = 0.1, label.padding = 0.15,  max.iter = Inf, min.segment.length = 0.15)+
+  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 1, after_stat(as.character(stratum)), NA), fill = branch, fontface = "bold"), size = 11, hjust = "left", nudge_x = -0.25, direction = "x", point.padding = 0, box.padding = 0.1, label.padding = 0.15, max.iter = Inf, show.legend = FALSE, alpha = 0.6) +
+  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 2, after_stat(as.character(stratum)), NA), fontface = "bold"), fill = "white", size = 11, hjust = "right", nudge_x = 0.38, direction = "y", point.padding = 0, box.padding = 0.1, label.padding = 0.15,  max.iter = Inf, min.segment.length = 0.15)+
   scale_y_continuous(expand = c(0.0, 0.0)) + 
   scale_x_continuous(expand = c(0.15, 0.25)) + 
   scale_fill_manual(values = c("#00308f", "#ffd530","#CC0000", "#088199")) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   theme(legend.position = "bottom", 
         axis.text.x = element_blank(),
         axis.text.y = element_blank(),
@@ -639,7 +602,7 @@ fat.data <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-
 ggplot(fat.data, aes(x = Year, y = deaths, fill = country)) +
   geom_bar(stat = "identity", position = "stack", color = "black", size = 0.1) +
   facet_wrap(. ~ War) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_fill_brewer(palette = "Set2") +
   labs(x = "Year",
        y = "Count",
@@ -673,7 +636,7 @@ fat.perc <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-
 
 ggplot(fat.perc, aes(x = Year, y = percent, color = War, linetype = War)) +
   geom_line(size = 1.5) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_color_brewer(palette = "Set2") +
   scale_y_continuous(labels = percent_format()) +
   scale_x_continuous(breaks = seq(2000, 2020, 4)) +
@@ -753,7 +716,7 @@ natodata <- readxl::read_xlsx(here("../../../Projects/Republican opposition to m
 # All votes concerning NATO by year
 ggplot(data = natodata %>% filter(Category != "All Votes"), aes(x = Year, y = count, fill = Category)) +
   geom_bar(stat = "identity", position = "stack", size = 0.1) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(1950, 2015, 5)) +
   scale_y_continuous(breaks = seq(0, 15, 5), limits = c(0,15)) +
   scale_fill_brewer(palette = "Set2") +
@@ -1024,7 +987,7 @@ combined <- tradedata %>%
 ggplot() +
   geom_line(data = combined, aes(x = year, y = index, linetype = defense, color = defense), size = 1.5) +
   geom_line(data = combined %>% filter(defense == "Non-US Allies"), aes(x = year, y = index_nochina, linetype = "longdash", color = "Non-US Allies (No China)"), size = 1.5) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(1950, 2020, 5)) +
   scale_y_continuous() +
   scale_color_brewer(palette = "Set2") +
@@ -1267,7 +1230,7 @@ density.df <- bind_rows(den.df, den.df.allies, den.df.nonallies)
 
 ggplot(density.df, aes(x =  year, y = density, color = ally, linetype = ally)) +
   geom_line(size = 2) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(1950, 2020, 5)) +
   scale_color_brewer(palette = "Set2") +
   guides(linetype = FALSE) +
@@ -1346,7 +1309,7 @@ colourCount = length(unique(spend1$country))
 # Note I needed a custom Brewer palette here because there were too many countries
 ggplot(data = spend1, aes(x = year, y = total, group = as.factor(country), colour = as.factor(country), linetype = as.factor(country))) +
   geom_line(size = 1.5)+
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(2013, 2020, 1)) +
   scale_y_continuous(labels = scales::dollar) +
   labs(y = "Millions of current dollars",
@@ -1379,7 +1342,7 @@ opmain.ts <- read.csv("../../../Projects/Minerva grant documents/Military Spendi
 
 ggplot(opmain.ts, aes(x = factor(year), y = toa.mean, color = country)) +
   geom_jitter(width = 0.2, height = 2, size = 3, alpha = 0.8) +
-  theme_flynn() + 
+  theme_flynn(base_family = "oswald", base_size = 12) + 
   scale_y_continuous(labels = dollar_format()) +
   scale_color_manual(values = getPalette(colourCount)) +
   labs(x = "Year",
@@ -1406,7 +1369,7 @@ map <- map_data("world")
 ggplot() + 
   geom_polygon(data = map, aes(x = long, y = lat, group = group), colour = "black", size = .1, fill = "gray90") +
   geom_point(data = opmain, aes(x = lon, y = lat, size = toa.sum), color = "red3", alpha = .4) +
-  theme_flynn() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(-20, 180, 40)) +
   scale_y_continuous(breaks = seq(-40, 80, 40)) +
   coord_fixed(xlim = c(-20, 180), ylim = c(-40, 80)) +
@@ -1521,7 +1484,7 @@ base.data <- troopdata::get_basedata(host = 255)
 germany.troop.fig <- troopdata::get_troopdata(host = 255, startyear = 2020, endyear = 2020) %>% 
   mutate(troops = comma(troops))
 
-load("C:/Users/flynn/Dropbox/Projects/Minerva grant documents/Book/Data/General/opinion.data.RData")
+load(here::here("../../../Projects/Minerva grant documents/Book/Data/General/opinion.data.RData"))
 
 opinion.data <- o.data %>% 
   filter(ccode == 255) %>% 
