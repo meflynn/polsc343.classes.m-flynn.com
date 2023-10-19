@@ -980,16 +980,17 @@ class: center, middle
 <img src="../images/woke-military-fox.jpg" width=800px" height="170px">
 </row>
 
-<hr>
+<hr style="height: 3px; color:#333; border: 0; background-color: #333;">
 
 <row>
-<img src="../images/jamrs-dod-youth-survey-2.jpg" width="400px" height="300px">
-<img src="../images/jamrs-dod-youth-survey.jpg" width="400px" height="300px">
+<img src="../images/jamrs-dod-youth-survey-2.jpg" width="320px" height="250px">
+<img src="../images/jamrs-dod-youth-survey.jpg" width="320px" height="250px">
+<img src="../images/jamrs-dod-youth-survey-3.jpg" width="320px" height="250px">
 
 </row>
 </rows>
 
-<figcaption>The outcry over the "woke" US military. Top panel: An article published on Fox News online on October 11, 2022. Bottom panel: Results of the 2021 DoD Youth Survey.</figcaption>
+<figcaption>The outcry over the "woke" US military. Top panel: An article published on Fox News online on October 11, 2022. Bottom panel: Results of the 2022 DoD Youth Survey.</figcaption>
 
 
 ???
