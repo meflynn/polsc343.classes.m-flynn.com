@@ -1557,13 +1557,11 @@ map.troops <- ggplot() +
 # One map to rule them all
 map.com <- patchwork::wrap_plots(map.troops, map.gov, map.people) + 
   patchwork::plot_layout(guides = "collect") +
-  patchwork::plot_annotation(title = glue::glue("<span style='font-size:65pt; color: #000000'>**German Attitudes Towards U.S. Actors**</span><br>",
-                               "<span style='font-size:40pt; color: #778899;'>_The figure shows the percent of respondents in each region expressing a 'very positive' or 'somewhat positive' view of the referent group. Red dots show location of U.S. military facilities from Vine (2015). As of 2020 there were {germany.troop.fig$troops} U.S. personnel in Germany. Surveys conducted by the authors from 2018-2020._</span>"),
-                  theme = theme_flynn_map()) &
-  theme_flynn_map() &
+  patchwork::plot_annotation(title = glue::glue("<span style='font-size:16pt; color: #000000'>**German Attitudes Towards U.S. Actors**</span><br>",
+                               "<span style='font-size:14pt; color: #778899;'>_The figure shows the percent of respondents in each region expressing a 'very positive' or 'somewhat positive' view of the referent group. Red dots show location of U.S. military facilities from Vine (2015). As of 2020 there were {germany.troop.fig$troops} U.S. personnel in Germany. Surveys conducted by the authors from 2018-2020._</span>")) &
   theme(legend.position = "bottom",
         legend.title = element_text(face = "bold", lineheight = 0.5),
-        legend.text = element_text(size = 25),
+        legend.text = element_text(size = 11),
           legend.key.height = unit(0.6, "cm"),
           legend.key.width = unit(2.5, "cm"),
         plot.title = element_textbox_simple(
