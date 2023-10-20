@@ -493,6 +493,15 @@ class: center, middle
 
 
 
+---
+class: center, middle
+
+<figure>
+<img src="../images/himars-ukraine-2023.jpg" style="width:700px; height:400px">
+<figcaption>U.S. High Mobility Artillery Rocket System (HIMARS) firing inside Ukraine. Photo obtained from Ukrainian Ministry of Defense/Twitter via Task and Purpose https://taskandpurpose.com/news/us-military-sending-atacms-missiles-to-ukraine-reports/</figcaption>
+</figure>
+
+
 
 ---
 class: center, middle
