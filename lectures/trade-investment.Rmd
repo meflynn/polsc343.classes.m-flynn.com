@@ -41,6 +41,7 @@ knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE
 
 sysfonts::font_add_google("Oswald", family = "oswald")
 showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
 
 
 ```
@@ -390,6 +391,16 @@ class: center, middle
 </figure>
   
   
+
+???
+
+# Notes
+
+- US has close relations with Saudi government, 1930s through present.
+- US companies win concessions to look for oil in 1938. Saudi government wary of European countries with colonial pasts. Favor US.
+- Arabian American Oil Company (Aramco) finds Saudi oil reserves in 1944. Saudi government steadily buys out foreign interests through 1980.
+- US wary of broader Middle East region and energy reserves. Objects to USSR trying to establish foothold in region after WWII.
+
   
 ---
 class: left, top
