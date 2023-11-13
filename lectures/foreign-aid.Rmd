@@ -1,0 +1,540 @@
+---
+title: "US Foreign Policy"
+subtitle: "Foreign Aid"
+author: "Michael E. Flynn"
+institute: "Kansas State University"
+date: "Updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "lecture_theme.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+      titleSlideClass: [left, middle, inverse]
+---
+```{r setup, include = FALSE, echo = FALSE}
+library(tidyverse)
+library(tidyquant)
+library(plotly)
+library(scales)
+library(here)
+library(Hmisc)
+library(kableExtra)
+library(knitr)
+library(lubridate)
+library(rgdal) # used to read world map data
+library(rgeos) 
+library(rvest)
+library(maptools)
+library(ggmap)
+library(colorRamps)
+library(RColorBrewer)
+library(flynnprojects)
+
+sysfonts::font_add_google(name = "Oswald", family = "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
+
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
+
+
+```
+
+
+# Lecture Overview
+
+1. Historical Background
+
+2. Trends in foreign aid
+
+3. Why give foreign aid?
+
+4. How to give aid?
+
+
+
+
+---
+class: left, top
+
+# Key Questions
+
+1. What are the historical roots of the post-War US foreign aid regime?
+
+2. Is aid selfish or selfless? How can it serve multiple purposes?
+
+3. How do aid delivery channels provide policymakers with greater flexibility?
+
+4. What are the advantages/disadvantages to giving aid through particular channels?
+
+
+
+---
+class: center, middle, inverse
+
+# Historical Overview
+
+
+
+---
+class: left, top
+
+# Pre-Cold War Period
+
+.pull-left[
+
+How did the US give aid?
+
+- It mostly didn't
+
+- No institutionalized foreign aid apparatus
+
+- Aid often given in the form of loans and grants
+
+- Typically on an ad hoc basis
+
+To right: [Poster for the American Relief Administration. Raising funds for food aid to help with Russian famine in 1921.](https://www.archives.gov/calendar/event/deliverance-america-and-the-famine-in-soviet-russia-1921-1923)
+
+]
+
+.pull-right[
+
+```{r, out.width="80%", fig.pos="center"}
+knitr::include_graphics("../images/ara-poster.jpg", 
+                        error = FALSE)
+```
+
+]
+
+
+
+---
+class: top, left
+
+# Post-World War II Period
+
+.pull-left[
+Cold War and Post-Cold War
+
+- First instance of systematic, institutionalized, peace-time foreign aid programs
+
+- US begins giving economic aid to promote economic recovery after WWII
+
+- Scope expands over time to promote a wide range of other outcomes
+
+To right: [Secretary of State General George C. Marshall testifying before the House Appropriations Committee on the need for a massive economic aid effort to assist Europe’s postwar recovery, January 1948.](https://origins.osu.edu/read/marshall-plan?language_content_entity=en)
+]
+
+.pull-right[
+<br>
+```{r, out.width="80%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-testimony.jpg", 
+                        error = FALSE)
+```
+]
+
+
+
+---
+class: left, top
+
+```{r aid-time-series}
+
+aid.time <- data.table::fread(here::here("../Data/us_foreign_aid_country.csv"))
+
+aid.time.clean <- aid.time |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  group_by(`Fiscal Year`) |> 
+  dplyr::summarise(aid_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(across(everything(), ~as.numeric(.x)))
+
+ggplot(data = aid.time.clean, aes(x = `Fiscal Year`, y = aid_total)) +
+  geom_area(fill = "deepskyblue2", color = "black", size = 0.1) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1950, 2020, 10)) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(y = "Constant US Dollars",
+       title = "Total U.S. Foreign Aid Obligations, 1949 <- 2024")
+
+```
+
+---
+class: left, top
+
+# Post-World War II Period
+
+<div class="row">
+
+```{r, out.width="28%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-plan-and-you-1.jpeg", 
+                        error = FALSE)
+```
+
+```{r, out.width="28%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-plan-and-you-2.jpeg", 
+                        error = FALSE)
+```
+
+```{r, out.width="28%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-plan-and-you-3.jpeg", 
+                        error = FALSE)
+```
+
+</div>
+
+
+---
+class: center, middle
+
+# Post-World War II Period
+
+
+<div class="row">
+
+```{r, out.width="28%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-plan-and-you-4.jpeg", 
+                        error = FALSE)
+```
+
+```{r, out.width="28%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-plan-and-you-5.jpeg", 
+                        error = FALSE)
+```
+
+```{r, out.width="28%", fig.pos="center"}
+knitr::include_graphics("../images/marshall-plan-and-you-6.jpeg", 
+                        error = FALSE)
+```
+
+</div>
+
+
+
+
+---
+class: left, top
+
+# What Does Aid Look Like?
+
+Aid can take on a variety of forms:
+
+- Cash grants
+
+- Loans
+
+- Credit
+
+- Food
+
+
+
+---
+class: center, middle
+
+```{r}
+aid.sector <- data.table::fread(here::here("../Data/us_foreign_aid_usg_sector.csv"))
+
+aid.sector.clean <- aid.sector |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  group_by(`Fiscal Year`, `US Category Name`) |> 
+  dplyr::summarise(constant_cat_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(constant_cat_total = as.numeric(constant_cat_total),
+        `US Category Name` = factor(`US Category Name`))
+
+ggplot(data = aid.sector.clean, aes(x = `Fiscal Year`, y = constant_cat_total , fill = `US Category Name`)) +
+  geom_bar(stat = "identity", color = "white", size = 0.1) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow=4)) +
+  scale_y_continuous(labels = scales::comma_format()) + 
+  viridis::scale_fill_viridis(discrete = TRUE,
+                              option = "plasma") +
+  labs(x = "Fiscal Year",
+       y = "Constant Dollars",
+       fill = "Aid Category",
+       title = "U.S. Foreign Aid by US Category Name")
+  
+```
+
+
+
+---
+class: left, top
+
+# Who Delivers Aid?
+
+Lots of people and groups
+
+- Aid can be delivered by different governmental organizations
+
+- Aid can also be delivered by various private actors
+
+  - Private charities
+  
+  - Non-profits
+  
+  - Hospitals
+  
+  - Religious organizations
+  
+  
+  
+---
+class: left, top
+
+```{r aid-implementing}
+
+aid.implementing <- data.table::fread(here::here("../Data/us_foreign_aid_implementing.csv"))
+
+aid.implementing.clean <- aid.implementing |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  group_by(`Fiscal Year`, `Managing Agency Name`) |> 
+  dplyr::summarise(aid_constant_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(aid_constant_total = as.numeric(aid_constant_total),
+         `Managing Agency Name` = factor(`Managing Agency Name`))
+
+
+ggplot(data = aid.implementing.clean, aes(x = `Fiscal Year`, y = aid_constant_total , fill = `Managing Agency Name`)) +
+  geom_bar(stat = "identity", color = "white", size = 0.1) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow=8)) +
+  scale_y_continuous(labels = scales::comma_format()) + 
+  viridis::scale_fill_viridis(discrete = TRUE,
+                              option = "plasma") +
+  labs(x = "Fiscal Year",
+       y = "Constant Dollars",
+       fill = "Aid Category",
+       title = "U.S. Foreign Aid by Managing Agency")
+```
+
+
+
+---
+class: center, middle, inverse
+
+# Why Give Foreign Aid?
+
+
+
+---
+class: left, top
+
+# Why Give Foreign Aid?
+
+
+- States give foreign aid for lots of reasons
+
+- We can think of these in broad terms, like humanitarian and strategic motivations
+
+  - Poverty reduction
+  
+  - Promote trade
+  
+  - Support allies
+  
+  - Support domestic economic interests
+  
+  - Deter adversaries
+  
+  - Promote global public health
+  
+  
+???
+#Notes
+
+- Note that it's tempting to view aid in purely binary terms (selfish or selfless)
+- But lots of aid can serve both ends. Global health and pandemic prevention initiatives can bolster health infrastructure around the world and prevent problems before they arise. 
+
+
+
+---
+class: center, middle
+
+
+```{r aid-time-series-subsaharan-africa}
+
+aid.time.clean <- aid.time |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  filter(`Region Name` %in% c("Sub-Saharan Africa")) |> 
+  group_by(`Fiscal Year`) |> 
+  dplyr::summarise(aid_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(aid_total = as.numeric(aid_total),
+         `Fiscal Year` = as.numeric(`Fiscal Year`))
+
+ggplot(data = aid.time.clean |> filter(`Fiscal Year` < 2022), aes(x = `Fiscal Year`, y = aid_total)) +
+  geom_vline(xintercept = 1979, size = 1.5) +
+  geom_line(size = 1.2) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  viridis::scale_color_viridis(discrete = TRUE,
+                               option = "plasma",
+                               begin = 0.2, 
+                               end = 0.8) +
+  scale_x_continuous(breaks = seq(1950, 2020, 10)) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(y = "Constant US Dollars",
+       title = "Total U.S. Foreign Aid Obligations to Sub-Saharan Africa over time")
+
+```
+
+???
+# Notes
+
+PEPFAR - Presidents Emergency Plan on AIDS Relief
+
+- Launched by George W. Bush in 2003
+- Estimated to have saved over 25 million lives
+- Provides education, medical care, treatments, and other services to help reduce HIV transmission
+
+---
+class: left, top
+
+```{r, hiv-aids}
+
+aid.sector.pepfar <- aid.sector |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  filter(`US Sector Name` == "HIV/AIDS") |> 
+  group_by(`Fiscal Year`) |> 
+  dplyr::summarise(aid_constant_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(across(everything(), ~as.numeric(.x)))
+
+ggplot(data = aid.sector.pepfar, aes(x = `Fiscal Year`, y = aid_constant_total)) +
+  geom_area(color = "black", fill = "dodgerblue2", size = 0.1) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(x = "Fiscal Year",
+       y = "Constant Dollars",
+       fill = "Aid Category",
+       title = "U.S. HIV and AIDS Relief Obligations, 2001--2024")
+```
+
+
+---
+class: left, top
+
+# Why Give Foreign Aid?
+
+.pull-left[
+Camp David Peace Accords
+
+- Four major wars between Israel and Egypt before the Accords were signed in 1978
+
+- Zero wars since 1978
+
+- Egypt regained control of Sinai Penninsula after losing it in the Six-Day War in 1967
+
+- Israel gained first formal recognition from an Arab State
+
+To right: [President Jimmy Carter (center) with Egyptian President Anwar Sadat (left) and Israeli Prime Minister (Menachem Begin) sign the Camp David Accords, September 17, 1978.](https://il.usembassy.gov/the-camp-david-accords-40-years-later/)
+
+]
+
+.pull-right[
+```{r camp-david-image, out.width="90%"}
+knitr::include_graphics("../images/camp-david-accords.jpeg", 
+                        error = FALSE)
+```
+]
+
+
+---
+class: center, middle
+
+```{r aid-time-series-israel-egypt}
+
+aid.time.clean <- aid.time |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  filter(`Country Name` %in% c("Egypt", "Israel")) |> 
+  group_by(`Fiscal Year`, `Country Name`) |> 
+  dplyr::summarise(aid_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(aid_total = as.numeric(aid_total),
+         `Fiscal Year` = as.numeric(`Fiscal Year`),
+         `Country Name` = as.character(`Country Name`))
+
+ggplot(data = aid.time.clean |> filter(`Fiscal Year` < 2022), aes(x = `Fiscal Year`, y = aid_total, color = `Country Name`)) +
+  geom_vline(xintercept = 1979, size = 1.5) +
+  geom_line(size = 1.2) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  viridis::scale_color_viridis(discrete = TRUE,
+                               option = "plasma",
+                               begin = 0.2, 
+                               end = 0.8) +
+  scale_x_continuous(breaks = seq(1950, 2020, 10)) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(y = "Constant US Dollars",
+       title = "Total U.S. Foreign Aid Obligations to Egypt and Israel over time")
+
+```
+
+
+
+---
+class: center, middle
+
+```{r aid-time-series-pakistan}
+
+aid.time.clean <- aid.time |> 
+  filter(`Transaction Type Name` == "Obligations") |> 
+  filter(`Country Name` %in% c("Pakistan")) |> 
+  group_by(`Fiscal Year`, `Country Name`) |> 
+  dplyr::summarise(aid_total = sum(constant_amount, na.rm = TRUE)) |> 
+  mutate(aid_total = as.numeric(aid_total),
+         `Fiscal Year` = as.numeric(`Fiscal Year`),
+         `Country Name` = as.character(`Country Name`))
+
+ggplot(data = aid.time.clean |> filter(`Fiscal Year` < 2022 & `Fiscal Year` >=1979), aes(x = `Fiscal Year`, y = aid_total, color = `Country Name`)) +
+  geom_line(size = 1.2) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  viridis::scale_color_viridis(discrete = TRUE,
+                               option = "plasma",
+                               begin = 0.2, 
+                               end = 0.8) +
+  scale_x_continuous(breaks = seq(1950, 2020, 10)) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(y = "Constant US Dollars",
+       title = "Total U.S. Foreign Aid Obligations to Pakistan over time")
+
+```
+
+
+---
+class: left, top
+
+# Why Give Foreign Aid?
+
+Domestic Political Factors
+
+- Partisanship
+
+- Ideological orientation
+
+- Constituent economic interests
+
+
+
+
+---
+class: center, middle
+
+```{r}
+
+aid.table <- tribble(~"District Characteristics", ~"Economic Aid", ~"Food Aid", ~"Military Aid",
+                    "Right Ideology",  "-", "-", "+",
+                    "Left Ideology",  "+", "+", "-",
+                    "Republican Presidential Vote Share",  "-", "NULL", "+",
+                    "High-Skill",  "+", "NULL", "NULL",
+                    "Land Productivity",  "N/A", "+", "N/A",
+                    "Median Income",  "+", "NULL", "-",
+                    "Unemployment",  "NULL", "NULL", "NULL",
+                    "% Foreign Born",  "+", "NULL", "NULL") |> 
+  kableExtra::kbl(caption = "Congressional Voting and Support For Aid") |> 
+  kable_styling(full_width = TRUE) |> 
+  row_spec(row = 0, background = "black", color = "white", bold = TRUE) |> 
+  add_footnote(label = "Results taken from: Helen V. Milner and Dustin H. Tingley. 2010. The Political Economy of US Foreign Aid: American Legislators and the Domestic Politics of Aid. Economics and Politics. 22(2): 200–232.")
+
+aid.table
+
+```

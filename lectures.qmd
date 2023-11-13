@@ -32,6 +32,8 @@ This page contains lectures delivered throughout the semester. You can click on 
 
 12. [Trade and Investment](lectures/trade-investment.html)
 
-13. [Human Rights](lectures/human-rights.html)
+13. [Foreign Aid](lectures/foreign-aid.html)
 
-14. [Multilateralism](lectures/multilateralism.html)
+14. [Human Rights](lectures/human-rights.html)
+
+15. [Multilateralism](lectures/multilateralism.html)
