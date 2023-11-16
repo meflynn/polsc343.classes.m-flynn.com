@@ -136,8 +136,24 @@ knitr::include_graphics("../images/marshall-testimony.jpg",
 ```
 ]
 
+???
+# Notes
 
+- Post-WWI economic recovery largely driven by private banks. 
+- John McCloy noted: “what took place after World War I was the forerunner to the Marshall Plan…but back then the rehabilitation of Europe was done in a private capacity,” (Isaacson & Thomas 1986, 122)
+- Foreign Assistance Act/Economic Recovery Act of 1948 (Public Law 472, the Marshall Plan)
+- Economic Cooperation Administration created by the Act in 1948. This becomes the Agency for International Development (AID). ECA was also involved in recovery of areas in Asia, including Korea and China.
+- Marshall Plan was also important as it prompted the creation of the Organization for European Economic Cooperation (1948), which became the Organization for Economic Cooperation and Development (OECD) in 1961. It was intended to help administer US funds and supplies.
 
+- Remarks by Senator William E. Jenner of Indiana (Congressional Record, 80th Congress, Second Session, Vol 94 Part 1, January 6, 1948 to February 19, 1948, 963-966): 
+
+    “If our purpose is honestly and actually to prevent Communist expansion I would explain to [the American people] that the present administration and its predecessor are totally responsible for the Communist domination of in all that vast land mass from Berlin, across Europe and Asia, to the very waters of Alaska.”
+
+    "As one student of affairs and as a soldier who served in the European theater in the recent war, I long since have reached the conclusion that the nations of Europe are not in danger of communism today because they have run into a chain of economic crises. They have run into a chain of economic crises because they have succumbed to the illusions of a dictated economy, socialistic controls, and deliberate monetary inflation—those three things taken together, these have destroyed the mechanism of free enterprise and its irreplaceable incentives to self-respect and self-support."
+
+    "Lastly, I would recognize, above all things, the devious Oriental mind that guides Stalin to oppose the Marshall Plan on the carefully calculated assumption that his opposition will insure its passage."
+
+- Communists seize power in Czechoslovakia in late February, about a month after Jenner’s speech.
 ---
 class: left, top
 
@@ -312,6 +328,56 @@ ggplot(data = aid.implementing.clean, aes(x = `Fiscal Year`, y = aid_constant_to
 ```
 
 
+---
+class: center, middle
+
+```{r top-vendors}
+library(rvest)
+
+url <- "https://2012-2017.usaid.gov/results-and-data/budget-spending/top-40-vendors"
+
+url.content <- read_html(url) |> 
+  html_table() |> 
+  as.data.frame() |> 
+  dplyr::select(`Vendor.Name`, `FY.2014`) |> 
+  dplyr::slice(1:25) |> 
+  dplyr::rename("Vendor" = `Vendor.Name`, "FY 2014" = `FY.2014`) |> 
+  kbl(caption = "Top USAID Vendors, 2014") |>
+  kableExtra::kable_styling(font_size = 8) |> 
+  row_spec(0, color = "white", background = "black") 
+
+url.content
+```
+
+
+
+---
+class: left, top
+
+# Who Delivers Aid?
+
+Why does aid go to so many different actors?
+
+- Can help aid get directly to the people who need it most
+
+- Helps to avoid corrupt, uncooperative, or abusive governments
+
+- Helps to maintain a more robust array of public-private partnerships
+
+- Helps to support US firms and build overseas markets 
+
+
+
+---
+class: center, middle
+
+```{r ukraine-javelin, out.width="60%", fig.cap="A Ukrainian soldier fires a javelin anti-tank missile during a training exercise. Often the price tag on aid packages represents the value of money already spent, and often money that goes to US-based firms. https://www.bbc.com/news/world-us-canada-60774098"}
+knitr::include_graphics("../images/ukraine-javelin.jpg",
+                        error = FALSE)
+```
+
+
+
 
 ---
 class: center, middle, inverse
@@ -346,6 +412,22 @@ class: left, top
 ???
 #Notes
 
+Reasons to give foreign aid:
+- Promote development and poverty reduction
+- US gives lots of money to fund development projects. 
+- GW Bush administration dramatically increased aid to Africa as a part of the Millennium Development Goals and PEPFAR. Note that this can be strategic. Helps US build soft power.
+
+- Foreign assistance act of 1961 calls for US financial assistance to go towards promoting political and economic equality, political/economic equality for women, better infrastructural development, lower infant mortality rates, control of birthrates, increased agricultural productivity, 
+
+Promote trade:
+
+- Aid can help open up foreign markets to US goods.
+- Aid is often tied to contracts other other benefits for US products and firms. Example: Infrastructural development projects might go to US companies.
+
+- Treasury Secretary Robert Rubin on Multilateral aid through multilateral development banks: "The MDBs provide substantial benefits to the U.S. economy. Caterpillar of Peoria, Illinois estimates that it gets $250 million each year from contracts funded through the MDBs. These contracts help the economy in Illinois and have a ripple effect elsewhere through sub-contractors and suppliers. Other U.S. corporations also get major contracts from the MDBs."
+
+Reward/support allies
+US often requires the assistance of other states. US paid billions to Pakistan during the Afghanistan War for intelligence assistance, access to Pakistani territory, and help patrolling the borders.
 - Note that it's tempting to view aid in purely binary terms (selfish or selfless)
 - But lots of aid can serve both ends. Global health and pandemic prevention initiatives can bolster health infrastructure around the world and prevent problems before they arise. 
 
@@ -366,7 +448,6 @@ aid.time.clean <- aid.time |>
          `Fiscal Year` = as.numeric(`Fiscal Year`))
 
 ggplot(data = aid.time.clean |> filter(`Fiscal Year` < 2022), aes(x = `Fiscal Year`, y = aid_total)) +
-  geom_vline(xintercept = 1979, size = 1.5) +
   geom_line(size = 1.2) +
   theme_flynn(base_family = "oswald", base_size = 11) +
   viridis::scale_color_viridis(discrete = TRUE,
@@ -530,7 +611,8 @@ aid.table <- tribble(~"District Characteristics", ~"Economic Aid", ~"Food Aid", 
                     "Median Income",  "+", "NULL", "-",
                     "Unemployment",  "NULL", "NULL", "NULL",
                     "% Foreign Born",  "+", "NULL", "NULL") |> 
-  kableExtra::kbl(caption = "Congressional Voting and Support For Aid") |> 
+  kableExtra::kbl(caption = "Congressional Voting and Support For Aid",
+                  align = c("l", "c", "c", "c")) |> 
   kable_styling(full_width = TRUE) |> 
   row_spec(row = 0, background = "black", color = "white", bold = TRUE) |> 
   add_footnote(label = "Results taken from: Helen V. Milner and Dustin H. Tingley. 2010. The Political Economy of US Foreign Aid: American Legislators and the Domestic Politics of Aid. Economics and Politics. 22(2): 200–232.")
@@ -538,3 +620,11 @@ aid.table <- tribble(~"District Characteristics", ~"Economic Aid", ~"Food Aid", 
 aid.table
 
 ```
+
+
+???
+# Notes
+
+- Both parties give aid
+- Republicans may support lower overall totals, but they still use aid across a range of different programs.
+- They may also have different preferences over how aid is distributed. 
