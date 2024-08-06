@@ -10,7 +10,7 @@ csl: bib/apsr-bibliography.csl
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-mon <- as.Date("2023-08-21")
+mon <- as.Date("2024-08-19")
 
 advdate <- function(obj, adv){
   tmon <- obj + 7*(adv - 1)
@@ -202,7 +202,7 @@ pacman::p_load(
 #showtext::showtext_auto()
 
 # Create base data frame
-dfr <- data.frame(date=seq(as.Date('2023-08-01'), as.Date('2023-12-31'), by = 1))
+dfr <- data.frame(date=seq(as.Date('2024-08-01'), as.Date('2024-12-31'), by = 1))
 dfr$day <- factor(strftime(dfr$date,format="%a"), levels=c("Sun","Mon","Tue","Wed","Thu","Fri","Sat"))
 dfr$week <- factor(strftime(dfr$date,format="%U"))
 dfr$month <- factor(strftime(dfr$date,format="%B"),levels=c("August","September","October", "November", "December"))
@@ -210,21 +210,21 @@ dfr$ddate <- factor(strftime(dfr$date,format="%d"))
 
 # Label dates
 dfr$comment <- "Available"
-dfr$comment[dfr$date < as.Date("2023-08-21") | dfr$date>as.Date("2021-12-09")] <- NA
-dfr$comment[dfr$date==as.Date("2023-09-08")] <- "Song/album choice due"
-dfr$comment[dfr$date==as.Date("2023-09-22")] <- "Final song/album choice due"
-dfr$comment[dfr$date==as.Date("2023-10-27")] <- "Annotated bibliography due"
-dfr$comment[dfr$date==as.Date("2023-11-17")] <- "Wiki draft due"
-dfr$comment[dfr$date==as.Date("2023-12-08")] <- "Final Wiki due"
+dfr$comment[dfr$date < as.Date("2024-08-21") | dfr$date>as.Date("2024-12-13")] <- NA
+dfr$comment[dfr$date==as.Date("2024-09-08")] <- "Song/album choice due"
+dfr$comment[dfr$date==as.Date("2024-09-22")] <- "Final song/album choice due"
+dfr$comment[dfr$date==as.Date("2024-10-27")] <- "Annotated bibliography due"
+dfr$comment[dfr$date==as.Date("2024-11-17")] <- "Wiki draft due"
+dfr$comment[dfr$date==as.Date("2024-12-08")] <- "Final Wiki due"
 
 # Photo blogs
-dfr$comment[dfr$date==as.Date("2023-09-30")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2023-10-31")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2023-11-30")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2024-09-30")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2024-10-31")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2024-11-30")] <- "Blog post due"
 
 
 # Thanksgiving
-dfr$comment[dfr$date >= as.Date("2023-11-20") & dfr$date <= as.Date("2023-11-24")] <- "Thanksgiving Break"
+dfr$comment[dfr$date >= as.Date("2024-11-25") & dfr$date <= as.Date("2024-11-29")] <- "Thanksgiving Break"
 
 dfr$week <- as.numeric(dfr$week) - min(as.numeric(dfr$week) - 1)
 dfr$comment <- factor(dfr$comment, levels=c("Blog post due", 

@@ -2,15 +2,15 @@
 title: "US Foreign Policy"
 description: "Course syllabus"
 date: "`r Sys.Date()`"
-bibliography: ../../../classrefs.bib
-csl: ../bib/apsr-bibliography.csl
+bibliography: ../../classrefs.bib
+csl: bib/apsr-bibliography.csl
 ---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-mon <- as.Date("2022-08-22")
+mon <- as.Date("2023-08-21")
 
 advdate <- function(obj, adv){
   tmon <- obj + 7*(adv - 1)
@@ -27,11 +27,7 @@ advdate <- function(obj, adv){
 
 ## Course Summary
  
-This course focuses on the development of US foreign policy over the
-course of the twentieth and twenty-first centuries. It will provide a brief background
-on the history of US foreign policy before 1900, but will focus primarily on the developments and issues
-occurring from 1900 through the present. The historical content of the course will be supplemented by
-introducing students to political science literature that can help to identify and explain key events and trends in US foreign policy during this time period. 
+This course focuses on the development of US foreign policy over the course of the twentieth and twenty-first centuries. It will provide a brief background on the history of US foreign policy before 1900, but will focus primarily on the developments and issues occurring from 1900 through the present. The historical content of the course will be supplemented by introducing students to political science literature that can help to identify and explain key events and trends in US foreign policy during this time period. 
 
 ## Course Objectives
 
@@ -56,19 +52,14 @@ prescribing what policy *should* be (though this is also an important considerat
 The course will be part lecture and part student participation. I encourage students to ask questions if the readings of lecture materials are unclear. In addition to class lectures students will be responsible for keeping up with readings and other class-related material as the semester progresses.
 
 
-### Modality Changes
-
-So what happens if we have to revert back to remote learning because of COVID? Ultimately my goal is to structure the course in a way to preserve our flexibility to the fullest extent possible. I have pre-recorded lectures available on my [YouTube channel](https://www.youtube.com/channel/UC7AzCLAufJAMCKkDL77clzw). In the event that we need to move to online only learning students can still view the lectures corresponding to each of the topics we're going to cover this semester. We will also use Zoom where needed to facilitate continued discussion. 
-
 ## Required Books 
 
 There are three required books and several required articles (listed below in the course schedule).  You can view the full citation in the reference list at the end of hover your cursor over the citation below for a preview of the full title.
 
 - @Allenetal2022
-- @Karlin2022
 - @GeorgeRishikof2017
+- @Karlin2022
 - @McDowell2023
-
 
 ## Additional Readings
 
@@ -88,37 +79,37 @@ Students should also make an effort to stay informed on current events. Below ar
 
 ## Course Requirements
 
-1. _Collaborative Discussion: 30%_
+1. _Attendance: 10%_
+
+A major component to being successful in this class is just showing up. Every topic we cover will build upon ideas, lessons, themes, etc., that we covered in previous weeks. To do well you must be present.
+
+2. _Collaborative Discussion: 20%_
 
 While the course has a heavy lecture component students will also spend time reflecting on class materials and discussing that material with classmates. We will use a combination of small group discussions and a Think-Pair-Share format---Students will have an opportunity to reflect on the course material independently, discuss the material with a classmate, and then communicate a summation of that discussion with the rest of the class. Students will then submit the notes from their discussion for review and grading. Accordingly, use the notes to keep track of the content of the discussion, ideas that emerge, and any lingering questions that might arise.
 
 
-2. _Content Quizzes: 20%_
+3. _Content Quizzes: 20%_
 
 There will be 6-8 content quizzes throughout the semester and they will cover material we have already reviewed through readings, lectures, and discussion. I will announce these ahead of time. All quizzes are open book and open note assignments and will be completed through Canvas. I will also identify the appropriate readings corresponding to each quiz so you do not have to worry about guessing. 
 
 
-3. _Photo Blog Journal: 20%_
+4. _DAG Exercise: 20%_
 
-Students will be required to keep a photo blog. You will be required to complete **3 posts** over the course of the semester. The goal of this assignment is to help students to develop a fuller appreciation for the ways in which their local community connects to the outside world. Here's the gist of the assignment:
+One of the things that separates the social sciences from punditry is the effort to be more precise in our understand of social phenomena. One tool that helps us to both crystallize our own thinking, and to communicate our thinking to others, is the directed acyclic graph (i.e. DAG). More casually, this is known as a causal graph. A DAG is simply a collection of nodes, which represent individual variables, and arrows, which represent causal ties. DAGs can range from relatively simple, to complex in structure, but they can all help us to identify causal relationships and develop model specifications to test those relationships.
 
-  - Identify something around campus, in town, or in the nearby region that connects to US foreign policy and world politics. 
-  - Take a picture of it!
-  - Write blog post of 800-1000 words in which you:
-    - Share the picture
-    - Tell us what it is
-    - Tell us where it is
-    - Explain how it ties into US foreign policy and world politics
-    - Share their posts with other students in the class
-    - The post must include hyperlink citations or parenthetical references with full citation information where appropriate.
-    
-Remember, you must complete **3 posts** throughout the semester. You must also complete approximately **1 post per month!** These assignments require some thought, so plan accordingly. I will not accept late posts.
-    
-Be creative! There's really no right or wrong here, but it's on you to clearly explain how the subject of your photo ties into the course's subject matter. 
+Students should choose three readings to serve as a basis for their DAG assignment. These readings should also be from separate weeks and NOT from the same week. Rather, don't wait to the last week of class to cram in three DAG assignments.
+
+Each DAG assignment will consist of the following parts:
+
+1. **Question:** After reading one of our in-class reading assignments (article, book, etc.) students will identify a new research question. This should aim to clearly articulate a specific question on which we can structure a research project.
+2. **Objective:** What is the objective of the research question? Students should clearly describe the goal and the scope of the proposed question/analysis.
+3. **Estimand:** Borrowing from @Lundbergetal2021, the estimand consists of 1) a unit-specific quantity, and 2) a description of the target population. Importantly, you must explain how this estimand relates to your research question. Is it an appropriate measure given your question?
+4. **DAG:** Using the [Dagitty web platform](https://www.dagitty.net/dags.html) draw the DAG outlining the relationships between the outcome of interest, key predictor variable, and other relevant variables (e.g. confounders).
+5. **Narrative:** This is where you explain _how_ the variables are related to one another. The DAG is useful insofar as it tells us *which* variables are related, but it doesn't make clear how one affects another. This is where theory becomes important.
+
+
   
-To complete this assignment you will have to create a blogger blog and submit the URL to Canvas. We will make sure this content is sharable through Canvas so students can explore each other's work. You can [watch a tutorial on how to set up your blog here](https://www.youtube.com/watch?v=xVy0_BcV7nU).
-  
-4. _The Music of Foreign Policy Wiki: 30%_
+5. _The Music of Foreign Policy Wiki: 30%_
 
 The arts are a powerful tool for communicating ideas across space and time, and are often deeply rooted in the politics of the moment. Over the last century music has increasingly come to serve as a vehicle for political speech, both reflecting and driving politics in the modern era. To that end, students will work together in small groups to build a Wiki-style page presenting a song or album that relates to US foreign policy in some way. The goal of this project is for students and their groups to build a wiki page on Canvas is dedicated to providing readers with a deeper understanding of the historical, political, and social underpinnings of songs. But there's a catch—since this is a class on US foreign policy, these songs have to be related to US foreign policy in some way. 
 
@@ -141,7 +132,7 @@ Deadlines:
 - November 18: Wiki draft due  (5%)
 - December 9: Final Wiki page due (10%)
   
-  
+Each iteration of this assignment should be drafted on Microsoft Word or Apple Pages, and submitted to Canvas.
   
 ## Classroom Policies
 
@@ -171,119 +162,6 @@ V, Section 3, number 2. Students who engage in behavior that disrupts the learni
 be asked to leave the class.
   
   
-## Academic Honesty and Plagiarism
-  
-All work turned in as a part of this class must be original.
-
-Kansas State University has an Honor & Integrity System based on personal integrity which is presumed to be sufficient assurance in academic matters one’s work is performed honestly and without unauthorized assistance. Undergraduate and graduate students, by registration, acknowledge the jurisdiction of the Honor Integrity System. The policies and procedures of the Honor System apply to all full and part time
-students enrolled in undergraduate and graduate courses on-campus, off-campus, and via distance
-learning.
-
-A component vital to the Honor & Integrity System is the inclusion of the Honor Pledge which applies to all
-assignments, examinations, or other course work undertaken by students. The Honor Pledge is implied,
-whether or not it is stated: “On my honor, as a student, I have neither given nor received unauthorized aid
-on this academic work.”
-
-The default in this class is that ALL work will be accomplished individually, UNLESS my permission is given
-in advance of an assignment/quiz/exam/take-home exam/final. If you are in doubt, please ask.
-
-A grade of XF can result from a breach of academic honesty. The F indicates failure in the course; the X
-indicates the reason is an Honor Pledge violation.
-
-For more information, visit the [Honor & Integrity System home web page](http://www.k-state.edu/honor/).
-All work is expected to adhere to the standards outlined by the Kansas State University Handbook. All
-written work is subject to online plagiarism checks and will be required for all reaction papers as well as the
-final paper. Any cases of plagiarism will receive an automatic failure for the assignment, possible failure in
-the course, and will be pursued further through the university for additional punishment.
-
-The Kansas State University Handbook (2008, Appendix F) defines plagiarism as follows:
-
-> Plagiarism is taking credit for someone else’s ideas, work, or words. In a university setting, it
-means submitting academic, scholarly, or literary work in which you either claim or imply the
-material to be your own, when that is not the case.
-
-The Handbook also provides examples of plagiarism, and steps students can take to avoid it:
-
-[P]lagiarism could include:
-
-  - Buying a term paper, or copying another person’s paper, even if she or he gives you permission.
-  - Cutting and pasting information from the internet into your own paper without properly
-identifying it as a quotation and properly attributing the source.
-  - Using someone else’s concept and presenting it as if it is your own original creativity, without
-acknowledging the source of the idea.
-
-While some acts of plagiarism are obvious attempts to deceive, like buying a term paper, others
-result from sloppy scholarship or failure to follow proper format for crediting sources. For
-example:
-
-  - If you copy directly from another source and acknowledge it in your bibliography or list of
-works cited, yet fail to put it in quotation marks, this is plagiarism. The reason is that,
-although you have indicated that the idea is someone else’s, the lack of quotation marks
-implies that the words are your own.
-  - Paraphrasing is summarizing a source so that you have rewritten the material in your own
-words but maintained the original author’s ideas. When you paraphrase, you do not need to
-put the words in quotation marks, but you do need to properly attribute the original source.
-Paraphrasing does not mean simply changing one or two words, or leaving out a sentence,
-while the rest remains the same. Even if you identify the original author, but have used faulty
-paraphrasing that retains too much of the original, the result is inadvertent plagiarism.
-  - If you use another researcher’s specific methodology, you should acknowledge doing so.
-While some research protocols are widespread and general enough to need no citation, if
-the protocol, analysis, or technique can be attributed to a specific publication it should be
-cited.
-  - Works of visual art and design, and images of the work, cannot be misrepresented as
-original work by another. Such images cannot be used in part or whole without permission
-of the artist.
-
-Also note that using papers previously written for another assignment in this, or in any other class, without
-the express permission of the professor is grounds for failing an assignment. Using your own material in
-this way, and not citing it, is also technically plagiarism and can be treated as such. If you have concerns
-regarding any of these issues please do not hesitate to contact me.
-
-
-## Statement on Mutual Respect and Inclusion in K-State Teaching and Learning Spaces
-
-At K-State, faculty and staff are committed to creating and maintaining an inclusive and supportive learning environment for students from diverse backgrounds and perspectives. K-State courses, labs, and other virtual and physical learning spaces promote equitable opportunity to learn, participate, contribute, and succeed, regardless of age, race, color, ethnicity, nationality, genetic information, ancestry, disability, socioeconomic status, military or veteran status, immigration status, Indigenous identity, gender identity, gender expression, sexuality, religion, culture, as well as other social identities.
-
-Faculty and staff are committed to promoting equity and believe the success of an inclusive learning environment relies on the participation, support, and understanding of all students. Students are encouraged to share their views and lived experiences as they relate to the course or their course experience, while recognizing they are doing so in a learning environment in which all are expected to engage with respect to honor the rights, safety, and dignity of others in keeping with the K-State Principles of Community https://www.k-state.edu/about/values/community/.
-
-If you feel uncomfortable because of comments or behavior encountered in this class, you may bring it to the attention of your instructor, advisors, and/or mentors. If you have questions about how to proceed with a confidential process to resolve concerns, please contact the Student Ombudsperson Office. Violations of the student code of conduct can be reported here [https://www.k-state.edu/sga/judicial/student-code-of-conduct.html](https://www.k-state.edu/sga/judicial/student-code-of-conduct.html). If you experience bias or discrimination, it can be reported here [https://www.k-state.edu/report/discrimination/](https://www.k-state.edu/report/discrimination/).
-
-
-## Statement Regarding Wearing of Face Coverings
-
-Kansas State University strongly encourages, but does not require, that everyone wear masks while indoors on university property, including while attending in-person classes. For additional information and the latest on K-State’s face covering policy, see https://www.k-state.edu/covid-19/guidance/health/face-covering.html
-
-
-## Statement Regarding Discrimination, Harassment, and Sexual Harassment
-
-Kansas State University is committed to maintaining academic, housing, and work environments that are free of discrimination, harassment, and sexual harassment. Instructors support the University’s commitment by creating a safe learning environment during this course, free of conduct that would interfere with your academic opportunities. Instructors also have a duty to report any behavior they become aware of that potentially violates the University’s policy prohibiting discrimination, harassment, and sexual harassment (PPM 3010).  
-
-If a student is subjected to discrimination, harassment, or sexual harassment, they are encouraged to make a non-confidential report to the University’s Office for Institutional Equity (OIE) using the online reporting form. Incident disclosure is not required to receive resources at K-State. Reports that include domestic and dating violence, sexual assault, or stalking, should be considered for reporting by the complainant to the Kansas State University Police Department or the Riley County Police Department. Reports made to law enforcement are separate from reports made to OIE. A complainant can choose to report to one or both entities. Confidential support and advocacy can be found with the K-State Center for Advocacy, Response, and Education (CARE). Confidential mental health services can be found with Lafene Counseling and Psychological Services (CAPS). Academic support can be found with the Office of Student Life (OSL). OSL is a non-confidential resource. A comprehensive list of resources is available here. If you have questions about non-confidential and confidential resources, please contact OIE at [equity@ksu.edu](mailto:equity@ksu.edu) or (785) 532–6220. 
-
-
-## Citation and Style
-
-All written work is expected to adhere to professional standards. As described above, citing previous work is
-key. If you have any questions regarding the appropriate citation style please consult the American Political
-Science Association style guide.
-
-
-## Students with Disabilities
-
-Students with disabilities who need classroom accommodations, access to technology, or information about
-emergency building/campus evacuation processes should contact the Student Access Center and/or their
-instructor. Services are available to students with a wide range of disabilities including, but not limited to,
-physical disabilities, medical conditions, learning disabilities, attention deficit disorder, depression, and anxiety.
-If you are a student enrolled in campus/online courses through the Manhattan or Olathe campuses,
-contact the Student Access Center at [accesscenter@k-state.edu](accesscenter@k-state.edu), 785-532-6441; for Salina campus, contact
-the Academic and Career Advising Center at acac@k-state.edu, 785-826-2649.
-
-If you have any special conditions or needs that will affect your ability to complete the required assignments
-outlined herein, please contact the instructor as soon as possible to discuss your needs. I am happy to help
-you in any way that I can. With advance notice accommodations can be made prior to deadlines and tests.
-Please note, however, that special consideration will not be granted afterwards as a means of addressing a
-grade you do not like.
-
 
 
 ## Contacting the Instructor
@@ -312,7 +190,7 @@ F: 0–59.99
 
 ## Tentative Course Schedule
 
-```{r course calendar, dpi = 400, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.pos="center"}
+```{r course calendar, dpi = 300, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.pos="center"}
 
 pacman::p_load(
   "ggplot2",
@@ -324,7 +202,7 @@ pacman::p_load(
 #showtext::showtext_auto()
 
 # Create base data frame
-dfr <- data.frame(date=seq(as.Date('2022-08-01'), as.Date('2022-12-31'), by = 1))
+dfr <- data.frame(date=seq(as.Date('2023-08-01'), as.Date('2023-12-31'), by = 1))
 dfr$day <- factor(strftime(dfr$date,format="%a"), levels=c("Sun","Mon","Tue","Wed","Thu","Fri","Sat"))
 dfr$week <- factor(strftime(dfr$date,format="%U"))
 dfr$month <- factor(strftime(dfr$date,format="%B"),levels=c("August","September","October", "November", "December"))
@@ -332,24 +210,30 @@ dfr$ddate <- factor(strftime(dfr$date,format="%d"))
 
 # Label dates
 dfr$comment <- "Available"
-dfr$comment[dfr$date < as.Date("2022-08-22") | dfr$date>as.Date("2021-12-09")] <- NA
-dfr$comment[dfr$date==as.Date("2022-09-09")] <- "Song/album choice due"
-dfr$comment[dfr$date==as.Date("2022-09-23")] <- "Final song/album choice due"
-dfr$comment[dfr$date==as.Date("2022-10-28")] <- "Annotated bibliography due"
-dfr$comment[dfr$date==as.Date("2022-11-18")] <- "Wiki draft due"
-dfr$comment[dfr$date==as.Date("2022-12-09")] <- "Final Wiki due"
+dfr$comment[dfr$date < as.Date("2023-08-21") | dfr$date>as.Date("2021-12-09")] <- NA
+dfr$comment[dfr$date==as.Date("2023-09-08")] <- "Song/album choice due"
+dfr$comment[dfr$date==as.Date("2023-09-22")] <- "Final song/album choice due"
+dfr$comment[dfr$date==as.Date("2023-10-27")] <- "Annotated bibliography due"
+dfr$comment[dfr$date==as.Date("2023-11-17")] <- "Wiki draft due"
+dfr$comment[dfr$date==as.Date("2023-12-08")] <- "Final Wiki due"
 
 # Photo blogs
-dfr$comment[dfr$date==as.Date("2022-09-30")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2022-10-31")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2022-11-30")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2023-09-30")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2023-10-31")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2023-11-30")] <- "Blog post due"
 
 
 # Thanksgiving
-dfr$comment[dfr$date >= as.Date("2022-11-21") & dfr$date <= as.Date("2022-11-25")] <- "Thanksgiving Break"
+dfr$comment[dfr$date >= as.Date("2023-11-20") & dfr$date <= as.Date("2023-11-24")] <- "Thanksgiving Break"
 
 dfr$week <- as.numeric(dfr$week) - min(as.numeric(dfr$week) - 1)
-dfr$comment <- factor(dfr$comment, levels=c("Blog post due", "Song/album choice due", "Final song/album choice due", "Annotated bibliography due", "Wiki draft due", "Thanksgiving Break", "Final Wiki due"))
+dfr$comment <- factor(dfr$comment, levels=c("Blog post due", 
+                                            "Song/album choice due", 
+                                            "Final song/album choice due", 
+                                            "Annotated bibliography due", 
+                                            "Wiki draft due", 
+                                            "Thanksgiving Break", 
+                                            "Final Wiki due"))
 
 ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
   geom_tile(color = "black", size = 0.1) +
@@ -378,15 +262,16 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ## `r advdate(mon, 1)`: Course Introduction
 
+### Readings and Assignments
+
 1. Watch video on [how to read a social science research paper](https://www.youtube.com/watch?v=pZq6c_shco0)
-2. Set up your blog!
 
 
 ## `r advdate(mon, 2)`: Historical background
 
 ### Readings and Assignments: 
 
-- Read @fordham2019
+- Read @Fordham2019
 
 
 
@@ -402,7 +287,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @dudziak2004
+- Read @Dudziak2004
 - Read @Fordham2007
 
 
@@ -411,7 +296,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ### Readings and Assignments:
 
 - Read @GeorgeRishikof2017[Chapter 13]
-- Read @lupton2017
+- Read @Lupton2017
 
 
 ## `r advdate(mon, 6)`: The Policymaking Process
@@ -419,7 +304,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ### Readings and Assignments:
 
 - Read @GeorgeRishikof2017[Chapters 1 and 2]
-- Read @miller2016
+- Read @Miller2016
 
 
 
@@ -427,7 +312,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @keane2015
+- Read @KeaneDiesen2015
 - Read @GeorgeRishikof2017[Chapter 4]
 
 
@@ -444,6 +329,8 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
+#### *Friday: Guest Lecture by Lt. Commander Jean Anne Kim, United States Navy.*
+
 - Watch [Restrepo](https://watchdocumentaries.com/restrepo/)
 - Read @sigar2019
 
@@ -451,15 +338,9 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ## `r advdate(mon, 10)`: Security Cooperation
 
-#### Guest Lecture: 
-- Lieutenant Commander Jean Anne Kim, USN on US alliance relations in the Asia-Pacific region.
-- Friday, October 28
-
 ### Readings and Assignments:
 
-- Read @beckley2015
-- Read [Flynn, Allen, and Martinez Machain (2019)](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
-- Read @moon2009
+- Read @Allenetal2022
 
 
 ## `r advdate(mon, 11)`: Trade, Immigration, Finance, and Monetary Policy
@@ -467,7 +348,6 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 ### Readings and Assignments:
 
 - Read @Oneil2022
-- Read @rosellacappellazielinski2022
 
 
 ## `r advdate(mon, 12)`: Trade, Immigration, Finance, and Monetary Policy (cont.)
@@ -480,7 +360,9 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ## `r advdate(mon, 13)`: Foreign Aid
 
-- Read @milner2013
+- Read @GeorgeRishikof2017[Chapter 5]
+- Read @PEPFARat20
+- Read @Fidler2023
 
 
 ## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
@@ -497,15 +379,17 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @Power2001 
+- Read @Fajardo-Heyward2015
+- Read @Ballve2009
+- Read @Diamond2023
 
 
 ## `r advdate(mon, 16)`: Multilateralism and global governance
 
 ### Readings and Assignments:
 
-- Read @schultz2017
-- Read @busby2020 
+- Read @Schultz2017
+- Read @Busby2020 
 
 
 

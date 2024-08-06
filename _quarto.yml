@@ -31,7 +31,7 @@ website:
         text: Blog
       - text: "Syllabus"
         menu:
-          - href: syllabus-f2023.qmd
+          - href: syllabus-f2024.qmd
             text: "Syllabus"
           - href: syllabus-boilerplate-stuff.qmd
             text: "University Syllabus Statements"
