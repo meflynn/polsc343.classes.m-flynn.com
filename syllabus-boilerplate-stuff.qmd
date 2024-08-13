@@ -73,9 +73,19 @@ this way, and not citing it, is also technically plagiarism and can be treated a
 regarding any of these issues please do not hesitate to contact me.
 
 
+
+## Statement Defining Expectations for Classroom Conduct
+
+All student activities in the University, including this course, are governed by the Student Judicial Conduct Code as outlined in the Student Governing Association By Laws, Article V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may be asked to leave the class.
+
+
+
 ## Artificial Intelligence
 
 Artificial Intelligence (AI), Large Language Models (LLMs), and chatbots have seen increased use recently. While these resources can be useful tools in certain contexts, their use is prohibited in this course and any such use will be treated as plagiarism and/or unauthorized outside assistance (you shouldn't need them anyway). There are multiple reasons for this. The purpose of taking this course is to learn new material and develop a deeper comprehension of that material to help you make sense of the world around you. This requires you engage directly with the coursework. Second, while these tools can be useful for certain tasks, using them intelligently and effectively often requires you have a strong knowledge of the underlying content. Absent that knowledge you are ill-equipped to judge the usefulness of what these resources generate. 
+
+
+
 
 ## Statement on Mutual Respect and Inclusion in K-State Teaching and Learning Spaces
 
