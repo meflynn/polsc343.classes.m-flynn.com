@@ -96,7 +96,7 @@ There will be 6-8 content quizzes throughout the semester and they will cover ma
 
 4. _DAG Exercise: 20%_
 
-One of the things that separates the social sciences from punditry is the effort to be more precise in our understand of social phenomena. One tool that helps us to both crystallize our own thinking, and to communicate our thinking to others, is the directed acyclic graph (i.e. DAG). More casually, this is known as a causal graph. A DAG is simply a collection of nodes, which represent individual variables, and arrows, which represent causal ties. DAGs can range from relatively simple, to complex in structure, but they can all help us to identify causal relationships and develop model specifications to test those relationships.
+One thing that separates the social sciences from punditry is the effort to be more precise in our understand of social phenomena. One tool that helps us to both crystallize our own thinking, and to communicate our thinking to others, is the directed acyclic graph (i.e. DAG). More casually, this is known as a causal graph. A DAG is simply a collection of nodes, which represent individual variables, and arrows, which represent causal ties. DAGs can range from relatively simple, to complex in structure, but they can all help us to identify causal relationships and develop model specifications to test those relationships.
 
 Students should base their DAG exercise on a reading that we have covered *prior to the assignment*. Do not base it on future readings that we have not yet covered.
 
