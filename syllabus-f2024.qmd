@@ -66,7 +66,8 @@ There are three required books and several required articles (listed below in th
 Students should also make an effort to stay informed on current events. Below are a some examples of good sources for keeping up with global events. Please note that some of these publications may be pay-walled, but you should have access through the university library.
 
   - [BBC News](www.bbc.com/news)
-  - [The Monkey Cage](www.washingtonpost.com/news/monkeycage)
+  - [Good Authority](https://goodauthority.org/)
+  - [The Monkey Cage (No longer active)](www.washingtonpost.com/news/monkeycage)
   - [Political Violence @ a Glance](www.politicalviolenceataglance.org)
   - [Foreign Affairs](www.foreignaffairs.com)
   - [Foreign Policy Magazine](www.foreignpolicy.com)
@@ -79,7 +80,7 @@ Students should also make an effort to stay informed on current events. Below ar
 
 ## Course Requirements
 
-1. _Attendance: 10%_
+1. _Attendance: 20%_
 
 A major component to being successful in this class is just showing up. Every topic we cover will build upon ideas, lessons, themes, etc., that we covered in previous weeks. To do well you must be present.
 
@@ -97,42 +98,51 @@ There will be 6-8 content quizzes throughout the semester and they will cover ma
 
 One of the things that separates the social sciences from punditry is the effort to be more precise in our understand of social phenomena. One tool that helps us to both crystallize our own thinking, and to communicate our thinking to others, is the directed acyclic graph (i.e. DAG). More casually, this is known as a causal graph. A DAG is simply a collection of nodes, which represent individual variables, and arrows, which represent causal ties. DAGs can range from relatively simple, to complex in structure, but they can all help us to identify causal relationships and develop model specifications to test those relationships.
 
-Students should choose three readings to serve as a basis for their DAG assignment. These readings should also be from separate weeks and NOT from the same week. Rather, don't wait to the last week of class to cram in three DAG assignments.
+Students should base their DAG exercise on a reading that we have covered *prior to the assignment*. Do not base it on future readings that we have not yet covered.
 
-Each DAG assignment will consist of the following parts:
+All DAG assignments will be completed in class. Students must complete the DAG exercise using pen/pencil and paper. Digital copies will not be accepted. 
 
-1. **Question:** After reading one of our in-class reading assignments (article, book, etc.) students will identify a new research question. This should aim to clearly articulate a specific question on which we can structure a research project.
-2. **Objective:** What is the objective of the research question? Students should clearly describe the goal and the scope of the proposed question/analysis.
-3. **Estimand:** Borrowing from @Lundbergetal2021, the estimand consists of 1) a unit-specific quantity, and 2) a description of the target population. Importantly, you must explain how this estimand relates to your research question. Is it an appropriate measure given your question?
-4. **DAG:** Using the [Dagitty web platform](https://www.dagitty.net/dags.html) draw the DAG outlining the relationships between the outcome of interest, key predictor variable, and other relevant variables (e.g. confounders).
-5. **Narrative:** This is where you explain _how_ the variables are related to one another. The DAG is useful insofar as it tells us *which* variables are related, but it doesn't make clear how one affects another. This is where theory becomes important.
+The DAG assignments will become increasingly complex as we move through the course. We will spend the class period before each DAG due date reviewing some of the basic concepts associated with causality and drawing a DAG. We will begin with simplistic models and moving to more complex models. The goal is to help students to develop a better understanding of how to identify causal relationships and how to communicate those relationships to others.
 
+The general pattern for the three assignments will be as follows:
 
+1. DAG Exercise 1
+  - Identify the key variables in the reading
+  - Identify the causal relationships between the variables
   
-5. _The Music of Foreign Policy Wiki: 30%_
+2. DAG Exercise 2
+  - Identify the key variables in the reading
+  - Identify the causal relationships between the variables
+  - Identify potential confounding variables
 
-The arts are a powerful tool for communicating ideas across space and time, and are often deeply rooted in the politics of the moment. Over the last century music has increasingly come to serve as a vehicle for political speech, both reflecting and driving politics in the modern era. To that end, students will work together in small groups to build a Wiki-style page presenting a song or album that relates to US foreign policy in some way. The goal of this project is for students and their groups to build a wiki page on Canvas is dedicated to providing readers with a deeper understanding of the historical, political, and social underpinnings of songs. But there's a catch—since this is a class on US foreign policy, these songs have to be related to US foreign policy in some way. 
-
-In general, each group's wiki page should focus on the following points:
-
-  - *Song/Album*: Identify a song (or if you're feeling ambitious, an entire album) that speaks to some aspect of US foreign policy.
-  - *Issue*: Identify the central issue, actors, policy, action, idea, behavior, etc., that is at the core of the song. 
-  - *Context*: Once you have identified the central issue, provide some historical background information. This should help readers to better understand the social, political, and economic issues of the time period in question. Who are the key actors? What are the issues or policies of the time that serve as the focus for the song/album? 
-  - *Reception*: How was the song/album received at the time of its release? Both critically and with respect to the popular impact that it had at the time?
-  - *Legacy*: What is the legacy of the song/album? How does its legacy compare with its impact at the time of its release?
-
-
-This will serve as your final project. Accordingly, I expect the final content to be detailed, polished, and thoroughly proofed. Your grade will be broken up into components and there will be multiple checkpoints along the way. The schedule is detailed below.
-
-Deadlines: 
-
-- September 9: Song/album choices due (2.5%)
-- September 23: Final song/album selection due (2.5%)
-- October 28: Annotated bibliography due (10%)
-- November 18: Wiki draft due  (5%)
-- December 9: Final Wiki page due (10%)
+3. DAG Exercise 3
+  - Identify the key variables in the reading
+  - Identify the causal relationships between the variables
+  - Identify potential confounding variables
+  - Identify potential mediating variables
+  - Identify potential moderating variables
   
-Each iteration of this assignment should be drafted on Microsoft Word or Apple Pages, and submitted to Canvas.
+
+5. _Photo Journal: 20%_
+
+Students will be required to keep a photo journal You will be required to complete **3 entries** over the course of the semester. The goal of this assignment is to help students to develop a fuller appreciation for the ways in which their local community connects to the outside world. Here's the gist of the assignment:
+
+  - Identify something around campus, in town, or in the nearby region that connects to US foreign policy and world politics. 
+  - Take a picture of it!
+  - Write journal entry in which you:
+    - Share the picture
+    - Tell us *what* it is
+    - Tell us *where* it is
+    - Explain *how* it ties into US foreign policy and world politics
+    - Reference class materials to help support the connections and explain why it's important.
+
+Be creative! There's really no right or wrong here, but it's on you to clearly explain how the subject of your photo ties into the course's subject matter. 
+
+We will allocate one class period per month to completing the photo journal assignments. Students should submit a picture of their photo journal entry and a brief write-up of the entry. The write-up should be no more than 500 words. All write-ups will be completed in class using pen/pencil and paper. Digital copies will not be accepted.
+
+
+
+
   
 ## Classroom Policies
 
@@ -208,32 +218,30 @@ dfr$week <- factor(strftime(dfr$date,format="%U"))
 dfr$month <- factor(strftime(dfr$date,format="%B"),levels=c("August","September","October", "November", "December"))
 dfr$ddate <- factor(strftime(dfr$date,format="%d"))
 
-# Label dates
-dfr$comment <- "Available"
-dfr$comment[dfr$date < as.Date("2024-08-21") | dfr$date>as.Date("2024-12-13")] <- NA
-dfr$comment[dfr$date==as.Date("2024-09-08")] <- "Song/album choice due"
-dfr$comment[dfr$date==as.Date("2024-09-22")] <- "Final song/album choice due"
-dfr$comment[dfr$date==as.Date("2024-10-27")] <- "Annotated bibliography due"
-dfr$comment[dfr$date==as.Date("2024-11-17")] <- "Wiki draft due"
-dfr$comment[dfr$date==as.Date("2024-12-08")] <- "Final Wiki due"
+
 
 # Photo blogs
-dfr$comment[dfr$date==as.Date("2024-09-30")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2024-10-31")] <- "Blog post due"
-dfr$comment[dfr$date==as.Date("2024-11-30")] <- "Blog post due"
+dfr$comment[dfr$date==as.Date("2024-09-27")] <- "Photo Journal Day"
+dfr$comment[dfr$date==as.Date("2024-10-25")] <- "Photo Journal Day"
+dfr$comment[dfr$date==as.Date("2024-11-22")] <- "Photo Journal Day"
+
+# DAG Exercises
+dfr$comment[dfr$date==as.Date("2024-09-13")] <- "DAG Exercise"
+dfr$comment[dfr$date==as.Date("2024-10-11")] <- "DAG Exercise"
+dfr$comment[dfr$date==as.Date("2024-11-08")] <- "DAG Exercise"
+
+# Book Discussion
+dfr$comment[dfr$date==as.Date("2024-10-18")] <- "Boczar Discussion"
+dfr$comment[dfr$date==as.Date("2024-11-15")] <- "Busby Discussion"
+dfr$comment[dfr$date==as.Date("2024-11-01")] <- "Helberg Discussion"
+dfr$comment[dfr$date==as.Date("2024-12-06")] <- "Doshi Discussion"
 
 
 # Thanksgiving
 dfr$comment[dfr$date >= as.Date("2024-11-25") & dfr$date <= as.Date("2024-11-29")] <- "Thanksgiving Break"
 
 dfr$week <- as.numeric(dfr$week) - min(as.numeric(dfr$week) - 1)
-dfr$comment <- factor(dfr$comment, levels=c("Blog post due", 
-                                            "Song/album choice due", 
-                                            "Final song/album choice due", 
-                                            "Annotated bibliography due", 
-                                            "Wiki draft due", 
-                                            "Thanksgiving Break", 
-                                            "Final Wiki due"))
+
 
 ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
   geom_tile(color = "black", size = 0.1) +
@@ -247,7 +255,8 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
         axis.text.y = element_text(size = 10, color = "white"),
         strip.text.x = element_text(size = 13, face = "bold", hjust = 0),
         strip.text = element_text(size = 16, face = "bold", margin = margin(b = 0.2, unit = "cm")),
-        title = element_text(face = "bold")) +
+        title = element_text(face = "bold"),
+        panel.spacing = unit(1, "cm")) +
   guides(fill=guide_legend(ncol=2)) +
   scale_fill_brewer(palette = "Set2", na.translate = FALSE) +
   labs(x = "Weekday",
@@ -295,7 +304,6 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @GeorgeRishikof2017[Chapter 13]
 - Read @Lupton2017
 
 
@@ -303,7 +311,6 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @GeorgeRishikof2017[Chapters 1 and 2]
 - Read @Miller2016
 
 
@@ -312,8 +319,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @KeaneDiesen2015
-- Read @GeorgeRishikof2017[Chapter 4]
+- Wednesday September 25: Read @KeaneDiesen2015
 
 
 
@@ -321,7 +327,6 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @Karlin2022
 
 
 
@@ -329,7 +334,10 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-#### *Friday: Guest Lecture by Lt. Commander Jean Anne Kim, United States Navy.*
+
+- Read @Boczar2022
+
+Suggested:
 
 - Watch [Restrepo](https://watchdocumentaries.com/restrepo/)
 - Read @sigar2019
@@ -340,13 +348,18 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @Allenetal2022
+
+Wednesday, October 23 Read:
+- [Flynn, Allen, and Martinez Machain 2019](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
+ 
+- [Allen, Martinez Machain, and Flynn 2022](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
 
 
 ## `r advdate(mon, 11)`: Trade, Immigration, Finance, and Monetary Policy
 
 ### Readings and Assignments:
 
+- Read @Helberg2022
 - Read @Oneil2022
 
 
@@ -354,18 +367,27 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 ### Readings and Assignments:
 
-- Read @McDowell2023
 
 
 
-## `r advdate(mon, 13)`: Foreign Aid
 
-- Read @GeorgeRishikof2017[Chapter 5]
-- Read @PEPFARat20
-- Read @Fidler2023
+## `r advdate(mon, 13)`: Environmental Politics and US Foreign Policy
+
+- Read @Busby2022
 
 
-## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
+
+
+## `r advdate(mon, 14)`: Human Rights Issues
+
+### Readings and Assignments:
+
+- Read @Ballve2009
+- Read @Diamond2023
+
+
+
+## `r advdate(mon, 15)`: Thanksgiving Break (No Class)
 
 ### Readings and Assignments:
 
@@ -375,21 +397,11 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 4. Take a good nap
 
 
-## `r advdate(mon, 15)`: Human Rights Issues
+## `r advdate(mon, 16)`: US and Chinese Competition
 
 ### Readings and Assignments:
 
-- Read @Fajardo-Heyward2015
-- Read @Ballve2009
-- Read @Diamond2023
-
-
-## `r advdate(mon, 16)`: Multilateralism and global governance
-
-### Readings and Assignments:
-
-- Read @Schultz2017
-- Read @Busby2020 
+- Read @Doshi2023
 
 
 
