@@ -67,10 +67,7 @@ cited.
 original work by another. Such images cannot be used in part or whole without permission
 of the artist.
 
-Also note that using papers previously written for another assignment in this, or in any other class, without
-the express permission of the professor is grounds for failing an assignment. Using your own material in
-this way, and not citing it, is also technically plagiarism and can be treated as such. If you have concerns
-regarding any of these issues please do not hesitate to contact me.
+Also note that using papers previously written for another assignment in this, or in any other class, without the express permission of the professor is grounds for failing an assignment. Using your own material in this way, and not citing it, is also technically plagiarism and can be treated as such. If you have concerns regarding any of these issues please do not hesitate to contact me.
 
 
 
@@ -83,6 +80,8 @@ All student activities in the University, including this course, are governed by
 ## Artificial Intelligence
 
 Artificial Intelligence (AI), Large Language Models (LLMs), and chatbots have seen increased use recently. While these resources can be useful tools in certain contexts, their use is prohibited in this course and any such use will be treated as plagiarism and/or unauthorized outside assistance (you shouldn't need them anyway). There are multiple reasons for this. The purpose of taking this course is to learn new material and develop a deeper comprehension of that material to help you make sense of the world around you. This requires you engage directly with the coursework. Second, while these tools can be useful for certain tasks, using them intelligently and effectively often requires you have a strong knowledge of the underlying content. Absent that knowledge you are ill-equipped to judge the usefulness of what these resources generate. 
+
+This course assumes that all your course work will be done by you. You will not need to use artificial intelligence (AI) tools such as ChatGPT for any of the assignments. In general, for this class, you should not have an AI instrument do the writing of any portion of any assignment, just as you would not have another person do your writing for you. My aim is to keep the focus on your originality and creativity, your learning and reflection. Using an AI tool to generate assignment content would be a violation of the K-State Honor Pledge.
 
 
 

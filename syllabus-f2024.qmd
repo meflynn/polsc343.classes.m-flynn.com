@@ -84,6 +84,8 @@ Students should also make an effort to stay informed on current events. Below ar
 
 A major component to being successful in this class is just showing up. Every topic we cover will build upon ideas, lessons, themes, etc., that we covered in previous weeks. To do well you must be present.
 
+Life also happens, and so students will be given three class periods to miss without penalty. After that, students will be given an attendance grade based on the proportion of classes attended relative to the total number of classes.
+
 2. _Collaborative Discussion: 20%_
 
 While the course has a heavy lecture component students will also spend time reflecting on class materials and discussing that material with classmates. We will use a combination of small group discussions and a Think-Pair-Share format---Students will have an opportunity to reflect on the course material independently, discuss the material with a classmate, and then communicate a summation of that discussion with the rest of the class. Students will then submit the notes from their discussion for review and grading. Accordingly, use the notes to keep track of the content of the discussion, ideas that emerge, and any lingering questions that might arise.
@@ -227,7 +229,7 @@ dfr$comment[dfr$date==as.Date("2024-11-22")] <- "Photo Journal Day"
 
 # DAG Exercises
 dfr$comment[dfr$date==as.Date("2024-09-13")] <- "DAG Exercise"
-dfr$comment[dfr$date==as.Date("2024-10-11")] <- "DAG Exercise"
+dfr$comment[dfr$date==as.Date("2024-10-09")] <- "DAG Exercise"
 dfr$comment[dfr$date==as.Date("2024-11-08")] <- "DAG Exercise"
 
 # Book Discussion
