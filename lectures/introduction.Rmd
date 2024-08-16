@@ -348,7 +348,7 @@ Class format is both lecture and discussion
 
 Required readings:
 
-  - There are multiple articles that we'll be reading this semester. 
+  - There are multiple books and articles that we'll be reading this semester. 
   
   - You'll need to access them through K-State Libraries website
 
@@ -368,8 +368,8 @@ requirements <- tibble(`Grade Item` = c("Attendance",
                                         "Discussion", 
                                         "Content Quizzes", 
                                         "DAG Exercise", 
-                                        "Music of Foreign Policy Wiki"),
-                       `Percent` = c("10%", "20%", "20%", "20%", "30%"))
+                                        "Photo Journal"),
+                       `Percent` = c("20%", "20%", "20%", "20%", "20%"))
 
 knitr::kable(requirements, 'html', align = c("l", "c")) %>% 
   kable_styling(full_width=TRUE) %>% 
@@ -437,4 +437,8 @@ class: left, top
 3. Isolationism vs. internationalism
 
 4. "Grand strategy" 
+
+5. US Foreign Policy less important pre-1945
+
+6. Institutions vying for power
 
