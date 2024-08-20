@@ -190,6 +190,27 @@ First, what are our goals?
 
 
 
+## Interpretting and Assessing Statistical Models
+
+What is a variable?
+
+- A variable is a characteristic, trait, attribute, or condition that can be measured or observed
+
+- A "definable quantity that can take on two or more values" (Kellstedt and Whitten 2018, 22).
+
+- Examples:
+  - Age
+  - Income
+  - Education
+  - Speed of a moving vehicle
+  - Color a car is painted
+  - Whether a person is a Democrat or Republican
+  - If a member of Congress served in the military or not
+
+
+
+
+
 ## Interpreting and Assessing Statistical Models
 
 What is a coefficient?
@@ -428,8 +449,8 @@ ggplot(baserate |> filter(Hospitalized == "Hospitalized"), aes(x = Group, y = Y,
                               end = 0.9) +
   labs(x = "",
        y = "",
-       title = "Hospitalization Among Vaccinated and Unvaccinated Individuals",
-       subtitle = "How can the vaccine be protective if most hospitalized people are vaccinated?")
+       title = "Hospitalization of Vaccinated and Unvaccinated Individuals",
+       subtitle = "How can the vaccine be protective if most people in the hospital are vaccinated?")
 
 
 ```
