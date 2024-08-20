@@ -27,8 +27,6 @@ website:
         text: Home
       - href: about.qmd
         text: Instructor
-      - href: posts.qmd
-        text: Blog
       - text: "Syllabus"
         menu:
           - href: syllabus-f2024.qmd

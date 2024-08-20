@@ -568,7 +568,7 @@ Y &amp; = \alpha + \beta_1 X_i + \beta_2 Z_i + \epsilon_i
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="methods-primer_files/figure-revealjs/confounding-example-1.png" style="width:88.0%"></p>
+<p><img data-src="methods-primer_files/figure-revealjs/confounding-example-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -594,7 +594,7 @@ lm(formula = speed ~ pedal_pressure, data = cardata)
 
 Coefficients:
    (Intercept)  pedal_pressure  
-     7.000e+01       4.377e-05  </code></pre>
+     7.004e+01      -9.668e-05  </code></pre>
 </div>
 </div>
 </div><div class="column">
@@ -627,7 +627,7 @@ lm(formula = speed ~ pedal_pressure + incline, data = cardata)
 
 Coefficients:
    (Intercept)  pedal_pressure         incline  
-        45.194           1.241          -1.489  </code></pre>
+        45.336           1.234          -1.481  </code></pre>
 </div>
 </div>
 </div><div class="column">
@@ -800,7 +800,7 @@ Coefficients:
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="methods-primer_files/figure-revealjs/collider-example-1-1.png" width="960"></p>
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-1-1.png" style="width:88.0%"></p>
 </figure>
 </div>
 </div>
@@ -816,14 +816,15 @@ Coefficients:
 <ul>
 <li><p>Let’s assume we’re interested in looking at students who have been admitted to college to see what the relationship is between their high school extracurricular activities and GPA</p></li>
 <li><p>We collect data on college freshman and compare their extracurricular activities in high school with their GPA.</p></li>
-<li><p>Surprisingly, we find a negative relationship. That’s sad.</p></li>
+<li><p>Surprisingly, we find a negative relationship.</p></li>
+<li><p>That’s sad.</p></li>
 </ul>
 </div><div class="column">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-1-1.png" style="width:88.0%" data-fig-pos="center"></p>
+<p><img data-src="methods-primer_files/figure-revealjs/collider-example-plot-1-1.png" style="width:88.0%"></p>
 </figure>
 </div>
 </div>
@@ -877,7 +878,7 @@ Coefficients:
 <ul>
 <li><p>More accurately, theory is the story we tell about which variables are important and how those variables are related.</p></li>
 <li><p>It both describes and explains how variables affect one another.</p></li>
-<li><p>It also allows us to make predictions about what we sould expect to see in various scenarios</p></li>
+<li><p>It also allows us to make predictions about what we should expect to see in various scenarios</p></li>
 </ul>
 <blockquote>
 <p><strong>Theory:</strong> A tentative conjecture about the causes of some phenomenon of interest (Kellstedt and Whitten 2019, 22)</p>
