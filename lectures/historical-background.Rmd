@@ -29,41 +29,26 @@ library(Hmisc)
 library(kableExtra)
 library(knitr)
 library(lubridate)
-library(rgdal) # used to read world map data
-library(rgeos) 
 library(sf)
 library(rvest)
 library(maps)
-library(maptools)
 library(viridis)
 library(ggmap)
 library(colorRamps)
 library(ggpubr)
 library(ggtext)
 library(RColorBrewer)
+library(flynnprojects)
 
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, dpi=400) 
+
+sysfonts::font_add_google("Oswald", "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 300)
 
 # Plotly font
 t <- list(family = "arial",
           size = 18)
-
-theme_flynn <- function(){ 
-  
-      theme_minimal(base_size = 12, base_family = "Arial") %+replace% 
-        
-        theme(plot.title = element_text(face = "bold", size = 18, hjust = 0, margin = margin(t = 0, b = 0.3, l = 0, r = 0, unit = "cm")),
-              plot.subtitle = element_text(size = 12, hjust = 0),
-              plot.caption = element_text(face = "italic", size = 8, hjust = 1, margin = margin(t = 0.2, unit = "cm")),
-              strip.background = element_rect(fill = "gray80", color = "black"),
-              strip.text = element_text(color = "black", face = "bold", margin = margin(t = 0.2, b = 0.2, l = 0.2, r = 0.2, unit = "cm")),
-              panel.grid.major = element_line(color = "gray70", size = 0.15),
-              panel.grid.minor = element_line(color = "gray90", size = 0.1),
-              axis.title = element_text(face = "bold", size = 12),
-              axis.title.y = element_text(angle = 90, margin = margin(t = 0, r = 0.5, b = 0, l = 0, unit = "cm")),
-              axis.title.x = element_text(margin = margin(t = 0.5, r = 0, b = 0, l = 0, unit = "cm")),
-              legend.title = element_text(face = "bold", hjust = 0))
-  }
 
 ### Map Data ###
 library(broom)
@@ -73,108 +58,36 @@ countries <- c("Canada", "USA", "Mexico")
 base.1 <- map_data("world") %>% 
   filter(region %in% countries & long < -50)
 
-shape.1790 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1790/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1790 <- spTransform(shape.1790, CRS("+proj=longlat +datum=WGS84")) 
-
-shape.1790.sf <- st_as_sf(shape.1790) %>% 
+shape.1790 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1790/")) |> 
   mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
 
-
-# <- tidy(shape.1790, region = "STATENAM") %>% 
-#  mutate(year = 1790,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
-
-
-shape.1800 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1800/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1800 <- spTransform(shape.1800, CRS("+proj=longlat +datum=WGS84"))
-
-shape.1800.sf <- st_as_sf(shape.1800) %>% 
+shape.1800 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1800/")) |> 
   mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
-#shape.1800.df <- tidy(shape.1800, region = "STATENAM") %>% 
-#  mutate(year = 1800,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
 
-
-shape.1820 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1820/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1820 <- spTransform(shape.1820, CRS("+proj=longlat +datum=WGS84"))
-
-shape.1820.sf <- st_as_sf(shape.1820) %>% 
-  mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
-
-#shape.1820.df <- tidy(shape.1820, region = "STATENAM") %>% 
-#  mutate(year = 1820,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
-
-
-
-shape.1840 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1840/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1840 <- spTransform(shape.1840, CRS("+proj=longlat +datum=WGS84"))
-
-shape.1840.sf <- st_as_sf(shape.1840) %>% 
+shape.1820 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1820/")) |> 
   mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
-#shape.1840.df <- tidy(shape.1840, region = "STATENAM") %>% 
-#  mutate(year = 1840,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
 
-
-
-shape.1850 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0005_shape/nhgis0005_shape/nhgis0005_shapefile_tl2000_us_state_1850/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1850 <- spTransform(shape.1850, CRS("+proj=longlat +datum=WGS84"))
-
-shape.1850.sf <- st_as_sf(shape.1850) %>% 
-  mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
-
-#shape.1850.df <- tidy(shape.1850, region = "STATENAM") %>% 
-#  mutate(year = 1850,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
-
-
-
-shape.1860 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1860/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1860 <- spTransform(shape.1860, CRS("+proj=longlat +datum=WGS84"))
-
-shape.1860.sf <- st_as_sf(shape.1860) %>% 
+shape.1840 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1840/")) |> 
   mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
-#shape.1860.df <- tidy(shape.1860, region = "STATENAM") %>% 
-#  mutate(year = 1860,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
-
-
-
-shape.1900 <- readOGR(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1900/"))
-
-# Need to transform the GIS coordinates into long/lat to match map_data coordinates
-shape.1900 <- spTransform(shape.1900, CRS("+proj=longlat +datum=WGS84"))
-
-shape.1900.sf <- st_as_sf(shape.1900) %>% 
+shape.1850 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0005_shape/nhgis0005_shape/nhgis0005_shapefile_tl2000_us_state_1850/")) |> 
   mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
-#shape.1900.df <- tidy(shape.1900, region = "STATENAM") %>% 
-#  mutate(year = 1900,
-#         territory = ifelse(grepl(".*erritor.*", id), "Territory", "State"))
+shape.1860 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1860/")) |> 
+  mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
+
+shape.1900 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1900/")) |> 
+  mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State"))
 
 
 ```
@@ -272,7 +185,7 @@ p1 <- ggplot(data = systemdata, aes(x = Year, y = Countries)) +
        title = "International system size, 1815-2010",
        subtitle = "How does the changing size of the international system affect conflict?",
        caption = "Data obtained from the Correlates of War Project: http://www.correlatesofwar.org/") +
-  theme_flynn() 
+  theme_flynn(base_size = 1, base_family = "oswald") 
 
 p1
 
@@ -293,7 +206,7 @@ milper <- read_csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv"))  %>
 # US military personnel as percent of population
 p2 <- ggplot(data = milper, aes(x = year, y = milper.per)) +
   geom_area(fill = "deepskyblue", color = "black") +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   scale_x_continuous(breaks = seq(1815, 2015, 20)) +
   scale_y_continuous(breaks = seq(0, 0.10, 0.02), limits = c(0, 0.10), labels = percent) +
   labs(x = "Year",
@@ -332,7 +245,7 @@ mid.time <- tibble(year = seq(1815, 2010)) %>%
 # US MID count over time
 ggplot(data = subset(mid.time, name == "usmidcount"), aes(x = year, y = value)) +
   geom_bar(stat = "identity", color = "black", size = 0.1) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 16)) +
   scale_x_continuous(breaks = seq(1815, 2010, 20)) +
   scale_y_continuous(breaks = seq(0, 12, 2)) +
@@ -355,7 +268,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1790.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1790, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -379,7 +292,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1800.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1800, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -406,7 +319,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1820.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1820, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -434,7 +347,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1840.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1840, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -458,7 +371,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1850.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1850, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -489,7 +402,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1860.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1860, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -517,7 +430,7 @@ class: left, top
 
 ggplot() +
  geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
- geom_sf(data = shape.1900.sf, aes(fill = territory)) +
+ geom_sf(data = shape.1900, aes(fill = territory)) +
   theme_void() +
   theme(plot.background = element_blank(),
         plot.title = element_text(size = 18, face = "bold"),
@@ -586,9 +499,7 @@ duration <- campaign %>%
 # Plotting campaign phases over time and by conflict
 ggplot(data = duration, aes(y = reorder(WarAndTheater_Ed196_, startyear), x = startyear, group = WarAndTheater_Ed196_, colour = BattleOrCampaign_Ed197_)) +
   geom_segment(aes(xend = endyear, yend = WarAndTheater_Ed196_), size = 10) +
-  theme_flynn() +
-  theme(plot.title.position = "plot",
-        text = element_text(size = 18)) +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   scale_color_viridis(discrete = TRUE) +
   labs(x = "Time",
        y = "",
@@ -607,7 +518,7 @@ class: left, middle
 ggplot(data = duration, aes(x = reorder(WarAndTheater_Ed196_, startyear), y = totalduration, group = WarAndTheater_Ed196_, fill = BattleOrCampaign_Ed197_)) +
   geom_bar(stat = "identity") +
   coord_flip() +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18),
         plot.title.position = "plot") +
   scale_y_continuous(breaks = seq(0, 12000, 2000), limits = c(0,12000)) +
@@ -1077,7 +988,7 @@ ggplot(data = subset(spend, Year >= 1870 & Year <= 1914 & group == "spend.navy" 
                        Year >= 1870 & Year <= 1914 & group == "spend.army" |
                        Year >= 1870 & Year <= 1914 & group == "spend.vet"), aes(x = Year, y = value, fill = group)) +
   geom_area(position = "stack", color = "black", size = .1) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_fill_brewer(labels = c("Army", "Navy", "Veterans"),
                     palette = "Spectral") +
@@ -1104,7 +1015,7 @@ ggplot(data = subset(spend, Year >= 1870 & Year <= 1914 & group == "navy.per" |
                        Year >= 1870 & Year <= 1914 & group == "army.per" |
                        Year >= 1870 & Year <= 1914 & group == "vet.per"), aes(x = Year, y = value, fill = group)) +
   geom_area(position = "stack", color = "black", size = .1) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_fill_brewer(labels = c("Army", "Navy", "Veterans"),
                     palette = "Spectral") +
@@ -1226,23 +1137,23 @@ kable(wwicosts,
 ---
 class: left, top
 
-#Transition
-
-Consequences of the war:
-
-- Breakdown of old imperial powers
-- Austo-Hungarian Empire collapses
-- Ottoman Empire collapses 
-- German Empire defeated
-- Creation of several new states
-- Nationalism as a driving force in European politics
-- Partition of Middle East
-- Russian Revolution
-- US rejects global leadership role
-- New forms of warfare emerge
-- League of Nations created
-- Reparations imposed on Germany
-- Turkey stripped of territory, resources
+  #Transition
+  
+  Consequences of the war:
+  
+  - Breakdown of old imperial powers
+  - Austo-Hungarian Empire collapses
+  - Ottoman Empire collapses 
+  - German Empire defeated
+  - Creation of several new states
+  - Nationalism as a driving force in European politics
+  - Partition of Middle East
+  - Russian Revolution
+  - US rejects global leadership role
+  - New forms of warfare emerge
+  - League of Nations created
+  - Reparations imposed on Germany
+  - Turkey stripped of territory, resources
 
 
 
@@ -1279,7 +1190,7 @@ p1 +
 
 
 ---
-ckass: left, top
+class: left, top
 
 # Transition
 
@@ -1444,7 +1355,7 @@ trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_COW_
 
 ggplot(data = subset(trade, year >= 1900 & year <= 1940), aes(x = year, y = totaltrade)) +
   geom_area(fill = "deepskyblue", color = "black", size = 0.1, alpha = .9) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_x_continuous(breaks = seq(1900, 1940, 5)) +
   scale_y_continuous(breaks = seq(0, 70000, 10000), labels = dollar) +
@@ -1474,7 +1385,7 @@ us.trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_C
 
 ggplot(data = us.trade, aes(x = year, y = exports)) +
   geom_area(fill = "deepskyblue", color = "black", size = 0.1, alpha = .9) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_x_continuous(breaks = seq(1900, 1950, 5), limits = c(1900, 1950)) +
   scale_y_continuous(breaks = seq(0, 15000, 3000), labels = dollar) +
@@ -1503,7 +1414,7 @@ gnp <- read.delim(here("../../../Data Files/NBER/GDP/a08166.dat.txt"), sep = " "
 
 ggplot(data = gnp, aes(x = Year, y = GNP)) +
   geom_bar(fill = "deepskyblue", color = "black", size = 0.1, stat = "identity") +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_x_continuous(breaks = seq(1920, 1950, 5), limits = c(1919, 1951)) +
   scale_y_continuous(breaks = seq(0, 175000, 25000), labels = dollar) +
@@ -1526,7 +1437,7 @@ class: middle, center
 ggplot(data = gnp, aes(x = Year, y = gnp.change, group = growth, fill = stat(gnp$gnp.change >0))) +
   geom_bar(stat = "identity", color = "black", size = 0.1) +
   geom_hline(yintercept = 0, color = "black", size = .3) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_x_continuous(breaks = seq(1920, 1950, 5), limits = c(1919, 1951)) +
   scale_y_continuous(breaks = seq(-0.15, 0.15, 0.05), labels = percent) +
@@ -1557,7 +1468,7 @@ unemp <- read.delim(here("../../../Data Files/NBER/Unemployment/m08292a.dat.txt"
 # US unemployment rate
 ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
   geom_line(size = 0.75) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_x_date(breaks = seq(as.Date("1930-01-01"), as.Date("1942-01-01"), "2 years"), limits = c(as.Date("1930-01-01"), as.Date("1942-01-01")), date_labels = "%Y %b") +
   scale_y_continuous(breaks = seq(0, 0.25, 0.05), labels = percent) +
@@ -1580,7 +1491,7 @@ class: center, middle
 unemp.fig.2 <- ggplot(data = unemp, aes(x = Time, y = change, color = change)) +
   geom_line(size = 1.0) +
   geom_hline(yintercept = 0, color = "black", size = 1.0) +
-  theme_flynn() +
+  theme_flynn(base_size = 1, base_family = "oswald") +
   theme(text = element_text(size = 18)) +
   scale_x_date(breaks = seq(as.Date("1930-01-01"), as.Date("1942-01-01"), "2 years"), limits = c(as.Date("1930-01-01"), as.Date("1942-01-01")), date_labels = "%Y %b") +
   guides(color = FALSE) +
