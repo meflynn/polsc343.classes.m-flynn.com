@@ -225,7 +225,8 @@ p.date {
 
 /* I set this to push figures vertically towards the center, but I may want to revisit this later. Quarto should have page specific settings I can use to do this. But the question is if I want to set it every time I create a new slide since I use A LOT of dataviz */
 .reveal img {
-  margin: 5%;
+  margin: 0%;
+  margin-top: -2%;
 }
 
 

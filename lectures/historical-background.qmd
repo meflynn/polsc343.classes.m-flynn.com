@@ -42,11 +42,12 @@ title-slide-attributes:
 ```{r setup}
 #devtools::install_github("meflynn/flynnprojects")
 #devtools::install_github("MatthewBJane/theme_park")
+#devtools::install_github("ropensci/rnaturalearth")
 library(tidyverse)
 library(ggdag)
 library(dagitty)
 library(flynnprojects)
-library(ThemePark)
+#library(ThemePark)
 library(ggmap)
 library(sf)
 library(here)
@@ -55,6 +56,7 @@ library(kableExtra)
 library(lubridate)
 library(rvest)
 library(viridis)
+library(rnaturalearth)
 
 sysfonts::font_add_google("Oswald", "oswald")
 sysfonts::font_add_google("Roboto", "roboto")
@@ -62,13 +64,13 @@ showtext::showtext_auto()
 showtext::showtext_opts(dpi = 400)
 
 
-countries <- c("Canada", "USA", "Mexico")
+countries <- c("Canada", "United States of America", "Mexico")
 
-base.1 <- map_data("world") %>% 
-  filter(region %in% countries & long < -50)
+base.1 <- ne_countries(scale = 50) |>  
+  filter(sovereignt %in% countries)  
 
 # Parameter to reduce compilation time by reducing detail in shapefiles.
-detail.reduction <- 10000
+detail.reduction <-500
 
 shape.1790 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0004_shape/nhgis0004_shapefile_tl2000_us_state_1790/")) |> 
   mutate(territory = ifelse(grepl(".*erritor.*", STATENAM), "Territory", "State")) |> 
@@ -275,15 +277,20 @@ ggplot(data = subset(mid.time, name == "usmidcount"), aes(x = year, y = value)) 
 
 
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1790, aes(fill = territory)) +
-  theme_void() +
-  theme(text = element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1790",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
@@ -302,15 +309,20 @@ ggplot() +
 
 
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1800, aes(fill = territory)) +
-  theme_void() +
-  theme(text = element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1800",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
@@ -330,15 +342,20 @@ ggplot() +
 
 
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1820, aes(fill = territory)) +
-  theme_void() +
-  theme(element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1820",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
@@ -357,15 +374,20 @@ ggplot() +
 
 
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1840, aes(fill = territory)) +
-  theme_void() +
-  theme(element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1840",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
@@ -384,15 +406,20 @@ ggplot() +
 
 
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1850, aes(fill = territory)) +
-  theme_void() +
-  theme(element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1850",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
@@ -410,17 +437,21 @@ ggplot() +
 #| out-width: "70%"
 
 
-
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1860, aes(fill = territory)) +
-  theme_void() +
-  theme(element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1860",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
@@ -439,15 +470,20 @@ ggplot() +
 #| out-width: "70%"
 
 ggplot() +
- geom_polygon(data = base.1, aes(x = long, y = lat, group = group), fill = "gray80") +
+ geom_sf(data = base.1, fill = "gray80") +
  geom_sf(data = shape.1900, aes(fill = territory)) +
-  theme_void() +
-  theme(element_text(family = "oswald"),
-        plot.background = element_blank(),
-        plot.title = element_text(size = 18, face = "bold"),
+  coord_sf(xlim = c(-170, -50), ylim = c(15, 80)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(plot.background = element_blank(),
         panel.border =  element_blank(),
-        panel.grid = element_blank(),
-        axis.line = element_blank()) +
+        panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x.bottom = element_blank(),
+        axis.line.y.left = element_blank(),
+        axis.line = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank()) +
   scale_fill_brewer(palette = "Set1") +
   labs(title = "United States and territories, 1900",
        caption = "Historical shapefiles available from https://data2.nhgis.org/main",
