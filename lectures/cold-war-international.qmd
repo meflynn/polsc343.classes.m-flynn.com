@@ -1,0 +1,961 @@
+---
+title: "US Foreign Policy"
+subtitle: "The Cold War and International Relations"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    fig-width: 7
+    fig-height: 5
+    fig-format: retina
+    fig-dpi: 400
+    fig-align: center
+    #incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    #data-background-size: 750px 750px
+    #data-background-position: 1000px 370px
+    #data-background-position: 115% 150%
+    #data-background-position: 115% 140%
+    #data-background-position: 19em 8em
+    #height: 700
+    #width: 1050
+---
+
+```{r setup}
+#devtools::install_github("meflynn/flynnprojects")
+#devtools::install_github("MatthewBJane/theme_park")
+#devtools::install_github("ropensci/rnaturalearth")
+library(tidyverse)
+library(ggdag)
+library(dagitty)
+library(flynnprojects)
+#library(ThemePark)
+library(ggmap)
+library(sf)
+library(here)
+library(scales)
+library(kableExtra)
+library(lubridate)
+library(rvest)
+library(viridis)
+library(rnaturalearth)
+library(tidyquant)
+
+sysfonts::font_add_google("Oswald", "oswald")
+sysfonts::font_add_google("Roboto", "roboto")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 400)
+```
+
+
+## Lecture Overview
+
+1. Transition from World War II to the Cold War
+
+2. The emerging divide between West and East
+
+3. American hegemony and the emerging global orders
+    - Military and security
+    - Political and diplomatic
+    - Economics and trade
+
+
+
+
+
+## Key Questions
+
+1. How did the events of the late 19th and early 20th centuries shape the development of the Cold War?
+
+2. Who were some of the key players involved in shaping US foreign policy during the early Cold War years?
+
+3. What were the key features of the US-led global order that emerges after World War II?
+
+
+
+# From World War to Cold War {.inverse}
+
+
+
+## From World Wars to Cold War
+
+::::{.columns}
+:::{.column width=50%}
+- President Roosevelt dies April 12, 1945. 
+
+- President Truman takes office and is informed of the Manhattan Project
+
+- May 8, 1945: Nazi Germany surrenders to allies
+
+- The war in the Pacific carries on
+:::
+
+:::{.column width=50%}
+![](../images/franklin-roosevelt.jpg){width=70% fig-align="center"}
+:::
+::::
+
+:::{.notes}
+- Truman didn't know about Manhattan Project. Had several run-ins with Secretary of War Henry Stimson when he was in the Senate. Truman was trying to hunt down wasteful programs.
+:::
+
+
+
+
+## From World War to Cold War
+
+Japan and the atomic bomb
+
+- Invasion?
+
+- Demonstration?
+
+- Bombing?
+
+:::{.notes}
+Background
+- Many argued invasion would be too costly.
+- Debate over how best to end war. Three options presented.
+- Arsenal initially limited, so demonstration would waste a valuable weapon.
+- Also a risk it wouldn't work if demonstrated.
+- The decision to use the bomb not just about US and Japan. Also motivated by USSR. US wanted to end the war quickly to avoid Soviet interference in Pacific.
+:::
+
+
+
+
+## From World War to Cold War
+
+::::{.columns}
+:::{.column width=50%}
+Henry Stimson
+
+- Secretary of War under Roosevelt and Truman
+
+- Opposes calls for demonstration of atomic weapons
+
+- Influential in selecting targets
+:::
+:::{.column width=50%}
+![](../images/henry-stimson-old.jpg){width=70% fig-align="center"}
+:::
+::::
+
+
+:::{.notes}
+- Previously served as Secretary of War under Howard Taft, and Secretary of State under Herbert Hoover
+- Governor-General of Philippines
+- Highly influential in shaping US policy during WWII
+- Specifically advocated for using nuclear weapons, but opposed targeting sites that were culturally significant. Got Kyoto knocked off the list of potential targets.
+- Also suggested sharing nuclear technology with USSR as a means of deflating post-war tensions.
+:::
+
+
+
+## From World War to Cold War
+
+::::{.columns}
+:::{.column width=50%}
+Decision is made to use the bombs
+
+- Hiroshima bombed on August 6, 1945
+
+- Nagasaki bombed on August 9, 1945
+
+- Japan surrenders on August 14, 1945
+
+To right: Replica of “Fat Man”, bomb dropped on Nagasaki
+:::
+
+:::{.column width=50%}
+![](../images/fat-man.jpg){width=80% fig-align="center"}
+:::
+::::
+
+
+
+
+# The Emerging Divide {.inverse}
+
+
+
+
+## The Emerging Divide
+
+Tensions between the US and USSR go back long before World War II
+
+- Longstanding ideological opposition to communism
+
+- Soviet skepticism of Western intentions during war (the second front)
+
+- Soviets want secure borders in Europe
+
+:::{.notes}
+
+US long opposed to communism.
+- Long history of government action against communists domestically
+- US troops invaded Russia and attempted to reverse the Russian Revolution in 1917
+- The second front. Soviets thought US and UK would wait and let USSR and Germany bleed to death.
+- Tehran conference: Soviets long pushed for second front to take pressure off them in East. They agree to press Germans to take pressure off Allied campaign in France.
+- Soviets also occupying territory in the East as they move into Germany. Incredibly brutal. Dan Carlin's Hardcore History podcast has good info on this. Lots of murder and rape.
+- 1939 Nazi-Soviet Pact/Molotov-Ribbentrop Pact: Germany and USSR divvy up Eastern Europe.
+- 1944 Warsaw uprising. Soviets out outskirts of town but let Germans massacre
+Poles.
+:::
+
+
+
+
+## The Emerging Divide
+
+Key post-war events
+
+- Soviets absorb occupied territories, which become the Warsaw Pact States
+
+- British begin cutting aid to Greece and Turkey in 1946
+
+- Soviets making claims on territory in Iran and Turkey
+
+:::{.notes}
+
+Soviets occupy territory and solidify control.
+- British secretly announces to the US in 1946 that it an no longer sustain aid to Greece and Turkey. Greece is currently fghting a civil war, with communist forces on one side.
+- Greece holds cultural signifcance to US
+- Stalin also attempting to bully US into making concessions in Iran and Turkey. 
+- Stalin wants oil concessions and access to warm water ports.
+- Iran issue taken to Security Council in 1946. The first serious issue brought before the body. Stalin eventually withdrew.
+:::
+
+
+
+
+## {.blank-slide}
+
+![](../images/percentages-agreement.png){fig-align="center" width=30%}
+
+
+:::{.notes}
+Percentages Agreement
+- Fourth Moscow Conference of 1944
+- Text: Romania, Greece, Yugoslavia, Hungary, Bulgaria
+- Roosevelt's representative not included in these meetings between Churchill and Stalin. FDR protests.
+- Churchill demands British sphere in Greece. This comes back to bite them in 1947 when they can no longer support Greeks.
+:::
+
+
+
+
+## {.blank-slide}
+
+![](../images/occupied-germany-map.png){fig-align="center" width=40%}
+
+
+:::{.notes}
+Shows allied occupation zones
+- Cream areas are annexed by Poland and USSR, respectively.
+- Cream area to left was effectively control by France (Saar Protectorate) but was reintegrated into Germany in 1957.
+:::
+
+
+
+
+## The Emerging Divide 
+
+::::{.columns}
+:::{.column width=50%}
+The Truman Doctrine
+
+- First outlined in President Truman’s March 1947 speech before Congress
+
+- Promises to support free peoples resisting tyrannical governments
+
+- Also lays foundations for foreign aid programs by calling for assistance to Greece and Turkey
+
+- To right: President Harry Truman
+:::
+:::{.column width=50%}
+
+![](../images/harry-truman.jpg){width=70% fig-align="center"}
+:::
+::::
+
+:::{.notes}
+Truman Doctrine
+- Direct reaction to events in Greece and Turkey
+- FDR seemed more optimistic regarding cooperation with Russa. Truman more skeptical.
+- "Must be the policy of the United States to support free peoples who are resisting
+attempted subjugation by armed minorities or by outside pressures...We must
+assist free peoples to work out their own destinies in their own way. (as quoted
+in Gaddis 2007, 31)"
+- Lays the foundations for economic and military aid programs, which haven't existed before.
+:::
+
+
+
+
+## The Emerging Divide 
+
+::::{.columns}
+:::{.column width=50%}
+The Marshall Plan
+
+- General George Marshall, Secretary of State under President Truman
+
+- June 1947: Delivered Harvard’s commencement speech. The “opening shot” of the Marshall Plan
+
+- Catalyst for what would become the Organization for Economic Cooperation and Development (OECD)
+
+- To right: General George C. Marshall
+:::
+:::{.column width=50%}
+
+![](../images/george-marshall.jpeg){width=60% fig-align="center"}
+:::
+::::
+
+:::{.notes}
+Marshall Plan
+- Builds off of the Truman doctrine
+- Europe's economy is in ruins. Hunger and poverty viewed as greater threats than
+direct Soviet intervention.
+- Calls for massive economic assistance to help rebuild Europe (European Recovery
+Program).
+- Excerpt from Marshall's speech: "Aside from the demoralizing effect on the world
+at large and the possibilities of disturbances arising as a result of the desperation
+of the people concerned, the consequences to the economy of the United States
+should be apparent to all. It is logical that the United States should do whatever
+it is able to do to assist in the return of normal economic health in the world,
+without which there can be no political stability and no assured peace. Our policy
+is directed not against any country or doctrine but against hunger, poverty, desperation and chaos. Its purpose should be the revival of a working economy in the
+world so as to permit the emergence of political and social conditions in which free
+institutions can exist. Such assistance, I am convinced, must not be on a piece-
+meal basis as various crises develop. Any assistance that this Government may
+render in the future should provide a cure rather than a mere palliative. Any government that is willing to assist in the task of recovery will find full co-operation
+I am sure, on the part of the United States Government. Any government which
+maneuvers to block the recovery of other countries cannot expect help from us.
+Furthermore, governments, political parties, or groups which seek to perpetuate
+human misery in order to profit therefrom politically or otherwise will encounter
+the opposition of the United States." OECD Marshall Plan Speech.
+- Soviets invited to partake. They refused.
+
+:::
+
+
+
+
+
+## The Emerging Divide
+
+
+::::{.columns}
+:::{.column width=50%}
+George F. Kennan
+
+- Director of Policy Planning, US State Department, Ambassador to the USSR
+
+- Father of containment doctrine
+
+- Author of the “Long Telegram” and the infamous “X Article” in Foreign Affairs
+
+- Emphasis on non-military resistance to Soviet expansion
+:::
+:::{.column width=50%}
+
+![](../images/george-kennan.jpg){width=60% fig-align="center"}
+:::
+::::
+
+
+
+:::{.notes}
+George Kennan
+- Kennan had been a foreign service officer for years.
+- In 1946---Long telegram was about 8,000 words. Ridiculous considering model of telegraphic delivery.
+- Early skeptic of the US' ability to cooperate with the Soviets
+- Containment emphasized less militarized resistance to USSR.
+- Kennan argued that Soviet rulers justified their rule on the idea that the West was trying to destroy the USSR/Russian people. The use of military force to counter them would only play into their narrative, helping to justify the Soviet regime's harsh domestic policies.
+- Kennan opposed NATO for this reason. He believed the formation of an alliance excluding the USSR would serve as the proof Soviet leaders needed
+:::
+
+
+
+
+
+## The Emerging Divide
+
+
+::::{.columns}
+:::{.column width=50%}
+Paul Nitze
+
+- Contemporary of George Kennan
+
+- Second Director of Policy Planning
+
+- Primary author of NSC–68
+
+- Supported a more militant version of Kennan’s containment strategy
+:::
+:::{.column width=50%}
+
+![](../images/paul-nitze.jpg){width=60% fig-align="center"}
+:::
+::::
+
+
+
+:::{.notes}
+Paul Nitze
+- One of the principal authors of NSC-68
+- Set out a vision of a more militarized approach to containment
+- Kennan opposed this view. 
+:::
+
+
+
+
+## The Emerging Divide
+
+Later events: 
+
+- Communist coup in Czechoslovakia (1948)
+
+- Yugoslav–Soviet split (1948)
+
+- Communist victory in China (1949)
+
+- USSR detonates atomic bomb (1949)
+
+- Chinese-Soviet Alliance (1950)
+
+- Korean War (1950–1953)
+
+- Communist parties gain strength in Europe after WWII
+
+
+:::{.notes}
+Other events pave the way for the cold war:
+- 1948: Stalin approves communist coup in Czechoslovakia. Had retained democratic government after the war. Czech foreign minister found dead on the ground.Suspicions that communists pushed him.
+- 1948: Tito splits with Stalin. US begins giving aid to Tito's regime. Dean Acheson
+famously says "he might be a son of a bitch, but he's our son of a bitch."
+- Communist Chinese win Civil War in 1949. Nationalists retreat to Taiwan
+- Chinese and Soviets form alliance in 1950. Perpetuates idea that there is a monolithic transnational communism bloc
+- Korean War. Reinforced idea that USSR would use force to advance communism around the world.
+- Economic devastation after WWI also leads to rise in support for communist parties. US worries that communists will gain power through legitimate electoral channels, and will be subservient to USSR.
+:::
+
+
+
+
+
+# American Hegemony {.inverse}
+
+
+
+## American Hegemony
+
+What is hegemony?
+
+
+> Hegemony is a __preponderance of global power__
+
+:::{.notes}
+
+Note that this means a hegemonic power doesn't get everything it wants. But more power helps in bargaining processes. 
+
+:::
+
+
+
+
+## American Hegemony
+
+US emerges from World War II with unparalleled economic and military power
+
+Europe, not so much
+
+US foreign policy focuses on three goals:
+
+1. Checking Soviet expansion
+
+2. Promoting recovery of war-torn areas
+
+3. Promoting greater global integration
+
+
+:::{.notes}
+Goal of promoting integration is a reaction to World War I and Western liberal political thought (e.g. Adam Smith, Immanuel Kant, etc.)
+:::
+
+
+
+
+## {.blank-slide}
+
+```{r cow-capabilities}
+#| fig-align: "center"
+#| out-width: "70%"
+
+data <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv")) %>% 
+  subset(year == 1945 | year == 1950)
+
+# Comparison
+ggplot(data = subset(data, cinc >= 0.01), aes(x = reorder(stateabb, cinc), y = cinc, group = as.factor(year), fill = as.factor(year))) +
+  geom_bar(stat = "identity", position = "dodge", color = "black", size = 0.1) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_fill_brewer(palette = "Set2") +
+  labs(x = "Country",
+       y = "CINC Score",
+       fill = "Year",
+       title = "Countries with minimum 1% CINC score",
+       subtitle = "Mind the difference between absolute, relative, and latent capabilities",
+       caption = "Data obtained from Correlates of War Project's National Material Capabilities data (v5.0).")
+
+```
+
+
+
+## American Hegemony
+
+US embarks on a massive order-building project
+
+- The emergent order is often referred to as a “liberal hegemonic” order, or as “liberal internationalism”
+
+- Three central pillars
+
+  - Security
+
+  - Diplomacy and governance
+
+  - Economic
+
+
+:::{.notes}
+Initial Alternatives
+- Talk about the origins of liberal here. Not liberal as in politically liberal.
+- Points to classical liberalism
+- Two main pillars are in economic and security affairs.
+- Also talk about the idea that earlier visions of post-war environment looked different
+  - FDR's Four Policemen: US, England, USSR, and China (Also members of
+UN Security Council). Emphasized leadership of great powers in spheres of
+influence
+  - US initially opposed to greater military involvement, but the situation eventually required it, and Europeans requested it. FDR told stalin troops would
+be out of Europe within 2 years.
+:::
+
+
+
+
+## American Hegemony
+
+What does a liberal internationalist/hegemonic order look like?
+
+- It emphasized a few key concepts
+
+- US leadership (with constraints)
+
+- Primacy of a rules-based system of global governance
+
+- Multilateral cooperation and in economic and security affairs
+
+
+:::{.notes}
+Examples of US leadership and constraints
+- US must abide by system it sets up
+- John Ikenberry argues that the US had to constrain its behavior to enjoy the long-term benefits of the order it was building.
+  - If it did whatever it wanted it would provoke a backlash and would collapse immediately.
+  - Getting buy-in and legitimacy was important
+- Rules-based system in contrast to pure balance of power that dominated before. Rules more formally outlined/defined.
+:::
+
+
+
+
+## American Hegemony
+
+Security affairs:
+
+- North Atlantic Treaty Organization (NATO)
+
+- Central Treaty Organization (CENTO)
+
+- United Nations (UN)
+
+- Southeast Asia Treaty  Organization (SEATO)
+
+
+:::{.notes}
+- US leaders insisted Europeans had to take the lead in forming NATO
+- US has to be asked to join partly to secure domestic support.
+:::
+
+
+
+
+## American Hegemony
+
+Diplomatic affairs:
+
+- Establish standards and principles to govern the post-War world
+
+- Provide forum for dispute resolution between states
+
+- Determine the fate of colonial territories and societies
+
+
+
+
+## American Hegemony
+
+Diplomatic affairs:
+
+- United Nations (UN)
+
+  - International Atomic Energy Agency (IAEA)
+  
+  - World Health Organization
+  
+  - United Nations Human Rights Council
+
+
+:::{.notes}
+Notes:
+- The idea here was to establish greater coordination between countries
+- Resolve problems before they emerged, and do so peacefully
+- Coordinate to facilitate greater interactions in other spaces (e.g. economic)
+:::
+
+
+
+## American Hegemony
+
+::::{.columns}
+:::{.column width=50%}
+Promoting democracy
+
+- US seeking to promote democracy abroad
+
+- Much of this is rooted in opposition to communism
+
+- Much of this effort conflicts with treatment of minority Americans at home
+
+- Many fear that US efforts to promote democracy and the rule of law will be applied unevenly across the international landscape
+
+- To right: James Byrnes, Secretary of State 1945-1947
+:::
+
+:::{.column width=50%}
+![](../images/james-byrnes.jpg){width=50% fig-align="center"}
+:::
+::::
+
+
+
+:::{.notes}
+Notes on Byrnes, Multilateralism, and Human Rights:
+
+- Secretary of STate. Also a staunch segregationist.
+
+- Brynes served in the House, Senate, and briefly as an associate justice on the US supreme court (though his tenure is the shortest on record). He played an important role in blocking anti-lynching legislation, blocking support for black colleges and universities, and also in maintaining white control over Democratic Party politics in South Carolina.
+
+- The State Department and various US officials worried that the Untied Nations Commission on Human Rights might have the power to investigate human rights abuses within the US. Also worried that it might be able to compel the US to impose equal protections for blacks and other minority groups. Also sought to prevent the commission from having the power to investigate petitions brought by various minority groups.
+
+- US immediately sought to weaken these institutions for fear that they would be used against the US. They also sought to limit petitions to come only from member states (i.e. not from individuals or non-governmental organizations).
+
+- This is exactly what happened---the National Negro Congress brought a petition to the UN on June 6, 1946 that outlined the oppression of black Americans (See Anderson 2003, 80-81).
+
+:::
+
+
+
+
+## {.blank-slide}
+
+:::{layout="[1,1]"}
+![Walter White](../images/walter-white.jpg){width=5in height=6in fig-align="center"}
+
+![Thurgood Marshall](../images/thurgood-marshall.jpg){width=5in height=6in fig-align="center"}
+:::
+
+:::{.notes}
+Notes on NAACP
+
+- We typically think of NAACP as a domestic civil rights organization
+- Historian Carol Anderson discusses how the concept of "civil rights" grew out of an effort to avoid red-baiting. 
+- The goal was initially to pursue a more general global agenda of human rights.
+- Walter White and Thurgood Marshall were two leading figures in the NAACP and were closely engaged with the early formulation of US human rights policy and stance re the United Nations.
+
+:::
+
+
+
+
+## American Hegemony
+
+
+Economic affairs:
+
+- Promote greater economic integration among all states
+
+- Remove barriers to trade and investment
+
+- Reaction to interwar period and Great Depression and move to autarky 
+
+
+:::{.notes}
+Notes on economic affairs
+
+- Promoting greater economic integration is a reaction to the Great Depression.
+- Policymakers believed that the move to autarky caused WWII.
+- What do we mean? Lower tariff barriers is the big thing. Lowering taxes on imports. Think Smoot Hawley Tariff.
+- Also inspired by classical liberal thinking. Roosevelt and Truman administrations are filled with people from the Northeastern business and banking sectors. They very much buy into the idea that commerce can create peace.
+- They also stand to benefit economically. European economies are in ruins, and the US is the only advanced industrial economy running at full steam. They canstand to gain a lot by getting other states to lower trade barriers, thus making
+US goods cheaper to buyers in other countries.
+- Foreign aid viewed as an extension of the Western welfare state.
+
+:::
+
+
+
+## American Hegemony
+
+Economic affairs:
+
+- Bretton Woods System
+  
+  - General Agreement on Tariffs and Trade (GATT)
+
+  - World Bank
+
+  - International Monetary Fund (IMF)
+
+
+:::{.notes}
+
+Early institutions
+
+- GATT becomes TWO in 1995. Provides a forum for international trade law, tariff negotiations, and dispute resolution.
+- World Bank: Originally focused on reconstruction after WWII. Later shifts to focus on development and poverty reduction. 
+- IMF: Originally intended to help maintain stable exchange rates and address
+balance of payments problems. US dollar was pegged to gold initially, so some
+management of the monetary system was still required. Since moving off the gold
+standard the IMF is not focused on debt management and balance of payments
+crises. Exchange rates were fixed, but could be adjusted (See Oatley).
+
+:::
+
+
+
+
+## {.blank-slide}
+
+
+```{r igo-count}
+data <- read.csv(here("../../../Data Files/COW Data/COW IGO Data/igounit_v2.3.csv")) 
+data[data < 0] <- NA
+data <- data %>% 
+  group_by(year) %>% 
+  dplyr::summarise(igocount = n_distinct(ioname))
+
+# Annual count of IGOs
+ggplot(data = data, aes(x = year, y = igocount)) +
+  geom_area(fill = "deepskyblue", color = "black", size = 0.1, alpha = 0.8) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1815, 2010, 15), limits = c(1815, 2010)) +
+  scale_y_continuous(breaks = seq(0, 350, 50)) +
+  labs(x = "Year",
+       y = "Count",
+       title = "Number of Intergovernmental Organizations, 1815-2005",
+       subtitle = "World War II represents an inflection point",
+       caption = "Data obtained from Correlates of War Project's IGO data (v2.3)")
+```
+
+
+
+## American Hegemony
+
+What does all this mean for US foreign policy?
+
+Big changes, that’s what!
+
+- US forges a series of long-term military alliances
+- New economic and military aid programs
+- Building up a nuclear arsenal
+- Maintaining long-term overseas military deployments
+- Maintaining high levels of military spending
+- Using military force abroad with greater regularity and intensity
+- Focus on political demands from less developed countries
+- Economic and monetary policies more tightly entwined with rest of the world
+- Policy goals require greater international coordination (i.e. multilateralism)
+- Greater attention on disparities between US domestic policies and foreign policies
+
+
+:::{.notes}
+
+World is more complicated
+
+- The US is in a position to manage many, many more relationships than in the past, and those issues are increasingly technical in nature (e.g. trade, nuclear weapons, etc.)
+
+- The issue of race relations in the US was a major focus in the lead up to the conferences laying out the United Nations
+
+- Domestic groups used foreign policy statements and international institutions to call attention to domestic injustices
+
+- International actors pointed to US domestic problems with race to undermine its rhetoric for justice, equality, and democracy abroad.
+
+:::
+
+
+
+## {.blank-slide}
+
+```{r}
+data <- read.csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_0ddyr.csv")) %>% 
+  subset(stateA == 2 & defense == 1) %>% 
+  group_by(year) %>% 
+  summarise(allies = n_distinct(stateB))
+
+combined <- tibble(year = seq(1815, 2016)) %>% 
+  left_join(data) %>% 
+  mutate(allies = ifelse(is.na(allies), 0, allies)) 
+
+
+# US allies over time
+ggplot(data = combined, aes(x = year, y = allies)) +
+  geom_line() +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1815, 2016, 20)) +
+  scale_y_continuous(breaks = seq(0, 70, 10), limits = c(0, 70)) +
+  labs(x = "Year",
+       y = "Count",
+       title = "US defense pacts over time, 1815-2016",
+       subtitle = "World War II and the Cold War mark an important turning point",
+       caption = "Data obtained from the Alliance Treaty Obligations and Provisions Data, (v4.0)")
+  
+
+```
+
+
+
+## {.blank-slide}
+
+
+```{r dpi=400}
+milper <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv"))  %>% 
+  subset(ccode == 2) %>% 
+  mutate(milper.per = milper / tpop)
+  
+# US military personnel as percent of population
+ggplot(data = milper, aes(x = year, y = milper.per)) +
+  geom_area(fill = "deepskyblue", color = "black") +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1815, 2015, 20)) +
+  scale_y_continuous(breaks = seq(0, 0.10, 0.02), limits = c(0, 0.10), labels = percent) +
+  labs(x = "Year",
+       y = "",
+       title = "Military personnel as percentage of total population, 1815-2015",
+       subtitle = "Historically the US military has been very small, until the Cold War",
+       caption = "Data obtained from the Correlates of War Project National Material Capabilities data (v5.0).\nhttp://www.correlatesofwar.org/data-sets/national-material-capabilities")
+
+```
+
+
+
+## {.blank-slide}
+
+```{r dpi=400}
+milspend <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv")) %>% 
+  subset(ccode == 2 & year >= 1913) 
+
+# Note this uses Consumer Price Index for All Urban Consumers: All Items in U.S. City Average
+cpi <- tq_get("CPIAUCNS",
+              get = "economic.data",
+              from = "1913-01-01",
+              to = "2019-01-01") %>% 
+  mutate(year = format(date, "%Y")) %>% 
+  group_by(year) %>% 
+  summarise(cpi = mean(price)) %>% 
+  mutate(basevalue = cpi[year==2018],
+         cpi = cpi/basevalue,
+         year = as.numeric(year))
+
+combined <- milspend %>% 
+  left_join(cpi) %>% 
+  mutate(milex.cons = milex/cpi)
+
+# US military spending 1913-2015
+ggplot(data = combined, aes(x = year, y = milex.cons/1000000)) +
+  geom_line() +
+  theme_flynn(base_family = "oswald", base_size = 12) +
+  scale_x_continuous(breaks = seq(1915, 2015, 20)) +
+  scale_y_continuous(labels = dollar) +
+  labs(x = "Year",
+       y = "Billions of 2018 dollars",
+       title = "US military spending by year, 1913-2012",
+       subtitle = "Military spending was historically very low until the Cold War",
+       caption = "Military spending data obtained from Correlates of War Project's National Material Capabilities data (v5.0).\nInflation data obtained from FRED data series CPIAUCNS.")
+
+```
+
+:::{.notes}
+- FDR promised Stalin at Tehran conference that US troops would be out of Europe within two years
+:::
+
+
+
+## Accepting American Leadership
+
+European considerations:
+
+- Military weakness
+- Economic weakness
+- Intra-European competition 
+
+
+Other Countries:
+
+- US position on Anti-Imperialism
+- US rhetoric on self-determination, democracy, and human rights
+- Support for particular domestic political and military factions
+- Economic and/or military assistance
+- Access to American markets
+
+
+:::{.notes}
+
+- Military Weakness
+ - Soviet Union increasingly hostile.
+ - Western European militaries exhausted from the war
+ - Military capabilities take a long time to rebuild
+- Economic Weakness
+ - Economies are in ruins. Basic infrastructure and capital need to reaccumulate
+ - US aid is a necessity to rebuild. Europeans can't manufacture basic goods.
+ - US leadership in military affairs will help ease the burdens on recovering economies, allowing Europeans to divert resources to other ends.
+- Intra-European competition
+ - US involvement helps to alleviate fears of a security dilemma
+ - Reconstruction and rearmament would be uneven, and some countries are more exposed to the USSR than others.
+ - US involvement helped to serve as a sort of referee
+ - This was particularly important for France and Germany, whose long history made them wary of each other
+ 
+- Other countries:
+  - Legacy of Wilson's attitude during Paris negotiations in 1919 still haunts independence movements
+  - Many wary of US hypocrisy with respect to the treatment of minorities at home. Disconnect between US behavior and rhetoric
+  - Other countries see the US-Soviet rivalry as an opportunity to exploit. Get aid, money, weapons, and access to markets.
+:::

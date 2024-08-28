@@ -13,8 +13,10 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: 16:9
-      titleSlideClass: [left, middle, inverse]
+
 ---
+
+
 ```{r setup, include = FALSE, echo = FALSE}
 library(tidyverse)
 library(tidyquant)
