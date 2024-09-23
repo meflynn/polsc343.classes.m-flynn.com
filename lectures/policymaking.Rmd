@@ -25,9 +25,6 @@ library(Hmisc)
 library(kableExtra)
 library(knitr)
 library(lubridate)
-library(rgdal) # used to read world map data
-library(rgeos) 
-library(maptools)
 library(ggmap)
 library(flynnprojects)
 
