@@ -25,14 +25,11 @@ library(Hmisc)
 library(kableExtra)
 library(knitr)
 library(lubridate)
-library(rgdal) # used to read world map data
-library(rgeos) 
-library(rvest)
-library(maptools)
-library(ggmap)
 library(colorRamps)
 library(RColorBrewer)
 library(flynnprojects)
+library(brms)
+library(marginaleffects)
 
 sysfonts::font_add_google(name = "Oswald", family = "oswald")
 showtext::showtext_auto()
@@ -731,7 +728,9 @@ Long tradition of the US military being "apolitical", but what does this mean?
 class: left, top
 # The Military in Politics
 
-```{r cjcos-president}
+```{r cjcos-president, echo=FALSE, include=FALSE}
+
+
 chiefs <- read_csv(here("../../../Data Files/chair joint chiefs.csv")) %>% 
   rename("Party" = "pres_party") %>% 
   mutate(Party = ifelse(Party == 0, "Republican", "Democrat")) %>% 
@@ -746,6 +745,30 @@ chiefstab <- chiefs %>%
               values_from = count) %>% 
   mutate(Navy = ifelse(is.na(Navy), 0, Navy))
 
+branch.model <- brms::brm(branch ~ 1 + Party, 
+          data = chiefs, 
+          family = categorical(link = "logit", refcat = "Army"), 
+          chains = 4, 
+          iter = 10000, 
+          warmup = 2000, 
+          cores = 4, 
+          seed = 1234,
+          backend = "cmdstanr")
+
+preds <- marginaleffects::predictions(branch.model,
+                                      by = "Party",
+                                      type = "response",
+                                      ndraws = 1000,
+                                      newdata = datagrid(Party = c("Republican", "Democrat")))
+
+draws <- posterior_draws(preds)
+
+```
+
+.pull-left[
+```{r cjos-president-output}
+
+
 kable(chiefstab,
       "html",
       align = c("l", "c", "c", "c"),
@@ -753,17 +776,28 @@ kable(chiefstab,
   kable_styling(full_width = TRUE) %>% 
   row_spec(0, bold=TRUE, color="white", background="#512888")
 
-chiefstab.chi2 <- chiefstab
-row.names(chiefstab.chi2) <- chiefstab.chi2$Party
-chiefstab.chi2 <- chiefstab.chi2[, c(2:4)]
-
-
-# Note: I'm not sure what to do to replicate Ben's original figure. I'm only getting a p value of 0.164. The Stata and R outputs are identical. 
-#table(chiefs$Party, chiefs$branch)
-
-chisq.test(chiefs$Party, chiefs$branch)
 
 ```
+]
+
+.pull-right[
+```{r cjos-president-plots, fig.width=6, fig.height=4, out.width="90%"}
+ggplot(draws, aes(x = draw, y = group, fill = Party, color = Party)) +
+  ggdist::stat_slabinterval(position = position_dodge(width = 0.2),
+                       slab_alpha = 0.6,
+                       scale = 1,
+                       height = 0.5) +
+  theme_flynn(base_size = 11, 
+              base_family = "oswald") +
+  theme(plot.title.position = "plot") +
+  scale_fill_manual(values = c("blue", "red")) +
+  scale_color_manual(values = c("blue", "red")) +
+  labs(x = "Predicted Probability",
+       y = "",
+       title = "Predicted probability of being Chair of the Joint Chiefs by branch and party")
+
+```
+]
 
 ???
 # Notes

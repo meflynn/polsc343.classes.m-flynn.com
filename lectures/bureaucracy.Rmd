@@ -13,7 +13,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: 16:9
-
+      titleSlideClass: [left, middle, inverse]
 ---
 
 
@@ -27,11 +27,6 @@ library(Hmisc)
 library(kableExtra)
 library(knitr)
 library(lubridate)
-library(rgdal) # used to read world map data
-library(rgeos) 
-library(rvest)
-library(maptools)
-library(ggmap)
 library(colorRamps)
 library(RColorBrewer)
 library(flynnprojects)
