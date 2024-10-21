@@ -25,12 +25,12 @@ library(Hmisc)
 library(kableExtra)
 library(knitr)
 library(lubridate)
-library(rgdal) # used to read world map data
-library(rgeos) 
+#library(rgdal) # used to read world map data
+#library(rgeos) 
 library(rvest)
 library(broom)
 library(troopdata)
-library(maptools)
+#library(maptools)
 library(patchwork)
 library(ggmap)
 library(sp)
@@ -51,7 +51,7 @@ knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.align="center", echo=FALSE
 
 sysfonts::font_add_google("Oswald", family = "oswald")
 showtext::showtext_auto()
-showtext::showtext_opts(dpi = 300)
+showtext::showtext_opts(dpi = 400)
 
 
 ```
@@ -390,8 +390,8 @@ class: center, middle
 
 #### Tree Map ####
 
-troopdata <- troopdata::troopdata %>% 
-  filter(ccode != 2 & year >= 1950) %>% 
+troopdata <- troopdata::get_troopdata() |>  
+  filter(ccode != 2 & year >= 1950) |> 
   mutate(ccode = ifelse(ccode == 260, 255, ccode),
          region = countrycode::countrycode(iso3c, "iso3c", "region"),
          region = case_when(
@@ -402,11 +402,11 @@ troopdata <- troopdata::troopdata %>%
 
 
 treeplot.data <- troopdata %>% 
-  filter(year %in% c(2000, 2005, 2010, 2015) & !is.na(troops) & !is.na(region)) %>% 
+  filter(year %in% c(2000, 2005, 2010, 2015) & !is.na(troops_ad) & !is.na(region)) |>  
   mutate(countryname = countrycode::countrycode(ccode, "cown", "country.name"),
          countryname = ifelse(iso3c == "PRI", "Puerto Rico", countryname))
 
-treemap.plot <- ggplot(treeplot.data, aes(area = troops, fill = region, label = iso3c)) +
+treemap.plot <- ggplot(treeplot.data, aes(area = troops_ad, fill = region, label = iso3c)) +
   geom_treemap() +
   geom_treemap_text() +
   facet_wrap(. ~ year) +
@@ -424,21 +424,32 @@ treemap.plot
 class: center, middle
 
 ```{r alluvial-plot}
+
+troopdata <- troopdata::get_troopdata(branch = TRUE) |>  
+  filter(ccode != 2 & year >= 1950) |> 
+  mutate(ccode = ifelse(ccode == 260, 255, ccode),
+         region = countrycode::countrycode(iso3c, "iso3c", "region"),
+         region = case_when(
+           ccode == 1003 ~ "Afloat",
+           ccode == 70 ~ "North America",
+           region == "Latin America & Caribbean" ~ "Central & South America & Caribbean",
+           TRUE ~ region))
+
 alluvial.data <- peacesciencer::cow_alliance %>% 
   filter(year >= 2006 & ccode1) %>% 
   left_join(troopdata, by = c("ccode2" = "ccode", "year")) %>% 
-  filter(!is.na(troops)) %>% 
+  filter(!is.na(troops_ad)) %>% 
   group_by(cow_defense, region, year) %>% 
   mutate(cow_defense = factor(cow_defense, levels = c(0, 1), labels = c("Non-Ally", "Ally"))) %>% 
   group_by(ccode2, year, cow_defense, region) %>% 
-  pivot_longer(cols = c("army", "navy", "air_force", "marine_corps"),
+  pivot_longer(cols = c("army_ad", "navy_ad", "air_force_ad", "marine_corps_ad"),
                names_to = "branch",
                values_to = "level") %>% 
   dplyr::select(-c(ccode1,  cow_neutral, cow_nonagg, cow_entente)) %>% 
   filter(!is.na(level)) %>% 
   group_by(region, branch) %>% 
   dplyr::summarise(level = sum(level)) %>% 
-  mutate(branch = factor(branch, levels = c("army", "air_force", "navy", "marine_corps"), labels = c("Army", "Air Force", "Navy", "Marine Corps")),
+  mutate(branch = factor(branch, levels = c("army_ad", "air_force_ad", "navy_ad", "marine_corps_ad"), labels = c("Army", "Air Force", "Navy", "Marine Corps")),
          region = factor(region, levels = c("North America", "Central & South America & Caribbean", "Europe & Central Asia", "Middle East & North Africa", "Sub-Saharan Africa", "East Asia & Pacific", "South Asia")))
 
 
@@ -1346,7 +1357,7 @@ library(RColorBrewer)
 getPalette = colorRampPalette(brewer.pal(9, "Set1"))
 colourCount = length(unique(spend1$country))
 
-opmain.ts <- read.csv("../../../Projects/Minerva grant documents/Military Spending/operations-and-maintenance/data_spend_geocoded.csv") %>% 
+opmain.ts <- read_csv("../../../../Projects/Minerva grant documents/Military Spending/operations-and-maintenance/data_spend_geocoded.csv") %>% 
   mutate(country = countrycode::countrycode(ccode, 'cown', 'country.name')) 
 
 ggplot(opmain.ts, aes(x = factor(year), y = toa.mean, color = country)) +
@@ -1369,7 +1380,7 @@ class: center, middle
 
 ```{r operations and maintenance}
 
-opmain <- read.csv("../../../Projects/Minerva grant documents/Military Spending/operations-and-maintenance/data_spend_geocoded.csv") %>% 
+opmain <- read.csv("../../../../Projects/Minerva grant documents/Military Spending/operations-and-maintenance/data_spend_geocoded.csv") %>% 
   mutate(country = countrycode::countrycode(ccode, 'cown', 'country.name'))
 
 map <- map_data("world")
@@ -1430,10 +1441,9 @@ class: center, middle
 library(raster)
 library(broom)
 
-peru <- getData("GADM", country = "PE", level = 1)
+peru <- geodata::gadm("GADM", country = "PE", level = 1) |> 
+  sf::st_as_sf()
 
-peru.regions <- as.data.frame(peru@data) %>% 
-  dplyr::select(NAME_1, CC_1)
 
 peru.deploy <- readxl::read_xlsx(here("../../../Projects/Troops and Public Opinion in Latin America/Data/Raw Data/SOUTHCOM Data/Deployment_Master-AliCopy-June2017.xlsx")) %>% 
   filter(Country == "Peru") %>% 
@@ -1441,19 +1451,15 @@ peru.deploy <- readxl::read_xlsx(here("../../../Projects/Troops and Public Opini
   mutate(deploy = 1) %>% 
   dplyr::summarise(deploymentcount = sum(deploy))
 
-peru.regions.c <- peru.regions %>% 
+peru <- peru |>  
   left_join(peru.deploy, by = c("NAME_1" = "Region")) %>% 
   mutate(deploymentcount = ifelse(NAME_1 == "Lima Province", 4, deploymentcount))
 
 
-peru.final.df <- broom::tidy(peru, region = "NAME_1") %>% 
-  left_join(peru.regions.c, by = c("id" = "NAME_1"))
-
-ggplot(peru.final.df) +
-  geom_polygon(aes(x = long, y = lat, group = group, fill = deploymentcount), color = "black", size = 0.1) +
-  coord_fixed(ratio = 1.3) +
-  scale_fill_distiller(palette = 3, direction = 1, na.value = "gray90") +
-  theme_flynn_map() +
+ggplot(peru) +
+  geom_sf(aes(geometry = geometry, fill = deploymentcount)) +
+  theme_void() +
+  theme(text = element_text(family = "oswald", size = 12)) +
   labs(fill = "Deployment count",
        title = "Humanitarian and civic-assistance deployments to Peru, 2007-2015")
 
@@ -1491,7 +1497,7 @@ base.data <- troopdata::get_basedata(host = 255)
 
 # load troop data
 germany.troop.fig <- troopdata::get_troopdata(host = 255, startyear = 2020, endyear = 2020) %>% 
-  mutate(troops = comma(troops))
+  mutate(troops_ad = comma(troops_ad))
 
 load(here::here("../../../Projects/Minerva grant documents/Book/Data/General/opinion.data.RData"))
 
