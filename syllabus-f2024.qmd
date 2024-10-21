@@ -234,9 +234,8 @@ dfr$comment[dfr$date==as.Date("2024-11-08")] <- "DAG Exercise"
 
 # Book Discussion
 dfr$comment[dfr$date==as.Date("2024-10-18")] <- "Boczar Discussion"
-dfr$comment[dfr$date==as.Date("2024-11-15")] <- "Busby Discussion"
-dfr$comment[dfr$date==as.Date("2024-11-01")] <- "Helberg Discussion"
-dfr$comment[dfr$date==as.Date("2024-12-06")] <- "Doshi Discussion"
+dfr$comment[dfr$date==as.Date("2024-11-08")] <- "Helberg Discussion"
+dfr$comment[dfr$date==as.Date("2024-11-22")] <- "Busby Discussion"
 
 
 # Thanksgiving
@@ -346,46 +345,45 @@ Suggested:
 
 
 
-## `r advdate(mon, 10)`: Security Cooperation
+## `r advdate(mon, 10)`: The Use of Force (cont.) and Security Cooperation
 
 ### Readings and Assignments:
 
 
-Wednesday, October 23 Read:
+
+
+## `r advdate(mon, 11)`: 
+
+### Readings and Assignments: Security Cooperation and Alliances
+
 - [Flynn, Allen, and Martinez Machain 2019](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
  
 - [Allen, Martinez Machain, and Flynn 2022](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
 
 
-## `r advdate(mon, 11)`: Trade, Immigration, Finance, and Monetary Policy
+## `r advdate(mon, 12)`: 
 
-### Readings and Assignments:
+### Readings and Assignments: Trade, Immigration, Finance, and Monetary Policy
 
 - Read @Helberg2022
 - Read @Oneil2022
 
 
-## `r advdate(mon, 12)`: Trade, Immigration, Finance, and Monetary Policy (cont.)
+
+## `r advdate(mon, 13)`: 
+
+### Readings and Assignments: Trade, Immigration, Finance, and Monetary Policy (cont.)
+
+- NA
+
+
+
+## `r advdate(mon, 14)`: Environmental Politics and US Foreign Policy
 
 ### Readings and Assignments:
-
-
-
-
-
-## `r advdate(mon, 13)`: Environmental Politics and US Foreign Policy
 
 - Read @Busby2022
 
-
-
-
-## `r advdate(mon, 14)`: Human Rights Issues
-
-### Readings and Assignments:
-
-- Read @Ballve2009
-- Read @Diamond2023
 
 
 
@@ -399,12 +397,12 @@ Wednesday, October 23 Read:
 4. Take a good nap
 
 
-## `r advdate(mon, 16)`: US and Chinese Competition
+## `r advdate(mon, 16)`: Human Rights Issues
 
 ### Readings and Assignments:
 
-- Read @Doshi2023
-
+- Read @Ballve2009
+- Read @Diamond2023
 
 
 
