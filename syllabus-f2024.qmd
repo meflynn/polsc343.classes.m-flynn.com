@@ -230,12 +230,12 @@ dfr$comment[dfr$date==as.Date("2024-11-22")] <- "Photo Journal Day"
 # DAG Exercises
 dfr$comment[dfr$date==as.Date("2024-09-13")] <- "DAG Exercise"
 dfr$comment[dfr$date==as.Date("2024-10-09")] <- "DAG Exercise"
-dfr$comment[dfr$date==as.Date("2024-11-08")] <- "DAG Exercise"
+dfr$comment[dfr$date==as.Date("2024-11-22")] <- "DAG Exercise"
 
 # Book Discussion
 dfr$comment[dfr$date==as.Date("2024-10-18")] <- "Boczar Discussion"
-dfr$comment[dfr$date==as.Date("2024-11-08")] <- "Helberg Discussion"
-dfr$comment[dfr$date==as.Date("2024-11-22")] <- "Busby Discussion"
+dfr$comment[dfr$date==as.Date("2024-11-15")] <- "Helberg Discussion"
+dfr$comment[dfr$date==as.Date("2024-12-06")] <- "Busby Discussion"
 
 
 # Thanksgiving
@@ -365,8 +365,7 @@ Suggested:
 
 ### Readings and Assignments: Trade, Immigration, Finance, and Monetary Policy
 
-- Read @Helberg2022
-- Read @Oneil2022
+- NA
 
 
 
@@ -374,15 +373,17 @@ Suggested:
 
 ### Readings and Assignments: Trade, Immigration, Finance, and Monetary Policy (cont.)
 
-- NA
+- Read @Helberg2022
+- Read @Oneil2022
 
 
 
-## `r advdate(mon, 14)`: Environmental Politics and US Foreign Policy
+## `r advdate(mon, 14)`: Human Rights Issues
 
 ### Readings and Assignments:
 
-- Read @Busby2022
+- Read @Ballve2009
+- Read @Diamond2023
 
 
 
@@ -397,12 +398,11 @@ Suggested:
 4. Take a good nap
 
 
-## `r advdate(mon, 16)`: Human Rights Issues
+## `r advdate(mon, 16)`: Environmental Politics and US Foreign Policy
 
 ### Readings and Assignments:
 
-- Read @Ballve2009
-- Read @Diamond2023
+- Read @Busby2022
 
 
 
