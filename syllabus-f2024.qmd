@@ -230,7 +230,7 @@ dfr$comment[dfr$date==as.Date("2024-11-22")] <- "Photo Journal Day"
 # DAG Exercises
 dfr$comment[dfr$date==as.Date("2024-09-13")] <- "DAG Exercise"
 dfr$comment[dfr$date==as.Date("2024-10-09")] <- "DAG Exercise"
-dfr$comment[dfr$date==as.Date("2024-11-22")] <- "DAG Exercise"
+dfr$comment[dfr$date==as.Date("2024-12-04")] <- "DAG Exercise"
 
 # Book Discussion
 dfr$comment[dfr$date==as.Date("2024-10-18")] <- "Boczar Discussion"

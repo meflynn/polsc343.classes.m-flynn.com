@@ -136,7 +136,7 @@ class: left, top
 .pull-left[
 1. Life, liberty, and security of person
 2. No slavery or forced servitude
-3. No torture, cruel and unusual punishment, unhuman or degrading treatment
+3. No torture, cruel and unusual punishment, inhuman or degrading treatment
 4. Recognition as a person before the law
 5. Equal protection before the law
 6. Right to effective remedy by national tribunals
@@ -146,7 +146,7 @@ class: left, top
 10. Protection from arbitrary interference in an individual's private, family, or home life, and in personal correspondence
 11. Freedom of movement, both within and between countries
 12. Freedom from persecution and access to asylum
-13. Right to a nationality and to chanve nationality
+13. Right to a nationality and to change nationality
 14. Freedom of consensual marriage and to raise a family
 15. Right to own property
 ]
