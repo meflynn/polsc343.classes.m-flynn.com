@@ -257,10 +257,10 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 - [The Significance of the Frontier in American History](https://www.usmcu.edu/Portals/218/Turner%20Thesis%2C%20Frederick%20Jackson%20Turner.pdf)
 - [Wilson's 14 Points](https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points)
 
-#### **`r discussiondate(mon, 2)`**
+
 
 :::{.callout-important}
-# Discussion Day
+# **`r discussiondate(mon, 2)`**
 
 Readings from Historical Background lectures:
 
@@ -292,10 +292,9 @@ Readings from Historical Background lectures:
 - @Dudziak2004
 - @Fordham2007
 
-#### **`r discussiondate(mon, 4)`**
 
 :::{.callout-important}
-## Discussion Day
+## **`r discussiondate(mon, 4)`**
 
 Readings from Cold War lectures:
 
@@ -308,12 +307,22 @@ Readings from Cold War lectures:
 :::
 
 
+
+
+
+
+
 ## `r advdate(mon, 5)`: The Presidency and Congress
 
 ### Readings and Assignments:
 
 - Read @Lupton2017
 - Read @Weissman2017
+
+
+
+
+
 
 
 ## `r advdate(mon, 6)`: The Policymaking Process
@@ -324,16 +333,20 @@ Readings from Cold War lectures:
 
 
 
+
+
+
 ## `r advdate(mon, 7)`: The Bureaucracy / The State Department
 
 ### Readings and Assignments:
 
 - Read @Norris2021
 
-### `r discussiondate(mon, 7)`
+
 
 :::{.callout-important}
-## Discussion Day
+
+## `r discussiondate(mon, 7)`
 
 - @Norris2021
 :::
@@ -358,11 +371,11 @@ Readings from Cold War lectures:
 - [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
 
 
-### `r discussiondate(mon, 9)`
+
 
 :::{.callout-important}
 
-## Discussion Day
+## `r discussiondate(mon, 9)`
 
 - Read @Ohanlon2013
 - [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
@@ -388,11 +401,11 @@ Additional selected readings:
 - [Congressional Research Service: Transfer of Defense Articles: U.S. Sale and Export of U.S.-Made Arms to Foreign Entities](https://www.congress.gov/crs-product/R46337)
 
 
-### `r discussiondate(mon, 10)` 
+
 
 :::{.callout-important}
 
-## Discussion Day
+## `r discussiondate(mon, 10)` 
 
 - [U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
 - [Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
@@ -420,11 +433,11 @@ Additional selected readings:
 
 - @McDowell2023
 
-### `r discussiondate(mon, 12)`
+
 
 :::{.callout-important}
 
-## Discussion Day
+## `r discussiondate(mon, 12)`
 
 - @McDowell2023
 - [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
@@ -443,11 +456,10 @@ Additional selected readings:
 - [Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
 - [The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
 
-### `r discussiondate(mon, 13)`
 
 :::{.callout-important}
 
-## Discussion Day
+## `r discussiondate(mon, 13)`
 
 - @Power2001
 - [Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
@@ -480,11 +492,9 @@ Additional selected readings:
 - @Doshi2023
 - [War on the Rocks: Strategy in Contention: Debating America’s Global Priorities](https://warontherocks.com/2025/07/strategy-in-contention-debating-americas-global-priorities/)
 
-### `r discussiondate(mon, 15)`
-
 :::{.callout-important}
 
-## Discussion Day
+## `r discussiondate(mon, 15)`
 
 - @Doshi2023
 - [War on the Rocks: Strategy in Contention: Debating America’s Global Priorities](https://warontherocks.com/2025/07/strategy-in-contention-debating-americas-global-priorities/)
@@ -512,4 +522,4 @@ Additional selected readings:
 ### Friday, December 12, 2025
 
 - Narrow the options
-- Provide final recommendations tot he president
+- Provide final recommendations to the president
