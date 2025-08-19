@@ -29,7 +29,7 @@ website:
         text: Instructor
       - text: "Syllabus"
         menu:
-          - href: syllabus-f2024.qmd
+          - href: syllabus-f2025.qmd
             text: "Syllabus"
           - href: syllabus-boilerplate-stuff.qmd
             text: "University Syllabus Statements"

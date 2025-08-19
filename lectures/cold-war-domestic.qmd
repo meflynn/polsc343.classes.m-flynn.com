@@ -15,7 +15,7 @@ resources:
 format:
   revealjs:
     theme: [quarto-lecture-theme.scss, default]
-    auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
+    #auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
     slide-number: true
     chalkboard: true
     height: 900
@@ -747,8 +747,7 @@ ggplot(manufacturing %>% filter(year >= 1910 & year <= 1950), aes(x = time2, y =
 
 
 ```{r military spending map}
-#| fig-align: "center"
-#| out-width: "75%"
+#| fig-align: center
 
 library(usmap)
 

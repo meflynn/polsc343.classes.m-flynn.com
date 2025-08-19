@@ -808,7 +808,7 @@ knitr::include_graphics("https://ichef.bbci.co.uk/news/1536/cpsprodpb/A17F/produ
 
 - Egypt argues that the dam will also reduce the amount of water available to downstream countries, particularly Egypt. The Nile is a source of fresh water for agriculture and consumption in downstream countries. 
 
-- US has security relationships with countries like Egypt and Ethiopia.
+- US has security relationships with countries like Egypt and Ethiopia. The United States has threatened to withhold development aid to Ethiopia if it doesn't work to resolve the dispute.
 
 - Droughts and economic hardships imposed by altering natural resource distribution can create security issues, like mass migration due to economic or humanitarian reasons. 
 

@@ -1,0 +1,515 @@
+---
+title: "US Foreign Policy"
+description: "Course syllabus"
+date: "`r Sys.Date()`"
+bibliography: ../../classrefs.bib
+csl: bib/apsr-bibliography.csl
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+mon <- as.Date("2025-08-25")
+
+advdate <- function(obj, adv){
+  tmon <- obj + 7 * (adv - 1)
+  tfri <- obj + 4 + 7*(adv - 1)
+  tmon <- format(tmon, format = "%m/%d")
+  tfri <- format(tfri, format = "%m/%d")
+  zadv <- sprintf("%02d", adv)
+  tmp <- paste("Week ", zadv, sep = '', ", ", tmon, " - ", tfri)
+  return(tmp)
+}
+
+discussiondate <- function(obj, adv){
+  tmon <- obj + 7 * (adv - 1)
+  tfri <- obj + 4 + 7 * (adv - 1)
+  tmon <- format(tmon, format = "%m/%d")
+  tfri <- format(tfri, format = "%m/%d")
+  zadv <- sprintf("%02d", adv)
+  tmp <- paste("Friday ", tfri, ":", " Discussion Day", sep = "")
+  return(tmp)
+}
+
+
+```
+ 
+
+## Course Summary
+ 
+This course focuses on the development of US foreign policy over the course of the twentieth and twenty-first centuries. It will provide a brief background on the history of US foreign policy before 1900, but will focus primarily on the developments and issues occurring from 1900 through the present. The historical content of the course will be supplemented by introducing students to political science literature that can help to identify and explain key events and trends in US foreign policy during this time period. 
+
+## Course Objectives
+
+1. The overarching goal is to develop an understanding
+of the systematic forces that shape US foreign policymaking. Please note that this is different than
+prescribing what policy *should* be (though this is also an important consideration when considering our motivations for studying the topic and reading course materials.
+2. Identify the key actors that influence foreign policy.
+3. Understand how and when the influence of actors varies (e.g. across time, issue area, etc.).
+4. Identify the key issues confronting policymakers and society. 
+5. Identify general trends in US foreign policy over time. 
+    - What's changed? 
+    - What stays the same?
+    - When and why do we see changes in behavior or policies?
+6. Students should develop a familiarity with social science research processes, practices. Specifically, students should have:
+    - A basic understanding of how to read social scientific research articles. 
+    - A basic understanding of research design considerations
+    - A basic understanding of what the scope and limitations of research articles
+
+
+## Course Format 
+
+The course will be part lecture and part student participation. I encourage students to ask questions if the readings of lecture materials are unclear. In addition to class lectures students will be responsible for keeping up with readings and other class-related material as the semester progresses.
+
+
+## Required Books 
+
+There are three required books and several required articles (listed below in the course schedule).  You can view the full citation in the reference list at the end of hover your cursor over the citation below for a preview of the full title.
+
+- @Doshi2023
+- @McDowell2023
+- @Norris2021
+- @Ohanlon2013
+
+## Additional Readings
+
+Students should also make an effort to stay informed on current events. Below are a some examples of good sources for keeping up with global events. Please note that some of these publications may be pay-walled, but you should have access through the university library.
+
+  - [BBC News](www.bbc.com/news)
+  - [Good Authority](https://goodauthority.org/)
+  - [The Monkey Cage (No longer active)](www.washingtonpost.com/news/monkeycage)
+  - [Political Violence @ a Glance](www.politicalviolenceataglance.org)
+  - [Foreign Affairs](www.foreignaffairs.com)
+  - [Foreign Policy Magazine](www.foreignpolicy.com)
+  - [The Conversation](https://theconversation.com/us)
+  - [The Washington Post](www.washingtonpost.com)
+  - [The New York Times](www.nytimes.com)
+  - [The Economist](www.economist.com)
+  - [The Financial Times](www.ft.com)
+  
+
+## Course Requirements
+
+1. _Attendance: 15%_
+
+A major component to being successful in this class is just showing up. Every topic we cover will build upon ideas, lessons, themes, etc., that we covered in previous weeks. To do well you must be present.
+
+Life also happens, and so students will be given three class periods to miss without penalty. After that, students will be given an attendance grade based on the proportion of classes attended relative to the total number of classes.
+
+2. _Collaborative Discussion: 25%_
+
+While the course has a heavy lecture component students will also spend time reflecting on class materials and discussing that material with classmates. We will use a combination of open discussion and small group discussions. Students will be required to submit 2 discussion questions to Canvas prior to the class discussion meeting for a given topic. Students will be graded on a combination of the quality of the questions they submit, but also on the quality of their in-class contributions.
+
+
+3. _Exams: 30%_
+
+There will be 3 short exams throughout the semester and they will cover material we have already reviewed through readings, lectures, and discussion. All exams are open book and open note assignments and will be completed through Canvas. 
+
+
+4. _Crisis Simulation: 30%_
+
+During the final week of the semester students will participate in a crisis simulation. The goal of this simulation is to provide students with an opportunity to apply the knowledge that they have acquired throughout the semester to a simulated crisis requiring the attention of US foreign policymakers. 
+
+Prior to the simulation students will be assigned a particular role for the simulation activity. For example, one student will be the President, another will be the Secretary of State, another will be the Secretary of Defense, etc. Students will be expected to prepare for the simulation by reading background materials and preparing a briefing for the President on their assigned topic. Each student should have a list of questions and proposals for the president to consider. 
+
+Students will ultimately be evaluated on their contributions during the simulation meetings, as well as on the basis of a reflection paper that will be due at the conclusion of the simulation.
+
+
+  
+## Classroom Policies
+
+1. Be kind. This might seem like an odd thing to list first, but I want to emphasize that this is not a normal class environment---this is still a time of unparalleled stress for many of us. We're still in the middle of a global pandemic, many of us are still very much worried about our own health and safety, and many of us are very much worried about the health and safety of our coworkers, friends, and families. Let's try to be cognizant of the fact that many of us (if not all) are going to be struggling at various points, and let's work together to make this semester as educational and enjoyable as possible. 
+
+2. Be professional. We're all here to learn, and many of the issues that we discuss have real-world impacts that affect people we know, or in our broader community. We're here to work together to develop a better understanding of these issues. 
+
+3. Study guides and extra credit. The class is the study guide. I do not offer extra credit.
+
+4. Grade Appeals. If you believe that I have given you an incorrect grade on an exam, you may submit
+a written appeal. All appeals must be in writing (they may not be made in person) and must contain
+an explanation for why the grade is incorrect. I will also require you to wait 24 hours after receiving a
+grade to submit a written appeal. Please note that even if your appeal is granted, I reserve the right
+to regrade the assignment in its entirety, meaning that your grade may go up or down depending on
+my reevaluation of the assignment.
+
+5. The Syllabus. The syllabus is a living document that can and will be altered throughout the duration
+of the course based both on need and design. Generally, this may mean readings will be removed or
+added as needed. All changes will be listed on K-State Online, so make sure to check announcements
+for any such change. Additionally, I maintain the right to all of my own intellectual property presented
+in this course, whether it is the course lectures or this syllabus. Materials from this course ought not
+to be reproduced without my expressed permission.
+
+6. Classroom conduct. All student activities in the University, including this course, are governed by
+the Student Judicial Conduct Code as outlined in the Student Governing Association By Laws, Article
+V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may
+be asked to leave the class.
+  
+  
+
+
+## Contacting the Instructor
+
+The best way to get in touch with me is through email. Please do not hesitate to contact me if you have any questions about course content or your ability to complete the assigned material.
+
+
+
+## Final Grades
+
+A: 90+
+
+B: 80–89.99
+
+C: 70–79.99
+
+D: 60–69.99
+
+F: 0–59.99
+
+
+*Tentative course schedule begins on next page*
+
+\clearpage
+
+
+## Tentative Course Schedule
+
+```{r course calendar, dpi = 300, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.pos="center"}
+
+pacman::p_load(
+  "ggplot2",
+  "showtext"
+)
+
+# Add custom fonts
+#sysfonts::font_add_google("Roboto", family = "oswald")
+#showtext::showtext_auto()
+
+# Create base data frame
+dfr <- data.frame(date=seq(as.Date('2025-08-01'), as.Date('2025-12-31'), by = 1))
+dfr$day <- factor(strftime(dfr$date,format="%a"), levels=c("Sun","Mon","Tue","Wed","Thu","Fri","Sat"))
+dfr$week <- factor(strftime(dfr$date,format="%U"))
+dfr$month <- factor(strftime(dfr$date,format="%B"),levels=c("August","September","October", "November", "December"))
+dfr$ddate <- factor(strftime(dfr$date,format="%d"))
+
+
+
+# Simulation Days
+dfr$comment[dfr$date==as.Date("2025-12-08")] <- "Crisis Simulation"
+dfr$comment[dfr$date==as.Date("2025-12-10")] <- "Crisis Simulation"
+dfr$comment[dfr$date==as.Date("2025-12-12")] <- "Crisis Simulation"
+
+# Book Discussion
+dfr$comment[dfr$date==as.Date("2025-10-10")] <- "Norris Discussion"
+dfr$comment[dfr$date==as.Date("2025-10-24")] <- "O'Hanlon Discussion"
+dfr$comment[dfr$date==as.Date("2025-11-14")] <- "McDowell Discussion"
+dfr$comment[dfr$date==as.Date("2025-12-05")] <- "Doshi Discussion"
+
+
+# Thanksgiving
+dfr$comment[dfr$date >= as.Date("2024-11-25") & dfr$date <= as.Date("2024-11-29")] <- "Thanksgiving Break"
+
+dfr$week <- as.numeric(dfr$week) - min(as.numeric(dfr$week) - 1)
+
+
+ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
+  geom_tile(color = "black", size = 0.1) +
+  geom_text(aes(label = ddate), size = 3) +
+  facet_wrap(. ~ month, scales = "free", ncol = 2) +
+  theme_void() +
+  theme(legend.position = "bottom",
+        legend.direction = "vertical",
+        legend.justification = "right",
+        axis.text.x = element_text(size = 10, color = "black"),
+        axis.text.y = element_text(size = 10, color = "white"),
+        strip.text.x = element_text(size = 13, face = "bold", hjust = 0),
+        strip.text = element_text(size = 16, face = "bold", margin = margin(b = 0.2, unit = "cm")),
+        title = element_text(face = "bold"),
+        panel.spacing = unit(1, "cm")) +
+  guides(fill=guide_legend(ncol=2)) +
+  scale_fill_brewer(palette = "Set2", na.translate = FALSE) +
+  labs(x = "Weekday",
+       y = "Week #",
+       fill = "Assignment")
+```
+  
+  
+  
+\clearpage
+
+
+## `r advdate(mon, 1)`: Course Introduction and Historical Background
+
+### Readings and Assignments
+
+- [Why does foreign policy matter?](https://education.cfr.org/learn/video/why-does-us-foreign-policy-matter)
+- [What tools do foreign policymakers have at their disposal?](https://education.cfr.org/learn/learning-journey/tools-foreign-policy/what-tools-do-foreign-policy-makers-have-at-their-disposal)
+- [Declaration of Independence](https://www.archives.gov/founding-docs/declaration-transcript)
+- [Washington's Farewell Address](https://www.presidency.ucsb.edu/documents/farewell-address)
+- [An Address...Celebrating the Declaration of Independence](https://teachingamericanhistory.org/document/speech-on-independence-day/)
+- [Anti-Federalist Papers: Brutus X](https://teachingamericanhistory.org/document/brutus-x/)
+
+
+
+## `r advdate(mon, 2)`: Historical background (cont.)
+
+### Readings and Assignments: 
+
+- [The Significance of the Frontier in American History](https://www.usmcu.edu/Portals/218/Turner%20Thesis%2C%20Frederick%20Jackson%20Turner.pdf)
+- [Wilson's 14 Points](https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points)
+
+#### **`r discussiondate(mon, 2)`**
+
+:::{.callout-important}
+# Discussion Day
+
+Readings from Historical Background lectures:
+
+- [Declaration of Independence](https://www.archives.gov/founding-docs/declaration-transcript)
+- [Washington's Farewell Address](https://www.presidency.ucsb.edu/documents/farewell-address)
+- [An Address...Celebrating the Declaration of Independence](https://teachingamericanhistory.org/document/speech-on-independence-day/)
+- [Anti-Federalist Papers: Brutus X](https://teachingamericanhistory.org/document/brutus-x/)
+- [The Significance of the Frontier in American History](https://www.usmcu.edu/Portals/218/Turner%20Thesis%2C%20Frederick%20Jackson%20Turner.pdf)
+- [Wilson's 14 Points](https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points)
+
+
+:::
+
+
+## `r advdate(mon, 3)`: The Cold War and US Hegemony
+
+### Readings and Assignments:
+
+- @NSC68
+- @Kennan1947
+- [The Truman Doctrine](https://www.archives.gov/milestone-documents/truman-doctrine)
+
+
+
+## `r advdate(mon, 4)`: The Cold War and Domestic Politics
+
+### Readings and Assignments:
+
+- @Dudziak2004
+- @Fordham2007
+
+#### **`r discussiondate(mon, 4)`**
+
+:::{.callout-important}
+## Discussion Day
+
+Readings from Cold War lectures:
+
+- @NSC68
+- @Kennan1947
+- [The Truman Doctrine](https://www.archives.gov/milestone-documents/truman-doctrine)
+- @Dudziak2004
+- @Fordham2007
+
+:::
+
+
+## `r advdate(mon, 5)`: The Presidency and Congress
+
+### Readings and Assignments:
+
+- Read @Lupton2017
+- Read @Weissman2017
+
+
+## `r advdate(mon, 6)`: The Policymaking Process
+
+### Readings and Assignments:
+
+- Read @Miller2016
+
+
+
+## `r advdate(mon, 7)`: The Bureaucracy / The State Department
+
+### Readings and Assignments:
+
+- Read @Norris2021
+
+### `r discussiondate(mon, 7)`
+
+:::{.callout-important}
+## Discussion Day
+
+- @Norris2021
+:::
+
+
+
+
+
+
+## `r advdate(mon, 8)`: The Defense Department and the Military
+
+### Readings and Assignments:
+
+- No readings or discussion
+
+
+## `r advdate(mon, 9)`: The Use of Military Force
+
+### Readings and Assignments:
+
+- @Ohanlon2013
+- [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
+
+
+### `r discussiondate(mon, 9)`
+
+:::{.callout-important}
+
+## Discussion Day
+
+- Read @Ohanlon2013
+- [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
+
+:::
+
+Additional selected readings:
+
+- Watch [Restrepo](https://watchdocumentaries.com/restrepo/)
+- Read @sigar2019
+
+
+
+
+## `r advdate(mon, 10)`: Security Cooperation
+
+### Readings and Assignments:
+- [Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
+- [The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
+- [U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
+- [Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
+- [Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
+- [Congressional Research Service: Transfer of Defense Articles: U.S. Sale and Export of U.S.-Made Arms to Foreign Entities](https://www.congress.gov/crs-product/R46337)
+
+
+### `r discussiondate(mon, 10)` 
+
+:::{.callout-important}
+
+## Discussion Day
+
+- [U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
+- [Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
+- [Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
+- [Congressional Research Service: Transfer of Defense Articles: U.S. Sale and Export of U.S.-Made Arms to Foreign Entities](https://www.congress.gov/crs-product/R46337)
+- [Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
+- [The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
+
+:::
+
+
+## `r advdate(mon, 11)`: Trade, Finance, and Monetary Policy
+
+### Readings and Assignments: 
+
+- [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
+
+
+
+
+
+## `r advdate(mon, 12)`: Trade, Finance, and Monetary Policy (cont.)
+
+### Readings and Assignments: 
+
+- @McDowell2023
+
+### `r discussiondate(mon, 12)`
+
+:::{.callout-important}
+
+## Discussion Day
+
+- @McDowell2023
+- [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
+
+:::
+
+
+
+
+## `r advdate(mon, 13)`: Human Rights Issues
+
+### Readings and Assignments:
+
+- @Power2001
+- [Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
+- [Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
+- [The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
+
+### `r discussiondate(mon, 13)`
+
+:::{.callout-important}
+
+## Discussion Day
+
+- @Power2001
+- [Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
+- [Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
+- [The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
+
+:::
+
+
+
+
+
+
+## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
+
+### Readings and Assignments:
+
+1. Get some rest
+2. Enjoy yourselves
+3. Eat good food
+4. Take a good nap
+
+
+
+
+## `r advdate(mon, 15)`: The Future of US Foreign Policy
+
+### Readings and Assignments:
+
+- @Doshi2023
+- [War on the Rocks: Strategy in Contention: Debating America’s Global Priorities](https://warontherocks.com/2025/07/strategy-in-contention-debating-americas-global-priorities/)
+
+### `r discussiondate(mon, 15)`
+
+:::{.callout-important}
+
+## Discussion Day
+
+- @Doshi2023
+- [War on the Rocks: Strategy in Contention: Debating America’s Global Priorities](https://warontherocks.com/2025/07/strategy-in-contention-debating-americas-global-priorities/)
+
+:::
+
+ 
+
+
+
+## `r advdate(mon, 16)`: Crisis Simulation
+
+### Monday, December 8, 2025
+
+- Introduce crisis simulation
+- Provide overview of the crisis scenario
+- Students present initial positions to the President
+
+### Wednesday, December 10, 2025
+
+- Review proposals
+- Clarify obstacles, risks, benefits, opportunities, threats, etc.
+- Evaluate positions
+
+### Friday, December 12, 2025
+
+- Narrow the options
+- Provide final recommendations tot he president
