@@ -1,0 +1,524 @@
+---
+title: "US Foreign Policy"
+subtitle: "Course Introduction"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    fig-width: 8
+    fig-height: 4.5
+    fig-format: retina
+    fig-dpi: 400
+    fig-align: center
+    #incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    #data-background-size: 750px 750px
+    #data-background-position: 1000px 370px
+    #data-background-position: 115% 150%
+    #data-background-position: 115% 140%
+    #data-background-position: 19em 8em
+    #height: 700
+    #width: 1050
+---
+
+```{r setup}
+library(dagitty)
+library(ggdag)
+library(tidyverse)
+library(viridis)
+library(scales) # For muted() function for colors
+
+```
+
+## Welcome!
+
+Why this class matters: 
+
+- International relations affects your day to day life in so many ways
+
+- Trade, migration, and investment
+
+- War and conflict
+
+- Global governance 
+
+
+
+
+
+
+## {.blank-slide}
+
+![Average effective tariff rate for the United States, 1790-2025. Courtesy of Yale Budget Lab. https://budgetlab.yale.edu/research/state-us-tariffs-july-28-2025](../images/effective-tariff-rate.jpg){width=1200px height=700px}
+
+
+:::{.notes}
+
+Notes
+
+- Pre and post-substitution refer to the changes in consumer spending habits in response to the tariffs. 
+- Consumers will shift some of their spending to lower cost items, but the figure shows that the predicted difference will not be all that much.
+
+:::
+
+
+
+
+## {.blank-slide}
+
+::::{.columns}
+:::{.column width=50%}
+![A Ukrainian soldier standing next to a destroyed tank.](https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-03/220331-destroyed-russian-tank-ukraine-al-1304-a4a48d.jpg){width=700px height=400px}
+
+:::
+
+:::{.column width=50%}
+![Palestinians walk on a road lined with destroyed buildings in the Shujaiya neighborhood of Gaza City in October 2004. Photograph Omar Al-Wattaa/AFP/Getty Images](https://i.guim.co.uk/img/media/09d3bb71d2d860f964ee03b48d53692a43ce0e2e/83_0_2653_1742/master/2653.jpg?width=1900&dpr=1&s=none&crop=none){width=700px height=400px}
+:::
+::::
+
+
+
+
+
+
+
+## {.blank-slide}
+
+::::{.columns}
+:::{.column width=50%}
+
+![Picture of Moderna mRNA Covid vaccine.](https://upload.wikimedia.org/wikipedia/commons/b/b0/Moderna_COVID-19_vaccine.jpg){width=100%}
+
+:::
+
+:::{.column width=50%}
+
+![A picture of 3M N95 face masks.](https://www.nj.com/resizer/b0dKI3wPKS7LAo2-ba-ur9dljVk=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/RHPJJZNT4ZAA7GJ4CBTKPIL6VA.JPG){width=100%}
+:::
+::::
+
+
+
+
+
+
+## But also...
+
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+
+
+
+
+
+
+
+## But also...
+
+::::{.columns}
+:::{.column width=50%}
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+:::
+
+:::{.column width=50%}
+
+
+```{r, dpi = 400, echo = FALSE, warning = FALSE}
+
+dag.df <- dagitty('dag{
+                  "x" [exposure]
+                  "y" [outcome]
+                  
+                  "x" [pos="1,1"]
+                  "y" [pos="2,1"]
+                  "z" [pos="1.5,2"]
+                  
+                  "x" -> "y"
+                  "y" <- "z" -> "x"
+}') %>% 
+  tidy_dagitty()
+
+
+
+ggplot(dag.df %>% filter(name != "z"), aes(x = x, xend = xend, y = y, yend = yend)) +
+  geom_dag_point(aes(color = name), show.legend = FALSE, size = 20) +
+  geom_dag_edges() +  
+  geom_text(aes(label = name), color = "white", size = 10, parse = TRUE) +
+  theme_dag() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.9) 
+
+```
+
+:::
+::::
+
+
+
+
+
+## But also...
+::::{.columns}
+:::{.column width=50%}
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+- Or complicated
+
+:::
+
+:::{.column width=50%}
+
+```{r, dpi = 400, echo = FALSE, warning=FALSE}
+
+dag.df <- dagitty(' dag{
+                  "x" [exposure]
+                  "y" [outcome]
+                  
+                  "x" [pos="1,1"]
+                  "y" [pos="2,1"]
+                  "z" [pos="1.5,2"]
+                  
+                  "x" -> "y"
+                  "y" <- "z" -> "x"
+}') %>% 
+  tidy_dagitty()
+
+
+
+ggplot(dag.df, aes(x = x, xend = xend, y = y, yend = yend)) +
+  geom_dag_point(aes(color = name), show.legend = FALSE, size = 20) +
+  geom_dag_edges(size = 10) +  
+  geom_text(aes(label = name), color = "white", size = 10, parse = TRUE) +
+  theme_dag() +
+  scale_color_viridis(discrete = TRUE, begin = 0.1, end = 0.9) 
+
+```
+
+:::
+::::
+
+
+
+
+
+## But also...
+
+::::{.columns}
+:::{.column width=50%}
+
+We want to start thinking about events in a different way
+
+- Accurate description
+
+- Causal relationships
+
+- Predictive relationships
+
+- Or **really** complicated
+
+:::
+
+:::{.column width=50%}
+
+
+```{r, dpi = 400, echo = FALSE, warning=FALSE}
+
+# Prettier DAG for public consumption in text
+
+dag.pretty <- dagitty(' dag{
+                    "Troops[t]" [exposure]
+                    "Protest[t]" [outcome]
+                    
+                    "Protest[t]" [pos="1,1"]
+                    "Troops[t]" [pos = "0,0"]
+                    "Z[t]" [pos="0,2"]
+                    
+                    "Protest[t-1]" [pos="-1,1"]
+                    "Troops[t-1]" [pos = "-2,0"]
+                    "Z[t-1]" [pos="-2,2"]
+
+                    "Protest[t-1]" -> "Protest[t]"
+                    "Troops[t]" -> "Protest[t]"
+                    "Troops[t-1]" -> "Troops[t]"
+                    "Troops[t-1]" -> "Protest[t-1]"
+                    "Z[t-1]" -> "Z[t]"
+                    "Z[t]" -> "Troops[t]"
+                    
+                    "Troops[t-1]" -> "Protest[t]"
+                    "Z[t-1]" -> "Troops[t-1]"
+                    "Z[t-1]" -> "Protest[t-1]"
+                    "Z[t]" -> "Protest[t]"
+
+                    }') 
+
+
+dag.pretty.tidy <- tidy_dagitty(dag.pretty) %>% 
+  dplyr::mutate(.$data, 
+         vartype = case_when(
+           name == "Troops[t]" ~ "Exposure",
+           name == "Protest[t]" ~ "Outcome",
+           grepl("Z", name) ~ "Confounders",
+           name == "Troops[t-1]" ~ "Lagged Treatment",
+           name == "Protest[t-1]" ~ "Lagged Outcome"
+
+         )) %>% 
+  dag_label(labels = c("Troops[t]" = "Troops[t]", "Troops[t-1]" = "Troops[t-1]", "Protest[t-1]" = "Protest[t-1]",
+                       "Protest[t]" = "Protest[t]", "Z[t]" = "Z[t]", "Z[t-1]" = "Z[t-1]")) 
+
+ 
+ggplot(dag.pretty.tidy, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point(aes(color = vartype), size = 20) +
+  geom_dag_edges(size = 10) +
+  geom_dag_label_repel(aes(label = label), parse = TRUE, size = 7) +
+  theme_dag_blank() +
+  guides(color = FALSE) +
+  scale_color_manual(values = c("orange",  "#009E73", scales::muted("dodgerblue1"), scales::muted("009E73"), "dodgerblue1"))
+
+
+```
+
+:::
+::::
+
+
+
+
+
+
+
+# Boilerplate Stuff
+
+
+## Details 
+
+
+Class info:
+
+- Class: US Foreign Policy
+
+- Me: Michael Flynn
+
+- Location: Calvin 116
+
+- Time: MWF 12:30-1:20
+
+- Office hours: By Appointment
+
+- Email! [meflynn@ksu.edu](mailto:meflynn@ksu.edu)
+
+
+
+
+
+
+
+
+
+
+## Contacting Me
+
+- The best way to contact me is email! (You can also schedule in-person appointments)
+
+- Please, email me!
+
+- Don't wait!
+
+- If I don't respond in 48 hours send me another!
+
+- That's a lot of exclamation points!
+
+
+
+
+## Contacting Me
+
+Some things to think about:
+
+- All correspondence should be professional in tone (I'm not your "bro")
+
+- Please address emails to "Professor Flynn" (Or something similar)
+
+- All faculty and staff appreciate your efforts to be respectful and are *much* more likely to go the extra mile to help you out.
+
+
+
+
+
+
+# Stuff you need
+
+
+
+## Stuff You Need
+
+The syllabus---Read it!
+
+Class format is both lecture and discussion
+
+Required readings:
+
+  - There are multiple books and articles that we'll be reading this semester. 
+  
+  - You'll need to access them through K-State Libraries website
+
+
+
+
+
+## Requirements
+
+
+
+```{r grade_breakdown, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+requirements <- tibble(`Grade Item` = c("Attendance",
+                                        "Discussion", 
+                                        "Exams", 
+                                        "Crisis Simulation"),
+                       `Percent` = c("15%", "25%", "30%", "30%")) |> 
+  tinytable::tt() |> 
+  tinytable::style_tt(
+    header = list(
+      background = "black",
+      color = "white",
+      font_size = 20,
+      font_weight = "bold"
+    ),
+    body = list(
+      font_size = 18,
+      padding = 10
+    )
+  )
+
+
+requirements
+
+
+```
+
+
+
+
+
+## Academic Dishonesty and Plagiarism
+
+Things to know:
+
+- Don't do it
+
+- Yes, we can tell
+
+- You will fail the assignment
+
+  - Possible the whole course
+
+    - Maybe suspension, too
+    
+- See the syllabus for more information
+
+- Also see [K-State's student handbook](https://www.k-state.edu/disclosures/handbooks.html) online
+
+
+
+
+
+## Academic Dishonesty and Plagiarism
+
+On the use of AI and Chatbots:
+
+- Do not use AI or chatbots to complete assignments
+
+- The use of AI and chatbots constitutes plagiarism and will result in the failure on the assignment
+
+- Other reasons not to use AI and chatbots:
+
+  - They are not accurate
+
+  - They are not reliable
+  
+  - They are not consistent 
+  
+
+
+
+
+
+## Classroom Conduct
+
+1. Be Kind
+
+2. Please make sure your questions and comments pertain to course materials
+
+3. Be respectful of one another in your discussions
+
+4. Reach out if you need help, and reach out early
+
+
+
+
+
+
+
+# Big Picture Preview
+
+
+
+
+
+## Myths of US Foreign Policy
+
+1. The "national interest"
+
+2. Politics stops at the water's edge
+
+3. Isolationism vs. internationalism
+
+4. "Grand strategy" 
+
+5. US Foreign Policy less important pre-1945
+
+6. Institutions vying for power
+

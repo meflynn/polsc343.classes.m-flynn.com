@@ -42,8 +42,8 @@ $title-author-font-size: 24px;
   font-family: $presentation-body-font;
   font-size: $body-font-size;
   line-height: 1.1;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
+  //margin-bottom: 5px;
+  //padding-bottom: 5px;
 }
 
 /* This one handles the bulleted lists */
@@ -102,8 +102,8 @@ h2 {
     background-color: #FFFFFF;
     border-width: 0px;
     border-color: #FFFFFF;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
@@ -224,11 +224,40 @@ p.date {
 }
 
 
-/* I set this to push figures vertically towards the center, but I may want to revisit this later. Quarto should have page specific settings I can use to do this. But the question is if I want to set it every time I create a new slide since I use A LOT of dataviz */
-.reveal img {
-  margin: 0%;
-  margin-top: -2%;
+
+
+
+// These three chunks make sure that figure captions are left-aligned, but also that the figures remain centered within the figure environment space or column space.
+
+figure {
+  display: table;
+  max-width: max-content;
+  max-height: max-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+.reveal img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  padding-left: 10px;
+}
+
+
+
+
 
 
 .small {
