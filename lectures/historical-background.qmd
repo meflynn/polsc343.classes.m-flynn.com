@@ -122,23 +122,28 @@ shape.1900 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0
 
 2. Transitional Period (1870-1945)
 
-3. Hegemonic Period (1945-Present)
+3. Hegemonic Period (1945-2025)
+
+4. Post-Hegemonic Period (2025-Future)
+
+
+
 
 
 
 ## Key Questions
 
-1. What are the broad contours of US foreign policy over time?
+1. What are the major periods in US foreign policy?
 
 2. What have been some of the key political and economic divides in each time period?
 
 3. What elements of US foreign policy are common across time period? What changes substantially?
 
-4. What constitutes an "empire"? 
+4. How do we reconcile the process of US expansion with popular rhetoric about democracy and (more recently) human rights?
 
-5. How do we reconcile the process of US expansion with popular rhetoric about democracy and (more recently) human rights?
+5. How does popular historical memory of these earlier time periods shape views on policy today?
 
-6. How does popular historical memory of these earlier time periods shape views on policy today?
+
 
 
 
@@ -547,14 +552,14 @@ duration.data <- campaign %>%
 
 # Plotting campaign phases over time and by conflict
 ggplot(data = duration.data, aes(y = reorder(WarAndTheater_Ed196_, startyear), x = startyear, group = WarAndTheater_Ed196_, colour = BattleOrCampaign_Ed197_)) +
-  geom_segment(aes(xend = endyear, yend = WarAndTheater_Ed196_), linewidth = 10) +
+  geom_segment(aes(xend = endyear, yend = WarAndTheater_Ed196_), linewidth = 7) +
   theme_flynn(base_size = 11, base_family = "oswald") +
   guides(colour = FALSE) +
   viridis::scale_color_viridis(discrete = TRUE) +
   labs(x = "Time",
        y = "",
        title = "US Army campaigns grouped by major war/theater",
-       caption = "Data obtained from: Historical Statistics of the United States, Table Ed196-197 - U.S. Army battle campaigns: 1775–1995 \nBattle campaigns are denoted by official military medals and streamers.")
+       caption = "Data obtained from: Historical Statistics of the United States, Table Ed196-197 - U.S. Army battle campaigns: 1775–1995 \nBattle campaigns are denoted by official military medals and streamers. Data updated through 2025 manually.")
 
 
 ```
@@ -653,33 +658,45 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/6/6b/Ame
 *Washington's Farewell Address:*
 
 > The great rule of conduct for us, in regard to foreign nations, is, in extending our commercial relations, to have with them as little political connexion [sic] as possible. So far as we have already formed engagements, let them be fulfilled with perfect good faith. Here let us stop.
+
 :::
 
 :::{.column width=50%}
-![](../images/george-washington.png)
+![](../images/george-washington.png){fig-align="center"}
 :::
 ::::
 
   
 
+
+
 ## The Early Years
 
-:::{layout-ncol=2}
-![Alexander Hamilton](../images/lin-manuel-hamilton.png){height=5.75in fig-align="center"}
+::::{.columns}
 
+:::{.column width=50%}
+![Alexander Hamilton](../images/lin-manuel-hamilton.png){height=5.75in fig-align="center"}
+:::
+
+:::{.column width=50%}
 ![Thomas Jefferson](../images/thomas-jefferson.png){height=5.75in fig-align="center"}
 :::
+::::
 
 
 
 ## The Early Years
 
-:::{layout-ncol=2}
-![Napoleon Bonaparte](../images/napolean-bonaparte.png){height=5.75in fig-align="center"}
+::::{.columns}
 
-![Robert Livingston](../images/robert-livingston.jpg){height=5.75in fig-align="center"}
+:::{.column width=50%}
+![Napoleon Bonaparte](../images/napolean-bonaparte.png){height=5.75in fig-align="center"}
 :::
 
+:::{.column width=50%}
+![Robert Livingston](../images/robert-livingston.jpg){height=5.75in fig-align="center"}
+:::
+::::
 
 :::{.notes}
 
