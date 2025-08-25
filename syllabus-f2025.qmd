@@ -70,7 +70,7 @@ There are three required books and several required articles (listed below in th
 - @Doshi2023
 - @McDowell2023
 - @Norris2021
-- @Ohanlon2013
+- @Harp2025
 
 ## Additional Readings
 
@@ -200,7 +200,7 @@ dfr$comment[dfr$date==as.Date("2025-12-12")] <- "Crisis Simulation"
 
 # Book Discussion
 dfr$comment[dfr$date==as.Date("2025-10-10")] <- "Norris Discussion"
-dfr$comment[dfr$date==as.Date("2025-10-24")] <- "O'Hanlon Discussion"
+dfr$comment[dfr$date==as.Date("2025-10-24")] <- "Harp Discussion"
 dfr$comment[dfr$date==as.Date("2025-11-14")] <- "McDowell Discussion"
 dfr$comment[dfr$date==as.Date("2025-12-05")] <- "Doshi Discussion"
 
@@ -367,7 +367,7 @@ Readings from Cold War lectures:
 
 ### Readings and Assignments:
 
-- @Ohanlon2013
+- @@Harp2025
 - [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
 
 
@@ -377,7 +377,7 @@ Readings from Cold War lectures:
 
 ## `r discussiondate(mon, 9)`
 
-- Read @Ohanlon2013
+- Read @@Harp2025
 - [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
 
 :::
@@ -421,6 +421,7 @@ Additional selected readings:
 
 ### Readings and Assignments: 
 
+- [Trade Talks: What happened on Trump's tariff day? ](https://tradetalkspodcast.com/podcast/207-what-happened-on-trumps-tariff-day/)
 - [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
 
 
