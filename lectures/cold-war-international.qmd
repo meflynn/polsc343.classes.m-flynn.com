@@ -109,7 +109,7 @@ showtext::showtext_opts(dpi = 400)
 :::
 
 :::{.column width=50%}
-![](../images/franklin-roosevelt.jpg){width=70% fig-align="center"}
+![](../images/franklin-roosevelt.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -155,7 +155,7 @@ Henry Stimson
 - Influential in selecting targets
 :::
 :::{.column width=50%}
-![](../images/henry-stimson-old.jpg){width=70% fig-align="center"}
+![](../images/henry-stimson-old.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -189,6 +189,8 @@ To right: Replica of “Fat Man”, bomb dropped on Nagasaki
 ![](../images/fat-man.jpg){width=80% fig-align="center"}
 :::
 ::::
+
+
 
 
 
@@ -249,7 +251,7 @@ Soviets occupy territory and solidify control.
 
 ## {.blank-slide}
 
-![](../images/percentages-agreement.png){fig-align="center" width=30%}
+![](../images/percentages-agreement.png){fig-align="center" width=50%}
 
 
 :::{.notes}
@@ -265,7 +267,7 @@ Percentages Agreement
 
 ## {.blank-slide}
 
-![](../images/occupied-germany-map.png){fig-align="center" width=40%}
+![](../images/occupied-germany-map.png){fig-align="center" width=50%}
 
 
 :::{.notes}
@@ -293,7 +295,7 @@ The Truman Doctrine
 :::
 :::{.column width=50%}
 
-![](../images/harry-truman.jpg){width=70% fig-align="center"}
+![](../images/harry-truman.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -327,7 +329,7 @@ The Marshall Plan
 :::
 :::{.column width=50%}
 
-![](../images/george-marshall.jpeg){width=60% fig-align="center"}
+![](../images/george-marshall.jpeg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -379,7 +381,7 @@ George F. Kennan
 :::
 :::{.column width=50%}
 
-![](../images/george-kennan.jpg){width=60% fig-align="center"}
+![](../images/george-kennan.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -416,7 +418,7 @@ Paul Nitze
 :::
 :::{.column width=50%}
 
-![](../images/paul-nitze.jpg){width=60% fig-align="center"}
+![](../images/paul-nitze.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -514,7 +516,7 @@ Goal of promoting integration is a reaction to World War I and Western liberal p
 #| fig-align: "center"
 #| out-width: "70%"
 
-data <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv")) %>% 
+data <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv"))  |>  
   subset(year == 1945 | year == 1950)
 
 # Comparison
@@ -659,11 +661,11 @@ Promoting democracy
 
 - Many fear that US efforts to promote democracy and the rule of law will be applied unevenly across the international landscape
 
-- To right: James Byrnes, Secretary of State 1945-1947
+To right: James Byrnes, Secretary of State 1945-1947
 :::
 
 :::{.column width=50%}
-![](../images/james-byrnes.jpg){width=50% fig-align="center"}
+![](../images/james-byrnes.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -688,11 +690,15 @@ Notes on Byrnes, Multilateralism, and Human Rights:
 
 ## {.blank-slide}
 
-:::{layout="[1,1]"}
+::::{.columns}
+:::{.column width=50%}
 ![Walter White](../images/walter-white.jpg){width=5in height=6in fig-align="center"}
+:::
 
+:::{.column width=50%}
 ![Thurgood Marshall](../images/thurgood-marshall.jpg){width=5in height=6in fig-align="center"}
 :::
+::::
 
 :::{.notes}
 Notes on NAACP
@@ -768,10 +774,13 @@ crises. Exchange rates were fixed, but could be adjusted (See Oatley).
 
 
 ```{r igo-count}
+#| fig-align: "center"
+#| out-width: "70%"
+#| 
 data <- read.csv(here("../../../Data Files/COW Data/COW IGO Data/igounit_v2.3.csv")) 
 data[data < 0] <- NA
-data <- data %>% 
-  group_by(year) %>% 
+data <- data |> 
+  group_by(year) |> 
   dplyr::summarise(igocount = n_distinct(ioname))
 
 # Annual count of IGOs
@@ -825,14 +834,17 @@ World is more complicated
 
 ## {.blank-slide}
 
-```{r}
-data <- read.csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_0ddyr.csv")) %>% 
-  subset(stateA == 2 & defense == 1) %>% 
-  group_by(year) %>% 
+```{r defense-pacts}
+#| fig-align: "center"
+#| out-width: "70%"
+#| 
+data <- read.csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_0ddyr.csv")) |> 
+  subset(stateA == 2 & defense == 1) |> 
+  group_by(year) |> 
   summarise(allies = n_distinct(stateB))
 
-combined <- tibble(year = seq(1815, 2016)) %>% 
-  left_join(data) %>% 
+combined <- tibble(year = seq(1815, 2016)) |> 
+  left_join(data) |> 
   mutate(allies = ifelse(is.na(allies), 0, allies)) 
 
 
@@ -853,12 +865,16 @@ ggplot(data = combined, aes(x = year, y = allies)) +
 
 
 
+
+
 ## {.blank-slide}
 
-
-```{r dpi=400}
-milper <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv"))  %>% 
-  subset(ccode == 2) %>% 
+```{r military-personnel}
+#| fig-align: "center"
+#| out-width: "70%"
+#| 
+milper <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv"))  |> 
+  subset(ccode == 2) |> 
   mutate(milper.per = milper / tpop)
   
 # US military personnel as percent of population
@@ -879,30 +895,34 @@ ggplot(data = milper, aes(x = year, y = milper.per)) +
 
 ## {.blank-slide}
 
-```{r dpi=400}
-milspend <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv")) %>% 
+```{r nmc-figure}
+#| fig-align: "center"
+#| out-width: "70%"
+#| 
+milspend <- read.csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv")) |> 
   subset(ccode == 2 & year >= 1913) 
 
 # Note this uses Consumer Price Index for All Urban Consumers: All Items in U.S. City Average
-cpi <- tq_get("CPIAUCNS",
+# If code gets hung up here try installing quantmod package.
+cpi <- tidyquant::tq_get("CPIAUCNS",
               get = "economic.data",
               from = "1913-01-01",
-              to = "2019-01-01") %>% 
-  mutate(year = format(date, "%Y")) %>% 
-  group_by(year) %>% 
-  summarise(cpi = mean(price)) %>% 
-  mutate(basevalue = cpi[year==2018],
+              to = "2019-01-01") |> 
+  dplyr::mutate(year = format(date, "%Y")) |> 
+  group_by(year) |> 
+  summarise(cpi = mean(price)) |> 
+  dplyr::mutate(basevalue = cpi[year==2018],
          cpi = cpi/basevalue,
          year = as.numeric(year))
 
-combined <- milspend %>% 
-  left_join(cpi) %>% 
-  mutate(milex.cons = milex/cpi)
+combined.spend <- milspend |>  
+  left_join(cpi) |> 
+  dplyr::mutate(milex.cons = milex/cpi)
 
 # US military spending 1913-2015
-ggplot(data = combined, aes(x = year, y = milex.cons/1000000)) +
+ggplot(data = combined.spend, aes(x = year, y = milex.cons/1000000)) +
   geom_line() +
-  theme_flynn(base_family = "oswald", base_size = 12) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
   scale_x_continuous(breaks = seq(1915, 2015, 20)) +
   scale_y_continuous(labels = dollar) +
   labs(x = "Year",

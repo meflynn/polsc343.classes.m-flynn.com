@@ -120,11 +120,11 @@ issue <- tibble(Issue = c("Military", "Imperialism", "Free Trade"),
 knitr::kable(issue,
              'html',
              align = c("l", "c", "c"),
-             caption = "Partisanship and positions on key issues") %>% 
-  kable_styling(full_width = TRUE) %>% 
-  column_spec(1, width_min = "8cm") %>% 
-  column_spec(2, width_min = "4cm") %>% 
-  column_spec(3, width_min = "4cm") %>% 
+             caption = "Partisanship and positions on key issues") |> 
+  kable_styling(full_width = TRUE) |> 
+  column_spec(1, width_min = "8cm") |> 
+  column_spec(2, width_min = "4cm") |> 
+  column_spec(3, width_min = "4cm") |> 
   row_spec(0, bold = T, color = "white", background = "#512888")
 
 ```
@@ -133,7 +133,7 @@ knitr::kable(issue,
 
 ## {.blank-slide}
 
-```{r}
+```{r imperialism-votes}
 votes <- tibble(`Party` = c("Republicans", "Democrats"),
                 `Independece for Cuba` = c(17, 91),
                 `Annexation of Hawaii` = c(87, 44),
@@ -142,14 +142,15 @@ votes <- tibble(`Party` = c("Republicans", "Democrats"),
 knitr::kable(votes,
       'html',
       align = c("l", "c", "c", "c"),
-      caption = "Votes on Key 19th Century Foreign Policy Issues") %>%
+      caption = "Votes on Key 19th Century Foreign Policy Issues") |>
   kable_styling(full_width = TRUE,
-                bootstrap_options = c("striped")) %>% 
-  column_spec(1, width_min = "4cm") %>% 
-  column_spec(2, width = "3cm") %>% 
-  column_spec(3, width = "3cm") %>% 
-  column_spec(4, width = "3cm") %>%
-  row_spec(0, bold = T, color = "white", background = "#512888") %>% 
+                font_size = 24,
+                bootstrap_options = c("striped")) |> 
+  column_spec(1, width_min = "4cm") |> 
+  column_spec(2, width = "3cm") |> 
+  column_spec(3, width = "3cm") |> 
+  column_spec(4, width = "3cm") |>
+  row_spec(0, bold = T, color = "white", background = "#512888") |> 
   footnote(general = "These votes are a subset of the votes used by Trubowitz (1998, 54) for the purposes of analyzing support for imperialism. All votes occurred during 55th Congress. Roll call data obtained from www.voteview.com (Poole 2012). Vote on Cuba is the vote on the Dinsmore (D-AR) Amendment recognizing Cuban independence (April 14, 1898). Vote on the Annexation of Hawaii is the final vote on the Newlands (D-NV) resolution to annex Hawaiian Islands (June 15, 1898). Canal vote is the vote on the Hepburn (R-IA) Amendment to build and fortify an isthmian canal in Nicaragua (May 2, 1900).",
            footnote_as_chunk = TRUE, 
            title_format = c("italic"))
@@ -189,7 +190,7 @@ Notes:
 #| fig-align: "center"
 #| out-width: "70%"
 
-mfgpct <- read_csv(here("../Data/manufacturing-percent-1900.csv")) %>% 
+mfgpct <- read_csv(here("../Data/manufacturing-percent-1900.csv")) |> 
   mutate(statename = str_to_lower(state.name[match(state, state.abb)]))
 
 mapdata <- rnaturalearth::ne_states(country = c("united states of america")) |>
@@ -202,11 +203,14 @@ mapdata <- rnaturalearth::ne_states(country = c("united states of america")) |>
 ggplot(data = mapdata) + 
   geom_sf(aes(geometry = geometry, fill = mfgpct)) +
   theme_void() +
+  theme(text = element_text(family = "oswald"),
+        title = element_text(family = "oswald", face = "bold")) +
   coord_sf(crs = sf::st_crs(4326)) +
-  scale_fill_gradient2(low = muted("blue"), mid = "white", high = muted("red"), midpoint = median(mfgpct$mfgpct), label = scales::percent_format())+
+  viridis::scale_fill_viridis(option = "turbo", 
+                              direction = -1, 
+                              label = scales::percent_format()) +
   labs(fill = "Percent",
-       title = "Manufacturing Employment as Percent of State Workforce, 1900",
-       caption = "Midpoint set to median manufacturing employment value")
+       title = "Manufacturing Employment as Percent of State Workforce, 1900")
 
 ```
 
@@ -243,9 +247,12 @@ Notes:
 
 ## {.blank-slide}
 
-```{r warning=FALSE, dpi=400}
-trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_COW_4.0.csv")) %>% 
-  group_by(year) %>% 
+```{r warning=FALSE}
+#| fig-align: "center"
+#| out-width: "75%"
+
+trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_COW_4.0.csv")) |> 
+  group_by(year) |> 
   summarise(imports = sum(imports, na.rm = TRUE), 
             exports = sum(exports, na.rm = TRUE), 
             totaltrade = (imports+exports))
@@ -268,9 +275,12 @@ ggplot(data = subset(trade, year >= 1900 & year <= 1940), aes(x = year, y = tota
 
 
 ```{r}
-us.trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_COW_4.0.csv")) %>% 
-  subset(ccode == 2) %>% 
-  group_by(year) %>% 
+#| fig-align: "center"
+#| out-width: "75%"
+#| 
+us.trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_COW_4.0.csv")) |> 
+  subset(ccode == 2) |> 
+  group_by(year) |> 
   summarise(imports = sum(imports, na.rm = TRUE), 
             exports = sum(exports, na.rm = TRUE), 
             totaltrade = (imports+exports))
@@ -292,10 +302,12 @@ ggplot(data = us.trade, aes(x = year, y = exports)) +
 ## {.blank-slide}
 
 ```{r us-gnp}
-
-gnp <- read.delim(here("../../../Data Files/NBER/GDP/a08166.dat.txt"), sep = " ", header = FALSE) %>% 
-  subset(select = c("V1", "V4")) %>% 
-  plyr::rename(c("V1" = "Year", "V4" = "GNP")) %>% 
+#| fig-align: "center"
+#| out-width: "75%"
+#| 
+gnp <- read.delim(here("../../../Data Files/NBER/GDP/a08166.dat.txt"), sep = " ", header = FALSE) |> 
+  subset(select = c("V1", "V4")) |> 
+  plyr::rename(c("V1" = "Year", "V4" = "GNP")) |> 
   mutate(gnp.change = (GNP - lag(GNP)) / lag(GNP),
          growth = as.factor(ifelse(gnp.change > 0, 1, 0)))
 
@@ -318,12 +330,14 @@ ggplot(data = gnp, aes(x = Year, y = GNP)) +
 ## {.blank-slide}
 
 ```{r us-gnp-growth}
+#| fig-align: "center"
+#| out-width: "75%"
+#| 
 # US GNP change by year
 ggplot(data = gnp, aes(x = Year, y = gnp.change, group = growth, fill = stat(gnp$gnp.change >0))) +
   geom_bar(stat = "identity", color = "black", linewidth = 0.1) +
   geom_hline(yintercept = 0, color = "black", linewidth = .3) +
-  theme_flynn(base_family = "oswald", base_size = 12) +
-  theme(text = element_text(size = 18)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
   scale_x_continuous(breaks = seq(1920, 1950, 5), limits = c(1919, 1951)) +
   scale_y_continuous(breaks = seq(-0.15, 0.15, 0.05), labels = percent) +
   labs(y = "Growth rate",
@@ -340,9 +354,11 @@ ggplot(data = gnp, aes(x = Year, y = gnp.change, group = growth, fill = stat(gnp
 ## {.blank-slide}
 
 ```{r unemployment}
-
-unemp <- read.delim(here("../../../Data Files/NBER/Unemployment/m08292a.dat.txt"), sep = "", header = FALSE) %>% 
- rename(c("Year" = "V1","Period" = "V2","Rate" = "V3")) %>% 
+#| fig-align: "center"
+#| out-width: "75%"
+#| 
+unemp <- read.delim(here("../../../Data Files/NBER/Unemployment/m08292a.dat.txt"), sep = "", header = FALSE) |> 
+ rename(c("Year" = "V1","Period" = "V2","Rate" = "V3")) |> 
   mutate(Rate = as.numeric(gsub("[^.[0-9]]", "", Rate)),
          Time = as.Date(paste(Year, Period, "01", sep = "-"), format = '%Y-%m-%d'),
          change = Rate - dplyr::lag(Rate, order_by = Time))
@@ -350,7 +366,7 @@ unemp <- read.delim(here("../../../Data Files/NBER/Unemployment/m08292a.dat.txt"
 # US unemployment rate
 ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
   geom_line(linewidth = 0.75) +
-  theme_flynn(base_family = "oswald", base_size = 12) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
   scale_x_date(breaks = seq(as.Date("1930-01-01"), as.Date("1942-01-01"), "2 years"), limits = c(as.Date("1930-01-01"), as.Date("1942-01-01")), date_labels = "%Y %b") +
   scale_y_continuous(breaks = seq(0, 0.25, 0.05), labels = percent) +
   labs(y = "",
@@ -368,15 +384,17 @@ ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
 
 
 ```{r fed spending}
-
-fedspend <- read_csv(here("../../../Data Files/Historical Statistics of the United States/TableEa636-643/Ea636-643.csv"), skip = 6) %>% 
-  rename("year" = 1, "total" = 3) %>% 
-  filter(year >= 1929 & year <= 1940) %>% 
+#| fig-align: "center"
+#| out-width: "75%"
+#| 
+fedspend <- read_csv(here("../../../Data Files/Historical Statistics of the United States/TableEa636-643/Ea636-643.csv"), skip = 6) |> 
+  rename("year" = 1, "total" = 3) |> 
+  filter(year >= 1929 & year <= 1940) |> 
   mutate(total = as.numeric(total))
 
 ggplot(fedspend, aes(x = year, y = total)) +
   geom_line(linewidth = 1.5) +
-  theme_flynn(base_family = "oswald", base_size = 12) + 
+  theme_flynn(base_family = "oswald", base_size = 11) + 
   scale_y_continuous(labels = dollar_format()) +
   scale_x_continuous(breaks = seq(1929, 1940, 1)) +
   labs(x = "Year",
@@ -457,7 +475,7 @@ Henry L. Stimson
 - Well connected
 :::
 :::{.column width=50%}
-![](../images/henry-stimson-old.jpg){width=70% fig-align="center"}
+![](../images/henry-stimson-old.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -487,11 +505,15 @@ Divided government
 
 ## {.blank-slide}
 
-:::{layout=[1,1]}
+::::{.columns}
+:::{.column width=50%}
 ![](../images/league_cartoon.jpg){width=6in height=7in fig-align="center"}
+:::
 
+:::{.column width=50%}
 ![](../images/league_cartoon2.GIF){width=6in height=7in fig-align="center"}
 :::
+::::
 
 
 
@@ -506,7 +528,7 @@ Arthur Vandenberg (R-MI)
 - Enormously influential in securing Republican support for Truman policies
 :::
 :::{.column width=50%}
-![](../images/vandenberg.jpg){width=80% fig-align="center"}
+![](../images/vandenberg.jpg){width=500px fig-align="center"}
 :::
 ::::
 
@@ -530,18 +552,18 @@ Arthur Vandenberg (R-MI)
 
 ## {.blank-slide}
 
-```{r Bipartisanship in Cong Voting, dpi=400}
+```{r Bipartisanship in Cong Voting}
 #| fig-align: "center"
 #| out-width: "75%"
  
-bipart.cong <- readxl::read_xlsx(here("../../../Data Files/Trubowitz Mellow Bipartisanship 2005.xlsx"), sheet = 1) %>% 
-  select(congress, bipartisanship_fp, bipartisanship_domesticpolicy) %>% 
+bipart.cong <- readxl::read_xlsx(here("../../../Data Files/Trubowitz Mellow Bipartisanship 2005.xlsx"), sheet = 1) |> 
+  select(congress, bipartisanship_fp, bipartisanship_domesticpolicy) |> 
   pivot_longer(cols = 2:3)
 
 ggplot(data = bipart.cong, aes(x = congress, y = value, group = name, color = name)) +
   geom_line() +
   geom_point(size = 3) +
-  theme_flynn(base_family = "oswald", base_size = 10) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
   scale_x_continuous(breaks = seq(50, 110, 10)) +
   scale_color_brewer(palette = "Set1", label = c("Domestic Policy", "Foreign Policy")) +
   labs(x = "Congress",
@@ -608,13 +630,13 @@ Political Factors
 
 # note that I can plot republicans and democrats moderates with this, too.
 
-moderates.party <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) %>% 
-  filter(congress >= 55 & chamber != "President" & party_code == 100 | congress >= 55 & chamber != "President" & party_code == 200) %>% 
-  group_by(congress) %>% 
+moderates.party <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) |> 
+  filter(congress >= 55 & chamber != "President" & party_code == 100 | congress >= 55 & chamber != "President" & party_code == 200) |> 
+  group_by(congress) |> 
   mutate(chamber_median = median(nominate_dim1, na.rm = TRUE),
          party_midpoint = median(nominate_dim1[party_code==100], na.rm = TRUE) + median(nominate_dim1[party_code==200], na.rm = TRUE),
-         totalmembers = n_distinct(icpsr)) %>%
-  group_by(congress, party_code) %>%
+         totalmembers = n_distinct(icpsr)) |>
+  group_by(congress, party_code) |>
   mutate(party_median = median(nominate_dim1, na.rm = TRUE),
          party_distance = abs(nominate_dim1 - party_median),
          midpoint_distance = abs(nominate_dim1 - party_midpoint),
@@ -622,21 +644,21 @@ moderates.party <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv
          moderate.dem = ifelse(party_distance > midpoint_distance & party_code == 100, 1, 0),
          moderate.rep = ifelse(party_distance > midpoint_distance & party_code == 200, 1, 0),
          totalreps = ifelse(party_code == 200, n_distinct(icpsr), NA),
-         totaldems = ifelse(party_code == 100, n_distinct(icpsr), NA)) %>%
-  group_by(congress) %>% 
+         totaldems = ifelse(party_code == 100, n_distinct(icpsr), NA)) |>
+  group_by(congress) |> 
   summarise(moderates = sum(moderate, na.rm = TRUE),
             moderate.reps = sum(moderate.rep, na.rm = TRUE),
             moderate.dems = sum(moderate.dem, na.rm = TRUE),
             totalreps = mean(totalreps, na.rm = TRUE),
             totaldems = mean(totaldems, na.rm = TRUE),
-            totalmembers = mean(totalmembers)) %>% 
+            totalmembers = mean(totalmembers)) |> 
   mutate(moderate.prop = moderates/totalmembers,
             moderate.rep.prop = moderate.reps/totalreps,
-            moderate.dem.prop = moderate.dems/totaldems) %>% 
+            moderate.dem.prop = moderate.dems/totaldems) |> 
   pivot_longer(cols = 8:10)
 
 
-ggplot(moderates.party %>%  filter(name == "moderate.prop"), aes(x = congress, y = value, group = name, color = name)) +
+ggplot(moderates.party |>  filter(name == "moderate.prop"), aes(x = congress, y = value, group = name, color = name)) +
   geom_line(size = 1.2) +
   geom_point(size = 3) +
   theme_flynn(base_family = "oswald", base_size = 12) +
@@ -644,7 +666,7 @@ ggplot(moderates.party %>%  filter(name == "moderate.prop"), aes(x = congress, y
   guides(color = FALSE) +
   labs(x = "Congress",
        y = "Proportion",
-       title = "Moderates as a percentage of all members of Congress, 55th-116th Congress",
+       title = "Moderates as a percentage of members of Congress, 55th-116th Congress",
        subtitle = "The influence of moderates ebbs and flows over time")
 
 ```
@@ -696,20 +718,20 @@ Note:
 cpi <- tq_get("CPIAUCNS",
               get = "economic.data",
               from = "1913-01-01",
-              to = "2019-01-01") %>% 
+              to = "2019-01-01") |> 
   mutate(year = as.numeric(format(date, "%Y")),
          basevalue = mean(price[year==2018]),
          cpi = price/basevalue)
 
-manufacturing <- readxl::read_xlsx(here("../../../Data Files/US_Exports_Finished_Manufactures_1905-1956.xlsx"), sheet = 1) %>% 
-  rename(manufacturing = 3, year = 1, month = 2) %>% 
+manufacturing <- readxl::read_xlsx(here("../../../Data Files/US_Exports_Finished_Manufactures_1905-1956.xlsx"), sheet = 1) |> 
+  rename(manufacturing = 3, year = 1, month = 2) |> 
   mutate(time = paste(year, month, 1, sep = "-"),
          manufacturing = as.numeric(manufacturing),
-         time2 = as.Date(time, format = "%Y-%m-%d")) %>% 
-  left_join(cpi) %>% 
+         time2 = as.Date(time, format = "%Y-%m-%d")) |> 
+  left_join(cpi) |> 
   mutate(manufacturing = manufacturing/cpi)
 
-ggplot(manufacturing %>% filter(year >= 1910 & year <= 1950), aes(x = time2, y = manufacturing)) +
+ggplot(manufacturing |> filter(year >= 1910 & year <= 1950), aes(x = time2, y = manufacturing)) +
   geom_line() + 
   theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_date(limits = c(as.Date("1910-01-01"), as.Date("1955-01-01")), date_labels = "%Y") +
@@ -781,7 +803,8 @@ mapdata <- us_map(regions = "states") |>
 ggplot(mapdata, aes(geometry = geom, fill = spend.ntile)) + 
   geom_sf(color = "white") +
   theme_void() +
-  theme(text = element_text(family = "oswald")) +
+  theme(text = element_text(family = "oswald"),
+        title = element_text(family = "oswald", face = "bold")) +
   scale_fill_brewer(type = "seq", palette = "RdPu", direction = -1) +
   labs(title = "Defense spending as a percentage of state GDP, 2017",
        subtitle = "States are grouped into quintiles based on dependence on DOD spending",
@@ -812,7 +835,8 @@ mapdata <- us_map(regions = "states") |>
 ggplot(mapdata, aes(geometry = geom, fill = spend.ntile)) + 
   geom_sf(color = "white") +
   theme_void() +
-  theme(text = element_text(family = "oswald")) +
+  theme(text = element_text(family = "oswald"),
+        title = element_text(family = "oswald", face = "bold")) +
   scale_fill_brewer(type = "seq", palette = "RdPu", direction = -1) +
   labs(title = "Defense spending as a percentage of state GDP, 2022",
        subtitle = "States are grouped into quintiles based on dependence on DOD spending",
@@ -843,9 +867,10 @@ mapdata <- us_map(regions = "counties") |>
 ggplot(mapdata, aes(geometry = geom, fill = `Spending FY2022`)) + 
   geom_sf(color = "white") +
   theme_void() +
-  theme(text = element_text(family = "oswald")) +
-  viridis::scale_fill_viridis(option = "magma", 
-                              direction = -1, 
+  theme(text = element_text(family = "oswald"),
+        title = element_text(family = "oswald", face = "bold")) +
+  viridis::scale_fill_viridis(option = "turbo", 
+                              direction = 1, 
                               begin = 0.2,
                               end = 0.9,
                               na.value = "gray90",
@@ -883,9 +908,10 @@ mapdata <- us_map(regions = "counties") |>
 ggplot(mapdata, aes(geometry = geom, fill = total_personnel)) + 
   geom_sf(color = "white") +
   theme_void() +
-  theme(text = element_text(family = "oswald")) +
-  viridis::scale_fill_viridis(option = "magma", 
-                              direction = -1, 
+  theme(text = element_text(family = "oswald"),
+        title = element_text(family = "oswald", face = "bold")) +
+  viridis::scale_fill_viridis(option = "turbo", 
+                              direction = 1, 
                               begin = 0.2,
                               end = 0.9,
                               na.value = "gray90",
@@ -1012,13 +1038,13 @@ summary.1 <- tibble(`Region` = c("North", "South", "West"),
 kable(summary.1,
       'html',
       align = c("l", "l", "c", "c"),
-      caption = "Pre-World War II") %>%
+      caption = "Pre-World War II") |>
   kable_styling(full_width = TRUE,
-                bootstrap_options = c("striped", "hover")) %>% 
-  column_spec(1, width = "5cm") %>% 
-  column_spec(2, width = "5cm") %>% 
-  column_spec(3, width = "4cm") %>% 
-  column_spec(4, width = "5cm") %>%   row_spec(0, bold = T, background = "#512888", color = "white")
+                bootstrap_options = c("striped", "hover")) |> 
+  column_spec(1, width = "5cm") |> 
+  column_spec(2, width = "5cm") |> 
+  column_spec(3, width = "4cm") |> 
+  column_spec(4, width = "5cm") |>   row_spec(0, bold = T, background = "#512888", color = "white")
   
 
 ```
@@ -1038,13 +1064,13 @@ summary.2 <- tibble(`Region` = c("North", "South", "West"),
 kable(summary.2,
       'html',
       align = c("l", "l", "c", "c"),
-      caption = "Late/Post-Cold War") %>%
+      caption = "Late/Post-Cold War") |>
   kable_styling(full_width = TRUE,
-                bootstrap_options = c("striped", "hover")) %>% 
-  column_spec(1, width = "5cm") %>% 
-  column_spec(2, width = "5cm") %>% 
-  column_spec(3, width = "4cm") %>% 
-  column_spec(4, width = "5cm") %>% 
+                bootstrap_options = c("striped", "hover")) |> 
+  column_spec(1, width = "5cm") |> 
+  column_spec(2, width = "5cm") |> 
+  column_spec(3, width = "4cm") |> 
+  column_spec(4, width = "5cm") |> 
   row_spec(0, bold = T, background = "#512888", color = "white")
   
 
@@ -1055,12 +1081,14 @@ kable(summary.2,
 ## {.blank-slide}
 
 ```{r nominate-dimensions-1}
+#| fig-align: "center"
+#| out-width: "75%"
 
-nom.1 <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) %>% 
-  filter(congress == 55 | congress == 86 | congress == 115) %>% 
-  filter(chamber == "House") %>% 
+nom.1 <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) |> 
+  filter(congress == 55 | congress == 86 | congress == 115) |> 
+  filter(chamber == "House") |> 
   mutate(party = factor(party_code, levels = c(100, 200), labels = c("Democrat", "Republican")),
-         congress = factor(congress, labels = c("55th Congress (1897-1899)", "86th Congress (1947-1949)", "115th Congress (2017-2019)"))) %>% 
+         congress = factor(congress, labels = c("55th Congress (1897-1899)", "86th Congress (1947-1949)", "115th Congress (2017-2019)"))) |> 
   filter(!is.na(party))
 
 
@@ -1068,7 +1096,7 @@ ggplot(nom.1, aes(x = nominate_dim1, fill = factor(party))) +
   geom_density(alpha = 0.8) +
   facet_wrap(. ~ congress, ncol = 1) +
   geom_vline(xintercept = 0, size = 1.5, linetype = "dashed") +
-  theme_flynn(base_family = "oswald", base_size = 12) + 
+  theme_flynn(base_family = "oswald", base_size = 11) + 
   scale_fill_brewer(palette = "Set1", direction = -1) +
   labs(x = "First Dimension NOMINATE Score",
        y = "Density",
