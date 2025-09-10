@@ -2600,8 +2600,8 @@ $presentation-author-block-padding-right: if(
   font-family: $presentation-body-font;
   font-size: $body-font-size;
   line-height: 1.1;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
+  //margin-bottom: 5px;
+  //padding-bottom: 5px;
 }
 
 /* This one handles the bulleted lists */
@@ -2660,8 +2660,8 @@ h2 {
     background-color: #FFFFFF;
     border-width: 0px;
     border-color: #FFFFFF;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
@@ -2782,51 +2782,58 @@ p.date {
 }
 
 
-// Method 1: CSS Grid - Most reliable approach
-.reveal .slides {
-  // Create a centering wrapper for figures
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; // Center figures horizontally
-  }
-
-  figure {
-    display: grid;
-    grid-template-columns: minmax(0, max-content); // Shrink to content size
-    grid-template-rows: auto auto;
-    justify-items: start; // Align grid items to the start (left) of their grid area
-
-    img {
-      grid-row: 1;
-      grid-column: 1;
-      display: block;
-      justify-self: center; // Center the image within its grid cell
-      // Image determines the column width
-    }
-
-    figcaption {
-      grid-row: 2;
-      grid-column: 1;
-      justify-self: stretch; // Stretch to fill the grid cell width
-      // Inherits exact width from the grid column (image width)
-      margin: 0.5rem 0 0 0;
-      padding: 0;
-      text-align: left;
-      font-size: 0.8em;
-      color: #666;
-      font-style: italic;
-      line-height: 1.4;
-      // Text will wrap to match image width
-      word-wrap: break-word;
-      hyphens: auto;
-    }
-  }
 
 
 
+// These three chunks make sure that figure captions are left-aligned, but also that the figures remain centered within the figure environment space or column space.
+
+figure {
+  display: table;
+  max-width: max-content;
+  max-height: max-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
+.reveal img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  padding-left: 10px;
+  //min-width: 95%;
+}
+
+
+.quarto-figure {
+  display: table;
+  max-width: max-content;
+  max-height: max-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quarto-figure > p {
+  display: table-caption;
+  caption-side: bottom;
+  padding-left: 10px;
+  //min-width: 95%;
+
+.center {
+  text-align: center;
+}
 
 .small {
   font-size: .8em;

@@ -132,6 +132,7 @@ Japan and the atomic bomb
 
 :::{.notes}
 Background
+
 - Many argued invasion would be too costly.
 - Debate over how best to end war. Three options presented.
 - Arsenal initially limited, so demonstration would waste a valuable weapon.
@@ -213,6 +214,7 @@ Tensions between the US and USSR go back long before World War II
 :::{.notes}
 
 US long opposed to communism.
+
 - Long history of government action against communists domestically
 - US troops invaded Russia and attempted to reverse the Russian Revolution in 1917
 - The second front. Soviets thought US and UK would wait and let USSR and Germany bleed to death.
@@ -239,6 +241,7 @@ Key post-war events
 :::{.notes}
 
 Soviets occupy territory and solidify control.
+
 - British secretly announces to the US in 1946 that it an no longer sustain aid to Greece and Turkey. Greece is currently fghting a civil war, with communist forces on one side.
 - Greece holds cultural signifcance to US
 - Stalin also attempting to bully US into making concessions in Iran and Turkey. 
@@ -251,11 +254,12 @@ Soviets occupy territory and solidify control.
 
 ## {.blank-slide}
 
-![](../images/percentages-agreement.png){fig-align="center" width=50%}
+![](../images/percentages-agreement.png){fig-align="center" width=70%}
 
 
 :::{.notes}
 Percentages Agreement
+
 - Fourth Moscow Conference of 1944
 - Text: Romania, Greece, Yugoslavia, Hungary, Bulgaria
 - Roosevelt's representative not included in these meetings between Churchill and Stalin. FDR protests.
@@ -267,11 +271,12 @@ Percentages Agreement
 
 ## {.blank-slide}
 
-![](../images/occupied-germany-map.png){fig-align="center" width=50%}
+![](../images/occupied-germany-map.png){fig-align="center" width=70%}
 
 
 :::{.notes}
 Shows allied occupation zones
+
 - Cream areas are annexed by Poland and USSR, respectively.
 - Cream area to left was effectively control by France (Saar Protectorate) but was reintegrated into Germany in 1957.
 :::
@@ -301,6 +306,7 @@ The Truman Doctrine
 
 :::{.notes}
 Truman Doctrine
+
 - Direct reaction to events in Greece and Turkey
 - FDR seemed more optimistic regarding cooperation with Russa. Truman more skeptical.
 - "Must be the policy of the United States to support free peoples who are resisting
@@ -335,6 +341,7 @@ The Marshall Plan
 
 :::{.notes}
 Marshall Plan
+
 - Builds off of the Truman doctrine
 - Europe's economy is in ruins. Hunger and poverty viewed as greater threats than
 direct Soviet intervention.
@@ -389,6 +396,7 @@ George F. Kennan
 
 :::{.notes}
 George Kennan
+
 - Kennan had been a foreign service officer for years.
 - In 1946---Long telegram was about 8,000 words. Ridiculous considering model of telegraphic delivery.
 - Early skeptic of the US' ability to cooperate with the Soviets
@@ -426,6 +434,7 @@ Paul Nitze
 
 :::{.notes}
 Paul Nitze
+
 - One of the principal authors of NSC-68
 - Set out a vision of a more militarized approach to containment
 - Kennan opposed this view. 
@@ -455,6 +464,7 @@ Later events:
 
 :::{.notes}
 Other events pave the way for the cold war:
+
 - 1948: Stalin approves communist coup in Czechoslovakia. Had retained democratic government after the war. Czech foreign minister found dead on the ground.Suspicions that communists pushed him.
 - 1948: Tito splits with Stalin. US begins giving aid to Tito's regime. Dean Acheson
 famously says "he might be a son of a bitch, but he's our son of a bitch."
@@ -552,6 +562,7 @@ US embarks on a massive order-building project
 
 :::{.notes}
 Initial Alternatives
+
 - Talk about the origins of liberal here. Not liberal as in politically liberal.
 - Points to classical liberalism
 - Two main pillars are in economic and security affairs.
@@ -581,6 +592,7 @@ What does a liberal internationalist/hegemonic order look like?
 
 :::{.notes}
 Examples of US leadership and constraints
+
 - US must abide by system it sets up
 - John Ikenberry argues that the US had to constrain its behavior to enjoy the long-term benefits of the order it was building.
   - If it did whatever it wanted it would provoke a backlash and would collapse immediately.
@@ -640,6 +652,7 @@ Diplomatic affairs:
 
 :::{.notes}
 Notes:
+
 - The idea here was to establish greater coordination between countries
 - Resolve problems before they emerged, and do so peacefully
 - Coordinate to facilitate greater interactions in other spaces (e.g. economic)
@@ -673,7 +686,7 @@ To right: James Byrnes, Secretary of State 1945-1947
 :::{.notes}
 Notes on Byrnes, Multilateralism, and Human Rights:
 
-- Secretary of STate. Also a staunch segregationist.
+- Secretary of State. Also a staunch segregationist.
 
 - Brynes served in the House, Senate, and briefly as an associate justice on the US supreme court (though his tenure is the shortest on record). He played an important role in blocking anti-lynching legislation, blocking support for black colleges and universities, and also in maintaining white control over Democratic Party politics in South Carolina.
 
@@ -757,7 +770,7 @@ Economic affairs:
 
 Early institutions
 
-- GATT becomes TWO in 1995. Provides a forum for international trade law, tariff negotiations, and dispute resolution.
+- GATT becomes WTO in 1995. Provides a forum for international trade law, tariff negotiations, and dispute resolution.
 - World Bank: Originally focused on reconstruction after WWII. Later shifts to focus on development and poverty reduction. 
 - IMF: Originally intended to help maintain stable exchange rates and address
 balance of payments problems. US dollar was pegged to gold initially, so some

@@ -21,7 +21,7 @@ format:
     height: 900
     width: 1600
     fig-width: 8
-    fig-height: 4.5
+    fig-height: 5
     fig-format: retina
     fig-dpi: 400
     fig-align: center
@@ -550,6 +550,7 @@ Munich parallel to Iran negotiations
 
 ```{r uk-france-germany-cap}
 #| fig-align: center
+#| out-width: 75%
 
 cap.data <- read_csv(here("../../../Data Files/COW Data/NMC_5_0/NMC_5_0.csv"))
 
@@ -588,6 +589,9 @@ Capabilities in 1930s
 ## {.blank-slide}
 
 ```{r iran-capabilities}
+#| fig-align: center
+#| out-width: 75%
+
 
 cap.2 <- ggplot(data = cap.data %>% filter(year >= 1979 & ccode == 2 |
                                             year >= 1979 & ccode == 630),

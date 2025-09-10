@@ -21,7 +21,7 @@ format:
     height: 900
     width: 1600
     fig-width: 8
-    fig-height: 4.5
+    fig-height: 5
     fig-format: retina
     fig-dpi: 400
     fig-align: center
@@ -146,7 +146,9 @@ Notes
 ## {.blank-slide}
 
 ```{r institutional-control, fig.width=12, fig.height=4}
-
+#| fig-align: "center"
+#| out-width: "70%"
+#| 
 nom.data <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) %>%
   filter(congress >= 55) %>% 
   group_by(chamber, congress) %>% 
@@ -296,6 +298,9 @@ Appointments occur in two key areas
 ## {.blank-slide}
 
 ```{r exec-leg-employ}
+#| fig-align: center
+#| out-width: 70%
+#| 
 data <- readxl::read_xlsx(here("../../../Data Files/Executive Branch Employment.xlsx")) %>%
   mutate(transportation = as.numeric(transportation)) %>% 
   pivot_longer(cols = c(2:13)) %>% 
@@ -311,7 +316,7 @@ getPalette <- colorRampPalette(brewer.pal(11, "Spectral"))
 # Legislative versus executive
 ggplot(data = data.leg, aes(x = year, y = value, group = name, fill = name)) +
   geom_area(position = "identity", alpha = .75, colour = "black", size = .1) +
-  theme_flynn(base_size = 12, base_family = "oswald") + 
+  theme_flynn(base_size = 11, base_family = "oswald") + 
   scale_fill_brewer(palette = "Spectral") +
   scale_x_continuous(breaks = seq(1940, 2015, 5)) +
   scale_y_continuous(breaks = seq(0, 3500, 500)) +
@@ -341,7 +346,8 @@ Notes
 ## {.blank-slide}
 
 ```{r executive-employment, dpi = 400}
-
+#| fig-align: "center"
+#| out-width: "70%"
 
 # Executive branch over time
 
@@ -377,7 +383,8 @@ Notes
 ## {.blank-slide}
 
 ```{r state-emp}
-
+#| fig-align: "center"
+#| out-width: "70%"
 
 state.df <- readxl::read_xlsx(here::here("../../../Data Files/US Government Files/state-department/state-department-personnel-size.xlsx")) %>% 
   pivot_longer(cols = 2:4)
@@ -386,7 +393,7 @@ state.df <- readxl::read_xlsx(here::here("../../../Data Files/US Government File
 # state department size
 ggplot(data = subset(state.df, name != "Total" & Year >= 1790), aes(x = as.numeric(Year), y = value, group = name, fill = name)) +
   geom_area(position = "stack", alpha = .8, colour = "black", size = .1) +
-  theme_flynn(base_size = 12, base_family = "oswald") + 
+  theme_flynn(base_size = 11, base_family = "oswald") + 
   viridis::scale_fill_viridis(discrete = TRUE) +
   scale_x_continuous(breaks = seq(1790, 2020, 20)) +
   scale_y_continuous(breaks = seq(0, 20000, 4000), limits = c(0, 20000)) +
@@ -994,7 +1001,9 @@ Notes
 ## {.blank-slide}
 
 ```{r aumf-table}
-#| fig-pos: center
+#| fig-align: "center"
+#| out-width: "75%"
+
 
 aumf.data <- readxl::read_xlsx(here::here("../../../Data Files/US Government Files/CRS/aumf-records.xlsx")) %>% 
   mutate(newact = ifelse(grepl(".*contin.*", `Country/Action/Target`), "Continuing", "New"),
@@ -1011,7 +1020,7 @@ aumf.data <- readxl::read_xlsx(here::here("../../../Data Files/US Government Fil
 
 
 ggplot(aumf.data, aes(x = Date, y = number)) +
-  geom_point(aes(fill = aumf.authority), color = "black", size = 3.0, pch = 21) +
+  geom_point(aes(fill = aumf.authority), color = "black", size = 4.5, pch = 21) +
   theme_flynn(base_size = 11, base_family = "oswald") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_fill_brewer(palette = "Set1", drop = FALSE) +
@@ -1058,10 +1067,12 @@ Notes
 
 
 ```{r aumf-chart-2}
-#| fig-pos: center
+#| fig-align: "center"
+#| out-width: "75%"
+
 
 ggplot(aumf.data, aes(x = Date, y = number.newact)) +
-  geom_point(aes(fill = newact), color = "black", size = 4.0, pch = 21) +
+  geom_point(aes(fill = newact), color = "black", size = 4.5, pch = 21) +
   theme_flynn(base_size = 11, base_family = "oswald") + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_fill_brewer(palette = "Set1", drop = FALSE) +
@@ -1160,8 +1171,8 @@ Actual effects?
 ## {.blank-slide}
 
 ```{r oversight-fig}
-#| fig-pos: center
-
+#| fig-align: "center"
+#| out-width: "75%"
 
 oversight <- read_csv(here("../../../Data Files/policy-agendas-project/US-Legislative-congressional_hearings-19.4.csv")) %>% 
   group_by(year) %>% 
@@ -1187,7 +1198,7 @@ ggplot(oversight) +
   geom_line(aes(x  = year, y = hearings_defense_days, color = "Defense"), linetype = 2, linewidth = 1) +
   geom_line(aes(x = year, y = hearings_intaff_days, color = "International Affairs"), linetype = 3, linewidth = 1) +
   geom_line(aes(x = year, y = hearings_trade_days, color = "Trade"), linewidth = 1) +
-  theme_flynn(base_size = 12, base_family = "oswald") + 
+  theme_flynn(base_size = 11, base_family = "oswald") + 
   scale_color_brewer(palette = "Set1") +
   scale_x_continuous(breaks = seq(1950, 2020, 10)) +
   labs(color = "Topic Area",

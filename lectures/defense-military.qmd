@@ -1,0 +1,1075 @@
+---
+title: "US Foreign Policy"
+subtitle: "The Department of Defense and the Military"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    fig-width: 8
+    fig-height: 5
+    fig-format: retina
+    fig-dpi: 400
+    fig-align: center
+    #incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    #data-background-size: 750px 750px
+    #data-background-position: 1000px 370px
+    #data-background-position: 115% 150%
+    #data-background-position: 115% 140%
+    #data-background-position: 19em 8em
+    #height: 700
+    #width: 1050
+---
+
+```{r setup}
+library(tidyverse)
+library(brms)
+library(here)
+library(bayestestR)
+library(posterior)
+library(marginaleffects)
+library(kableExtra)
+library(flynnprojects)
+
+sysfonts::font_add_google("Oswald", "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 400)
+
+```
+
+## Lecture Overview
+
+1. Historical background
+
+2. Organization of the DOD 
+
+3. Organization of the Military
+
+4. Military leadership and politics 
+
+
+
+
+
+
+
+## Key Questions
+
+1. How has the organization of the US military changed over time?
+
+2. What is the general structure of the US military—What are the key organizational entities and how do they relate to one another?
+
+3. How have the economic interests of political parties affected their relationships with the branches of the military?
+
+4. In what ways is the military a political institution?
+
+5. What's the difference between non-political and non-partisan?
+
+
+
+
+
+
+# Historical Background
+
+
+
+
+## Historical Background
+
+The military of olden times looked a lot different than it does today
+
+The Military was initially two separate, independent entities
+
+- Department of War (Army)
+
+- Department of the Navy
+
+Size and aims were also very different
+
+- Both Navy and Army were small
+
+- Both were intended to be focused on external threats
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+::::{.columns}
+:::{.column width=50%}
+
+![Secretary of War Henry Stimson](../images/henry-stimson-old.jpg){width=400 height=600 fig-align=center}
+
+:::
+
+:::{.column width=50%}
+
+![Secretary of the Navy Frank Knox](../images/frank-knox.jpg){width=400 height=600 fig-align=center}
+
+:::
+::::
+
+
+
+:::{.notes}
+
+- Henry Stimson and Frank Knox. Secretaries of War and Navy (respectively) during WWII. Oversaw the US war effort, and both reported directly to President Roosevelt. Both Republicans. 
+- Independent services led to coordination problems.
+- Stimson and others also criticize FDR’s administrative abilities. Bad at giving direction and keeping subordinates organized.
+- President Truman stated: “We must never fight another war the way we fought the last two. I have the feeling that if the Army and the Navy had fought our enemies as hard as they fought each other, the war would have ended much earlier.”
+- Henry Stimson: The JCS was “an imperfect instrument of top-level decision,” because “it remained incapable of enforcing a decision against the will of any one of its members.” (See JCS History)
+- George Marshall: “the lack of real unity has handicapped the successful conduct of the war.”
+- This prompts discussion of a major reorganizational drive for the US military
+
+:::
+
+
+
+
+
+
+## Historical Background
+
+### National Security Act of 1947
+
+- Creates the National Military Establishment (NME)
+
+- Department of Defense (DoD) follows in 1949
+
+- Army Air Corps becomes independent Air Force
+
+- Army, Navy, Air Force, and Marine Corps brought under one unified organization with one civilian secretary
+
+:::{.notes}
+
+National Security Act of 1947:
+- Intended to solve coordination problems that plagued the Army and Navy during WWII. Also intended to sort out the growing power of the Army Air Corps.
+- Army Leaders wanted the Army Air Corps out of the Army. Argued that it would corrupt the Army’s traditional mission of providing overwhelming ground combat capabilities. 
+- Secretary of the Navy James Forrestal (1944–1947), opposed unification. He believed (as did many others) that the Navy would be relegated to a transportation role, and that the Marine Corps would be stripped and integrated into the Army. The air force now had nuclear weapons, but the Army and Navy did not. 
+- Subsequent amendments to initial legislation protected Navy’s air wing, and the Marine Corps.
+
+:::
+
+
+
+
+
+
+
+## Historical Background
+
+::::{.columns}
+:::{.column width=50%}
+James Forrestal
+
+- First Secretary of Defense
+
+- Former Secretary of the Navy
+
+- Resigned March 28, 1949
+
+:::
+
+:::{.column width=50%}
+![](../images/james-forrestal.jpg){width=400 height=600 fig-align=center}
+:::
+::::
+
+:::{.notes}
+
+James Forrestal
+- First Secretary of Defense. Formerly serving as Secretary of the Navy.
+- Position was initially weak. Forrestal could do little to override the chiefs of staff and the individual military departments, who still retained significant power. His tenure was plagued by difficulties. He also opposed Truman’s approach to defense spending, which did not prioritize national threats. Truman initially wanted to cut spending, capping the FY1949 budget at $10 billion ($127.7 billion in 1997 dollars) but service chiefs went around Forrestal and got Congress to approve a larger budget than what Truman wanted. 
+- Truman wanted a budget cap of $14.4 billion for FY1950, Forrestal and the JCS prepared several budget plans ranging from $14.4 billion o $18 billion.
+
+:::
+
+
+
+
+
+
+
+# Defense Department Organization
+
+
+
+
+
+
+## Defense Department Organization
+
+Main components
+
+- Office of the Secretary of Defense (OSD)
+
+- Military Departments
+
+- Joint Chiefs of Staff
+
+- Combatant Commands
+
+:::{.notes}
+
+Main components
+- Office of the Secretary of Defense (OSD): This is the main civilian branch of the military. There are military officers working within the OSD, though.
+- Military Departments: Army, Navy, Air Force
+- Joint Chiefs of Staff
+- Combatant Commands
+
+:::
+
+
+
+
+
+
+## Defense Department Organization
+
+But wait, what are these things?
+
+```{r org-description}
+
+dodorg <- tibble(`Office of the Secretary of Defense` = c("Civilian side of the military", "Secretary of Defense, Deputy, Assistant, and Under Secretaries", "Civilian offices and bureaues"),
+                 `Military Departments` = c("The military side (which also contains a civilian side)", "Army, Navy, Airforce, Space Force", "Less about warfighting, more about recruitment, doctrine, and management"),
+                 `Joint Chiefs of Staff` = c("Upper level management of military leadership", "Chair of the Joint Chiefs of Staff, Vice Chair, and other service chiefs", "Principal military adviser to the president (CJCOS)"),
+                 `Combatant Commands` = c("Focus on warfighting/planning", "Made up of personnel from different service branches", "Focus on specific geographic or functional AOR"))
+
+kable(dodorg,
+      "html",
+      align = c("l", "l", "l", "l"),
+      caption = "Summary of key military entities") %>%
+  kable_styling(full_width = TRUE) %>% 
+  row_spec(0, bold = TRUE, color = "white", background = "#512888")
+```
+
+:::{.notes}
+
+Details on functions and roles
+
+- But what do these entities do?
+- Lots of stuff, review slide content.
+
+:::
+
+
+
+
+
+## Defense Department Organization
+
+Goldwater-Nichols Act of 1986
+
+- Greatest reorganization of the US military since National Security Act of 1947
+
+- Removed Joint Chiefs of Staff from the operational chain of command
+
+- Creates Vice Chair of the Joint Chiefs of Staff
+
+- Chain of command runs straight to combatant commanders:
+```{r chain of command, fig.height=1.4}
+library(dagitty)
+
+mildag <- dagitty('dag {
+  "President" [pos="0,0"]
+  "Secretary of Defense" [pos="4,0"]
+  "Combatant Commanders" [pos="8,0"]
+  
+  "President" -> "Secretary of Defense" -> "Combatant Commanders"
+}')
+par(cex=1.25)
+plot(mildag)
+```
+
+:::{.notes}
+
+Goldwater–Nichols Act of 1986
+- Major reorganization of US military
+- Removes JCS from the operational chain of command. Chain of command runs directly from the president to the SECDEF to the combatant commanders. 
+- Intended to promote a more holistic approach to defense. Since the CINCs command forces from every branch, it was believed they would be less parochial than service chiefs. 
+- Coordination problems still exist:
+- (Apocryphal?) During Grenada invasion an Army officer had to use his AT&T card and a payphone to call in air support for his troops because Army and Air Force were not operating on the same frequency
+- Also each branch buys similar equipment, but it is not necessarily interchangeable. This contributes in some ways to maintaining service independence, as this scheme prevents individual services from being folded into one another too readily. Massive transaction costs associated with combining branches since we would have to decide what equipment to stick with, how and when to train new people on new equipment, etc.
+
+:::
+
+
+
+## {.blank-slide}
+
+![](../images/dod-org-2019-1.png){width=1000 height=750 fig-align="center"}
+
+
+
+:::{.notes}
+
+Organization chart
+
+- Discuss basic organizational details
+
+:::
+
+
+
+
+## {.blank-slide}
+
+![](../images/dod-org-2023-senior.png){width=900 height=700 fig-align=center}
+
+
+:::{.notes}
+
+OSD Leadership
+
+- OSD is the civilian side of the DoD. 
+- Oversees every aspect of the Department of Defense 
+
+:::
+
+
+
+
+
+## {.blank-slide}
+
+![](../images/dod-org-2019-assistant.png){width=900 height=700 fig-align=center}
+
+
+:::{.notes}
+
+Assistant Secretaries
+
+- Perform/manage more fine-grained tasks and oversee specific functional or topical areas.
+- Note that blacks indicate which Under Secretary they fall under
+
+:::
+
+
+
+
+
+## {.blank-slide}
+
+![](../images/dod-org-field-activities.png){width=1000, height=700 fig-align=center}
+
+:::{.notes}
+
+Defense Agencies and Field activities
+
+- Mixture of military and civilian personnel
+- Note the National Security Agency (NSA) is hiding over there on the right, as is the National Reconaissance Office (NRO)
+- Also note that with the exception of Admiral Rogers at the NSA, all agencies are director or Three-star level.
+
+:::
+
+
+
+
+
+
+## Defense Department Organization
+
+::::{.columns}
+:::{.column width=50%}
+Secretary of Defense Pete Hegseth
+
+- Retired US Army Major
+- Former Fox News commentator
+
+
+
+:::
+
+:::{.column width=50%}
+
+![](../images/pete-hegseth-secdef.jpg){width=500 height=700 fig-align=center}
+
+:::
+::::
+
+
+:::{.notes}
+
+SecDef
+
+- Pete Hegseth
+- Weird choice, he doesn't have a lot of relevant experience. 
+- Military experience, but nothing at the policy or strategic levels. Others, like Chuck Hagel, who served as a Sergeant in Vietnam, served for years in the Senate developing policy expertise.
+- He got into political advocacy after leaving the Army, becoming the Chair and President of Vets for Freedom, but was fired from Vets for Freedom after the organization accrued substantial debts.
+- He launched a failed campaign for Senate in Minnesota in 2012.
+- Also left Concerned Veterans for America in 2016 due to mismanagement and alcoholism.
+- Reports of sexual assault and a payment of $50,000 to a woman who accused him of sexual assault. She was also asked to sign a non-disclosure agreement.
+- Hegseth's former sister-in-law, Danielle Hegseth, also gave the FBI information about allegations of abuse and alcoholism directed at her sister, Hegseth's second ex-wife. She gave a statement to the Senate Armed Services Committee outlining these allegations.
+- Allegations of continued alcoholism, sexual assault, and mismanagement of veterans' organizations and PACs arose during his confirmation hearings. 
+- Opponents included Iowa Republican Senator Joni Ernst, a veteran and victim of sexual assault. Ernst eventually voted for Hegseth after he promised to support legislation to address sexual assault in the military.
+- Any of this would have been enough to sink previous nominees.
+
+
+- [See the following article for more details](https://www.military.com/daily-news/2025/01/24/hegseth-confirmed-defense-secretary-after-republicans-dismiss-misconduct-allegations.html)
+- [Danielle Hegseth Statement to the Senate Armed Services Committee](https://www.washingtonpost.com/documents/e3f2b3a0-93ca-4477-90f6-3730957115b8.pdf?itid=lk_inline_manual_4)
+
+- Political Appointment subject to Senate Confirmation
+- Often has a military background (not always)
+- Other SecDefs have had academic backgrounds. 
+  - Ashton Carter was a physicist before entering politics. 
+  - Harold Brown (SecDef under President Carter) got his PhD in nuclear physics at age 21.
+
+- Debate about whether or not military background is necessary or even desirable to be secretary of defense.
+- Discuss this as a class: Why might it be good?  Why might it be bad?
+
+:::
+
+
+
+
+
+
+
+# Organization of the Military
+
+
+
+## {.blank-slide}
+
+![The Joint Staff circa 2019.](../images/dod-org-2019-joint-staff.png){width=900 height=700 fig-align=center}
+
+
+
+:::{.notes}
+
+JCOS and Joint Staff
+
+- Not up to date, but a good overview of the organization of central military leadership
+- First row is the chair, vice chair, and chiefs of staff.
+- Second row is the commanders of regional and functional commands
+- Third row are specific offics on joint staff
+  - Note some of these are key positions on road to higher office/rank.
+  - Joseph Martin is a general currently serving as vice chief of staff of the Army, previously served at Ft. Riley as 1ID commanding general.
+  - Former 1ID commanding general John Kolasheski went to serve on the Joint Staff before being promoted to serve as commander of the V Corps.
+
+:::
+
+
+
+
+
+
+## {.blank-slide}
+
+:::{.center}
+But 2019 was a big year for the military!
+:::
+
+
+:::{.center}
+<iframe src="https://giphy.com/embed/QAyqdvMLCfQvtnYPiT" width="500"  height="500" fig-align="center" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+:::
+
+:::{.notes}
+
+Space Force GIF
+
+- This is the first new service created since 1947. Big deal!
+- Established by the 2020 National Defense Authorization Act
+- The Act also establishes the Assistant Secretary of Defense for Space Policy, and other positions within the Department of the Air Force
+
+:::
+
+
+
+
+
+
+## {.blank-slide}
+
+:::{layout-nrow=2}
+
+![Dan Cain, Chair Joint Chiefs of Staff](../images/dod-cjcos.jpg){width=275px height=325px}
+
+![Christopher W. Grady, Vice Chair Joint Chiefs of Staff](../images/dod-vcjcos.jpg){width=275px height=325px}
+
+![Randy A. George, Army Chief of Staff](../images/dod-armychief.jpg){width=275px height=325px}
+
+![David W. Allvin, Air Force Chief of Staff](../images/dod-afchief.jpg){width=275px height=325px}
+
+![Daryl Caudle, Chief of Naval Operations](../images/dod-navycno.jpg){width=275px height=325px}
+
+![Eric M. Smith, Commandant of the Marine Corps](../images/dod-marinecomm.jpg){width=275px height=325px}
+
+![Daniel R. Hokanson, Chief of National Guard Bureau](../images/dod-natguardchief.jpg){width=275px height=325px}
+
+![B. Chance Saltzman, Chief of Space Operations](../images/dod-spaceforcechief.jpg){width=275px height=325px}
+
+:::
+
+
+:::{.notes}
+
+- Coast Guard is not an official member since it falls under the Department of Homeland Security. 
+- Space command falls within the Department of the Air Force. Doesn't have it's own separate Department.
+- This is akin to how the Marine Corps falls within the Department of the Navy but is its own separate service. 
+- Air Force Secretary overseas both Air Force and Space Force
+
+- Currently two service chiefs are only serving in actinv capacity. 
+  - Alabama Senator Tommy Tuberville has placed a hold on military promotions to protest DoD policy of providing accommodations to service members who need to travel to seek an abortion. Troops and dependents are allowed to use time off and use official travel to get to other states to seek reproductive care. This can also include in vitro fertilization and other pregnancy aids. See [here](https://apnews.com/article/tuberville-military-holds-senate-officers-45c4230a8aee5222bf32b43823e29acc)
+  - DoD Policy is set by civilian leadership and administrations. 
+  - Promotions are voted on in a single omnibus vote. Senate had to break the chair of the joint chiefs, the commandant of the Marine Corps, and the Army Chief of Staff out into three separate individual votes. 
+  - Hundreds of other promotions are being held up, and it would take weeks to vote on all of them individually. 
+  - "The chairman of the Senate Armed Services Committee, Sen. Jack Reed, D-R.I., said this week that voting on the more than 260 military nominations through the regular procedure would take 27 days with the Senate working “around the clock” or 84 days if the Senate worked eight hours a day." See [AP Story](https://apnews.com/article/tuberville-military-holds-senate-officers-45c4230a8aee5222bf32b43823e29acc).
+  - This means some key roles don't have occupants or some officers are trying to perform two jobs at once. 
+
+:::
+
+
+
+## {.blank-slide}
+
+```{r rank-distribution}
+#| fig-align: center
+#| out-width: 75%
+
+library(pdftools)
+text_2018 <- pdf_text(here("../Data/military-grade-2018.pdf"))
+# 2018 values
+text_2018_2 <- text_2018 %>% 
+  read_lines() 
+# Breaking here to eliminate early list values that are making the column parsing a pain.
+text_2018_2 <- text_2018_2[5:35] %>% 
+  grep('\\w', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.))
+colnames(text_2018_2)[1] <- "Grade"
+colnames(text_2018_2)[2] <- "Army"
+colnames(text_2018_2)[4] <- "Navy"
+colnames(text_2018_2)[5] <- "Marine Corps"
+colnames(text_2018_2)[7] <- "Air Force"
+
+
+data.grade <- text_2018_2 %>% 
+  dplyr::select(c(1,2,4,5,7)) %>% 
+  dplyr::filter(!is.na(Grade)) %>% 
+  dplyr::filter(!is.na(Army)) %>% 
+  dplyr::filter(Grade != "TOTAL ENLISTED" & Grade != "TOTAL OFFICER") %>% 
+  dplyr::mutate(Grade = factor(Grade, Grade)) %>% 
+  pivot_longer(cols = c(2:5)) %>%
+  mutate(value = as.numeric(gsub(",", "", value)),
+         rank = as.numeric(Grade),
+         Grade = gsub("\\s\\s", "", Grade),
+         Grade = gsub("\\s-", " / ", Grade),
+         Grade = gsub("(\\D)(-)(\\D)", "\\1 / \\3", Grade))
+
+
+ggplot(data = data.grade, aes(x = reorder(Grade, -rank), y = value, group = name, fill = name)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  theme(plot.title.position = "plot") +
+  viridis::scale_fill_viridis(discrete = TRUE) +
+  labs(x = "Rank",
+       y = "Count",
+       fill = "Service",
+       title = "Military personnel by rank and service branch, December 2018")
+
+```
+
+
+:::{.notes}
+
+Notes
+
+- General structure of US military in terms of distribution of rank
+- Notice that there are way more enlisted personnel than officers
+- Bi-modal distribution, officers kind of replicate their own mini-service. 
+
+:::
+
+
+
+
+
+## Organization of the Military
+
+### Joint Chiefs of Staff and Joint Staff
+
+- Equip, train, and organization of individual service branches
+
+- Serve as senior uniformed advisers to the president, National Security Council, and Congress
+
+  - Note: They're not in the operational chain of command
+  
+  - Chairman is the highest ranking uniformed military officer
+  
+  - Joint Staff organized into different focus areas
+  
+- Guide the development of new weapons systems, technology, and force structure
+
+- Set routine administrative policies 
+
+
+:::{.notes}
+Notes
+- JCS is mostly the adminisrative component
+- Less directly concerned with war-fighting/planning
+  - This is not *entirely* true, since planning, recruitment, weapons systems, etc., all have a clear relationships to war-fighting capabilities. 
+
+:::
+
+
+
+
+
+
+## Organization of the Military
+
+### Combatant Commands
+
+::::{.columns}
+:::{.column width=50%}
+- Oversee US military forces from all branches operating in a particular area of responsibility (These can be geographic or functional)
+
+- Plan and execute military operations
+
+- Advise the president and members of Congress on military operations, battle plans, war efforts, etc.
+
+- Answer directly to the president and secretary of defense
+
+To right: Then Commander of Central Command, General David Petaeus
+:::
+
+:::{.column width=50%}
+
+![](../images/david-petraus.jpg){width=450 height=600 fig-align="center"}
+
+:::
+::::
+
+
+:::{.notes}
+Notes
+- Combatant commanders are more directly responsible for war-planning/fighting
+- David Petraeus is probably the most famous recent combatant commander
+:::
+
+
+
+
+
+
+
+## {.blank-slide}
+
+![](../images/dod-combatant-command-map.png){width=900 height=700 fig-align=center}
+
+
+:::{.notes}
+
+Notes
+
+- Map shows rough overview of how combatant commands are divided up. Mostly focus on geographic areas of responsibility
+- Also some functional commands, like Special Operations command, transportation command, etc.
+
+:::
+
+
+
+
+
+# The Military in Politics
+
+
+:::{.incremental}
+
+## The Military in Politics
+
+Long tradition of the US military being "apolitical", but what does this mean?
+
+
+- Civilian control of the military **IS** a political arrangement.
+
+
+- A-political versus non-partisan
+
+
+- But there's a puzzle: How do we "reconcile a military strong enough to do anything the civilians ask with a military subordinate enough to do only what civilians authorize?" (Feaver 2003, 2)
+
+
+- Civil-Military relations has a couple of key parts:
+
+  - How the civilian population and the military relate to one another
+  
+  - Military actors intervening in civilian political processes
+  
+  - Civilians politicizing the military
+
+:::
+
+:::{.notes}
+Notes
+
+- The military is inherently political
+- How we manage it is inherently political
+- Keeping it "a-poltical" or more accurately "non-partisan" is a fundamentally political question.
+
+- civilian-military interactions happen at two levels: Elite policymakers and mass civilian/military levels.
+
+:::
+
+
+
+
+
+
+## The Military in Politics
+
+```{r cjcos-president, echo=FALSE, include=FALSE}
+
+
+chiefs <- read_csv(here("../../../Data Files/chair joint chiefs.csv")) %>% 
+  rename("Party" = "pres_party") %>% 
+  mutate(Party = ifelse(Party == 0, "Republican", "Democrat")) %>% 
+  filter(Position == 4) %>% 
+  as_tibble()
+
+chiefstab <- chiefs %>% 
+  group_by(Party, branch) %>% 
+  filter(Position == 4) %>% 
+  summarise(count = n_distinct(name)) %>% 
+  pivot_wider(names_from = branch,
+              values_from = count) %>% 
+  mutate(Navy = ifelse(is.na(Navy), 0, Navy))
+
+branch.model <- brms::brm(branch ~ 1 + Party, 
+          data = chiefs, 
+          family = categorical(link = "logit", refcat = "Army"), 
+          chains = 4, 
+          iter = 10000, 
+          warmup = 2000, 
+          cores = 4, 
+          seed = 1234,
+          backend = "cmdstanr")
+
+preds <- marginaleffects::predictions(branch.model,
+                                      by = "Party",
+                                      type = "response",
+                                      ndraws = 1000,
+                                      newdata = datagrid(Party = c("Republican", "Democrat")))
+
+draws <- marginaleffects::posterior_draws(preds)
+
+```
+
+::::{.columns}
+:::{.column width=50%}
+```{r cjos-president-output}
+
+
+kable(chiefstab,
+      "html",
+      align = c("l", "c", "c", "c"),
+      caption = "Chairs of the Joint Chiefs and Appointing President's Party") %>% 
+  kable_styling(full_width = TRUE) %>% 
+  row_spec(0, bold=TRUE, color="white", background="#512888")
+
+
+```
+:::
+
+:::{.column width=50%}
+
+```{r cjos-president-plots, fig.width=6, fig.height=4, out.width="90%"}
+ggplot(draws, aes(x = draw, y = group, fill = Party, color = Party)) +
+  ggdist::stat_slabinterval(position = position_dodge(width = 0.2),
+                       slab_alpha = 0.6,
+                       scale = 1,
+                       height = 0.5) +
+  theme_flynn(base_size = 11, 
+              base_family = "oswald") +
+  theme(plot.title.position = "plot") +
+  scale_fill_manual(values = c("blue", "red")) +
+  scale_color_manual(values = c("blue", "red")) +
+  labs(x = "Predicted Probability",
+       y = "",
+       title = "Predicted probability of being Chair of the Joint Chiefs by branch and party")
+
+```
+
+:::
+::::
+
+:::{.notes}
+Notes
+
+- Macroeconomic policy preferences of Republicans and Democrats have implications with respect to military policy
+  - Republicans tend to enact capital-friendly policies, Democrats labor-friendly policies
+- In this case the military is affected by broader political preferences
+- Democrats have preference for labor-intensive force structure
+- Republicans have preference for capital-intensive force structure
+- This relationship has weakened over time since Fordham initially looked at it.
+
+:::
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r mil-party-id}
+#| out-width: 75%
+#| fig-align: center
+
+milpid <- readxl::read_xlsx(here("../../..//Data Files/military party id.xlsx")) %>% 
+  mutate(groupname = str_to_sentence(groupname),
+         partyname = str_to_sentence(partyname))
+
+ggplot(milpid, aes(x = year, y = percent, color = partyname)) +
+  geom_line(size = 1.5) +
+  geom_point(size = 3) +
+  facet_wrap(. ~ groupname) +
+  scale_colour_manual(values = c("navy", "forestgreen", "maroon")) +
+  theme_flynn() +
+  labs(x = "Year",
+       y = "Percent",
+       color = "Party ID",
+       title = "Party self-identification for civilian leaders, military leaders, and the general public, 1976-1999",
+       caption = "Data obtained from the Foreign Policy Leadership Project.\nLocated at https://www.icpsr.umich.edu/web/ICPSR/studies/02614")
+  
+
+```
+
+:::{.notes}
+Note
+
+- Military personnel also have their own political preferences
+- Data is hard to come by, but earlier survey data allow us to compare military officers to other societal groups
+- We see a huge increase in Republican self-identification. 
+  - This mostly comes at the expense of independents
+- Does this mean the military is getting *more* conservative? 
+  - Not necessarily
+  - Democratic self-identification remains mostly stable, but with some decline
+  - Conservative/right political orientation may be stable across time. Party self-ID is simply matching underlying preferences
+  - But this may still be a concern if military officials are more openly identifying with one party over another. Risks professionalization of the military. 
+
+:::
+
+
+
+
+## {.blank-slide}
+
+![Chairman of the Joint Chiefs of Staff, General Omar Bradley, testifies before House Armed Services Committee in 1949.](../images/revolt-of-the-admirals.png){width=700 height=500 fig-align=center}
+
+
+:::{.notes}
+
+Sometimes political conflict spills out into the open
+- Revolt of the Admirals was a case in the late 1940s rooted in interservice rivalries and unification of military under DoD
+- Navy was concerned that the rise of the Air Force and the emphasis on strategic bombing and nuclear weapons would leave it vulnerable to cuts or elimination. 
+- President Truman sought to hold the FY1950 defense budget to \$15 billion, but individual services combined calculated they needed \$29 billion.
+- Navy were planning a supercarrier capable of launching larger bombers that could be used to deliver nuclear weapons, but these bombers didn't exist yet. 
+- Secretary of Defense Louis Johnson ordered the supercarrier program to be halted on April 23, 1949.
+- Secretary of the Navy John Sullivan wasn't consulted and resigned in protest
+- House Armed Services Committee hearings investigating allegations of corruption began in the summer of 1949
+  - Navy leadership (active duty and retired) began attacking the civilian leadership of the DoD, the Army, and the Air Force. Specifically calling out the Air Force and the entire plan for relying on B-36 bombers and atomic weapons. Also claimed the Navy was being intentionalyl sabotaged and destroyed. 
+  - Eventually General Omar Bradley testified that Navy leaders were: 
+  
+  > “fancy Dans who won’t hit the line” unless they could call the signals. “I believe that the public hearing of the grievances of a few officers who will not accept the decisions of the authorities established by law. . . have done infinite harm to our national defense, our position of leadership in world affairs, the position of our national policy, and the confidence of the people in their government.”
+
+:::
+
+
+
+
+
+## {.blank-slide}
+
+![Commandant of the Marine Corps, General Clifton Cates, discusses the Marine Corps' fragile position relative to the other service branches in testimony before Congress, 1949.](../images/clifton-cates-testimony.jpg){width=700 height=500 fig-align=center}
+
+
+
+
+:::{.notes}
+
+- Marine Corps was initially vulnerable to cuts as the unification process unfolded
+- Marine Commandant Clifton Cates was not invited to a conference in Key West in 1948 that dealt with the restructuring among the services. 
+- Cates testified before the House Armed Services Committee that budgetary priorities and other services were destroying the Marine Corps. 
+- Backed up the Navy, but also sought to represent the Marines as a standalone service, advocating that the Marines be represented formally on the JCS (this doesn't happen until the 1970s)
+
+:::
+
+
+
+
+
+## {.blank-slide}
+
+::::{.columns}
+:::{.column width=50%}
+![Eric Shinseki, Army Chief of Staff](../images/eric-shinseki.jpg){width=400 height=400 fig-align=center}
+:::
+
+:::{.column width=50%}
+
+![Donald Rumsfeld, Secretary of Defense](../images/donald-rumsfeld.jpg){width=400 height=400 fig-align=center}
+
+:::
+::::
+
+
+:::{.notes}
+
+Military leaders trying to avoid becoming politicized
+
+- Military leaders often try to avoid becoming embroiled in politcal conflicts. But this can be tough when the president and congress both press military leaders for information that may conflict with executive policy.
+- In the lead up to to the Iraq War there was substantial conflict over manpower requirements
+- Rumsfeld, Vice President Cheney, and others insissted that US forces would be greeted as liberators and the post-war stabilization operations would be easy.
+- This obviously turned out to not be the case. 
+- In hearings before the invasion in 2003, General Shinseki (then Army chief of staff) was being grilled by Senator Carl Levin on manpower requirements. Shinseki was loathe to publicly contradict his boss, but eventually relented and said "several hundred thousand" troops would be needed.
+
+:::
+
+
+
+
+## {.blank-slide}
+
+:::{#fig-endorsements layout-ncol=2}
+
+![Michael Flynn](../images/trump-flynn.jpg){width=500px height=400px style="padding-right:20px;"}
+
+![John Allen](../images/john-allen-dnc.jpg){width=500px height=400px style="padding-left:20px;"}
+
+To left: Army Lt. General Michael Flynn (Ret.) with then-candidate Trump at a rally, 2016. To right: Marine General John Allen (Ret) speaks at the Democratic Convention in 2016. Endorsements from military officers have become highly-valued commodities for civilian political figures.
+
+:::
+
+
+
+
+:::{.notes} 
+
+Politicization of military leaders
+
+- Military personnel, both active duty and retired, have become important symbols of political legitimacy.
+- Retired general/flag officers provide sought-after endorsements by political leaders of both parties
+- This presents problems in that it creates or reinforces the perception that civilian leaders are only legimitized by the approval of military officials (obviously this is difficult since both sides typically attract military endorsements). 
+- It also shifts the focus of foreign policy to the military, when the military doesn't know much about most areas of foreign policymaking. We rely much more on civilian officials and expertise, and  yet they don't carry the weight of uniformed personnel. 
+- Notably both Flynn and Allen have been investigated for lying to the FBI about foreign contacts and lobbying efforts on behalf of foreign governments.
+
+:::
+
+
+
+
+
+
+## {.blank-slide}
+
+![President Trump walks to St. John's Episcopal Church with Attorney General William Barr (over President's left shoulder), Secretary of Defense Mark Esper (middle), and  Chairman of the Joint Chiefs of of Staff General Mark Milley, June 1, 2020. Attorney General Barr ordered peaceful protesters to be forcibly dispersed from Lafayette Park to to clear the way for President Trump to walk to St. John's for a photo op. General Milley and Secretary of Defense Esper later distanced themselves from the action.](../images/trump-lafayette-park-walk.jpg){width=800px height=570px}
+
+
+
+:::{.notes}
+
+The use of military personnel for political purposes.
+
+- Politicians often want to be seen in a military context to signal seriousness, expertise, authority, command, etc.
+- Over the summer of 2020 President Donald Trump's Attorney General ordered military forces to attack peaceful protesters gathered in opposition to police brutality in Lafayette Square in Washington, DC. 
+- The goal was to create a photo op of the president appearing with military officers walking to St. John's Church, at which point he held up a bible. 
+- This is messaging and signaling for core constituents. It didn't really do anything other than inflame tensions and protests in DC.
+- But military leaders later became accutely sensitive to the perception that the military was involved in ordering the dispersion of protestors and that they were actively involved in the effort to attack peacefully protesting individuals.
+
+:::
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+
+:::{#fig-opeds layout-ncol=2}
+
+![Mullen oped](../images/mike-mullen-atlantic-oped.png){width=700px height=500px margin-top=auto}
+
+![Mattis oped](../images/mattis-atlantic-oped.png){width=700px height=500px margin-top=auto}
+
+The events of Lafayette Square prompted prominent retired military officials to speak out publicly. Op-eds from former Chairman of the Joint Chiefs of Staff, Admiral Mike Mullen, and Former Secretary of Defense and former Marine General James Mattis, appeared soon after in the Atlantic on June 2 and June 3, 2020.
+:::
+
+
+
+
+
+:::{.notes}
+
+Backlash
+
+- This event sparked a massive outcry of support for protesters from across the political spectrum, and a wave of condemnations of Milley, Esper, Barr, and Trump.
+- Among the most prominent, two former Chairs of the Joint Chiefs of Staff published articles explicitly condemning Trump.
+- Most notably, former Defense Secretary James Mattis finally broke his silence after leaving office.
+- In the age of Trump this might not seem like a big deal, but for these two to speak out against a sitting president is particularly unusual.
+
+:::
+
+
+
+
+## {.blank-slide}
+
+:::{layout-nrow=1}
+
+![](../images/jamrs-dod-youth-survey-2.jpg){width=550px height=420px}
+
+![](../images/jamrs-dod-youth-survey.jpg){width=550px height=420px}
+
+![](../images/jamrs-dod-youth-survey-3.jpg){width=550px height=420px}
+
+
+:::
+
+:::{.small}
+The outcry over the "woke" US military. Top panel: An article published on Fox News online on October 11, 2022. Bottom panel: Results of the 2022 DoD Youth Survey.
+:::
+
+:::{.notes}
+
+Notes:
+
+- In general, people don't have a good understanding of why people join the military
+
+- 43% of individuals surveyed list pay and benefits as a primary reason for joining.
+This is the largest single reason listed.
+
+- "Perhaps the survey’s most surprising finding is the large gulf between respondents with military experience in the AVF and their families. Veterans of the AVF and active-duty service members are more likely to acknowledge that the market matters in service members’ decisions to join the military, but their families are more prone to deny its role in these decisions." See [Krebs and Ralston 2020](https://doi.org/10.1177/0095327X20917166)
+
+- Does Diversity Equity and Inclusion (DEI) training crowd out "more important" types of military training? Sergeant Major of the U.S. Army Michael Grinston reported in Congressional testimony on March 9, 2022: "As the sergeant major of the U.S. Army, Michael Grinston, stated in recent congressional testimony: “When I looked at it, there is one hour of equal opportunity training in basic training, and 92 hours of rifle marksmanship training.” He then added, “And if you go to [One Station Unit Training], there is 165 hours of rifle marksmanship training and still only one hour of equal opportunity training." See [Risa Brooks War on the Rocks article here](https://warontherocks.com/2023/04/how-the-anti-woke-campaign-against-the-u-s-military-damages-national-security/).
+
+:::
