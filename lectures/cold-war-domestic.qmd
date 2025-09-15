@@ -60,6 +60,7 @@ library(rnaturalearth)
 library(mapproj)
 library(tidyquant)
 library(fuzzyjoin)
+library(ggridges)
 
 sysfonts::font_add_google("Oswald", "oswald")
 sysfonts::font_add_google("Roboto", "roboto")
@@ -82,9 +83,8 @@ showtext::showtext_opts(dpi = 400)
 
 1. How have domestic coalitions and their preferences over foreign policy changed over time?
 
-  - How has "ideology" developed over time?
-  
-  - How have the interests and positions of political parties changed over time?
+    - How has "ideology" developed over time?
+    - How have the interests and positions of political parties changed over time?
 
 2. What were some of the key factors in generating greater support for a more internationalist foreign policy?
 
@@ -216,6 +216,7 @@ ggplot(data = mapdata) +
 
 :::{.notes}
 Notes:
+
 - Large values in Montana and Colorado are related to mining and smelting industries. These were tied into manufacturing in the Northeast.
 - The 15 manufacturing states in the Northeast and Great Lakes region held 214 of the 224 electoral votes needed to win the presidency in the 1900 election and were similarly critical in all the other elections during the 1890-1914 period 
 :::
@@ -237,6 +238,7 @@ Great Depression:
 
 :::{.notes}
 Notes:
+
 - Great depression played an important part in building the social welfare programs we now take for granted, but this also played a role in the design of programs that came after WWII.
 - Marshall Plan and foreign aid were inspired by social safety nets from the depression.
 - Also worth noting that WWII did not get the US out of the great depression, as the following slides illustrate. 
@@ -407,6 +409,7 @@ ggplot(fedspend, aes(x = year, y = total)) +
 
 :::{.notes}
 Notes
+
 - Note that spending declined by about 20% between 1936 and 1938. This massive reduction in spending stunted the recovery and helped push the country back into recession.
 :::
 
@@ -495,6 +498,8 @@ Divided government
 
 
 :::{.notes}
+Notes
+
 - Divided government promoted cooperation. Republicans could block Democrat initiatives.
 - Republicans wary of inflation associated with massive military spending.
 - Failure of League of Nations to pass was blamed on lack of bipartisanship. Next slide shows Cartoons from WWI era to this effect.
@@ -523,6 +528,8 @@ Divided government
 :::{.column wdth=50%}
 Arthur Vandenberg (R-MI)
 
+- Chair of Senate Foreign Relations Committee during 80th Congress
+
 - “Converted” to internationalism following attack on Pearl Harbor
 
 - Enormously influential in securing Republican support for Truman policies
@@ -534,6 +541,8 @@ Arthur Vandenberg (R-MI)
 
 
 :::{.notes}
+Notes
+
 - Vandenberg came to support FDR’s policies following attack on Pearl Harbor
 - Helped to represent Republican preferences in policies that emerged in the key years between 1946 and 1949. Republicans were vary wary of maintaining high levels of military spending, as well as large foreign aid programs.
 - One Republican legislator called the Marshall Plan “Operation Rathole”
@@ -546,7 +555,7 @@ Arthur Vandenberg (R-MI)
 
 ## {.blank-slide}
 
-![](../images/marshall-plan-sign.jpg){width=80% fig-align="center"}
+![A photo of President Truman signing the European Recovery Act, also known as the Marshall Plan, into law. To Truman's right are Senator Vandenberg and Undersecretary of State Robert Lovett.](../images/marshall-plan-sign.jpg){width=900px height=600px fig-align="center"}
 
 
 
@@ -672,6 +681,8 @@ ggplot(moderates.party |>  filter(name == "moderate.prop"), aes(x = congress, y 
 ```
 
 :::{.notes}
+Notes
+
 - 80th Congress is highlighted. This is where Republicans took over and Democratic Truman administration had to negotiate.
 - Moderates here are defined as individuals whose ideology score puts them closer to the chamber’s median legislator than to their own party’s median legislator
 - Perhaps draw on the board? In the normal times, yes, I would.
@@ -743,6 +754,8 @@ ggplot(manufacturing |> filter(year >= 1910 & year <= 1950), aes(x = time2, y = 
 ```
 
 :::{.notes}
+Notes
+
 - At this time finished manufactures are primarily coming from the Northeast.
 - So Republicans who used to oppose free trade now support it! 
 - The magic underpinnings of bipartisanship! Money!
@@ -755,11 +768,13 @@ ggplot(manufacturing |> filter(year >= 1910 & year <= 1950), aes(x = time2, y = 
 
 ## {.blank-slide}
 
-![](../images/hiscox-1999-figure.png){width=40% fig-align="center"}
+![A screenshot from Hiscox, Michael. 1999. "The Magic Bullet? The RTAA, Institutional Reform, and Trade Liberalization. International Organization. 53:4 669-698.](../images/hiscox-1999-figure.png){width=600px height=800px fig-align="center" style="margin-top:-75px;" fig-alt="Figure from Hiscox 1999 showing changes in party positions on trade over time."}
 
 :::{.notes}
+Notes
+
 - From Hiscox (1999) this goes to show how important WWII was in changing Republican positions on trade
-- Also note how Democrat positiosn drop in the 1970s and 1980s, but eventually rebound.
+- Also note how Democrat positions drop in the 1970s and 1980s, but eventually rebound.
 - Also note that this contradicts narratives about institutions ceding authority to the executive.
 :::
 
@@ -804,8 +819,10 @@ ggplot(mapdata, aes(geometry = geom, fill = spend.ntile)) +
   geom_sf(color = "white") +
   theme_void() +
   theme(text = element_text(family = "oswald"),
-        title = element_text(family = "oswald", face = "bold")) +
-  scale_fill_brewer(type = "seq", palette = "RdPu", direction = -1) +
+        title = element_text(family = "oswald", face = "bold"),
+        plot.caption = element_text(size = rel(0.6))) +
+  viridis::scale_fill_viridis(option = "turbo",
+                              discrete = TRUE) +
   labs(title = "Defense spending as a percentage of state GDP, 2017",
        subtitle = "States are grouped into quintiles based on dependence on DOD spending",
        fill = "Quintile",
@@ -836,8 +853,10 @@ ggplot(mapdata, aes(geometry = geom, fill = spend.ntile)) +
   geom_sf(color = "white") +
   theme_void() +
   theme(text = element_text(family = "oswald"),
-        title = element_text(family = "oswald", face = "bold")) +
-  scale_fill_brewer(type = "seq", palette = "RdPu", direction = -1) +
+        title = element_text(family = "oswald", face = "bold"),
+        plot.caption = element_text(size = rel(0.6))) +
+  viridis::scale_fill_viridis(option = "turbo",
+                              discrete = TRUE) +
   labs(title = "Defense spending as a percentage of state GDP, 2022",
        subtitle = "States are grouped into quintiles based on dependence on DOD spending",
        fill = "Quintile",
@@ -868,11 +887,10 @@ ggplot(mapdata, aes(geometry = geom, fill = `Spending FY2022`)) +
   geom_sf(color = "white") +
   theme_void() +
   theme(text = element_text(family = "oswald"),
-        title = element_text(family = "oswald", face = "bold")) +
+        title = element_text(family = "oswald", face = "bold"),
+        plot.caption = element_text(size = rel(0.6))) +
   viridis::scale_fill_viridis(option = "turbo", 
                               direction = 1, 
-                              begin = 0.2,
-                              end = 0.9,
                               na.value = "gray90",
                               labels = scales::label_currency()) +
   labs(title = "Defense contract spending by county, 2022",
@@ -912,8 +930,6 @@ ggplot(mapdata, aes(geometry = geom, fill = total_personnel)) +
         title = element_text(family = "oswald", face = "bold")) +
   viridis::scale_fill_viridis(option = "turbo", 
                               direction = 1, 
-                              begin = 0.2,
-                              end = 0.9,
                               na.value = "gray90",
                               labels = scales::comma_format()) +
   labs(title = "Total DOD military personnel by, 2022",
@@ -990,6 +1006,7 @@ Cold War
 
 :::{.notes}
 Notes:
+
 - In this telling bipartisanship was the result of exogenous security threats
 - With those threats gone the US was free to revert to more partisan foreign policymaking process
 
@@ -1016,6 +1033,7 @@ Economic explanation:
 
 :::{.notes}
 Notes:
+
 - The collapse of bipartisanship can be better understood as a process of evolving interests---just like the formation of bipartisanship before it
 - Republicans increasingly find their base in the South and West---places that have benefitted from military spending
 - Republicans also in general have a longer history of opposing multilateral agreements, favoring unilateralism, bilateral negotiations, and military power
@@ -1083,27 +1101,48 @@ kable(summary.2,
 ```{r nominate-dimensions-1}
 #| fig-align: "center"
 #| out-width: "75%"
+#| out-height: "100%"
+
+#nom.1 <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) |> 
+#  filter(congress == 55 | congress == 86 | congress == 115 | congress == 117) |> 
+#  filter(chamber == "House") |> 
+#  mutate(party = factor(party_code, levels = c(100, 200), labels = c("Democrat", "Republican")),
+#         congress = factor(congress, labels = c("55th Congress (1897-1899)", "86th Congress (1947-1949)", "115th Congress #(2017-2019)", "117th Congress (2023-2025)"))) |> 
+#  filter(!is.na(party)) |> 
+#  dplyr::group_by(party, congress) |> 
+#  dplyr::mutate(party_median = median(nominate_dim1, na.rm = TRUE))
+#
+#
+#ggplot(nom.1, aes(x = nominate_dim1, fill = factor(party))) +
+#  geom_density(alpha = 0.8) +
+#  geom_vline(aes(xintercept = party_median),  color = "black", linetype = "dotted", size = 1) +
+#  facet_wrap(. ~ congress, ncol = 1) +
+#  geom_vline(xintercept = 0, size = 1.5, linetype = "dashed") +
+#  theme_flynn(base_family = "oswald", base_size = 11) + 
+#  scale_fill_brewer(palette = "Set1", direction = -1) +
+#  labs(x = "First Dimension NOMINATE Score",
+#       y = "Density",
+#       fill = "Party ID",
+#       title = "First Dimension House NOMINATE Scores across time",
+#       caption = "Data obtained from Voteview.com")
 
 nom.1 <- read_csv(here("../../../Data Files/Voteview/HSall_members.csv")) |> 
-  filter(congress == 55 | congress == 86 | congress == 115) |> 
-  filter(chamber == "House") |> 
-  mutate(party = factor(party_code, levels = c(100, 200), labels = c("Democrat", "Republican")),
-         congress = factor(congress, labels = c("55th Congress (1897-1899)", "86th Congress (1947-1949)", "115th Congress (2017-2019)"))) |> 
-  filter(!is.na(party))
+  filter(congress>=55) |> 
+  filter(chamber == "House" | chamber == "Senate") |> 
+  mutate(party = factor(party_code, levels = c(100, 200), labels = c("Democrat", "Republican")))
 
-
-ggplot(nom.1, aes(x = nominate_dim1, fill = factor(party))) +
-  geom_density(alpha = 0.8) +
-  facet_wrap(. ~ congress, ncol = 1) +
+ggplot(nom.1, aes(x = nominate_dim1, y = reorder(factor(congress), -congress), fill = factor(party))) +
+  geom_density_ridges(alpha = 0.8, scale = 1.85, rel_min_height = 0.01, linewidth = 0.01) +
   geom_vline(xintercept = 0, size = 1.5, linetype = "dashed") +
   theme_flynn(base_family = "oswald", base_size = 11) + 
+  theme(axis.text.y = element_text(size = rel(0.6))) +
   scale_fill_brewer(palette = "Set1", direction = -1) +
   labs(x = "First Dimension NOMINATE Score",
-       y = "Density",
+       y = "",
        fill = "Party ID",
-       title = "First and Second Dimension House NOMINATE Scores across time",
+       title = "First Dimension House NOMINATE Scores, 55th Congress-Present",
        caption = "Data obtained from Voteview.com")
-
+  
 
 
 #ggplot(nom.1, aes(x = nominate_dim1, y = nominate_dim2, color = factor(party))) +
