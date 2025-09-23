@@ -18,9 +18,10 @@ This page contains lectures delivered throughout the semester. You can click on 
 
 5. [The Cold War in Domestic Politics](lectures/cold-war-domestic.html)
 
-6. [The Policymaking Process](lectures/policymaking.html)
+6. [Congress and the Presidency](lectures/congress-and-presidency.html)
 
-7. [Congress and the Presidency](lectures/congress-and-presidency.html)
+<!--
+7. [The Policymaking Process](lectures/policymaking.html)
 
 8. [Bureaucracy and the State Department](lectures/bureaucracy.html)
 
@@ -39,3 +40,5 @@ This page contains lectures delivered throughout the semester. You can click on 
 15. [Multilateralism](lectures/multilateralism.html)
 
 16. [Environmental Policy](lectures/environmental-policy.html)
+
+-->
