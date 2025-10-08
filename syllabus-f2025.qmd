@@ -354,7 +354,7 @@ Readings from Cold War lectures:
 ### Readings and Assignments:
 
 - @@Harp2025
-- [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
+- [Modern War Institute Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
 
 
 
@@ -364,7 +364,7 @@ Readings from Cold War lectures:
 ## `r discussiondate(mon, 9)`
 
 - Read @@Harp2025
-- [MWI Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
+- [Modern War Institute Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
 
 :::
 
@@ -379,12 +379,12 @@ Additional selected readings:
 ## `r advdate(mon, 10)`: Security Cooperation
 
 ### Readings and Assignments:
-- [Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
-- [The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
-- [U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
-- [Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
-- [Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
+- [Council on Foreign Relations: U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
+- [Council on Foreign Relations: Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
+- [Center for Strategic and International Studies: Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
 - [Congressional Research Service: Transfer of Defense Articles: U.S. Sale and Export of U.S.-Made Arms to Foreign Entities](https://www.congress.gov/crs-product/R46337)
+- [The Conversation: Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
+- [The Conversation: The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
 
 
 
@@ -393,12 +393,12 @@ Additional selected readings:
 
 ## `r discussiondate(mon, 10)` 
 
-- [U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
-- [Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
-- [Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
+- [Council on Foreign Relations: U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
+- [Council on Foreign Relations: Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
+- [Center for Strategic and International Studies: Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
 - [Congressional Research Service: Transfer of Defense Articles: U.S. Sale and Export of U.S.-Made Arms to Foreign Entities](https://www.congress.gov/crs-product/R46337)
-- [Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
-- [The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
+- [The Conversation: Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
+- [The Conversation: The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
 
 :::
 
@@ -439,19 +439,20 @@ Additional selected readings:
 ### Readings and Assignments:
 
 - @Power2001
-- [Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
-- [Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
-- [The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
+- [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
+- [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
+- [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
 
 
 :::{.callout-important}
 
 ## `r discussiondate(mon, 13)`
 
+- [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
 - @Power2001
-- [Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
-- [Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
-- [The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
+- [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
+- [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
+- [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
 
 :::
 
