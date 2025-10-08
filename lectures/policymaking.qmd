@@ -115,6 +115,7 @@ vs.
 :::{.notes}
 
 Situation room photo from bin Laden raid. 
+
 - Example of decision-making. 
 - US officials had to decide whether or not they wanted to capture bin Laden alive or to kill him. They also had to decide whether or not to release photos of bin Laden’s body. Secretary of Defense Robert Gates recently came out and said that one of the major factors leading them to decide not to release the photos as the possibility that they could be photoshopped, which they believed would inflame tensions and possibly endanger US military forces on the ground.
 
@@ -131,6 +132,7 @@ Situation room photo from bin Laden raid.
 :::{.notes}
 
 George Marshall at Harvard’s commencement address in 1947.
+
 - Example of Policy. 
 - This set the stage for the Marshall Plan and for US policy more broadly. 
 - Excerpt from Marshall’s speech: Aside from the demoralizing effect on the world at large and the possibilities of disturbances arising as a result of the desperation of the people concerned, the consequences to the economy of the United States should be apparent to all. It is logical that the United States should do whatever it is able to do to assist in the return of normal economic health in the world, without which there can be no political stability and no assured peace. Our policy is directed not against any country or doctrine but against hunger, poverty, desperation and chaos. Its purpose should be the revival of a working economy in the world so as to permit the emergence of political and social conditions in which free institutions can exist. Such assistance, I am convinced, must not be on a piece-meal basis as various crises develop. Any assistance that this Government may render in the future should provide a cure rather than a mere palliative. Any government that is willing to assist in the task of recovery will find full cooperation, I am sure, on the part of the United States Government. Any government which maneuvers to block the recovery of other countries cannot expect help from us. Furthermore, governments, political parties or groups which seek to perpetuate human misery in order to profit therefrom politically or otherwise will encounter the opposition of the United States.
@@ -145,6 +147,7 @@ Soviets initially invited to partake, but they decided to leave the Paris negoti
 
 :::{.notes}
 Eisenhower’s “New Look” Policy
+
 - Eisenhower came into office concerned about maintaining the health of the economy while also meeting the demands of the Cold War. Nuclear weapons offered a relatively inexpensive way to deter aggression, but relied on the idea of massive retaliation.
 - Problems with this policy were somewhat obvious:
   - Salami tactics: Would the US seriously respond to small wars and incursions with full nuclear force? 
@@ -178,6 +181,7 @@ Different processes:
 :::{.notes}
 
 Policy
+
 - Typically oriented towards a broader audience. Policy is often designed and implemented with an eye towards achieving broad political goals and appealing to broad audiences. 
 - Domestic political supporters and party activists, for example. 
 - For this reason policy can often be vague, and how presidents choose to implement policy gets into the realm of decision.
@@ -204,12 +208,15 @@ Policy
 :::{.notes}
 
 Influence of Policy on Decision
+
 - Slide of Donald Rumsfeld speaking to US troops in Kuwait, 2004. 
 - Policy can impose constraints on what actions you can take.
 - Rumsfeld fielded a question from Army Spc. Thomas Wilson of the 278th Regimental Combat Team who complained that military vehicles are not properly armored:
+
 > "Now why do we soldiers have to dig through local landfills for pieces of scrap metal and compromised ballistic glass to up armor our vehicles, and why don't we have those resources readily available to us?"
 
 - Rumsfeld replied: 
+
 >"As you know, you go to war with the army you have, not the army you might want or wish to have at a later time. Since the Iraq conflict began, the Army has been pressing ahead to produce the armor necessary at a rate that they believe -- it's a greatly expanded rate from what existed previously, but a rate that they believe is the rate that is all that can be accomplished at this moment.”
 
 - This smaller leaner military was a result of Bush administration priorities. Not necessarily bad, but they did tie the administration’s hands in some ways.
@@ -280,6 +287,7 @@ National Security Act of 1947:
 :::{.notes}
 
 National Security Act of 1947:
+
 - Created the basic bureaucratic framework to guide decision making and policymaking. 
 - Created to remedy issues related to cooperation and interservice rivalry in World War II
 - Also intended to address FDR’s highly personalized leadership style and lack of clear organization.
@@ -308,6 +316,7 @@ Bureaucratic organizations:
 :::{.notes}
 
 Bureaucratic Organizations
+
 - Organizational mandates and roles inform positions and policy preferences
 - Develop expertise in particular areas
 - Carry out basic functions of government
@@ -322,21 +331,42 @@ National Security Council:
 
 - Designed to promote inter-agency cooperation and coordination
 
-- President chairs all NSC meetings
+- President chairs all NSC meetings when present
 
-- Statutory members:
+:::{.small}
+::::{.columns}
+:::{.column width=50%}
+
+Statutory members
 
   - President
   - Vice President
   - Secretary of State
+  - Secretary of the Treasury
   - Secretary of Defense
   - Secretary of Energy
-  - Secretary of the Treasury
   - Director of the Office of Pandemic Preparedness and Response
   - Such other officers of the United States Government as the President may designate
 
+:::
+
+:::{.column width=50%}
+Currently includes (as of 2025)
+
+  - Attorney General
+  - Secretary of the Interior
+  - Chief of Staff
+  - National Security Advisor
+  - Secretary of Homeland Security
+  - Homeland Security Advisor (Currently Stephen Miller, Deputy Chief of Staff for Policy)
+
+:::
+::::
+:::
+
 :::{.notes}
 Organization of the NSC
+
 - Chaired by President
 - Statutory Members include: 
   - President
@@ -422,6 +452,7 @@ Political factors:
 :::{.notes}
 
 Policy is guided by politics
+
 - Policy is informed by political preferences. Presidents may be constrained in some ways if certain policy options are not in line with ideological views or constituent preferences.
 
 :::
@@ -447,6 +478,7 @@ The ideal process:
 :::{.notes}
 
 What does the ideal look like?
+
 - Information obtained from all available sources. Collect as much intelligence as possible. What information does an administration have or not have?
 - Facts coordinated and distilled (Director of Central Intelligence and National Security Advisor). Were some sources of information suppressed?
 - Broad range of options considered
@@ -472,6 +504,7 @@ Breakdowns in information search
 :::{.notes}
 
 Possible problems
+
 -Breakdowns in information search (cover each on subsequent slides)
 
 - Reliance on a single information channel
@@ -502,6 +535,7 @@ Possible problems
 
 :::{.notes}
 Iran and the Shah
+
 - US embassy and CIA largely reliant on the Shah for intelligence. This presented them with a distorted view of domestic stability.
 - Shah suppressed alternative sources.
 - Accounts suggest that Colin Powell was frozen out of the Bush administration’s deliberations. This prevents him from giving advice. 
@@ -520,6 +554,7 @@ Iran and the Shah
 :::{.notes}
 
 Use of analogies: Chamberlain, Hitler, Munich, and Appeasement
+
 - Western leaders believed that Hitler could be appeased. Negotiated annexation of Sudetenland from Czechoslovakia to Hitler’s Germany. Hitler goes on to ravage Europe.
 - Dubious conclusion is that all diplomatic negotiations are dangerous.
 - Ignores particular details about a case that may set it apart from other cases.
@@ -537,6 +572,7 @@ Use of analogies: Chamberlain, Hitler, Munich, and Appeasement
 
 :::{.notes}
 Munich parallel to Iran negotiations
+
 - Large power disparities between Iran and the US.
 - Not clear that Iran's goals are at all similar to Germany's. No clear territorial ambitions requiring regional conquest. 
 - Iran surrounded by wealthy and heavily armed nations hostile to it, many of whom all have established relationships with hardened militant organizations.
@@ -699,3 +735,61 @@ Not considering all the options
 - Some options might be eliminated immediately because they're not politically desirable
 
 - Bureaucratic officials or advisers may manipulate the range of options presented 
+
+:::{.notes}
+Example: War on terror
+
+- The response to September 11 could have taken a range of forms
+  - Diplomacy
+  - Law enforcement
+  - Military action
+  
+- Bush administration quickly settled on military action
+- Bureaucratic officials or advisers may manipulate the range of options presented 
+  - Example: Doug Feith and the Office of Special Plans
+
+
+:::
+
+
+
+## Policymaking Pitfalls
+
+Conflicts between policy goals
+
+- Politicians make promises to different constituencies over different issues
+
+- Sometimes these promises conflict with one another
+
+- Policymakers then have to make tradeoffs between policy goals
+
+
+
+
+## {.blank-slide}
+
+
+:::{layout="[[1,1], [1,1]]"}
+
+![Federal agents stand guard next to a road leading to an agricultural facility in Camarillo, California, on 10 July 2025. Photograph: Daniel Cole/Reuters](../images/ice-farm-workers.avif){width=400px height=260px}
+
+![Average US tariff rate, courtesey JP Morgan Global Economics. https://www.jpmorgan.com/insights/global-research/current-events/us-tariffs](../images/us-tariff-rates.svg){width=400px height=260px}
+
+![Consumer Price Index for all urban consumers, 2020-Present](../images/fed-cpi-recent.jpg){width=400px height=260px}
+
+![Seal for the United States Agency for International Development](../images/usaid-seal.png){width=300px height=260px}
+
+:::
+
+:::{.notes}
+Trump Administration's conflicting priorities
+
+- Trump campaigned on promises to lower inflation, mass deportations, getting tough on US trade partners, and unleashing DOGE on a wasteful federal bureaucracy
+- These goals frequently conflict with one another
+- Mass deportations threaten the agricultural workforce, which is approximately 40% reliant on undocumented labor. Only 32 percent are US-born and 19% were authorized immigrants. See [USDA information on farmworkers' legal status](https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=63466)
+- Tariffs increase prices for US consumers
+- Trade conflicts with adversaries also lead to retaliation, which often targets US agricultural exports
+- Eliminating USAID also led to a drop in US demand for US agricultural products which were often shipped overseas.
+- All of these policies contribute to increased prices for consumers and hurt the US agricultural sector.
+
+:::

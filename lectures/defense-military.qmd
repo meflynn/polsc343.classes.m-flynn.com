@@ -1078,7 +1078,7 @@ This is the largest single reason listed.
 
 ## {.blank-slide}
 
-:::{layout="[25,25,25,25], [33,33,33]"}
+:::{layout="[[25,25,25,25], [33,33,33]]"}
 
 ![General Charles Brown, CJCOS](../images/c-q-brown.jpg){height=300, width=200}
 

@@ -1,6 +1,6 @@
 ---
 title: "US Foreign Policy"
-subtitle: "The Policymaking Process"
+subtitle: "Bureaucracies and the State Department"
 author: 
   - Michael Flynn
 institute:
@@ -77,11 +77,11 @@ showtext::showtext_opts(dpi = 400)
 
 ## Key Questions
 
-1. How did the foreign policy buraucracy change between the pre- and post-War periods?
+1. How did the foreign policy bureaucracy change between the pre- and post-War periods?
 
 2. Why/How might suboptimal policy outcomes result from otherwise good actors following organizational mandates?
 
-3. How are actors at different positiosn in a bureaucratic hierarchy able to exercise power and influence?
+3. How are actors at different positions in a bureaucratic hierarchy able to exercise power and influence?
 
 4. How has the State Department's role in foreign policymaking changed over time?
 
@@ -106,7 +106,7 @@ Executive bureaucracy before World War II
 
 - Foreign policy activism spurs demand for personnel, expertise
 
-- Senior administrators up through World War II generall had little government experience
+- Senior administrators up through World War II general had little government experience
 
 - Bureaucracy didn't become a "career" until post-1940s
 
