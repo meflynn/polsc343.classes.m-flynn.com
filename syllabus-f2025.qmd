@@ -438,6 +438,8 @@ Additional selected readings:
 
 ### Readings and Assignments:
 
+- [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
+
 - @Power2001
 - [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
 - [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
