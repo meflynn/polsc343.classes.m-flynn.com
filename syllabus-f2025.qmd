@@ -349,19 +349,27 @@ Readings from Cold War lectures:
 - No readings or discussion
 
 
-## `r advdate(mon, 9)`: The Use of Military Force
+
+
+## `r advdate(mon, 9)`: Bureaucracies, State Department, and Department of Defense, Cont.
+
+### Readings and Assignments:
+
+
+
+
+
+## `r advdate(mon, 10)`: The Use of Military Force
+
 
 ### Readings and Assignments:
 
 - @@Harp2025
 - [Modern War Institute Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
 
-
-
-
 :::{.callout-important}
 
-## `r discussiondate(mon, 9)`
+## `r discussiondate(mon, 10)`
 
 - Read @@Harp2025
 - [Modern War Institute Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
@@ -376,7 +384,13 @@ Additional selected readings:
 
 
 
-## `r advdate(mon, 10)`: Security Cooperation
+
+
+
+
+
+
+## `r advdate(mon, 11)`: Security Cooperation
 
 ### Readings and Assignments:
 - [Council on Foreign Relations: U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
@@ -391,7 +405,7 @@ Additional selected readings:
 
 :::{.callout-important}
 
-## `r discussiondate(mon, 10)` 
+## `r discussiondate(mon, 11)` 
 
 - [Council on Foreign Relations: U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
 - [Council on Foreign Relations: Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
@@ -403,7 +417,12 @@ Additional selected readings:
 :::
 
 
-## `r advdate(mon, 11)`: Trade, Finance, and Monetary Policy
+
+
+
+
+
+## `r advdate(mon, 12)`: Trade, Finance, and Monetary Policy
 
 ### Readings and Assignments: 
 
@@ -414,7 +433,7 @@ Additional selected readings:
 
 
 
-## `r advdate(mon, 12)`: Trade, Finance, and Monetary Policy (cont.)
+## `r advdate(mon, 13)`: Trade, Finance, and Monetary Policy (cont.)
 
 ### Readings and Assignments: 
 
@@ -424,7 +443,7 @@ Additional selected readings:
 
 :::{.callout-important}
 
-## `r discussiondate(mon, 12)`
+## `r discussiondate(mon, 13)`
 
 - @McDowell2023
 - [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
@@ -433,35 +452,6 @@ Additional selected readings:
 
 
 
-
-## `r advdate(mon, 13)`: Human Rights Issues
-
-### Readings and Assignments:
-
-- [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
-- @Power2001
-- [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
-
-- [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
-<!---
-- [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
---->
-
-
-
-:::{.callout-important}
-
-## `r discussiondate(mon, 13)`
-
-- [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
-- @Power2001
-- [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
-
-- [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
-<!---
-- [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
---->
-:::
 
 
 
@@ -480,21 +470,36 @@ Additional selected readings:
 
 
 
-## `r advdate(mon, 15)`: The Future of US Foreign Policy
+## `r advdate(mon, 15)`: Human Rights Issues
 
 ### Readings and Assignments:
 
-- @Doshi2023
-- [War on the Rocks: Strategy in Contention: Debating America’s Global Priorities](https://warontherocks.com/2025/07/strategy-in-contention-debating-americas-global-priorities/)
+- [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
+- @Power2001
+- [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
+
+- [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
+<!---
+- [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
+--->
+
+
 
 :::{.callout-important}
 
 ## `r discussiondate(mon, 15)`
 
-- @Doshi2023
-- [War on the Rocks: Strategy in Contention: Debating America’s Global Priorities](https://warontherocks.com/2025/07/strategy-in-contention-debating-americas-global-priorities/)
+- [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
+- @Power2001
+- [Chicago Council on Global Affairs: Is Gaza's Hunger Crisis Driving the World to Recognize a Palestinian State?](https://globalaffairs.org/commentary-and-analysis/podcasts/gazas-hunger-crisis-driving-world-recognize-palestinian-state)
 
+- [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
+<!---
+- [American Bar Association: Human Rights, Civilian Harm, and Arms Sales: A Primer on US Law and Policy](https://civiliansinconflict.org/wp-content/uploads/2022/02/US-Law-and-Arms-Transfers_Final.pdf)
+--->
 :::
+
+
 
  
 
