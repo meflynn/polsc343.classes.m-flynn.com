@@ -398,10 +398,12 @@ Defense Agencies and Field activities
 
 ::::{.columns}
 :::{.column width=50%}
-Secretary of Defense Pete Hegseth
+Secretary of Defense 
 
+- Current Secretary: Pete Hegseth
 - Retired US Army Major
 - Former Fox News commentator
+- Responsible for overseeing the organization of the armed forces, the development of national defense strategy, and reporting on various issues to the President and Congress.
 
 
 
@@ -417,7 +419,7 @@ Secretary of Defense Pete Hegseth
 
 :::{.notes}
 
-SecDef
+Current Secretary
 
 - Pete Hegseth
 - Weird choice, he doesn't have a lot of relevant experience. 
@@ -431,6 +433,14 @@ SecDef
 - Opponents included Iowa Republican Senator Joni Ernst, a veteran and victim of sexual assault. Ernst eventually voted for Hegseth after he promised to support legislation to address sexual assault in the military.
 - Any of this would have been enough to sink previous nominees.
 
+Statutory Requirements:
+
+ - Requirements and limitations are outlined under Title 10, Subtitle A, Part I, Chapter 2, Section 113 of US Code.
+
+    1. Must be a civilian (e.g. "Appointed from civilian life")
+    2. Military service limitations:
+      - Seven year time window for anyone below one-star GOFO rank. May not have served "within seven years after relief from active duty as a commissioned officer of a regular component of an armed force in a grade below O-7". 
+      - 10 year time window for one-star and above GOFO rank. May not have served "within ten years after relief from active duty as a commissioned officer of a regular component of an armed force in a grade O-7 or above".
 
 - [See the following article for more details](https://www.military.com/daily-news/2025/01/24/hegseth-confirmed-defense-secretary-after-republicans-dismiss-misconduct-allegations.html)
 - [Danielle Hegseth Statement to the Senate Armed Services Committee](https://www.washingtonpost.com/documents/e3f2b3a0-93ca-4477-90f6-3730957115b8.pdf?itid=lk_inline_manual_4)
@@ -443,6 +453,8 @@ SecDef
 - Other SecDefs have had academic backgrounds. 
   - Ashton Carter was a physicist before entering politics. 
   - Harold Brown (SecDef under President Carter) got his PhD in nuclear physics at age 21.
+
+Discussion Questions:
 
 - Debate about whether or not military background is necessary or even desirable to be secretary of defense.
 - Discuss this as a class: Why might it be good?  Why might it be bad?

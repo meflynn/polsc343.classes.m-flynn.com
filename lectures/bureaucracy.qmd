@@ -579,7 +579,58 @@ The Secretary of State is the chief diplomat of the Untied States
 
 - Responsible for embassies and diplomats around the world
 
+- Also administers immigration and visa policies
 
+
+
+
+
+## The State Department
+
+::::{.columns}
+:::{.column width=50%}
+
+Secretary of State
+
+Current Secretary: Marco Rubio
+- Former US Senator from Florida
+- Elected to Senate in 2010
+- Ran for Republican presidential nomination in 2016
+- Served on the Senate Foreign Relations Committee
+
+
+
+:::
+
+:::{.column width=50%}
+![Marco Rubio](../images/marco-rubio.jpg){width=500px height=600px fig-align="center"}
+
+:::
+::::
+
+
+:::{.notes}
+
+Notes
+
+- Primarily goverened by Title 22 of the US Code.
+- Charged with a number of specific functions.
+- Office is charged with overseeeing US diplomatic missions worldwide
+- Manages international relations
+- Advises the president on foreign policy matters
+- Also charged with advancing a number of specific issue areas, including:
+  - Democracy promotion
+  - Human rights
+  - Economic development
+  - Environmental issues
+  - Scientific interests of the United States
+  - International credit reports (Assistant secretary for economic and business affairs, Title 22, Chapter 38, Section 2656h)
+  
+  - Secretary also has the power under Title 8, Chapter 12, Subchapter 2, Part 4, Section 1225 to remove "An alien whose presence or activities in the United States the Secretary of State has reasonable ground to believe would have potentially serious adverse foreign policy consequences for the United States is deportable."
+  - This has been used as the basis for denying and cancelling hundreds of student visas in 2025. Often on the basis of political speech. This issue has been contested in court numerous times. 
+  
+Lots of responsibilities! 
+:::
 
 
 
