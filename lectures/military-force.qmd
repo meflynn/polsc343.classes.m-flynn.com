@@ -1,6 +1,6 @@
 ---
 title: "US Foreign Policy"
-subtitle: "The Department of Defense and the Military"
+subtitle: "The Use of Military Force"
 author: 
   - Michael Flynn
 institute:
@@ -65,7 +65,7 @@ showtext::showtext_opts(dpi = 400)
 
 3. When and why does the US use military force?
 
-4. Limits on the use of force
+4. Constraints on the Use of Force
 
 
 
@@ -77,11 +77,21 @@ showtext::showtext_opts(dpi = 400)
 
 2. What constraints do policymakers face when using military force?
 
-3. Wha domestic factors shape incentives to use military force?
+3. What domestic factors shape incentives to use military force?
 
 4. Why do policymakers escalate (or not) military conflicts?
 
 5. What role do concepts like "resolve" play in the use of force?
+
+
+
+
+
+## {.blank-slide}
+
+
+<iframe width="1120" height="630"  src="https://www.youtube.com/embed/y2TLJmIF220?si=4oa3MLbMGYGOrW1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; text-align: center; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 
 
@@ -433,7 +443,7 @@ Notes:
 - Victoriano Huerta had come to power in a coup during the Mexican Revolution. President Wilson hoped to push him out of power. Wilson decided to use this as an opportunity to increase pressure on Huerta and backed Admiral Mayo's demands. Huerta refused.
 - Wilson asks Congress for approval to use military force against Mexico in response, and both the House and Senate vote to approve the use of force against Mexico.
 - Approximately 6,500 Marines invade and occupy the city
-- Shortly after military operatiosn begin Wilson gets word of a ship about to dock at Veracruz that contains machine guns and munitions, which he fears will strengthen Huerta's regime.
+- Shortly after military operations begin Wilson gets word of a ship about to dock at Veracruz that contains machine guns and munitions, which he fears will strengthen Huerta's regime.
 - Wilson thinks US troops will be greeted as liberators, but Mexican naval cadets and civilians start fighting US forces after Huerta's forces pull back. Huerta's opponents also denounce the US intervention, contrary to Wilson's beliefs (sound familiar?)
 - Source: [CFR Page on the invasion of Veracruz](https://www.cfr.org/blog/twe-remembers-us-invasion-veracruz-mexico)
 
@@ -478,7 +488,7 @@ International factors
 
 - Specific details vary, but we can distill motivations down into some broad groupings
 - Security interests would be things like destroying a rival's capacity to launch an attack on the US, or thwarting an actual planned attack.
-- Economist interests csan include access to new markets, or access to natural resources
+- Economist interests can include access to new markets, or access to natural resources
 :::
   
   
@@ -883,11 +893,14 @@ Notes
 
 
 
-# Limits on the Use of Force
 
 
 
-## Limits on the Use of Force
+# Constraints on the Use of Force
+
+
+
+## Constraints on the Use of Force
 
 A puzzle:
 
@@ -901,10 +914,11 @@ A puzzle:
 
 
 
-
-## Limits on the Use of Force
+## Constraints on the Use of Force
 
 Some key factors:
+
+- Law and legitimacy
 
 - Risks, costs, benefits
 
@@ -921,26 +935,150 @@ Some key factors:
 
 
 
+
+
+## Constraints on the Use of Force
+
+Constitutional Authority
+
+- The US Congress has had the authority to declare war (Article I. Section; 8. Clause 11)
+
+- The President is designated by the Constitution as Commander-in-Chief of the US military (Article II. Section 2. Clause 1)
+
+- Congress has also previously exercised the authority to delegate limited uses of military force, short of war
+
+  - Example: Quasi-War with France, 1798-1801
+
+- The Executive has claimed more authority and autonomy over time, particularly in the post-WWII era
+
+:::{.notes}
+
+Notes
+
+- Presidents are Constitutionally designated as commander-in-chief of US military, but the Constitution doesn't specify what their exact powers are.
+
+- Quasi- War with France was a limited naval war with France and French privateers who were attacking US shipping in the Caribbean.
+
+- In 1799 Congress authorized the Navy to inspect and seize US ships they suspected were bound or sailing to any French ports.
+
+- Supreme Court  case of Little v Barreme (1804) concerned the seizure of US ships sailing *from* French ports, not to. The Court upheld Congress' authority to delegate limited uses of military force to the president and ruled that the military could not exceed that authority, and that the seizure was outside the scope of Congressional authorization.
+
+- Later Supreme Court Cases ruled that the President has some limited autonomy and could use military force to protect. US individuals.
+
+:::
+
+
+
+
+## Constraints on the Use of Force
+
+War Powers Resolution of 1973
+
+- A response to the Vietnam War and concerns about executive overreach
+
+- Passed in 1973 Over President Nixon's veto
+
+- Requires:
+
+  - &sect; 3: Regular [**consultations**]{style="color: red;"}, "in every possible instance," with Congress **prior** to deploying troops
+
+  - &sect; 4: [**Report**]{style="color: red;"} to Congress within 48 hours of troop deployment explaining cause and justification for deployment. Also requires ongoing reports while troops are deployed.
+
+  - &sect; 5: Places a [**60 day time limit**]{style="color: red;"} on the deployment of US personnel, absent Congressional action.
+
+  - &sect; 5: Empowers Congress to [**end US military action**]{style="color: red;"} by concurrent resolution
+
+
+:::{.notes}
+
+Notes
+
+- Recent strikes by the US military against boats in the Caribbean and Pacific do not have a clear legal basis and Congressional leaders have not been briefed by the executive. 
+
+  - At least 57 people have been killed by such strikes in the fall of 2025. They are nominally focused on fighting narcotics trafficking. 
+  
+  - Also violates international law (next slide) because even if they are traffickers there's no clear or obvious threat to the US.
+  
+  - [See BBC News article](https://www.bbc.com/news/articles/c0ex94eeljeo)
+
+- SEC. 3. The President in every possible instance shall consult with
+Congress before introducing United States Armed Forces into hostilities or into situations where imminent involvement in hostilities is
+clearly indicated by the circumstances, and after every such introduction shall consult regularly with the Congress until United States
+Armed Forces are no longer engaged in hostilities or have been removed
+from such situations.
+
+- SEC. 4. (a) In the absence of a declaration of war, in any case in which United States Armed Forces are introduced into 1) hostilities or situations where imminent involvement in hostilities in indicated, 2) into the territory, airspace, or waters of a foreign nation while equipped for combat, or 3) in numbers which substantially enlarge the United States Armed Forces equipped for combat already located in a foreign nation, the President shall submit within 48 hours a report to the Speaker of the House and the President Pro Tempore of the Senate.
+
+  - This report must cite the conditions that necessitated the introduction of US forces, and the legislative authority under which the introduction took place, and the estimated scope and duration of the hostilities. 
+  
+  - Requires continuous reporting while troops are in harm's way.
+
+- Requires the President to terminate the use of force within 60 days from the submission of the report as dicated by SEC 4.1.
+
+:::
+
+
+
+## Constraints on the Use of Force
+
+International Law
+
+- The UN Charter generally prohibits the use of force, except in two cases:
+
+  - Individual or Collective Self-defense (Article 51)
+  
+  - When authorized by the UN Security Council to maintain peace and stability (Chapter VII)
+
+- Hague Conventions focus on means and methods of warfare
+
+- Geneva Conventions and other treaties place limits on the conduct of warfare
+
+- Various other treaties and agreements 
+
+  - Convention against torture and other cruel, inhuman, or degrading punishment of 1984
+  - Biological Weapons Convention of 1975 (BWC)
+  - Chemical Weapons Convention of 1993 (CWC)
+  - Nuclear Non-Proliferation Treaty of 1970 (NPT)
+  - Anti-Personnel Mine Ban Treaty of 1997 (Ottawa Convention)
+
+:::{.notes}
+
+Notes
+
+- Basically all of Chapter 7 of the UN treaty lays out the escalatory measures that the Security Council can take to maintain or restore international peace and security. This can include, if other measures fail or are deemed insufficient, the use of military force. 
+
+- Hague Conventions: Early efforts to place limits on the conduct of warfare. Focus on things like the rights of soldiers, wearing visible symbols, carrying arms openly, etc. Also covers rights of prisoners of war, use of POW labor, etc.
+
+- Four separate Geneva Convention agreements, dating to 1864, 1906, 1929, and 1949, plus three additional protocols (1977 and 2005) that lay out rules for the conduct of war.
+
+  - Convention 1: Focuses on the conditions and treatment of wounded and sick soldiers and medical personnel who are not taking active part in hostilities. This convention prohibits torture.
+
+  - Convention 2: Focuses on the conditions and treatment of wounded, sick, and shipwrecked military personnel at sea. Similar to Convention 1, this convention prohibits torture.
+
+  - Convention 3: Updates previous conventions on the treatment of prisoners of war to better reflect the changing nature of war and standards of living.
+
+  - Convention 4: Focuses on the protection of civilians during times of war. Prohibits torture and inhumane treatment of civilians.
+  
+- Geneva Protocols:
+
+  - Different from the treaties. 
+  - 1925 Geneva Protocol bans the use of poison gasses or bacteriological weapons.
+  
+- Notably the use of tear gas is banned in combat under the Chemical Weapons Convention (CWC), but is not banned for use in domestic law enforcement, including riot control. The United States signed the CWC but registered a reservation stipulating that tear gas is not covered under the CWC. 
+:::
+
+
+
+
+
 ## {.blank-slide}
 
-
-<iframe width="1120" height="630"  src="https://www.youtube.com/embed/y2TLJmIF220?si=4oa3MLbMGYGOrW1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; text-align: center; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-
-
-
-
-
-
-## {.blank-slide}
-
-![US test of an atomic bomb on Bikini Atoll, July 1946. The picture shows the first of two bombs tested, named "Able". The second bomb generated a radioactive mist that turned test ships in the vicinity into "radioactive stoves". Extreme military power is often of very little practical use.](../images/bikini-atoll.jpg){width=700 height=400}
+![US test of an atomic bomb on Bikini Atoll, July 1946. The picture shows the first of two bombs tested, named "Able". The second bomb generated a radioactive mist that turned test ships in the vicinity into "radioactive stoves". Extreme military power is often of very little practical use.](../images/bikini-atoll.jpg){width=1000 height=600}
 
 :::{.notes}
 Notes
 
-- Difference between early atomic weapons and newer hyrdogen bombs concerned the difference between fusion and fission. Later weapons used fusion. Fusion weapons are much more powerful than fission weapons.
+- Difference between early atomic weapons and newer hydrogen bombs concerned the difference between fusion and fission. Later weapons used fusion. Fusion weapons are much more powerful than fission weapons.
 
 - Fusion bombs were 700 times more powerful than the bomb dropped on Hiroshima.
 
@@ -956,11 +1094,17 @@ Information from Department of Energy [Office of Scientific and Technical Inform
 
 ## {.blank-slide}
 
-![A photo of "Ivy "Mike", the first thermonuclear (Hydrogen) bomb test. November 1, 1952. The test took place on Enewetak Atoll, a section of the US Marshall Islands.  ](https://www.osti.gov/opennet/manhattan-project-history/images/IvyMikeWhiteLarge1.jpg){width=800 height=450}
+![A photo of "Ivy "Mike", the first thermonuclear (Hydrogen) bomb test. November 1, 1952. The test took place on Enewetak Atoll, a section of the US Marshall Islands.  ](https://www.osti.gov/opennet/manhattan-project-history/images/IvyMikeWhiteLarge1.jpg){width=1000 height=600}
 
 
 
-## Limits on the Use of Force
+
+
+
+
+
+
+## Constraints on the Use of Force
 
 Domestic public support
 
@@ -978,7 +1122,7 @@ Domestic public support
 
 
 
-## Limits on the Use of Force
+## Constraints on the Use of Force
 
 What will allies do?
 
@@ -997,12 +1141,12 @@ What will allies do?
 
 ## {.blank-slide}
 
-![US supply routes into Afghanistan, 2009.](../images/afghan-supply-routes.gif){width=600 height=400}
+![US supply routes into Afghanistan, 2009.](../images/afghan-supply-routes.gif){width=1000px fig-align="center"}
 
 
 
 
-## Limits on the Use of Force
+## Constraints on the Use of Force
 
 What will rivals do?
 
@@ -1020,7 +1164,7 @@ What will rivals do?
 
 
 
-## Limits on the Use of Force
+## Constraints on the Use of Force
 
 Are there better options?
 

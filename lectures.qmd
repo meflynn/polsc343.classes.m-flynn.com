@@ -20,12 +20,13 @@ This page contains lectures delivered throughout the semester. You can click on 
 
 6. [Congress and the Presidency](lectures/congress-and-presidency.html)
 
-<!--
 7. [The Policymaking Process](lectures/policymaking.html)
 
 8. [Bureaucracy and the State Department](lectures/bureaucracy.html)
 
 9. [The Defense Department and the Military](lectures/defense-military.html)
+
+<!--
 
 10. [The Use of Military Force](lectures/military-force.html)
 

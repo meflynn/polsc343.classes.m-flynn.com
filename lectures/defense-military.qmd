@@ -526,21 +526,21 @@ Space Force GIF
 
 :::{layout-nrow=2}
 
-![Dan Caine, Chair Joint Chiefs of Staff](../images/dod-cjcos.jpg){width=275px height=325px}
+![Dan Caine, Chair Joint Chiefs of Staff](../images/dod-cjcos.jpg){width=250px height=300px}
 
-![Christopher W. Grady, Vice Chair Joint Chiefs of Staff](../images/dod-vcjcos.jpg){width=275px height=325px}
+![Christopher W. Grady, Vice Chair Joint Chiefs of Staff](../images/dod-vcjcos.jpg){width=250px height=300px}
 
-![Randy A. George, Army Chief of Staff](../images/dod-armychief.jpg){width=275px height=325px}
+![Randy A. George, Army Chief of Staff](../images/dod-armychief.jpg){width=250px height=300px}
 
-![David W. Allvin, Air Force Chief of Staff](../images/dod-afchief.jpg){width=275px height=325px}
+![David W. Allvin, Air Force Chief of Staff](../images/dod-afchief.jpg){width=250px height=300px}
 
-![Daryl Caudle, Chief of Naval Operations](../images/dod-navycno.jpg){width=275px height=325px}
+![Daryl Caudle, Chief of Naval Operations](../images/dod-navycno.jpg){width=250px height=300px}
 
-![Eric M. Smith, Commandant of the Marine Corps](../images/dod-marinecomm.jpg){width=275px height=325px}
+![Eric M. Smith, Commandant of the Marine Corps](../images/dod-marinecomm.jpg){width=250px height=300px}
 
-![Daniel R. Hokanson, Chief of National Guard Bureau](../images/dod-natguardchief.jpg){width=275px height=325px}
+![Daniel R. Hokanson, Chief of National Guard Bureau](../images/dod-natguardchief.jpg){width=250px height=300px}
 
-![B. Chance Saltzman, Chief of Space Operations](../images/dod-spaceforcechief.jpg){width=275px height=325px}
+![B. Chance Saltzman, Chief of Space Operations](../images/dod-spaceforcechief.jpg){width=250px height=300px}
 
 :::
 
@@ -1113,13 +1113,19 @@ This is the largest single reason listed.
 
 ## {.blank-slide}
 
-:::{layout="[[25,25,25,25], [33,33,33]]"}
+:::{layout="[[20,20,20,20,20], [20,20,20,20,20]]"}
 
 ![General Charles Brown, CJCOS](../images/c-q-brown.jpg){height=300, width=200}
 
 ![Admiral Lisa Francetti, CNO](../images/lisa-francetti.jpg){height=300, width=200}
 
 ![Admiral Linda Fagan, Commandant USCG](../images/linda-fagan.jpg){height=300, width=200}
+
+![General David Allvin, COS USAF](../images/david-allvin.jpg){height=300, width=200}
+
+![Admiral Alvin Holsey, Commander SOUTHCOM](../images/alvin-holsey.jpg){height=300, width=200}
+
+![General Timothy Haugh, Director NSA and Commander CYBERCOM](../images/timothy-haugh.jpg){height=300, width=200}
 
 ![General James Slife, VCOS Air Force](../images/james-slife.jpg){height=300, width=200}
 
@@ -1138,15 +1144,24 @@ Notes
 - CQ Brown fired after complaints over his comments on race and military service during the 2020 George Floyd riots. Pete Hegseth appeared on the [Shaun Ryan show #143 on November 7, 2024](https://youtu.be/DoN5ovwB8s4?si=mKW2VPmIH5PwjrgR) where he discusses that leaders like Brown need to be removed for promoting DEI, gender ideology, etc. Argues that military needs more focus on "lethality" and less on social issues.
   - Hegseth and Ryan also see instances like the trial of Navy SEAL Eddie Gallagher as evidence that the military is too focused on "woke" political correctness over war-fighting capabilities. 
   - Gallagher was accused of killing a young ISIS captive in Iraq after administering emergency medical care. Members of Gallagher's team reported him to NCIS. Members of Gallagher's SEAL team also took pictures with the dead boy. Members of Gallagher's team also reported that Gallagher would regularly brag about kills, sometimes involving civilians. 
-  - The case against Gallagher fell apart when a witness for the prosecution changed his story last minute and claimed to have stabbed the prisoner. 
+  - The case against Gallagher fell apart when a witness for the prosecution changed his story last minute and claimed to have stabbed the prisoner. Corey Scott was a medic who witnessed the events and was granted immunity in exchange for his testimony. Scott later testified that he and not Gallagher killed the prisoner. 
   - In 2021 Gallagher also commented on the podcast "The Line" that the "intention was to kill him" and that they intended to administer medical treatments until the prisoner died.
   - See [CBS News report](https://www.cbsnews.com/video/eddie-gallagher-and-the-changing-story-of-a-death-in-iraq/) on Gallagher's case.
   
 - After firing Lisa Francetti Hegseth declared that the Administration was "putting in place new leaders that will focus our military on its core mission of deterring, fighting, and winning wars." See [New York Times report](https://www.nytimes.com/2025/02/21/us/politics/hegseth-navy-lisa-franchetti.html)
 
+- Linda Fagan was fired ostensibly for insufficient attention to the Southern Border and the flow of drugs, as well as the Coast Guard's handling of sexual assault cases. Reports also indicate that it was due to excessive attention to DEI initiatives. Coast Guard investigations into handling of sexual assault preceded Fagan's time as Commandant and the committee conducting the investigation never briefed her [US Naval Institute Article on Fagan](https://news.usni.org/2025/01/21/adm-linda-fagan-removed-as-coast-guard-commandant)
+
+- David Allvin was asked to resign. Reporting on what lead to his firing is contradictory, with some alleging that it was due to Allvin's and the Air Force's planned organizational changes, with other sources reporting that Allvin was a vocal supporter of Trump's planned Air Force policies. 
+
+- General Timothy Haugh was fired as head of Cyber Command in April 2025. [CNN article on firing](https://www.cnn.com/2025/04/03/politics/trump-administration-fires-director-national-security-agency)
+
+- Air Force JAG was replaced by his deputy, Major General Rebecca Vernon. Less than one year into the job, and lacking SEnate Confirmation, she announced she is retiring in January of 2026. [Defense One Article](https://www.defenseone.com/threats/2025/10/hegseth-fired-air-forces-top-lawyer-jag-who-took-job-stepping-away/409013/)
+
 - The Judge Advocate Generals (JAGs) are responsible for ensuring commanders and personnel follow the law. They also provide legal advice on different issues, and prosecute/defend personnel in courts martial. See [Jurist article](https://www.jurist.org/features/2025/02/26/explainer-jag-firings-spark-concerns-about-us-military-legal-oversight/)
   - They also investigate potential violations of the law. 
-  - Hegseth claimed that "“We want lawyers who give sound constitutional advice and don’t exist to attempt to be roadblocks." "
+  - Hegseth claimed that "“We want lawyers who give sound constitutional advice and don’t exist to attempt to be roadblocks." 
+  - In Hegseth's book the War on Warriors he referred to JAGs as "jagoffs".
   - Civil-Military relations experts feared that this represented an effort to reduce constraints on the executive and remove impediments to getting military personnel to follow potentially illegal orders. 
 
 - DIA director Kruse fired after DIA issued a preliminary report suggesting that the strike on the Fordo nuclear facility in Iran only set Iran's nuclear program back by a few months. [CBS News report](https://www.cbsnews.com/news/jeffrey-kruse-ousted-as-defense-intelligence-agency-director/)
