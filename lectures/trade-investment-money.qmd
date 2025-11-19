@@ -1,0 +1,2083 @@
+---
+title: "US Foreign Policy"
+subtitle: "Trade, Investment, and Monetary Policy"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
+format:
+  revealjs:
+    toc: true
+    toc-depth: 1
+    toc-title: "Lecture Overview"
+    theme: [quarto-lecture-theme.scss, default]
+    auto-stretch: false ## Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    fig-width: 8
+    fig-height: 5
+    fig-format: retina
+    fig-dpi: 400
+    fig-align: center
+    ##incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    ##data-background-size: 750px 750px
+    ##data-background-position: 1000px 370px
+    ##data-background-position: 115% 150%
+    ##data-background-position: 115% 140%
+    ##data-background-position: 19em 8em
+    ##height: 700
+    ##width: 1050
+---
+
+
+```{r setup, include = FALSE, echo = FALSE}
+library(tidyverse)
+library(tidyquant)
+library(plotly)
+library(scales)
+library(here)
+library(Hmisc)
+library(kableExtra)
+library(knitr)
+library(lubridate)
+library(rvest)
+library(ggmap)
+library(colorRamps)
+library(RColorBrewer)
+
+##devtools::install_github("meflynn/flynnprojects", force = TRUE)
+library(flynnprojects)
+
+# Set as default theme
+ggplot2::theme_set(theme_flynn(base_size = 11, base_family = "oswald"))
+
+sysfonts::font_add_google("Oswald", family = "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 400)
+
+
+```
+
+
+
+
+
+## Key Questions
+
+1. How has the importance of trade to the US economy changed over time?
+
+2. What is protectionism? What role has it played in the history of US development?
+
+3. What is the difference between fiscal and monetary policy? How do they relate to one another?
+
+4. How does an industry's size relate to its ability to get protectionist policies?
+
+5. What are the positions of the two major parties been on trade policy? How have they changed over time?
+
+6. What are some of the major changes in immigration policy across US history?
+
+7. How has immigration been a tool of US foreign policy?
+
+
+
+
+
+
+
+
+## Key concepts and terms
+
+### Trade
+
+Trade: The flow of goods and services between countries
+
+Imports: Goods and services that are consumed within a referent country but produced in another.
+
+Exports: Goods and services that are produced within a referent country for consumption in another.
+
+Aggregation: We can talk about how to group different businesses or products (specific items, technologies, industries, sectors, etc.)
+
+:::{.notes}
+
+Notes
+
+Example of aggregation: North American Industry Classification System Item ##311111: Dog and cat food (e.g., canned, dry, frozen, semi-moist), manufacturing.
+
+Another: 311330 Cocoa, powdered, mixed with other ingredients, made from purchased chocolate
+
+:::
+
+
+
+
+
+## Terminology Key concepts and terms
+
+### Finance and Monetary Policy
+
+Finance: Refers to the flow of capital (cash) within and across borders
+  
+  - Portfolio Investment
+  - Sovereign Lending
+  - Foreign Direct Investment (FDI)
+
+Monetary Policy: Refers to the supply and valuation of currency
+
+  - Interest rates
+  - Money supply
+
+
+
+
+
+
+
+
+
+# Historical Background
+
+
+
+
+
+
+
+## Historical Background
+
+Trade before 1934
+
+- Protectionism is dominant approach to US economic development
+
+- Northeastern manufacturing interests had substantial political influence and favor protectionist policies
+
+- Southern and Western agricultural interests less influential and favor freer trade polices. 
+
+
+
+
+
+
+## Historical Background
+
+Trade after 1934
+
+- Northeastern and Southern interests align in 1930s and 1940s
+
+- Both groups come to support freer trade
+
+- Protectionist barriers begin to come down
+
+- World War II marks an important turning point 
+
+
+
+
+## {.blank-slide}
+
+![Percentage of members of the House and Senate voting in support of freer trade over time. Taken from Hiscox 1999.](../images/hiscox-1999-figure.png){width=650px height=760px fig-align=center}
+
+
+
+
+
+
+## Historical Background
+
+### Reciprocal Trade Agreements Act (RTAA) of 1934
+
+- Trade Promotion Authority (TPA) granted to executive to negotiate trade agreements
+
+- Origin of "fast track" authority
+
+- Grants president authority to negotiate reductions in tariffs with other countries
+
+- Establishes objectives and places scope parameters on those negotiations
+
+- Extended 11 times through 1962
+
+:::{.notes}
+Notes
+
+- Trade Promotion Authority is a general term describing the delegation of powers to the executive to negotiate trade agreements.
+
+- Part of the rationale is to limit Congressional meddling in negotiated agreements so other countries are more likely to engage. If they suspect Congress will alter an agreement then they might not trust the US delegation.
+
+- Initially limited President's TPA to three years.
+
+- Initially limited agreements themselves to three-year time windows unless renewed.
+
+- See [Brookings article](https://www.brookings.edu/articles/fast-track-trade-promotion-authority/) on fast track authority.
+
+:::
+
+
+
+
+
+
+
+
+
+## Historical Background
+
+### Trade Act of 1974
+
+- Further extends fast track authority
+
+- Reaffirms Executive power to reduce tariffs without further action
+
+- Establishes parameters on Executive negotiations, reporting, and consultation with Congress
+
+- Promises an amendment-free vote to reassure negotiators and trading partners
+
+- Guarantees vote within fixed period of time
+
+
+:::{.notes}
+
+Notes
+
+- Partly a response to the increasing use of non-tariffs barriers to trade, like health and safety regulations
+
+- Congress doesn't want executive effectively crafting law over non-tariff regulations
+
+- President can negotiate agreements that require changes to US law, but Congress must act and approve those changes.
+
+- Bill must be automatically discharged out of the relevant committee after 45 days if it has not been reported
+
+- Chamber must vote within 15 days of a bill being discharged from committee
+
+:::
+
+
+
+## Historical Background
+
+### Bretton Woods System
+
+- Partly a reaction to pre-World War II move to autarky
+
+- Three main components
+
+  - General Agreement on Tariffs and Trade (GATT)
+  - International Monetary Fund (IMF)
+  - International Bank for Reconstruction and Development (World Bank)
+  
+:::{.notes}
+
+Notes
+
+- GATT focuses on promoting free trade and lowering tariff barriers
+- IMF focuses on short-term imbalances in payments between states
+- World Bank promotes development in less developed countries
+
+:::
+
+
+
+  
+## {.blank-slide}
+
+```{r us trade fig 1}
+#| out-width: 80%
+#| fig-align: center
+
+
+trade <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/Dyadic_COW_4.0.csv")) 
+
+trade.national <- read_csv(here("../../../Data Files/COW Data/COW_Trade_4.0/National_COW_4.0.csv"))
+
+gdp <- read_delim(here("../../../Data Files/expgdpv6.0/gdpv6.txt"), delim = "\t") %>% 
+  subset(statenum == 2)
+
+cpi <- read_csv(here("../../../Data Files/US Government Files/BLS/cpi_1913_2015.csv")) %>% 
+  filter(year >= 1950) |> 
+  dplyr::select(year, annualavg) |> 
+  dplyr::mutate(cpi = annualavg/236.736)
+
+us.consumption <- trade.national %>% 
+  group_by(ccode, year) %>% 
+  mutate(us.dummy = ifelse(ccode == 2, 1, 0)) %>% 
+  ungroup() %>% 
+  group_by(year) %>% 
+  mutate(total.exports = sum(exports, na.rm = TRUE),
+         us.cons = imports/(total.exports-exports)) %>% 
+  filter(ccode == 2 & year >= 1946)
+
+
+us.trade.gdp <- trade.national %>% 
+  filter(ccode == 2) %>% 
+  filter(year >= 1950) %>%
+  group_by(year) %>% 
+  mutate(imports = imports, na.rm = TRUE,
+         exports = exports, na.rm = TRUE) %>% 
+  left_join(cpi, by = "year") %>% 
+  mutate(imports.con = (imports/cpi),
+         exports.con = (exports/cpi),
+         deficit = exports.con - imports.con) %>% 
+  left_join(gdp, by = "year") %>% 
+  mutate(exports.gdp = ((exports.con/realgdp)),
+        imports.gdp = ((imports.con/realgdp))) %>% 
+  as.data.frame() %>% 
+  dplyr::rename("Exports" = "exports.gdp", "Imports" = "imports.gdp", "Exports (Constant)" = "exports.con", "Imports (Constant)" = "imports.con", "Deficit" = "deficit") %>% 
+  pivot_longer(cols = c("Exports", "Imports", "Exports (Constant)", "Imports (Constant)", "Deficit", "realgdp"))
+
+
+
+## US exports and imports over time
+ggplot(data = us.trade.gdp |> filter(name == "Exports (Constant)" | name == "Imports (Constant)"), aes(x = year, y = value/1000, group = name, colour = name)) +
+  geom_line(linewidth = 2) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  labs(x = "Year",
+       y = "Billions of 2014 Dollars",
+       title = "US imports and exports, 1950-2014",
+       subtitle = "Imports and exports do not change at the same rate over time",
+       caption = "Data obtained from the Correlates of War Data's National Trade Data (v4.0)") +
+  scale_y_continuous(labels = dollar) +
+  scale_x_continuous(breaks = seq(1950,2015,5)) +
+  viridis::scale_color_viridis(option = "magma", 
+                               begin = 0.1, 
+                               end = 0.9, 
+                               discrete = TRUE)
+
+
+```
+
+
+
+## {.blank-slide}
+
+```{r trade over gdp figure}
+#| out-width: 80%
+#| fig-align: center
+
+## Trade as percent of US GDP
+ggplot(data = subset(us.trade.gdp, name == "Exports" | name == "Imports"), aes(x = year, y = value, group = name, color = name)) +
+  geom_line(size = 2) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  labs(x = "Year",
+       y = "",
+       title = "Trade as a percent of US GDP, 1950-2014",
+       color = "Trade Type",
+       subtitle = "Trade has also become a larger component of national economies",
+       caption = "Data obtained from the Correlates of War Data's National Trade Data (v4.0) \n and Gleditsch's Expanded Trade and GDP Data (v6.0)") +
+  scale_y_continuous(labels = percent) +
+  scale_x_continuous(breaks = seq(1950,2015,5)) +
+  scale_color_brewer(palette = "Set1")
+  
+
+```
+
+
+
+
+
+
+
+
+# Why Does Trade Matter?
+
+
+
+
+
+
+
+## Why Does Trade Matter?
+
+Theoretical
+
+- Realism/Mercantilism
+
+  - Trade as a source of national power
+  
+  - Trade is a zero-sum game
+  
+- Liberal theory
+
+  - Trade can be positive-sum (both/multiple players can "win")
+  
+  - Trade has other beneficial effects (e.g. it promotes peaceful relations between states)
+  
+:::{.notes}
+
+Notes
+
+- Historically nations very wary of trade as it might enrich adversaries
+- Adam Smith and David Ricardo came along and talked about the benefits of specialization and free markets.
+- We see greater moves towards free trade throughout the 1800s, mostly as a response to British leadership and technological change
+- Ideas gain steam in 20th century through Woodrow Wilson's 14 Points
+
+:::
+
+
+
+
+  
+
+
+## Why Does Trade Matter?
+
+Tangible benefits
+
+- Trade creates jobs
+
+- Access to desirable goods (spices, cool cars, technology, media/entertainment)
+
+Less tangible
+
+- Soft power and prestige
+
+- Information, education, etc.
+
+
+
+
+
+
+
+
+
+
+# Trade as a Policy Instrument
+
+
+
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Trade can be a source of power---States can use it to get what they want
+
+But how?
+
+- Revenue generation
+
+- Control over vital resources
+
+- Market access (think bargaining)
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Revenue generation
+
+- Trade represents the flow of goods and services across borders
+
+- These transactions can be taxed!
+
+- Revenues can be used for various projects
+
+
+
+
+
+## {.blank-slide}
+
+```{r tariff-revenue}
+#| out-width: 80%
+#| fig-align: center
+
+tariff.revenue <- tq_get("B235RC1Q027SBEA", 
+                             get = "economic.data", 
+                             from = "1960-01-01", 
+                             to = "2025-11-01")
+
+ggplot(data = tariff.revenue, aes(x = date, y = price)) +
+  geom_area(fill = "deepskyblue", colour = "black", size = .2, alpha = .8) +
+  scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2026-01-01"), by = "5 years"), date_labels = "%Y",
+               limits = c(as.Date("1960-01-01"), as.Date("2026-01-01"))) +
+  scale_y_continuous(labels = dollar_format()) +
+  labs(x = "Year",
+       y = "Billions of USD",
+       title = "US Tariff Revenue, 1960-2024",
+       subtitle = "Taxes on imports generate revenue for the federal government",
+       caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series B235RC1Q027SBEA")
+
+
+```
+
+:::{.notes}
+Notes
+
+- For most of US history, up until the income tax was established in 1913, tariffs were the primary source of federal government revenue.
+
+:::
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r tariff-revenue-nominal}
+#| out-width: 80%
+#| fig-align: center
+
+tariff.revenue <- tq_get(c("B235RC1Q027SBEA", "W006RC1Q027SBEA"),
+                             get = "economic.data", 
+                             from = "1960-01-01", 
+                             to = "2025-11-01") |> 
+  dplyr::mutate(symbol = case_when(
+    symbol == "B235RC1Q027SBEA" ~ "Tariff Revenue",
+    symbol == "W006RC1Q027SBEA" ~ "Total Federal Tax Receipts"
+  )) |> 
+  tidyr::pivot_wider(names_from = symbol, values_from = price) |>
+  dplyr::mutate(`Total Federal Tax Receipts` = `Total Federal Tax Receipts` - `Tariff Revenue`) |>
+  tidyr::pivot_longer(cols = c("Tariff Revenue", "Total Federal Tax Receipts"), names_to = "symbol", values_to = "price") |> 
+  dplyr::mutate(symbol = factor(symbol, levels = c("Total Federal Tax Receipts", "Tariff Revenue"))) 
+
+
+ggplot(data = tariff.revenue, aes(x = date, y = price, fill = symbol)) +
+  geom_area(colour = "black", linewidth = 0.1, alpha = .8) +
+  scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2026-01-01"), by = "5 years"), date_labels = "%Y",
+               limits = c(as.Date("1960-01-01"), as.Date("2026-01-01"))) +
+  scale_y_continuous(labels = dollar_format()) +
+  viridis::scale_fill_viridis(discrete = TRUE, option = "turbo", begin = 0.1, end = 0.9) +
+  labs(x = "Year",
+       y = "Trillions of USD",
+       fill = "Revenue Type",
+       title = "US tariff revenue and total federal tax revenues, 1960-2024",
+       subtitle = "Taxes on imports generally account for a small proportion of federal revenues",
+       caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series B235RC1Q027SBEA")
+
+
+```
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r tariff-revenue-percent}
+#| out-width: 80%
+#| fig-align: center
+
+tariff.revenue <- tq_get(c("B235RC1Q027SBEA", "W006RC1Q027SBEA"),
+                             get = "economic.data", 
+                             from = "1960-01-01", 
+                             to = "2025-11-01") |> 
+  dplyr::mutate(symbol = case_when(
+    symbol == "B235RC1Q027SBEA" ~ "Tariff Revenue",
+    symbol == "W006RC1Q027SBEA" ~ "Total Federal Tax Receipts"
+  )) |> 
+  tidyr::pivot_wider(names_from = symbol, values_from = price) |> 
+  dplyr::mutate(tariff_percent = (`Tariff Revenue`/`Total Federal Tax Receipts`)) 
+
+ggplot(data = tariff.revenue, aes(x = date, y = tariff_percent)) +
+  geom_bar(stat = "identity", fill = "deepskyblue", colour = "black", linewidth = 0.1, alpha = .8) +
+  scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2026-01-01"), by = "5 years"), date_labels = "%Y",
+               limits = c(as.Date("1960-01-01"), as.Date("2026-01-01"))) +
+  scale_y_continuous(labels = percent_format()) +
+  labs(x = "Year",
+       y = "Percent",
+       title = "US tariff revenue as a percent of total federal tax revenues, 1960-2024",
+       subtitle = "Taxes on imports generally account for a small proportion of federal revenues",
+       caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series B235RC1Q027SBEA")
+
+
+```
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+
+```{r coffee-inflation}
+#| out-width: 80%
+#| fig-align: center
+
+coffee.prices <- tq_get(c("WPU026301", "CUSR0000SEFP01", "PCOFFOTMUSDM"), 
+                        get = "economic.data", 
+                        from = "2010-01-01", 
+                        to = "2025-11-01") |> 
+  dplyr::mutate(Index = case_when(
+    symbol == "WPU026301" ~ "PPI",
+    symbol == "CUSR0000SEFP01" ~ "CPI",
+    symbol == "PCOFFOTMUSDM" ~ "Arabica Coffee"
+  )) |> 
+  dplyr::group_by(Index) |> 
+  dplyr::mutate(price = price/price[date=="2010-01-01"]*100) 
+
+ggplot(data = coffee.prices, aes(x = date, y = price, color = Index, linetype = Index)) +
+  geom_line(size = 1, alpha = .8) +
+  geom_vline(xintercept = as.Date("2025-01-20"), linetype = "dashed", color = "red", size = 1) +
+  annotate("text", x = as.Date("2024-10-20"), y = 225, label = "President Trump's\nInnuguration", color = "black", size = 3, hjust = 1) +
+  scale_x_date(breaks = seq(as.Date("2010-01-01"), as.Date("2026-01-01"), by = "2 years"), date_labels = "%Y",
+               limits = c(as.Date("2010-01-01"), as.Date("2026-01-01"))) +
+  scale_y_continuous() +
+  viridis::scale_color_viridis(discrete = TRUE, option = "magma", begin = 0.1, end = 0.9) +
+  labs(x = "Year",
+       y = "Index",
+       title = "US Coffee Prices, 2010-2024",
+       subtitle = "Tariffs on imported coffee can raise prices for consumers and change consumption habits",
+       caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series WPU026301, CUSR0000SEFP01, and PCOFFOTMUSDM")
+    
+
+```
+
+
+:::{.notes}
+
+Notes
+
+- Note that other factors can affect commodity prices, including supply chain disruptions, weather events, changes in consumer demand, etc.
+
+- Coffee demand has increased sharply over the last few years in other parts of the world, in addition to the US.
+
+- Major exporters include Brazil, Vietnam, Colombia, Indonesia, Ethiopia, Uganda, India, Honduras, and Mexico.
+
+- Brazil (37%), Vietnam (17%), and Colombia (8%) alone account for 60% of global coffee production.
+
+- Droughts, fires, and other weather events have affected production in some of these countries recently. This has driven prices up as well, and commodity price increases have started to break through to producers and consumers more than they usually do. Adding tariffs on top of this only exacerbates the problem.
+
+- See USDA page on [coffee production](https://www.fas.usda.gov/data/production/commodity/0711100)
+
+:::
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Control over vital resources
+
+- What types of resources?
+
+  - Energy (oil, gas, coal, etc.)
+  
+  - Food (grains, meat, etc.)
+  
+  - Strategic minerals (rare earths, metals, etc.)
+
+- Necessary for survival of the state, everyday life, etc.
+  
+- Few substitutes, few alternative suppliers
+
+- Labor or capital intensive production processes
+
+:::{.notes}
+Notes
+
+- Sometimes things like rare earth minerals are rare because they are difficult to mine or process, not because they are actually rare in nature.
+
+:::
+
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+![President Franklin Roosevelt (seated right) and Fleet Admiral William Leahy (standing left) meet with King Ibn al Saud (seated center) aboard the USS Quincy, February 14, 1945.](../images/fdr-ibn-al-saud.jpg){width=900px height=600px fig-align=center}
+
+
+:::{.notes}
+
+Notes
+
+- US has close relations with Saudi government, 1930s through present.
+- US companies win concessions to look for oil in 1938. Saudi government wary of European countries with colonial pasts. Favor US.
+- Arabian American Oil Company (Aramco) finds Saudi oil reserves in 1944. Saudi government steadily buys out foreign interests through 1980.
+- US wary of broader Middle East region and energy reserves. Objects to USSR trying to establish foothold in region after WWII.
+
+:::
+
+
+
+
+
+
+## {.blank-slide}
+
+![Mountain Pass Mine in California, the only rare earth mining and processing facility in the United States.](../images/mountain-pass-mine.jpg){width=1000px height=600px fig-align=center}
+
+:::{.notes}
+Notes
+
+- Mountain Pass Mine has been in operation for over 70 years
+
+- It is the only operating rare earth mining and processing facility in the US. It accounts for over 10% of the world's supply of rare earth minerals. See [their webpage](https://mpmaterials.com/materials/) for details.
+
+- Rare earth minerals are used in a variety of high-tech applications, including electronics, renewable energy technologies, and military hardware
+
+- Specific rare earths include 
+
+  - Neodymium-praseodymium Oxide is used to make magnets that are used in motors, generators, and more
+  
+  - Neodymium-praseodymium (NdPr) metal is used to make magnets
+  
+  - Lanthanum carbonate is used in batteries and in the production of jet fuel
+:::
+
+  
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Market access and bargaining
+
+- Producers need markets. Scaling up production requires larger markets.
+
+- Exports bring in money from the sale of goods
+
+- Domestic consumer base is often limited in various ways (money, taste, interests, etc.)
+
+- Provides bargaining power
+
+
+
+
+## {.blank-slide}
+
+![](../images/trade-importance-figure.png){width=1200px height=700px fig-align=center}
+
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r gdp world figure}
+#| out-width: 80%
+#| fig-align: center
+
+
+# Get world bank population and gdp data
+gdp.2024 <- wbstats::wb_data(indicator = c("NY.GDP.MKTP.CD", 
+                                           "SP.POP.TOTL"), 
+                             country = "countries_only",
+                             start_date = 2024) |> 
+  dplyr::rename(GDP = NY.GDP.MKTP.CD,
+                POP = SP.POP.TOTL) |>
+  dplyr::mutate(GDPPC = GDP/POP)  |> 
+  dplyr::filter(!is.na(GDP)) |> 
+  dplyr::mutate(percentile = ntile(GDP, 10)) |> 
+  dplyr::filter(percentile == 10)
+  
+  
+
+
+ggplot(gdp.2024, aes(x = reorder(country, GDP), y = GDP)) +
+  geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = 0.1) +
+  coord_flip() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(x = "",
+       y = "2024 US Dollars",
+       title = "Largest 10% of global economies according to 2024 GDP")
+
+```
+
+
+
+
+
+## {.blank-slide}
+
+
+```{r gdppc market size}
+#| out-width: 80%
+#| fig-align: center
+
+
+ggplot(gdp.2024, aes(x = reorder(country, GDP), y = GDPPC)) +
+  geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = 0.1) +
+  coord_flip() +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  labs(x = "",
+       y = "2024 US Dollars",
+       title = "Largest 10% of global economies according to 2024 GDP Per Capita")
+
+
+```
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r consumption-of-global-exports-2}
+#| out-width: 80%
+#| fig-align: center
+
+import.data.us <- read_csv(here::here("../../../Data Files/IMF/DOTS/imf-exports-imports-1948-2024.csv")) |> 
+  dplyr::filter(COUNTRY == "United States") |> 
+  dplyr::filter(COUNTERPART_COUNTRY == "World") |> 
+  dplyr::filter(grepl(".*Imports.*", INDICATOR)) |> 
+  dplyr::select(COUNTRY, TIME_PERIOD, OBS_VALUE) |> 
+  dplyr::mutate(total.us.imports = OBS_VALUE) 
+
+export.data.world <- read_csv(here::here("../../../Data Files/IMF/DOTS/imf-exports-imports-1948-2024.csv")) |> 
+  dplyr::filter(COUNTRY == "United States" | COUNTRY == "World") |>
+  dplyr::filter(grepl(".*Exports.*", INDICATOR)) |>
+  dplyr::select(COUNTRY, TIME_PERIOD, OBS_VALUE) |> 
+  tidyr::pivot_wider(names_from = COUNTRY, values_from = OBS_VALUE) |> 
+  dplyr::mutate(total.global.exports = World - `United States`) 
+  
+combined.import.export <- import.data.us |>
+  bind_cols(export.data.world) |> 
+  dplyr::mutate(us.imports.of.global.exports = total.us.imports/total.global.exports,
+                Year = as.numeric(`TIME_PERIOD...2`)) 
+
+colorcustom <- viridis::turbo(1, begin = 0.2, end = 0.8)
+
+ggplot(data = combined.import.export, aes(x = Year, y = us.imports.of.global.exports)) +
+  geom_bar(stat = "identity", color = "black", linewidth = 0.1, fill = colorcustom) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_continuous(breaks = seq(1948, 2024, 5), limits = c(1948, 2024)) +
+  scale_y_continuous(labels = percent_format()) +
+  labs(x = "Year",
+       y = "Percent",
+       title = "US imports as a percent of global exports, 1948-2024",
+       subtitle = "4.3% of the world's population concums 15-20% of global exports",
+       caption = "Data obtained from IMF DOTS database")
+
+
+```
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r trade deficit}
+#| out-width: 80%
+#| fig-align: center
+
+
+growth.comparison <- us.trade.gdp %>% 
+  subset(name == "Deficit" | name == "realgdp") %>% 
+  group_by(name) %>% 
+  arrange(name, year) %>% 
+  mutate(growth = ((value-lag(value))/lag(value))) %>% 
+  filter(year <= 2010) %>% 
+  arrange(name, year) %>% 
+  ungroup() %>% 
+  mutate(name = factor(name, labels = c("Deficit", "GDP"))) %>% 
+  arrange(name, year)
+
+
+## US trade deficit
+ggplot(data = subset(growth.comparison, name == "Deficit"), aes(x = year, y = value, fill = value>0)) +
+  geom_bar(stat = "identity", alpha = .8, colour = "black", size = .1) +
+  geom_hline(yintercept = 0) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_y_continuous(labels = dollar) +
+  scale_x_continuous(breaks = seq(1950,2015,5)) +
+  scale_fill_brewer(palette = "Set1") +  
+  guides(fill = FALSE) +
+  labs(x = "Year",
+       y = "Millions of 2014 Dollars",
+       title = "US Balance of Trade, 1950-2014",
+       subtitle = "Trade deficits result when states import more than they export",
+       caption = "Data obtained from the Correlates of War Data's National Trade Data (v4.0)") 
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+:::{.incremental}
+Does this mean trade is hurting your economy?
+
+No!
+
+Let's look at how GDP is calculated:
+
+$$GDP_{it} = Consumption_{it} + Investment_{it} + Government_{it} + (Exports_{it} - Imports_{it})$$
+  
+:::
+
+
+
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Protectionism and market access
+
+- Trade creates winners and losers
+
+- Some countries can produce goods more/less efficiently than others
+
+- Domestic producers who are relatively inefficient tend to favor protectionism (i.e. government intervention)
+
+
+
+
+
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Forms of Protectionism
+
+- Trade protection can come in a variety of policy interventions
+
+  - Tariffs: Taxes on imported goods
+  
+  - Quotas: Limits on how much of a good is imported
+  
+  - Subsidies: Government payments to purchase goods or offset costs of donig business
+  
+  - Health and safety regulations: Creating different standards between importers and exporters
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+## {.blank-slide}
+
+```{r sugar quota}
+#| out-width: 80%
+#| fig-align: center
+
+
+
+sugar.prices <- read_csv(here("../../../Data Files/US Government Files/USDA/Group2Tables.csv")) |> 
+  dplyr::filter(Commodity_desc2 == "U.S. raw sugar (Number 16)" |
+                  Commodity_desc2 == "World raw sugar (Number 11)") |>
+  dplyr::filter(Period_cat == "Month") |> 
+  dplyr::mutate(date = as.Date(glue::glue("{Year}-{Period_desc}-01"), format = "%Y-%B-%d"),
+                group = case_when(
+                  Geographic_extent == "United States" ~ "US Raw Sugar",
+                  Geographic_extent == "World" ~ "World Raw Sugar"
+                )) 
+
+
+
+
+## Sugar prices over time
+ggplot(data = sugar.prices, aes(x = date, y = Value, colour = group, linetype = group)) +
+  geom_line(size = 1.2, alpha = 0.8) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date(breaks = seq(as.Date("1989-01-01"), as.Date("2025-11-01"), by = "5 years"),
+               limits = c(as.Date("1989-01-01"), as.Date("2025-11-01"))) +
+  scale_y_continuous(breaks = seq(0,50,10), limits = c(0,50)) +
+  viridis::scale_color_viridis(discrete = 1, option = "magma", begin = 0.1, end = 0.9) +
+  labs(y = "Cents per pound",
+       x = "Date",
+       title = "Average raw sugar price on US versus world markets, 1989-2025",
+       subtitle = "US prices are generally higher than the world market prices due to trade protection", 
+       caption = "Data obtained from USDA's Sugar and Sweeteners Yearbook Tables \n https://www.ers.usda.gov/data-products/sugar-and-sweeteners-yearbook-tables.aspx")  
+
+
+```
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Example: Sugar Quota System
+
+- WTO agreements requires the US to import a minimum of 1,117,195 metric tons of raw sugar from global producers
+
+- This is an aggregate figure-it does not have to be distributed evenly across sugar producing states
+
+
+
+
+## {.blank-slide}
+
+```{r sugar distribution}
+#| out-width: 80%
+#| fig-align: center
+#| fig-height: 5
+
+sugar.allocations <- read_csv(here("../../../Data Files/US Government Files/USDA/FY2026_Raw_Cane_Sugar_Allocations.csv")) |> 
+  dplyr::rename("tons" = 2)
+
+
+
+
+ggplot(sugar.allocations, aes(y = reorder(Country, tons), x = tons)) +
+  geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = 0.1) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  theme(axis.text.y.left = element_text(size = 7)) +
+  scale_x_continuous(label = comma_format(),
+                     expand = c(0.01,0)) +
+  labs(x = "Metric Tons",
+       y = "",
+       color = "Item",
+       title = "Distribution of US Sugar Quota for FY2025",
+       subtitle = "What factors determine the allocation of the quota?",
+       caption = str_wrap("Data obtained from https://ustr.gov/about/policy-offices/press-office/press-releases/2025/august/ustr-announces-fiscal-year-2026-wto-tariff-rate-quota-allocations-raw-cane-sugar-refined-and", 40))
+  
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+
+What is the benefit to foreign countries?
+
+:::{.incremental}
+- Dominican Republic share = 189,343 metric tons
+
+- World raw sugar price (2025) $\approx$ 16.39 cents/lb.
+
+- US raw sugar price (2025) $\approx$ 36.87 cents/lb.
+
+- Difference = 20.48 cents/lb.
+
+- So what?
+
+- That's about $85.5 million more than world market—Nearly 0.7% of the Dominican Republic's GDP in 2023!
+
+:::
+
+
+
+## {.blank-slide}
+
+```{r farm subsidies}
+#| out-width: 80%
+#| fig-align: center
+
+library(tidyquant)
+library(rlang)
+
+farm.subsidies <- tq_get("L312041A027NBEA",
+                         get = "economic.data",
+                         from = "1960-01-01",
+                         to = "2025-11-01")
+
+
+## Farm subsidies
+ggplot(data = farm.subsidies, aes(x = date, y = price)) +
+  geom_area(fill = "deepskyblue", colour = "black", size = .2, alpha = .8) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2021-01-01"), by = "5 years"), date_labels = "%Y",
+               limits = c(as.Date("1960-01-01"), as.Date("2026-01-01"))) +
+  scale_y_continuous(labels = dollar_format()) +
+  labs(y = "Billions of Current Dollars",
+       x = "Date",
+       title = "US federal agricultural subsidies, 1960-2020",
+       caption = "Data obtained from FRED data series L312041A027NBEA")
+```
+
+
+
+
+
+
+
+
+
+
+## Trade as a Policy Instrument
+
+More recent example: Manufacturing
+
+- Some industries are politically powerful for reasons apart from economic salience
+
+- Manufacturing sector has a lot of influence
+
+- Heavily tied into American image of production and the importance of making things
+
+- Early Trump economic policies focused on "reviving" US manufacturing, but was it even in need of resuscitation?
+
+
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r manufacturing index}
+#| out-width: 80%
+#| fig-align: center
+
+## CPI to adjust wage data
+cpi <- tq_get("CPILFESL",
+              get = "economic.data",
+              from = "1960-01-01",
+              to = "2025-01-01")
+
+## Manufacturing employment 
+man.emp <- tq_get("MANEMP",
+                         get = "economic.data",
+                         from = "1960-01-01",
+                         to = "2025-01-01")
+  
+## Manufacturing wages data
+man.wage <- tq_get("CES3000000008",
+                         get = "economic.data",
+                         from = "1960-01-01",
+                         to = "2025-01-01")
+
+
+man.wage <- man.wage %>% 
+  left_join(cpi, by = c("date")) %>% 
+  mutate(cpi = price.y / price.y[date=="2019-01-01"],
+    price = price.x/cpi) %>% 
+  select(-c(symbol.y)) %>% 
+  rename("symbol" = "symbol.x")
+
+## Manufacturing Production Index
+man.index <- tq_get("IPMAN",
+                         get = "economic.data",
+                         from = "1960-01-01",
+                         to = "2025-01-01")
+
+
+ggplot(data = man.index) +
+  geom_line(aes(x = date, y = price), size = 1) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date(breaks = "5 years") +
+  labs(x = "Date",
+       y = "Index (2012 = 100)",
+       title = "US Manufacturing Production Index, 1972-2019",
+       subtitle = "Overlall manufacturing production has generally risen over time",
+       caption = "Data obtained from FRED data series IPMAN")
+
+
+```
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r manufacturing employment and wages}
+#| out-width: 80%
+#| fig-align: center
+
+man.com <- bind_rows(man.emp, man.wage) %>% 
+  group_by(symbol) %>% 
+  mutate(index = (price / price[date == "2012-01-01"]) * 100,
+         symbol = ifelse(is.na(symbol), "CES3000000008", symbol),
+         group = factor(symbol, levels = c("MANEMP", "CES3000000008"), labels = c("Employment", "Wages")))
+
+ggplot(man.com, aes(x = date, y = index, color = group)) +
+  geom_line(size = 2, alpha = 0.8) +
+  geom_vline(xintercept = as.Date("2018-03-01"), linetype = "dotted") +
+  annotate("text", x = as.Date("2008-01-01"), y = 130, size = 3, label = "Trump announces tariffs\non steel and aluminum\nMarch 2, 2018", hjust = 0) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date() +
+  scale_color_brewer(palette = "Set1") +
+  labs(x = "Date",
+       y = "Index (2012 = 100)",
+       color = "Index",
+       title = "Index of manufacturing wages and employment, 1960-2020",
+       subtitle = "Consider the case and effect of these changes in the broader historical context",
+       caption = "Data obtained from FRED data series MANEMP and CES3000000008.\nWage data adjusted for inflation.")
+
+```
+
+:::{.notes}
+Notes
+
+There's really no evidence that Trump's tariffs altered the employment or wage levels/growth that we see here.
+
+:::
+
+
+
+## {.blank-slide}
+
+```{r steel and aluminum production index}
+#| out-width: 80%
+#| fig-align: center
+
+## Manufacturing employment 
+index.steel <- tq_get("IPN3311A2RN",
+                         get = "economic.data",
+                         from = "1960-01-01",
+                         to = "2021-01-01")
+  
+## Manufacturing wages data
+index.alum <- tq_get("IPG3313SQ",
+                         get = "economic.data",
+                         from = "1960-01-01",
+                         to = "2021-01-01")
+
+industry.com <- bind_rows(index.alum, index.steel) %>% 
+  mutate(industry = factor(symbol, labels = c("Aluminum", "Steel"))) %>% 
+  group_by(industry) %>%
+  mutate(index = (price/price[date=="2010-01-01"]) * 100)
+  
+
+
+## Steel and aluminum production
+ggplot(data = industry.com, aes(x = date, y = index, color = industry)) +
+  geom_line(size = 1, alpha = 0.8) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date(breaks = seq(as.Date("1972-01-01"), as.Date("2019-01-01"), by = "5 years"), date_labels = "%Y") +
+  scale_y_continuous(breaks = seq(50, 200, 50), limits = c(50, 200)) +
+  scale_color_brewer(palette = "Set1") +
+  labs(x = "Date",
+       y = "Index (2012 = 100)",
+       colour = "Group",
+       title = "Industry Production Index, 1972-2019",
+       subtitle = "Production of both aluminum and steel has been largely stable since the 1980s.",
+       caption = "Data obtained from Federal Reserve of St. Louis data series IPG3313SQ and IPN3311A2RN")
+
+```
+
+
+
+## {.blank-slide}
+
+```{r soy-futures, echo = FALSE, warning=FALSE}
+#| out-width: 80%
+#| fig-align: center
+
+## Soy data
+soy.data <- tidyquant::tq_get("ZS=F",
+                              get = "stock.prices",
+                              from = "2018-01-01",
+                              to = "2019-02-01")
+
+## Soybeans
+## Note: Prices rescaled from cents per bushel in original to dollars per bushel
+ggplot(data = soy.data, aes(x = date, y = close/100)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = as.Date("2018-03-02"), linetype = "dotted", size = 1) + ## Trump announaces
+  geom_vline(xintercept = as.Date("2018-03-23"), linetype = "dotted", size = 1) + ## US imposes first steel and aluminum tariffs
+  geom_vline(xintercept = as.Date("2018-05-29"), linetype = "dotted", size = 1) + ## Talks break down
+  geom_vline(xintercept = as.Date("2018-07-06"), linetype = "dotted", size = 1) + ## China and US tariffs take effect on same date
+  annotate("text", x = as.Date("2018-03-06"), y = 9.8, size = 2.75, hjust = 0, label = "Trump tweets about tariffs\non steel and aluminum\nMarch 2, 2018") +
+  annotate("text", x = as.Date("2018-03-27"), y = 9.2, size = 2.75, hjust = 0, label = "US tariffs on Chinese goods,\nsteel, and aluminum take effect \nMarch 22-23, 2018") +
+  annotate("text", x = as.Date("2018-06-03"), y = 10.5, size = 2.75, hjust = 0, label = "US-Chinese talks break down \nMay 29, 2018") +
+  annotate("text", x = as.Date("2018-07-10"), y = 9.4, size = 2.75, hjust = 0, label = "US tariffs on Chinese goods \nand Chinese tariffs on US goods \ntake effect \nJuly 6, 2018") +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date(breaks = seq(as.Date("2018-01-01"), as.Date("2019-03-29"), by = "2 months"), date_labels = "%b %Y",
+               limits = c(as.Date("2018-01-01"), as.Date("2019-02-01"))) +
+  scale_y_continuous(labels = dollar_format()) +
+  labs(y = "Closing price per bushel",
+       x = "Date",
+       title = "Soybean futures contract prices, January 2018-March 2019",
+       caption = "Data obtained from {tidyqant} package, symbol ZS=F")
+
+
+```
+
+
+
+
+
+## Trade as a Policy Instrument
+
+Conflict between goals
+
+- Tariffs and protection can be used for three purposes
+
+  - Generate revenue
+  
+  - Protect domestic industries
+  
+  - Leverage bargaining power in trade negotiations
+  
+- But these goals cannot coexist perfectly
+
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-1.png){width=870px height=700px fig-align=center}
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-2.png){width=870px height=700px fig-align=center}
+
+
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-3.png){width=870px height=700px fig-align=center}
+
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-4.png){width=870px height=700px fig-align=center}
+
+
+
+
+# Investment and Finance
+
+
+
+## Investment and Finance
+
+What is it?
+
+- US policy towards capital flows (both in and out)
+
+- Can include things like
+
+  - Stocks
+  - Bonds
+  - Larger corporate investment (FDI)
+  
+- Also concerns actors' use of US financial system more broadly
+
+:::{.notes}
+Notes
+
+- Private investment
+
+- Government control over broader financial system. 
+
+- Financial sanctions can be used to block users from accessing funds and resources.
+
+:::
+
+
+
+
+
+
+
+## Investment and Finance
+
+Investment and finance in US foreign policy
+
+- Encouraging foreign investment in the US economy
+
+- Encouraging US investment abroad
+
+- Using capital flows to fund policy goals
+
+  - War
+  
+  - Spending programs
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r fdi-in-us-equity-asset}
+#| out-width: 80%
+#| fig-align: center
+
+fdi.us.equity <- tq_get("BOGZ1FL263092141A",
+                         get = "economic.data",
+                         from = "1945-01-01",
+                         to = "2025-11-01")
+
+ggplot(data = fdi.us.equity, aes(x = date, y = price/1000)) +
+  geom_area(fill = "dodgerblue1", colour = "black", size = .1, alpha = .8) +
+  scale_y_continuous(labels = dollar_format()) +
+  scale_x_date(breaks = seq(as.Date("1945-01-01"), as.Date("2025-01-01"), by = "5 years"), date_labels = "%Y",
+               limits = c(as.Date("1945-01-01"), as.Date("2026-01-01"))) +
+  labs(x = "Date",
+       y = "Billions of Dollars",
+       title = "Foreign Direct Investment in U.S. Equity and Assets, 1945-2020",
+       caption = "Data obtained from FRED data series BOGZ1FL263092141A") 
+
+```
+
+
+
+
+
+
+
+# Monetary Policy
+
+
+
+
+
+## Monetary Policy
+
+People need money to buy things
+
+- Theoretically, we could use all sorts of stuff!
+
+- A commonly held/used/accepted currency (e.g. "brand") of money helps resolve coordination problems
+
+- US dollar is widely used and valued, making it a great basis for global commercial exchange
+
+:::{.notes}
+Notes
+
+- Money is a medium of exchange, a store of value, and a unit of account.
+
+- One problem the constitution was designed to solve was the lack of federal control over money. Colonies/states used to print their own, with wildly different valuations and management regimes. 
+
+:::
+
+
+
+
+
+
+
+## Monetary Policy
+
+A couple of approaches to establishing currency and valuation
+
+- Commodity money
+
+  - Currency backed by a physical good (e.g. gold, silver, etc.)
+  
+  - Historically common, but has limitations (scarcity, divisibility, transportability, etc.)
+  
+- Fiat money
+
+  - Currency backed by government decree
+  
+  - Value comes from trust in government and its management of the currency
+
+
+
+
+## Monetary Policy
+
+So how do governments manage their money?
+
+For present purposes, let's focus on two key topics
+
+- Money supply
+
+- Interest rates
+
+
+:::{.notes}
+Notes
+
+- The "supply" of money can be a tricky concept. It can be used to refer to the total amount of money that exists, but also the amount that's in circulation and available for spending.
+
+:::
+
+
+
+
+
+## {.blank-slide}
+
+```{r M2 Money supply}
+#| out-width: 80%
+#| fig-align: center
+
+m2stock <- tq_get("M2",
+                  get = "economic.data",
+                  from = "1970-01-01",
+                  to = "2021-09-01") %>% 
+  mutate(date = as.Date(date, "%Y-%m-%d"))
+
+ggplot(m2stock, aes(x = date, y = price)) +
+  geom_area(fill = "dodgerblue1", color = "black", size = 0.1, alpha = 0.8) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_y_continuous(labels = dollar_format()) +
+  labs(x = "Date", 
+       y = "Billions of Dollars",
+       title = "M2 Money Stock, 1980-2020",
+       subtitle = "How much money is sloshing around out there?",
+       caption = "Data obtained from FRED M2 series.")
+
+```
+
+
+:::{.notes}
+Notes
+
+- M2 money consists of cash, checking deposits, and easily convertible near money, like money market funds and savings deposits. 
+
+- It doesn't include things like retirement savings.
+
+- Designed to capture the amount of money that is readily available for spending.
+
+:::
+
+
+
+
+
+## Monetary Policy
+
+Mr. (money) manager
+
+- Governments manipulate money and its value through a couple of key mechanisms
+
+  - Setting interest rates
+  
+  - Buying and selling assets
+
+
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r fed-fund-rates-1}
+#| fig-align: center
+#| out-width: 80%
+
+
+fed.rate.data <- tq_get(c("FEDFUNDS"),
+                            "economic.data",
+                            from = "2000-01-01",
+                            to = "2025-05-01")
+
+ggplot(fed.rate.data, aes(x = date, y = price)) +
+  geom_line() +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2024-04-01"), by = "2 years"), date_labels = "%b %Y") +
+  scale_y_continuous(n.breaks = 10) +
+  labs(x = "Date",
+       y = "Rate (%)",
+       title = "Effective Federal Funds Rate, 2000-2024",
+       caption = "Data obtained from https://www.newyorkfed.org/markets/reference-rates/effr")
+
+```
+  
+  
+  
+  
+## {.blank-slide}
+
+```{r fed-fund-rates-2}
+#| fig-align: center
+#| out-width: 80%
+
+ggplot(fed.rate.data, aes(x = date, y = price)) +
+  geom_line() +
+  geom_vline(xintercept = as.Date("2008-09-15"), color = "red", alpha = .6) +
+  geom_vline(xintercept = as.Date("2020-03-15"), color = "red", alpha = .6) +
+  geom_text(aes(x = as.Date("2008-09-15"), y = 6), label = "Lehman Brothers\nBankruptcy", size = 3, hjust = 0) +
+  geom_text(aes(x = as.Date("2020-03-15"), y = 6), label = "COVID-19 Pandemic", size = 3, hjust = 0) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2024-04-01"), by = "2 years"), date_labels = "%b %Y") +
+  scale_y_continuous(n.breaks = 10) +
+  labs(x = "Date",
+       y = "Rate (%)",
+       title = "Effective Federal Funds Rate, 2000-2024",
+       caption = "Data obtained from https://www.newyorkfed.org/markets/reference-rates/effr")
+
+
+
+```
+
+
+:::{.notes}
+Notes
+
+- The federal funds rate affects the overnight lending rate between banks, which in turn affects other interest rates throughout the economy.
+
+- Banks borrow from each other to meet reserve requirements set by the Federal Reserve.
+
+
+
+:::
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r interest rate comparison}
+#| out-width: 80%
+#| fig-align: center
+
+
+fed.rate <- tq_get("DISCNTD8",
+                   get = "economic.data",
+                   from = "1900-01-01",
+                   to = "2021-01-01")
+
+fed.rate <- fed.rate %>% 
+  mutate(country = "United States",
+         rate = price)
+
+boe.rate <- read_delim(here("../../../Data Files/Bank of England/Interest rate changes since 1694 - INTEREST RATES.tsv"), "\t") %>% 
+  mutate(date = as.Date(format(as.Date(Date, "%d-%b-%Y"), "%Y-%m-%d")),
+         country = "England") %>% 
+  rename("rate" = `Interest rate`)
+
+rate.com <- bind_rows(boe.rate, fed.rate) %>% 
+  filter(date >= as.Date("1915-01-01") & date <= as.Date("1930-01-01"))
+
+ggplot(rate.com, aes(x = date, y = rate/100, color = country, linetype = country)) +
+  geom_step(size = 1.5, alpha = 0.9) +
+  annotate("rect", xmin = as.Date("1919-01-01"), xmax = as.Date("1925-01-01"), ymin=-Inf, ymax = Inf, alpha = 0.2) +
+  scale_y_continuous(labels = percent_format()) +
+  theme_flynn(base_size = 11, base_family = "oswald") + 
+  scale_color_brewer(palette = "Set1") +
+  guides(linetype = FALSE) +
+  labs(x = "Date",
+       y = "Interest Rate",
+       color = "Country",
+       title = "Central Bank Rates in US and England, 1915-1930",
+       subtitle = "Countries can coordinate interest rates to accomplish policy goals")
+
+```
+
+
+
+## Monetary Policy
+
+Bonds---How do *they* work?
+
+- Bonds are loans made to the government with the promise of repayment
+
+- Bonds have... 
+  - a face or par value (e.g. $1,000), 
+  - a coupon rate (e.g. 5%), 
+  - and a maturity date (e.g. 10 years)
+  
+- You initially buy a bond for more or less than its face value. 
+  
+- You might buy a savings bond and hold it until maturity, at which point you collect the face value plus interest
+
+- Some bonds have fixed interest rates (e.g. 2.5% for 30 years) based on the face value
+
+- A bond's yield is a function of its price and coupon rate
+
+:::{.notes}
+Notes
+
+- Bonds have a face value and a purchase value.
+- Series EE bonds are purchased at half their face value and mature to full face value over 20 years. They can be worth more if held for the full 30 years.
+- Bonds are debt securities issued by governments or corporations to raise capital.
+- The yield of a bond is the effective return on investment, which can change based on the bond's price in the market.
+- If a bond is in demand then the price goes up and the yield goes down. 
+- Note that the coupon rate remains fixed, but the yield changes as the price changes.
+- For example, if you buy a bond with a face value of \$1,000 and a coupon rate of 5% then your annual payment will be \$50. 
+- That \$50 yield changes as the price of the bond changes.
+
+- Ultimately you care about 1) What you paid for the bond, and 2) What you get back from the bond in the payments. This is how you assess the value of a bond relative to other investments.
+:::
+
+
+
+
+
+## Monetary Policy
+
+Yield Curve
+
+- The yield curve shows interest rates across different bond maturities
+
+- Normally longer maturities (e.g. 30 year bonds) have higher yields than shorter-term maturities (e.g. 2 year bonds)
+
+- When short-term rates are higher than long-term rates, the yield curve is inverted
+
+- An inverted yield curve is often a predictor of recession
+
+
+:::{.notes}
+Notes
+
+- The yield curve is a graphical representation of interest rates across different maturities.
+- Normally, longer-term bonds have higher yields to compensate for the increased risk of holding them over a longer period.
+- An inverted yield curve, where short-term rates exceed long-term rates, can signal economic uncertainty and is often seen as a predictor of recession.
+
+- Yield changes because investors are moving money between long and short-term bonds based on their expectations of future interest rates and economic conditions.
+
+- The yield curve inverts when investors are wary of near-term conditions, so they move money out of short-term bonds and into longer-term bonds. This drives up the price of long-term bonds and pushes down their yields.
+:::
+
+
+
+
+## {.blank-slide}
+
+```{r yield-curve}
+#| out-width: 80%
+#| fig-align: center
+
+yield.curve <- tq_get(c("T10Y2Y", "T10Y3M"),
+                      get = "economic.data",
+                      from = "2000-01-01",
+                      to = "2025-11-01") 
+
+ggplot(yield.curve, aes(x = date, y = price, color = symbol, linetype = symbol)) +
+  geom_hline(yintercept = 0, color = "black") +
+  geom_line(size = 1) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2025-11-01"), by = "3 years"), date_labels = "%Y") +
+  viridis::scale_color_viridis(discrete = TRUE,
+                               option = "turbo",
+                               begin = 0.2,
+                               end = 0.8) +
+  labs(x = "Date",
+       y = "Yield Spread",
+       color = "Spread",
+       title = "US Treasury Yield Curve Spreads, 2000-2025",
+       subtitle = "Difference between 10-year and 2-year (T10Y2Y) and 10-year and 3-month (T10Y3M) yields",
+       caption = "Data obtained from FRED data series T10Y2Y and T10Y3M")
+
+```
+
+
+
+
+## Monetary Policy 
+
+Open Market Operations (OMO)
+
+- Central Bank can buy securities, like bonds
+
+- Purchases occur on private markets, not directly from the Treasury
+
+- Buying up bonds increases liquidity, and pushes interest rates down
+
+- Selling bonds reduces liquidity, and pushes interest rates up
+
+- Quantitative Easing (QE) is similar
+
+:::{.notes}
+
+How do bonds work?
+
+- Bond (loan) has face value, say 100.
+- You can pay 50 for that with the promise of getting 100 back at maturity
+- You can also buy/sell that bond for more/less than what you paid.
+- You buy a bond for 50, but sell it for 75
+- Yield (interest rate) goes down because the price went up
+- Rising prices can be because:
+  - Debt is less attractive
+  - New debt has higher interest rate
+
+:::
+
+
+## Monetary Policy 
+
+Effects of lowering interest rates
+
+- Lower rates makes money cheaper and more abundant
+
+- Businesses and people will consume more
+
+- Increased demand and consumption will drive prices up and unemployment down
+  
+  
+
+
+
+  
+
+
+## {.blank-slide}
+
+```{r fed-treasury-holdings}
+#| fig-align: center
+#| out-width: 80%
+
+treasury.holdings <- tq_get(c("TREAST", "CPIAUCSL"),
+                            "economic.data",
+                            from = "2000-01-01",
+                            to = "2025-05-01") |> 
+  group_by(symbol) |> 
+  dplyr::mutate(change = price - lag(price),
+                index = price / price[date == "2003-01-01"],
+                index_change = index - lag(index))
+
+viridis.palette <- viridis::turbo(10, begin = 0, end = 1)
+colors <- c(viridis.palette[[1]], viridis.palette[[9]])
+
+ggplot(treasury.holdings) +
+  geom_hline(yintercept = 0, color = "red") +
+  geom_line(data = treasury.holdings |> filter(symbol == "CPIAUCSL"), aes(x = date, y = index_change * 5, color = "Inflation"),
+            linewidth = 0.4,
+           alpha = 1.0) +
+  geom_line(data = treasury.holdings |> filter(symbol == "TREAST"), aes(x = date, y = index_change, color = "Treasuries"), 
+            linewidth = 0.4,
+            alpha = 0.85) +
+  annotate("segment", 
+           x = as.Date("2005-01-01"), xend = as.Date("2005-01-01"), 
+           y = 0.2, yend = 0.05, 
+           arrow = arrow(type = "closed", length = unit(0.025, "npc"))) +
+  annotate("segment", 
+           x = as.Date("2005-01-01"), xend = as.Date("2005-01-01"), 
+           y = 0.25, yend = 0.40, 
+           arrow = arrow(type = "closed", length = unit(0.025, "npc"))) +
+  annotate("text", label = "Treasuries come in,\ncash goes out.", x = as.Date("2005-02-01"), y = 0.28, hjust = 0) +
+  annotate("text", label = "Treasuries go out,\ncash comes in.", x = as.Date("2005-02-01"), y = 0.17, hjust = 0) +
+  scale_y_continuous(name = "Treasury Assets Index",
+                     sec.axis = sec_axis(~ . / 2.5, 
+                                         name = "Inflation Index")) +
+  viridis::scale_color_viridis(option = "magma",
+                               discrete = TRUE,
+                               begin = 0.0,
+                               end = 0.75) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
+  labs(x = "Date",
+       color = "Indicator",
+       title = "Weekly Change in Total U.S. Treasuries Held by U.S. Federal Reserve",
+       subtitle = "Buying and selling treasuries affects liquidity, interest rates, and inflation",
+       caption = "Data obtained from {tidyquant} R package.\nFRED indicators TREAST and CPIAUCSL")
+
+
+```
+
+
+
+
+## Monetary Policy
+
+Liquidity Swaps
+
+- The Federal Reserve works with foreign banks to ensure global liquidity
+
+- During times of crisis, foreign banks may have trouble getting access to dollars
+
+- Fed can set up swap lines to provide dollars to foreign banks
+
+- This involves two transactions:
+
+  - First: Bank of England agrees to sell British Pounds to Fed for US dollars
+  
+  - Second: Bank of England agrees to repurchase its Pounds from the Fed at a later date for US dollars plus interest
+
+:::{.notes}
+Notes
+
+- Foreign governments maintain bank accounts at the NY Federal Reserve
+
+- Whenever they need dollars, they can sell their currency and then the Fed credits their account at the NY Federal Reserve Bank, from which they can draw funds. 
+
+- US makes profit off of the interest charged on these swaps.
+
+:::
+
+
+
+
+
+## {.blank-slide}
+
+```{r foreign exchange reserves}
+#| out-width: 80%
+#| fig-align: center
+
+
+forex.data <- read_csv(here("../../../Data Files/IMF/COFER_03-31-2018 03-43-47-80_timeSeries.csv"))
+
+forex.data <- subset(forex.data, `Country Name` == "World") %>% 
+  mutate(indicator = substr(`Indicator Name`, 1, 5)) %>% 
+  subset(indicator == "Alloc") %>% 
+  mutate(Currency = c("Total", "Australian", "Canadian", "Euro", "Yen", "Pound", "Swiss Franc", "Dollar", "Other", "Deutsche Mark", "ECU", "Franc", "Guilder", "Renminbi")) %>% 
+  subset(select=c(`2000`:Currency)) %>% 
+  pivot_longer(cols = c("2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017")) %>% 
+  group_by(name) %>% 
+  mutate(total = ifelse(Currency == "Total", value, NA),
+         total = max(total, na.rm = TRUE),
+         percent = (value/total)*100) %>% 
+  ungroup() %>% 
+  mutate(year = name) %>% 
+  arrange(year, percent)  %>% 
+  mutate(Currency = factor(Currency, unique(Currency)))
+  
+
+ggplot(data = subset(forex.data, Currency == "Dollar" | Currency == "Euro" | Currency == "Yen" | Currency == "Pound"), aes(x = year, y = percent, group = Currency, fill = Currency)) +
+  geom_area(alpha = .7, colour = "black", size = .1) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  scale_fill_brewer(palette = "Spectral") +
+  scale_y_continuous(breaks = seq(0, 100, 20), limits = c(0, 100)) +
+  labs(x = "Year",
+       y = "Percent",
+       title = "Currency shares of global foreign exchange reserves, 2000-2017",
+       subtitle = "The US Dollar has long been the dominant reserve currency",
+       caption = "Data available from International Monetary Fund, Currency Composition of Foreign Exchange Reserves \n http://data.imf.org/?sk=E6A5F467-C14B-4AA8-9F6D-5A09EC4E62A4")
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r us-dollar-index}
+#| out-width: 80%
+#| fig-align: center
+
+
+## Dollar Index data
+dollar.index <- tidyquant::tq_get("DX-Y.NYB",
+                              get = "stock.prices",
+                              from = "2024-01-01",
+                              to = "2025-11-01")
+
+## Soybeans
+## Note: Prices rescaled from cents per bushel in original to dollars per bushel
+ggplot(data = dollar.index, aes(x = date, y = close)) +
+  geom_line(linewidth = 1) +
+  theme_flynn(base_size = 11, base_family = "oswald") +
+  geom_vline(xintercept = as.Date("2025-01-20"), linetype = "dotted", size = 1) + ## New US president inaugurated
+  geom_vline(xintercept = as.Date("2025-04-02"), linetype = "dotted", size = 1) + ## New US president inaugurated
+  annotate("text", x = as.Date("2025-01-30"), y = 112, size = 2.75, hjust = 0, label = "President Trump inaugurated\nJanuary 20, 2025") +
+  annotate("text", x = as.Date("2025-04-08"), y = 105, size = 2.75, hjust = 0, label = "Liberation Day Tariffs\nApril 2, 2025") +
+  scale_x_date(breaks = seq(as.Date("2024-01-01"), as.Date("2025-11-01"), by = "3 months"), date_labels = "%b %Y",
+               limits = c(as.Date("2024-01-01"), as.Date("2025-11-01"))) +
+  scale_y_continuous(labels = dollar_format()) +
+  labs(y = "Index",
+       x = "Date",
+       title = "US Dollar Index, January 2024-November 2025",
+       caption = "Data obtained from {tidyqant} package, symbol DX-Y.NYB")
+
+```
+
+
+
+
+
+
+## {.blank-slide}
+
+
+```{r inflation-data}
+#| fig-align: center
+#| out-width: 80%
+
+inflation.data <- readxl::read_xlsx(here::here("data/inflation-calculator-historical-data.xlsx")) |> 
+  tidyr::pivot_longer(2:14) |> 
+  dplyr::filter(name != "Ave") |> 
+  dplyr::mutate(Year = as.numeric(Year),
+                value = as.numeric(value),
+                Date = glue::glue("{Year}-{name}-01"),
+                Date = as.Date(Date, format = "%Y-%b-%d"),
+                Date = ymd(Date)) 
+
+std.pre <- data.frame(sd = round(sd(inflation.data$value[inflation.data$Year<1971]), 2))
+std.post <- data.frame(sd = round(sd(inflation.data$value[inflation.data$Year>=1971]), 2))
+ 
+ggplot(data = inflation.data) +
+  geom_line(aes(x = Date, y = value)) +
+  geom_vline(xintercept = as.Date("1971-08-01"), color = "black", linetype = "dashed", linewidth = 1.2) +
+  geom_hline(yintercept = 0, color = "red", linewidth = 1.2) +
+  annotate("text", x = as.Date("1935-01-01"), y = 18, label = paste0("Pre-1971 Std. Dev. = ", std.pre$sd, sep = " ")) +
+  annotate("text", x = as.Date("1990-01-01"), y = 18, label = paste0("Post-1971 Std. Dev. = ", std.post$sd, sep = " ")) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_date(breaks = seq(as.Date("1914-01-01"), as.Date("2024-01-01"), by = "10 years")) +
+  scale_y_continuous(breaks = seq(-20, 20, 5)) +
+  labs(x = "Year",
+       y = "Inflation Rate (%)",
+       title = "Inflation rate in the pre and post-Bretton Woods period",
+       subtitle = "The gold standard did not equate to more stable prices",
+       caption = "Data obtained from https://www.usinflationcalculator.com/inflation/historical-inflation-rates/")
+
+
+```
+

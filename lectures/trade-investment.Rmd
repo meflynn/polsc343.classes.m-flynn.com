@@ -1153,7 +1153,7 @@ Immigration policy takes a turn in the 20th Century
 
 
 ---
-ckass: left, top
+class: left, top
 
 # Immigration Policy
 

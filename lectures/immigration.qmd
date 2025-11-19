@@ -1,0 +1,136 @@
+---
+title: "US Foreign Policy"
+subtitle: "Immigration Policy"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    auto-stretch: false ## Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    fig-width: 8
+    fig-height: 5
+    fig-format: retina
+    fig-dpi: 400
+    fig-align: center
+    ##incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    ##data-background-size: 750px 750px
+    ##data-background-position: 1000px 370px
+    ##data-background-position: 115% 150%
+    ##data-background-position: 115% 140%
+    ##data-background-position: 19em 8em
+    ##height: 700
+    ##width: 1050
+---
+
+
+## Immigration Policy
+
+
+
+---
+class: left, top
+
+## Immigration Policy
+
+A Brief Overview of US Immigration Policy
+
+- Immigration was largely unregulated until the late 1800s
+- US government starts keeping track more systematically in 1819 with the Steerage Act
+- Immigration Act of 1864 creates positions within the State Department to oversee immigration, but Act is repealed after 4 years.
+- Chinese Exclusion Act of 1882
+- Immigration Act of 1882
+- Immigration Act of 1891
+
+
+
+
+
+---
+class: left, top
+
+## Immigration Policy
+
+Early Quote System
+
+Immigration policy takes a turn in the 20th Century
+
+- Quota Law of 1921
+- National Origins Act of 1924
+
+
+
+---
+ckass: left, top
+
+## Immigration Policy
+
+Cold War Period
+
+- Labor shortages during WWII lead to growth in immigration from Mexico
+- US eliminates formal race-based quotas on immigration, but *de facto* policy still prioritizes Western Europe
+- Country-specific quotas are gradually eliminated, but broad regional quotas remain
+- US policy eventually starts to emphasize humanitarian concerns, partly to stick it to the Soviets
+
+
+
+---
+class: center, middle, inverse
+
+## What Drives Immigration?
+
+
+
+---
+class: left, top
+
+## What Drives Immigration?
+
+Lots of things, but for now we'll focus on a basic IPE approach to political economy
+
+- Push Factors
+    - Lack of economic opportunity (i.e. jobs)
+    - War and conflict
+    - Repression and violence
+    - Crime
+    
+- Pull Factors
+    - Basically the same, but the inverse
+    - Attracted to job opportunities
+    - Less crime/violence
+    - More political participation 
+    
+    
+
+
+---
+class: left, top
+
+## What Drives Immigration?
+
+
+Heckscher--Ohlin Framework
+
+- Think of migration in terms of trade theory
+- Countries *export* goods that make intensive use of the factors that are abundant
+- Countries *import* goods that make intensive use of the factors that are scarce
+
+Migration as factor mobility
+
+-  Just as investors move capital around seeking a greater return on investment, so too do individuals move trying to find greater returns on **their** investment (i.e. time, effort, skills, etc.)

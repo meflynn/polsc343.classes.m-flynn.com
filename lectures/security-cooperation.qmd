@@ -150,8 +150,8 @@ States may not agree on everything, but they often have shared interests
 
 - This can involve different sorts of activities:
 
-  - .font-color-blue[Forming a military alliance]
-  - .font-color-blue[Hosting foreign military deployments]
+  - Forming a military alliance
+  - Hosting foreign military deployments
   - Military and economic aid
   - Military training and exercises
   - Professional military education
@@ -183,7 +183,6 @@ What are military alliances?
 
 ## Military Alliances
 
-.small[
 Dimensions of alliances:
 
 Commitment level (Depth)
@@ -204,7 +203,7 @@ Relative capabilities (Power)
   1. Symmetric
   2. Asymmetric
 
-]
+
 
 
 
@@ -212,6 +211,9 @@ Relative capabilities (Power)
 ## {.blank-slide}
 
 ```{r ally count}
+#| out-width: 80%
+#| fig-align: center
+
 
 allydata <- read.csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_0ddyr.csv")) %>% 
   subset(stateA == 2 & defense == 1) %>% 
@@ -255,6 +257,9 @@ Notes
 ## {.blank-slide}
 
 ```{r ally region}
+#| out-width: 80%
+#| fig-align: center
+
 
 allydataregion <- read.csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_0ddyr.csv")) %>% 
   subset(stateA == 2 & defense == 1) %>% 
@@ -304,7 +309,6 @@ Notes
 
 ## Military Deployments
 
-.small[
 Let's define them first
 
 > The permanent or temporary placement of military personnel and assets in a location outside of the United States and its territories.
@@ -324,7 +328,7 @@ Different types:
   - Professional military education (sort of)
   
 - Marine Embassy Guards/Marine Security Guard
-]
+
 
 
 
@@ -334,6 +338,24 @@ Different types:
 ## {.blank-slide}
 
 ```{r fig-time}
+#| out-width: 80%
+#| fig-align: center
+
+troop.data.total <- troopdata::get_troopdata() |> 
+  dplyr::group_by(year) |> 
+  dplyr::summarise(total_troops = sum(troops_ad, na.rm = TRUE))
+  
+troop.data.overseas <- troopdata::get_troopdata() |> 
+  dplyr::filter(ccode != 2) |> 
+  dplyr::group_by(year) |> 
+  dplyr::summarise(overseas_troops = sum(troops_ad, na.rm = TRUE))
+
+troop.data.combined <- troop.data.total |> 
+  left_join(troop.data.overseas, by = "year") |> 
+  mutate(percent_overseas = overseas_troops/total_troops)
+
+
+
 troops.data <- readxl::read_xls(here("../../../Data Files/troopMarch2005.xls"), sheet = 2)
 
 time.data <- troops.data %>% 
@@ -353,42 +375,25 @@ time.data <- troops.data %>%
 
 
 # total and overseas deployments
-ggplot(data = subset(time.data, group == "Total Foreign" 
-                     | group == "Total Worldwide"), aes(x = year, y = value, group = group, fill = group)) +
-  geom_area(position = "identity", alpha = .8, color = "black", size = .1) +
-  scale_y_continuous(breaks = seq(0, 3500000, 500000), labels = comma_format()) +
-  scale_x_continuous(breaks = seq(1950, 2005, 5)) +
+ggplot(data = troop.data.combined |> dplyr::filter(year>=1953)) +
+  geom_area(aes(x = year, y = total_troops, fill = "Total"), position = "identity", alpha = .8, linewidth = .1, color = "black") +
+  geom_area(aes(x = year, y = overseas_troops, fill = "Overseas"), position = "identity", alpha = .8, linewidth = .1, color = "black") +
+  geom_line(aes(x = year, y = percent_overseas*10000000), position = "identity", alpha = .8, linewidth = 1) +
+  scale_y_continuous(breaks = seq(0, 3500000, 500000), labels = comma_format(),
+                     sec.axis = sec_axis(~ . / 100000, name = "Percent")) +
+  scale_x_continuous(breaks = seq(1950, 2025, 5)) +
   scale_fill_brewer(palette = "Set2") +
   labs(x = "Year",
        y = "Count",
        fill = "Category",
        title = "US military personnel and overseas deployments, 1950-2005",
        subtitle = "A substantial portion of US personnel have been stationed overseas",
-       caption = "Data obtained from https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2003")
+       caption = "Data obtained from {troopdata} package for R.")
 
 
 ```
 
 
-
-
-
-## {.blank-slide}
-
-```{r}
-
-# percent overseas
-ggplot(data = subset(time.data, group == "Percent Overseas"), aes(x = year, y = value/100, group = group, fill = group)) +
-  geom_line(size = 1.5) + 
-  scale_y_continuous(breaks = seq(.12, .32, .04), limits = c(.12, .32), labels = percent_format()) +
-  scale_x_continuous(breaks = seq(1950, 2005, 5)) +
-  labs(x = "Year",
-       y = "",
-       title = "US overseas deployments as a percent of all personnel, 1950-2005",
-       subtitle = "A substantial portion of US personnel have been stationed overseas",
-       caption = "Data obtained from https://www.heritage.org/defense/report/global-us-troop-deployment-1950-2003")
-
-```
 
 
 
@@ -398,6 +403,8 @@ ggplot(data = subset(time.data, group == "Percent Overseas"), aes(x = year, y = 
 ## {.blank-slide}
 
 ```{r treepmap-plot}
+#| out-width: 80%
+#| fig-align: center
 
 #### Tree Map ####
 
@@ -440,6 +447,9 @@ treemap.plot
 
 
 ```{r alluvial-plot}
+#| out-width: 80%
+#| fig-align: center
+
 
 troopdata <- troopdata::get_troopdata(branch = TRUE) |>  
   filter(ccode != 2 & year >= 1950) |> 
@@ -472,8 +482,8 @@ alluvial.data <- peacesciencer::cow_alliance %>%
 alluvialplot <- ggplot(alluvial.data, aes(y = level, weight = level, axis1 = branch, axis2 = region, fill = branch)) +
   geom_alluvium(alpha = 0.5, width = 1/14) +
   geom_stratum(width = 1/12, fill = "gray80", color = "black", size = 0.1) +
-  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 1, after_stat(as.character(stratum)), NA), fill = branch, fontface = "bold"), size = 11, hjust = "left", nudge_x = -0.25, direction = "x", point.padding = 0, box.padding = 0.1, label.padding = 0.15, max.iter = Inf, show.legend = FALSE, alpha = 0.6) +
-  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 2, after_stat(as.character(stratum)), NA), fontface = "bold"), fill = "white", size = 11, hjust = "right", nudge_x = 0.38, direction = "y", point.padding = 0, box.padding = 0.1, label.padding = 0.15,  max.iter = Inf, min.segment.length = 0.15)+
+  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 1, after_stat(as.character(stratum)), NA), fill = branch, fontface = "bold"), size = 5, hjust = "left", nudge_x = -0.25, direction = "x", point.padding = 0, box.padding = 0.1, label.padding = 0.15, max.iter = Inf, show.legend = FALSE, alpha = 0.6) +
+  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 2, after_stat(as.character(stratum)), NA), fontface = "bold"), fill = "white", size = 5, hjust = "right", nudge_x = 0.38, direction = "y", point.padding = 0, box.padding = 0.1, label.padding = 0.15,  max.iter = Inf, min.segment.length = 0.15)+
   scale_y_continuous(expand = c(0.0, 0.0)) + 
   scale_x_continuous(expand = c(0.15, 0.25)) + 
   scale_fill_manual(values = c("#00308f", "#ffd530","#CC0000", "#088199")) +
@@ -623,6 +633,8 @@ Notes
 ## {.blank-slide}
 
 ```{r}
+#| out-width: 80%
+#| fig-align: center
 
 fat.data <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
   mutate(NonUS = Total - US) %>% 
@@ -661,7 +673,9 @@ Notes
 ## {.blank-slide}
 
 ```{r coalition fatalities percent}
-
+#| out-width: 80%
+#| fig-align: center
+#| 
 fat.perc <- readxl::read_xlsx(here("../../../Data Files/icasualties/afghan-iraq-fatalities.xlsx")) %>%
   mutate(percent = US/Total)
 
@@ -716,7 +730,7 @@ To right: President Trump at a NATO summit with other alliance member leaders in
 
 :::{.column width=50%}
 
-![](../images/trump-nato-summit.jpg){width=400 height=270}
+![](../images/trump-nato-summit.jpg){width=500 height=300 fig-align="center"}
 
 :::
 ::::
@@ -745,7 +759,9 @@ Notes
 ## {.blank-slide}
 
 ```{r nato-votes}
-
+#| out-width: 80%
+#| fig-align: center
+#| 
 natodata <- readxl::read_xlsx(here("../../../Projects/Republican opposition to multilateralism/Data/NATO Voting/Data/NATO Votes Compiled 20180412.xlsx")) %>% 
   subset(select = c("congress", "date", "expansion_mf", "limits_mf", "allied_contributions_mf", "general_participation_mf")) %>% 
   gather(., group, count, -congress, -date) %>% 
@@ -810,7 +826,7 @@ To right: Lord Hastings Lionel Ismay, first Secretary General of NATO
 :::
 
 :::{.column width=50%}
-![](../images/lord-ismay.jpg){width=300 height=400 fig-align=center}
+![](../images/lord-ismay.jpg){width=400 height=550 fig-align="center"}
 
 :::
 ::::
@@ -845,7 +861,8 @@ To right: President Gerald Ford with South Korean President Park Chung-hee in Se
 
 :::{.column width=50%}
 
-![]../images/ford-park-picture.jpg){width=400 height=300 fig-align=center}
+![](../images/ford-park-picture.jpg){width=600 height=400 fig-align="center"}
+
 :::
 ::::
 
@@ -1465,7 +1482,8 @@ map.sa <- map_data("world") %>%
 ggplot() + 
   geom_polygon(data = map.sa, aes(long, lat, group = group, fill = deploymentcount), color = "black", size = 0.1) +
   coord_fixed(ratio = 1.3) +
-  theme_flynn_map() +
+  theme_void() +
+  theme(text = element_text(family = "oswald", size = 12)) +
   scale_fill_distiller(na.value = "gray90", palette = 3, direction = 1) +
   labs(fill = "Number of Annual\nDeployments",
        title = "US humanitarian and civic-assistance exercises by country, 2007-2015")
