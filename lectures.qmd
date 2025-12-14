@@ -26,8 +26,6 @@ This page contains lectures delivered throughout the semester. You can click on 
 
 9. [The Defense Department and the Military](lectures/defense-military.html)
 
-<!--
-
 10. [The Use of Military Force](lectures/military-force.html)
 
 11. [Security Cooperation](lectures/security-cooperation.html)
@@ -37,6 +35,8 @@ This page contains lectures delivered throughout the semester. You can click on 
 13. [Foreign Aid](lectures/foreign-aid.html)
 
 14. [Human Rights](lectures/human-rights.html)
+
+<!--
 
 15. [Multilateralism](lectures/multilateralism.html)
 

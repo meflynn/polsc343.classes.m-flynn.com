@@ -1,0 +1,1440 @@
+---
+title: "US Foreign Policy"
+subtitle: "Human Rights Issues"
+author: 
+  - Michael Flynn
+institute:
+  - Professor
+  - Department of Political Science
+  - 011C Calvin Hall
+  - meflynn@ksu.edu
+date: last-modified
+resources: 
+  - ."../images/"
+  - "images/"
+format:
+  revealjs:
+    theme: [quarto-lecture-theme.scss, default]
+    toc: true
+    toc-depth: 1
+    toc-title: "Lecture Overview"
+    auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
+    slide-number: true
+    chalkboard: true
+    height: 900
+    width: 1600
+    fig-width: 8
+    fig-height: 5
+    fig-format: retina
+    fig-dpi: 400
+    fig-align: center
+    #incremental: true
+title-slide-attributes:
+    data-background-image: "ksu-seal.png"
+    data-background-size: 45% 
+    data-background-position: bottom -38% right -19%
+    #data-background-size: 750px 750px
+    #data-background-position: 1000px 370px
+    #data-background-position: 115% 150%
+    #data-background-position: 115% 140%
+    #data-background-position: 19em 8em
+    #height: 700
+    #width: 1050
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(here)
+library(revealjs)
+library(kableExtra)
+library(ggthemes)
+library(lubridate)
+library(flynnprojects)
+library(scales)
+library(treemapify)
+library(ggalluvial)
+library(ggrepel)
+library(patchwork)
+library(ggtext)
+library(data.table)
+library(pdftools)
+
+theme_set(theme_flynn(base_family = "oswald", base_size = 11))
+
+sysfonts::font_add_google("Oswald", "oswald")
+
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 400)
+
+
+```
+
+
+
+
+## Key Questions
+
+1. How have theory and history shaped the place of human rights in US foreign policy?
+
+2. How do human rights issues intersect with other policy areas?
+
+3. What are the difficulties associated with humanitarian intervention?
+
+4. What are some of the pressing human rights issue in the world today?
+
+
+
+
+
+
+# Historical Overview
+
+
+
+
+## Historical Overview
+
+Origins of US human rights policy
+
+- Classical liberalism
+
+- Abolitionist movement
+
+- Laws of war
+
+- Women's rights movement
+
+
+:::{.notes}
+
+Notes
+
+- Laws of War:
+
+- Some of the earliest efforts to establish international institutions governing human rights
+
+- Geneva Conventions and additional protocols are known as "Humanitarian Laws of Armed Conflict"
+
+- First Geneva Convention adopted in 1864
+
+- [From Cornell Law Library](https://www.law.cornell.edu/wex/geneva_conventions_and_their_additional_protocols): "protects wounded and sick soldiers and medical personnel who are not taking an active part in hostility against a party. It ensures humane treatment without discrimination founded on race, color, sex, religion or faith, birth or wealth, etc.  To that end, the Convention prohibits torture, assaults upon personal dignity, and execution without judgment (Article 3). It also grants the right to proper medical treatment and care."
+
+:::
+
+
+
+
+
+
+## Historical Overview
+
+::::{.columns}
+:::{.column width=50%}
+United Nations Universal Declaration of Human Rights 
+
+- Provides an explicit listing of human rights to which *all* human beings are entitled
+
+- Also reflects ideas and rights with origins in a wide range of cultural and religious traditions
+
+
+To right: Eleanor Roosevelt, Chair of the UN Human Rights Commission
+:::
+
+:::{.column width=50%}
+
+![Eleanor Roosevelt](../images/eleanor-roosevelt.jpg){width=500px height=600px fig-align=center}
+:::
+::::
+
+
+
+
+## Historical Overview
+
+:::{.tiny}
+::::{.columns}
+:::{.column width=50%}
+
+1. Life, liberty, and security of person
+2. No slavery or forced servitude
+3. No torture, cruel and unusual punishment, inhuman or degrading treatment
+4. Recognition as a person before the law
+5. Equal protection before the law
+6. Right to effective remedy by national tribunals
+7. No arbitrary arrest or punishment
+8. Fair and public hearings by an independent and impartial tribunal
+9. Presumed innocence until guilt is proven 
+10. Protection from arbitrary interference in an individual's private, family, or home life, and in personal correspondence
+11. Freedom of movement, both within and between countries
+12. Freedom from persecution and access to asylum
+13. Right to a nationality and to change nationality
+14. Freedom of consensual marriage and to raise a family
+15. Right to own property
+:::
+
+:::{.column width=50%}
+16. Freedom of thought, conscience, and religion
+17. Freedom of opinion and expression
+18. Freedom of peaceful assembly and association
+19. Freedom of political participation and assembly
+20. Access to essential economic, social, and cultural rights necessary for individual development and dignity
+21. Right to work, without discrimination, for fair pay, and in favorable conditions
+22. Right to join trade unions
+23. Right to rest, leisure, and limited working hours
+24. Access to basic standards of living, including healthcare, food, clothing, and housing
+25. Right to equally partake in the cultural and scientific life of the community
+26. Right to enjoy a social and international order that facilitates the realization of these rights
+27. Limitations on these rights only to the extent that they are necessary to secure the ability of others to enjoy their rights
+28. Nothing in the UNDHR will be interpreted as a license to destroy or harm the freedoms outlined herein
+
+:::
+::::
+:::
+
+
+
+
+## Historical Overview
+
+Human Rights Treaties and Covenants
+
+- The Universal Declaration is a general list with broad recognition, but it's not binding in any way
+
+- Actual implementation and practice is a different story
+
+- There are several treaties that actually involve countries committing to protect various rights in a substantive way
+
+- This means ensuring that domestic political institutions and laws align with international human rights law
+
+- This is where the rubber meets the road
+
+
+
+## Historical Overview
+
+Overall US Engagement with Human Rights Regime:
+
+- The US was central to the creation of the modern human rights regime, but doesn't always embrace it
+
+- United States has a poor track record when it comes to ratifying human rights treaties
+
+- US has signed 23 of 49 total agreements
+
+- It's only ratified 17 of 49 agreements
+
+
+
+
+## {.blank-slide}
+
+```{r human rights table}
+
+agreements <- tibble(`Category` = c("International Bill of Human Rights", "Prevention of discrimination on the basis of race, religion, or belief; and protection of minorities", "Women's Rights", "Slavery", "Torture and Ill-treatment", "Children's rights", "Freedom of association", "Employment and forced labor", "Education", "Refugees and asylum", "Nationality and statelessness", "War crimes and genocide", "Law of armed conflict", "Terrorism and human rights", "Total"),
+                     `Total Agreements` = c(4, 1, 5, 4, 4, 3, 2, 7, 1, 2, 2, 3, 6, 5, 49),
+                     `Total Ratified` = c(1, 1, 0, 1, 1, 2, 0, 1, 0, 0, 0, 1, 4, 5, 17))
+
+  kable(agreements,
+        "html",
+        align = c("l", "c", "c"),
+        caption = "US Human Rights Treaty Commitments by Topic Area") %>% 
+    kable_styling(full_width = TRUE, font_size = 20) %>% 
+    column_spec(1, width = "10cm") %>% 
+    row_spec(0, bold = TRUE, background = "#512888", color = "white") %>% 
+    row_spec(14, extra_css = "border-bottom: 1px solid") %>% 
+    row_spec(15, bold = TRUE) %>% 
+    footnote(general = "Data obtained from University of Minnesota Human Rights Library http://hrlibrary.umn.edu/research/ratification-USA.html",
+           footnote_as_chunk = TRUE, title_format = c("italic"))
+
+
+
+```
+
+
+
+
+# Institutionalizing Human Rights
+
+
+
+
+
+## Institutionalizing Human Rights
+
+::::{.columns}
+:::{.column width=50%}
+Domestic roadblocks to human rights
+
+- US is championing international human rights, but there are domestic roadblocks
+
+- Much of this effort conflicts with treatment of minority Americans at home
+
+- Segregation at home is threatened by international institutions that can enforce human rights agreements
+
+To right: James Byrnes, Secretary of State 1945-1947
+:::
+
+:::{.column width=50%}
+
+![James Byrnes](../images/james-byrnes.jpg){width=500px height=700px fig-align=center}
+
+:::
+::::
+
+
+
+
+:::{.notes}
+
+Notes on Byrnes, Multilateralism, and Human Rights:
+
+- Secretary of State. Also a staunch segregationist.
+
+- Byrnes served in the House, Senate, and briefly as an associate justice on the US supreme court (though his tenure is the shortest on record). He played an important role in blocking anti-lynching legislation, blocking support for black colleges and universities, and also in maintaining white control over Democratic Party politics in South Carolina.
+
+- The State Department and various US officials worried that the Untied Nations Commission on Human Rights might have the power to investigate human rights abuses within the US. Also worried that it might be able to compel the US to impose equal protections for blacks and other minority groups. Also sought to prevent the commission from having the power to investigate petitions brought by various minority groups.
+
+- US immediately sought to weaken these institutions for fear that they would be used against the US. They also sought to limit petitions to come only from member states (i.e. not from individuals or non-governmental organizations).
+
+- This is exactly what happened---the National Negro Congress brought a petition to the UN on June 6, 1946 that outlined the oppression of black Americans (See Anderson 2003, 80-81).
+
+:::
+
+
+
+
+## Institutionalizing Human Rights
+
+::::{.columns}
+:::{.column width=50%}
+Bricker Amendment
+
+- Really a *series* of amendments
+
+- First, introduced by Senator John Bricker (R-OH)
+
+- Two key parts
+
+  - No treaties can conflict with the Constitution (Duh)
+  - Strips the president of the power to negotiate executive agreements (Oh...)
+
+- To right: Senator John Bricker
+:::
+
+:::{.column width=50%}
+![John Bricker](../images/john-bricker.jpg){width=500px height=700px fig-align=center}
+:::
+::::
+
+
+
+
+
+## {.blank-slide}
+
+![](../../../../Projects/Republican opposition to multilateralism/Figures/figure-bricker-votes.png){width=1000px height=600px fig-align=center}
+
+
+
+
+
+
+
+## Institutionalizing Human Rights
+
+Humphrey-Cranston Amendment (Section 502B of the
+1974 Foreign Assistance Act):
+
+> Except under extraordinary circumstances no security
+assistance may be provided to any country the
+government of which engages in a consistent pattern
+of gross violations of internationally recognized human
+rights, including torture or cruel, inhuman or degrading
+treatment or punishment, prolonged detention without
+charges, causing the disappearance of persons by the
+abduction and clandestine detention of those persons
+or other flagrant denials of the right to life, liberty, and
+the security of the person.
+
+
+
+
+
+
+## Institutionalizing Human Rights
+
+Harkin Amendment (Section 116 of the Foreign
+Assistance Act of 1974):
+
+> No assistance may be provided under this part to
+the government of any country which engages in
+consistent pattern of gross violations of
+internationally recognized human rights, including
+torture or cruel, inhuman, or degrading treatment
+or punishment, prolonged detention without
+charges, or other flagrant denial of the right to life,
+liberty, and the security of person, unless such
+assistance will directly benefit the needy people in
+such country.”
+
+
+
+
+## Institutionalizing Human Rights
+
+::::{.columns}
+:::{.column width=50%}
+Assistant Secretary of State for Human Rights and Humanitarian Affairs
+
+- Position created in 1976
+
+- Raised profile of human rights
+issues in State Department
+
+- Began practice of drafting annual
+country reports on human rights
+performance
+
+To right: James M. Wilson, first
+Assistant Secretary of State for Human
+Rights and Humanitarian Affairs
+:::
+
+:::{.column width=50%}
+![](../images/james-m-wilson.jpg){width=500px height=700px fig-align=center}
+:::
+::::
+
+
+
+
+
+## Institutionalizing Human Rights
+
+::::{.columns}
+:::{.column width=50%}
+
+Undersecretary of State for Civilian
+Security, Democracy, and Human
+Rights
+
+- Position created in 2012
+
+- Replaced Undersecretary for
+Global Affairs and Democracy
+
+- First elevation of human rights in
+State Department since 1976
+
+
+To right: Maria Otero, first
+Undersecretary of State for Civilian
+Security, Democracy, and Human
+Rights
+
+:::
+
+:::{.column width=50%}
+
+![](../images/maria-otero.jpg){width=500px height=700px fig-align=center}
+
+:::
+::::
+
+
+
+
+
+
+
+
+# Trends in Human Rights
+
+
+
+
+
+## Trends in Human Rights
+
+:::::{.small}
+**Torture**: Purposeful inflicting of extreme pain, whether
+mental or physical, by government officials or by
+private individuals at the instigation of government
+officials
+
+**Political Imprisonment**: The incarceration of people by government officials
+because of: their speech; non-violent opposition to
+government policies or leaders; religious beliefs;
+non-violent religious practices including
+proselytizing; or their membership in a group,
+including an ethnic or racial group
+
+
+**Extrajudicial Killings**: Killings by government officials without due
+process of law. They include murders by private
+groups if instigated by the government. These
+killings may result from the deliberate, illegal, and
+excessive use of lethal force by the police, security
+forces, or other agents of the state whether against
+criminal suspects, detainees, prisoners, or others.
+
+**Disappearance**: Cases in which people have disappeared, political
+motivation appears likely, and the victims have not
+been found. Knowledge of the whereabouts of the
+disappeared is, by definition, not public knowledge.
+However, while there is typically no way of knowing
+where victims are, it is typically known by whom
+they were taken and under what circumstances.
+
+:::::
+
+
+
+
+## {.blank-slide}
+
+```{r ciri-physical-integrity-scores}
+#| fig-align: center
+#| out-width: 80% 
+
+hr.score <- data.table::fread(here::here("../../../Data Files/latent-human-rights-scores/humanrightsprotectionscores.csv")) %>% 
+  filter(COW == 2)
+
+torture <- ggplot(hr.score, aes(x = YEAR, y = TORT)) +
+  geom_step() +
+  geom_point(color = "dodgerblue1", size = 2) +
+  scale_x_continuous(breaks = seq(1980, 2015, 5), limits = c(1980, 2015)) +
+  scale_y_continuous(breaks = seq(0, 2, 1), limits = c(0, 2)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  labs(x = "Year",
+       y = "Score",
+       title = "Torture")
+
+prison <- ggplot(hr.score, aes(x = YEAR, y = POLPRIS)) +
+  geom_step() +
+  geom_point(color = "dodgerblue1", size = 2) +
+  scale_x_continuous(breaks = seq(1980, 2015, 5), limits = c(1980, 2015)) +
+  scale_y_continuous(breaks = seq(0, 2, 1), limits = c(0, 2)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  labs(x = "Year",
+       y = "Score",
+       title = "Political Imprisonment")
+
+kill <- ggplot(hr.score, aes(x = YEAR, y = KILL)) +
+  geom_step() +
+  geom_point(color = "dodgerblue1", size = 2) +
+  scale_x_continuous(breaks = seq(1980, 2015, 5), limits = c(1980, 2015)) +
+  scale_y_continuous(breaks = seq(0, 2, 1), limits = c(0, 2)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  labs(x = "Year",
+       y = "Score",
+       title = "Extrajudicial Killings")
+
+disap <- ggplot(hr.score, aes(x = YEAR, y = DISAP)) +
+  geom_step() +
+  geom_point(color = "dodgerblue1", size = 2) +
+  scale_x_continuous(breaks = seq(1980, 2015, 5), limits = c(1980, 2015)) +
+  scale_y_continuous(breaks = seq(0, 2, 1), limits = c(0, 2)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  labs(x = "Year",
+       y = "Score",
+       title = "Disappearances")
+
+
+
+plots <- (torture | prison) / (kill | disap)
+
+plots + plot_annotation(title = "Physical Integrity Rights Measures for the United States, 1980-2012",
+                        theme = theme_flynn(base_family = "oswald", base_size = 11))
+
+```
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r latent scores}
+#| fig-align: center
+#| out-width: 80% 
+
+
+ggplot(hr.score, aes(x = YEAR, y = theta_mean)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = theta_mean - 2*theta_sd, ymax = theta_mean + 2*theta_sd), alpha= 0.5, fill = "dodgerblue1") +
+  scale_x_continuous(breaks = seq(1950, 2020, 10)) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  labs(x = "Year",
+       y = "Score",
+       title = "Latent Human Rights Score for United States, 1946-2017",
+       caption = "Latent human rights score data: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TADPGE")
+
+```
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r US Comparison}
+#| fig-align: center
+#| out-width: 80% 
+
+
+countries <- c(2, 20, 200, 220, 255, 325, 365, 710, 740, 732)
+
+hr.score <- fread(here::here("../../../Data Files/latent-human-rights-scores/humanrightsprotectionscores.csv")) %>% 
+  dplyr::filter(COW %in% countries) %>% 
+  mutate(country = factor(COW, levels = c(2, 20, 200, 220, 255, 325, 365, 710, 740, 732),
+                          labels = c("USA", "Canada", "UK", "France", "Germany", "Italy", "Russia/USSR", "China", "Japan", "South Korea")))
+
+ggplot(hr.score, aes(x = YEAR, y = theta_mean, color = factor(country), size = country, group = country)) +
+  geom_line(alpha = 0.8) +
+  scale_color_brewer(palette = "Set3", name = "Country") +
+  scale_size_manual(name = "Country", values = c(5, 1, 1, 1, 1, 1, 1, 1, 1, 1), 
+                    labels = c("USA", "Canada" ,"UK", "France", "Germany", "Italy", "Russia/USSR", "China", "Japan", "South Korea")) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  labs(x = "Year",
+       y = "Score",
+       color = "Country",
+       size = "Country",
+       title = "United States scores compared to other states of interest",
+       caption = "Latent human rights score data: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TADPGE")
+
+```
+
+
+
+
+
+
+
+
+
+# Current Issues
+
+
+
+
+
+
+## Current Issues
+
+The US is routinely cited for lots of different issues, but some of the most common and/or big ones that pertain to foreign policy are:
+
+- The War on Terror 
+  - Torture
+  - Extrajudicial Killings
+  - Extraordinary rendition program
+  - Drone strikes
+- Military interventions and Responsibility to Protect
+- Security assistance to allies and proxies
+- Drug Trafficking
+- Migrant communities
+  - Refugees and asylum seekers
+  - Family separations
+
+
+
+
+
+
+## Human Rights and the War on Terror
+
+Major issues:
+
+- Torture of individuals suspected of, or linked to, terrorist activity
+
+- Indefinite imprisonment of suspects in Guantanamo Bay, Cuba
+
+- CIA black sites and rendition program
+
+- Drone strikes and civilian casualties 
+
+:::{.notes}
+
+Notes
+
+- During the 1990s the Clinton Administration coordinated with other countries' militaries and intelligence services to construct a network of secret prisons to be used for torture and interrogation of suspected terrorists.
+- After September 11 attacks the Bush Administration dramatically expanded this program
+- Ran from 2001-2005 with the involvement of about 54 countries, including many democracies.
+
+- Roughly 780 people imprisoned at Guantanamo Bay since 2001
+- 40 Still remain in custody
+- Overwhelmingly citizens of Afghanistan, Saudi Arabia, Yemen, and Pakistan
+- Ages ranged from 13 - 89, with 21 children
+- According to the ACLU over 200 FBI agents reported abusive treatment of detainees
+- Of the 780 individuals who were detained, Human Rights Watch reports 731 have been released without changes, many after having been imprisoned for years.
+
+
+Sources:
+- https://www.aclu.org/issues/national-security/detention/guantanamo-numbers
+- https://www.nytimes.com/interactive/projects/guantanamo
+-https://www.washingtonpost.com/news/monkey-cage/wp/2017/03/14/the-u-s-carried-out-extraordinary-rendition-flights-from-2001-2005-here-are-15-more-countries-that-helped/
+
+:::
+
+
+
+
+
+
+
+## Human Rights and the War on Terror
+
+
+
+::::{.columns}
+:::{.column width=50%}
+
+Anwar al-Awlaki
+
+- A prominent leader of al-Qaeda forces in Yemen
+
+- Assassinated by a US drone strike in Yemen on September 30, 2011
+
+- He was an American-born US citizen
+
+- So was his 16 year old son, who was killed by a drone strike two weeks later
+
+- Raises issues of due process and the boundaries between citizens, civilians, and enemy combatants
+
+:::
+
+:::{.column width=50%}
+
+![](../images/anwar-al-awlaki.jpg){width=500px height=700px fig-align=center}
+:::
+::::
+
+
+
+
+
+
+
+
+## Human Rights and Military Intervention
+
+::::{.columns}
+:::{.column width=50%}
+Responsibility to Protect (R2P):
+
+- Calls for other nation states to ensure fundamental human rights are respected around the world
+
+- Fundamental question: Can military intervention stop human rights abuses and/or improve conditions on the ground?
+
+- The results aren't great
+
+- Military intervention can worsen human rights abuses
+
+- Post-conflict reconstruction is really, really complicated
+
+To right: August 2014 protests in Libya after Libyan Parliament voted to request UN intervention, three years after the NATO invervention that toppled the Gaddafi regime.
+
+:::
+
+:::{.column width=50%}
+![](../images/libya-protest.jpg){width=100% fig-align=center}
+
+:::
+::::
+
+
+
+:::{.notes}
+
+Notes
+
+- Responsibility to protect has its roots in the genocides of the 1990s (Yugoslavia, Rwanda, etc.)
+- Established at the International Committee on Intervention and State Sovereignty in 2001.
+- Unanimously adopted at the UN World Summit in 2005.
+
+- R2P has three primary components
+    1. Every state has a responsibility to protect its populations from genocide, war crimes, crimes against humanity, and ethnic cleansing
+    2. The international community has the responsibility to assist individual states in meeting the first responsibility. 
+    3. The international community must be prepared to take collective action in a timely and decisive manner if states are "manifestly failing" to protect its populations.
+  
+  See [here](https://www.globalr2p.org/what-is-r2p/#:~:text=The%20Responsibility%20to%20Protect%20%E2%80%93%20known,cleansing%20and%20crimes%20against%20humanity.)
+
+:::
+
+
+
+
+
+
+
+
+## Human Rights and Security Assistance
+
+:::{#fig-security-cooperation layout-ncol=2}
+![](../images/palestinian-man-child-casualty.jpeg){fig-align=center width=700px height=600px}
+
+![](../images/ukraine-cluster-bomb.jpeg){fig-align=center width=700px height=600px}
+
+To left: A Palestinian man carries a child casualty following Israeli strikes on houses in Rafah in the southern Gaza Strip October 17. REUTERS/Ibraheem Abu Mustafa. [Photo and caption source](https://www.reuters.com/pictures/children-gaza-caught-crossfire-war-2023-10-19/). To right: A man walks past an unexploded tail section of a 300mm rocket which appear to contained cluster bombs launched from a BM-30 Smerch multiple rocket launcher embedded in the ground after shelling in Lysychansk, Lugansk region on April 11, 2022. [Photo and caption source](https://www.npr.org/2023/07/07/1186534233/cluster-bombs-munitions-ukraine).
+:::
+
+
+
+:::{.notes}
+
+Notes
+
+US support for allies can lead to conflict
+
+- Allies don't always behave in a way that aligns with US interests or goals
+- Israeli military's targeting of civilian centers in the 2023 Gaza War has caused growing divisions between Israeli and the United States. 
+
+- US provision of cluster munitions to Ukraine are controversial because they can be difficult to control and have been linked with high numbers of civilian casualties. 
+
+- "They are controversial because the submunitions have high dud rates. They often land wrong, so the fuse does not function. Dud rates vary from 2 percent to 40 percent, with U.S. submunitions on the lower end and Russian submunitions on the higher end. Duds act like landmines and can injure civilians. For this reason, the Convention on Cluster Munitions was established. Signed by 123 nations, it came into effect in 2010. The convention prohibits using, developing, producing, acquiring, stockpiling, or transferring cluster munitions.
+
+Russia, Ukraine, and the United States have not signed the convention. The United States has not signed because it wants to retain the right to use such munitions in combat emergencies.
+
+Although the United States did not sign the convention, it stopped producing cluster munitions in 2008 and has produced only unitary warheads since then. It has gradually converted inventories to convention-compliant configurations. For example, it has replaced the cluster munition warhead on many MLRS rockets with an inert warhead appropriate for training.
+
+The United States tried to develop submunitions with dud rates under 1 percent. However, this was not technically feasible. Before ceasing production in 2008, DOD was able to produce submunitions with dud rates under 2.35 percent, and these are the cluster munitions being sent to Ukraine." Source [here](https://www.csis.org/analysis/cluster-munitions-what-are-they-and-why-united-states-sending-them-ukraine)
+
+:::
+
+
+
+
+
+
+## Human Rights and Drug Trafficking
+
+::::{.columns}
+:::{.column width=50%}
+Drug Trafficking
+
+- Trump Administration began using GWOT tactics on alleged drug traffickers
+
+- Issues in question:
+
+  - Targeting civilian vessels operating in international waters
+  - Due process
+  - Violations of military and international laws of war
+  - Freedom of movement
+  - Cruel and unusual punishment
+
+To right: Photo of a boat recently struck by US missiles. Photo obtained from the BBC via Defense Secretary Hegseth's X account. 
+:::
+
+:::{.column width=50%}
+![](../images/drone-strikes-boat.png){width=800 heght=600 fig-align=center}
+:::
+::::
+
+:::{.notes}
+Notes
+
+- Throughout the fall of 2025 the Trump Administration launched a series of attacks on boats, mostly operating in the Carribbean off the coast of Venezuela, but some in the Pacific as well. 
+
+- In late November the [Washington Post published an article](https://www.washingtonpost.com/national-security/2025/11/28/hegseth-kill-them-all-survivors-boat-strike/) claiming that the SOCOM commander overseeing the first strikes launched a second strike to kill survivors. This was reportedly to be in line with Defense Secretary Hegseth's command to "kill them all". 
+
+- This is a violation of international humanitarian law, and the laws of war. 
+
+- DOD even has a [Law of War Manual](https://media.defense.gov/2023/Jul/31/2003271432/-1/-1/0/DOD-LAW-OF-WAR-MANUAL-JUNE-2015-UPDATED-JULY%202023.PDF) that forbids this!
+
+- Chapter V Section 4 Paragraph 7: "Prohibition Against Declaring That No Quarter Be Given. It is forbidden to declare that no quarter will be given.145 This means that it is prohibited to order that legitimate offers of surrender will be refused or that detainees, such as unprivileged belligerents, will be summarily executed.146 Moreover, it is also prohibited to conduct hostilities on the basis that there shall be no survivors, or to threaten the adversary with the denial of quarter. This rule is based on both humanitarian and military considerations.148 This rule also applies during non-international armed conflict."
+
+:::
+
+
+
+
+
+
+
+
+
+## Human Rights and Immigration, Asylum, and Refugees
+
+- US offers to let in people who may be persecuted in their home countries. 
+
+- Groups are classified as one of two types. 
+  
+  - Asylum Seekers
+  - Refugees
+
+- Trump Administration has sought to reduce access across the board, including general immigration, asylum seekers, and refugees
+
+- Refugees and Asylum seekers are been particular targets
+
+
+
+
+
+
+## Human Rights and Immigration, Asylum, and Refugees
+
+So what do these terms mean?
+
+**Refugee** According to 8 U.S. Code § 1101(a)(42)(A)
+
+> Any person who is outside their home country and who is unable or unwilling to return to that country because of persecution or a well-founded fear of persecution on account of race, religion, nationality, membership in a particular social group, or political opinion. 
+
+
+**Asylum** 
+
+>Meet criteria for refugee status, but apply after they are in the United States, or at a port of entry.
+
+
+
+:::{.notes}
+
+Notes
+
+- Must apply for asylum within one year of arriving in US.
+
+- Refugee definition: Under Section 101(a)(42) of the INA, a refugee is an alien who, generally, has experienced past persecution or has a well-founded fear of persecution on account of race, religion, nationality, membership in a particular social group, or political opinion.
+
+- Note five protected groups: Race, religion, nationality, social group, or political opinion.
+
+- Individuals who meet the statutory definition may be considered for either refugee status under Section 207 of the INA if they are outside the United States, or asylum status under Section 208 of the INA, if they are already in the United States or present themselves at a U.S. port of entry.
+
+- Criteria for asylum and refugee admissions is the same, but there is no cap on asylum seekers like there is on refugee status. Cap is set on refugees each year, but there is no limit on asylum seekers. 
+
+:::
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r refugee ceiling}
+#| fig-align: center
+#| out-width: 80% 
+
+
+# Refugee ceiling and admissions
+refugee.ceiling <- readxl::read_xlsx(here("../../../Data Files/US Government Files/DHS/2025_0812_ohss_yearbook_refugees_fy2024.xlsx"), sheet = 2, skip = 5) |> 
+  slice(1:45) |> 
+  dplyr::mutate(Year = as.numeric(Year))
+
+crs.report.data <- readxl::read_xlsx(here("../../../Data Files/US Government Files/CRS/refugee-report.xlsx")) |> 
+  tidyr::separate(col = 1,
+                  into = c("Year", "Ceiling", "Admissions"),
+                  sep = " ") |> 
+  dplyr::mutate(across(everything(),
+                       ~ gsub(",", "", .x))) |> 
+  dplyr::mutate(across(everything(),
+                ~ as.numeric(.x)))
+  
+
+ggplot() +
+  geom_bar(data = refugee.ceiling,
+           aes(x = Year, 
+               y = Number), 
+           stat = "identity", 
+           fill = "dodgerblue1", 
+           color = "black", 
+           size = .1, 
+           alpha = .8) +
+  geom_step(data = crs.report.data,
+            aes(x = Year, 
+                y = Ceiling), 
+            color = "maroon", 
+            size = 2, 
+            na.rm = TRUE,  
+            direction = "mid") +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1980, 2025, 5)) +
+  labs(x = "Year",
+       title = "Refugee ceiling and admissions, 1980-2024",
+       caption = "Data obtained from US Department of Homeland Security \nand Congressional Research Service: https://ohss.dhs.gov/topics/immigration/yearbook/2024 and\nhttps://www.congress.gov/crs-product/R47399.")
+  
+
+```
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r refugee and asylum grants}
+#| fig-align: center
+#| out-width: 80% 
+
+# Refugees and asylum seekers
+text_asylum <- pdf_text(here("../../../Data Files/US Government Files/state-department/refugee-report.pdf"))
+# table values
+text_asylum_2 <- text_asylum[9] %>% # Select page with table
+  read_lines(skip = 3, skip_empty_rows = TRUE, n_max = 38)  %>% 
+  grep('\\s', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.)) %>% 
+  plyr::rename(c("X1" = "year", "X2" = "ref.arrivals", "X3" = "asylum.grants", "X4" = "totals")) %>% 
+  pivot_longer(cols = c("ref.arrivals", "asylum.grants", "totals")) %>% 
+  mutate(name = factor(name, levels = c("ref.arrivals", "asylum.grants", "totals"), labels = c("Refugee Admissions", "Asylum Grants", "Totals")))
+
+ggplot(data = text_asylum_2 %>% filter(name != "Totals"), aes(x = year, y = value, group = name, fill = name)) +
+  geom_bar(stat = "identity", color = "black", size = .1, alpha = .8) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1980, 2015, 5), limits = c(1980, 2017)) +
+  scale_y_continuous(labels = comma_format()) +
+  scale_fill_brewer(palette = "Set1") +
+  labs(x = "Year",
+       y = "Count",
+       title = "Refugee admissions and asylum grants, 1980-2017",
+       fill = "Category",
+       caption = "Data obtained from State Department report to Congress: \"Proposed refugee admissions for fiscal year 2019\"\nhttps://www.state.gov/documents/organization/286401.pdf")
+
+
+
+```
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r refugee resettlement by country}
+#| fig-align: center
+#| out-width: 80% 
+#| 
+# Refugees by country of origin
+text_asylum <- pdf_text(here("../../../Data Files/US Government Files/state-department/refugee-report.pdf"))
+# table values
+text_asylum_3_1 <- text_asylum[25] %>% # Select page with table
+  read_lines(skip = 6, skip_empty_rows = TRUE, n_max = 30)  %>% 
+  grep('\\s', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.)) %>% 
+  select(c("X1","X2","X3")) %>% 
+  plyr::rename(c("X1" = "country", "X2" = "count", "X3" = "percent"))
+
+text_asylum_3_2 <- text_asylum[26] %>% # Select page with table
+  read_lines(skip = 0, skip_empty_rows = TRUE, n_max = 35)  %>% 
+  grep('\\s', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.)) %>% 
+  select(c("X1","X2","X3")) %>% 
+  plyr::rename(c("X1" = "country", "X2" = "count", "X3" = "percent"))
+
+text_asylum_3_3 <- text_asylum[27] %>% # Select page with table
+  read_lines(skip = 0, skip_empty_rows = TRUE, n_max = 12)  %>% 
+  grep('\\s', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.)) %>% 
+  select(c("X1","X2","X3")) %>% 
+  plyr::rename(c("X1" = "country", "X2" = "count", "X3" = "percent"))
+
+refugee.combined <- rbind(text_asylum_3_1, text_asylum_3_2, text_asylum_3_3)
+
+ggplot(data = refugee.combined, aes(x = reorder(country, -count), y = count)) +
+  geom_bar(stat = "identity", fill = "deepskyblue", colour = "black", size = .1) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  theme(axis.text.x  = element_text(size = 5,
+                                    angle = 45,
+                                    hjust = 1)) +
+  scale_y_continuous(breaks = seq(0, 10000, 2000), 
+                     limits = c(0, 10000), 
+                     labels = comma_format()) +
+  labs(x = "",
+       y = "Count",
+       title = "US refugee resettlement by country of origin, 2017", 
+       caption = "Data obtained from State Department report to Congress: \"Proposed refugee admissions for fiscal year 2019\"\nhttps://www.state.gov/documents/organization/286401.pdf")
+
+
+```
+
+
+
+
+
+
+
+## Human Rights and Immigration, Asylum, and Refugees
+
+- Large focus on Southwest Border
+
+- This is the border between the US and Mexico
+
+- Trump campaigned in 2015-2016 on cutting down on migration from Mexico and central America, claiming broad patterns of violence and crime for which there's little evidence
+
+- Escalated existing deterrence strategies employed by previous administrations to reduce migration
+
+- But what does it take for deterrence to work?
+
+  - Is the threat credible?
+  - What is the cost-benefit calculus of immigrants?
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r }
+#| fig-align: center
+#| out-width: 80% 
+
+
+# Monthly apprehension data
+text_ill_mon <- pdf_text(here("../../../Data Files/US Government Files/customs-border-patrol/bp-total-monthly-apps-sector-area-fy2018.pdf"))
+text_ill_mon_1 <- text_ill_mon[1]
+text_ill_mon_2 <- text_ill_mon[2]
+text_ill_mon_3 <- text_ill_mon[3]
+text_ill_mon_4 <- text_ill_mon[4]
+text_ill_mon_5 <- text_ill_mon[5]
+text_ill_mon_6 <- text_ill_mon[6]
+text_ill_mon_7 <- text_ill_mon[7]
+text_ill_mon_8 <- text_ill_mon[8]
+text_ill_mon_9 <- text_ill_mon[9]
+text_ill_mon_10 <- text_ill_mon[10]
+text_ill_mon_11 <- text_ill_mon[11]
+text_ill_mon_12 <- text_ill_mon[12]
+text_ill_mon_13 <- text_ill_mon[13]
+text_ill_mon_14 <- text_ill_mon[14]
+text_ill_mon_15 <- text_ill_mon[15]
+text_ill_mon_16 <- text_ill_mon[16]
+text_ill_mon_17 <- text_ill_mon[17]
+text_ill_mon_18 <- text_ill_mon[18]
+text_ill_mon_19 <- text_ill_mon[19]
+
+ill.mon.list <- list(text_ill_mon_1, 
+                     text_ill_mon_2, 
+                     text_ill_mon_3, 
+                     text_ill_mon_4, 
+                     text_ill_mon_5, 
+                     text_ill_mon_6, 
+                     text_ill_mon_7, 
+                     text_ill_mon_8, 
+                     text_ill_mon_9, 
+                     text_ill_mon_10,
+                     text_ill_mon_11,
+                     text_ill_mon_12,
+                     text_ill_mon_13,
+                     text_ill_mon_14,
+                     text_ill_mon_15,
+                     text_ill_mon_16,
+                     text_ill_mon_17,
+                     text_ill_mon_18,
+                     text_ill_mon_19)
+
+# BOOM!
+# Adjust for fiscal year
+for(page in 1:19) {
+    df_page <- text_ill_mon[[page]] %>% 
+    read_lines(skip = 29, skip_empty_rows = TRUE, n_max = 4)  %>% 
+    grep('\\s', ., value = TRUE) %>% 
+    paste(collapse = '\n') %>% 
+    read_fwf(fwf_empty(.)) %>% 
+    dplyr::rename(c("October"= "X2",
+                   "November"  = "X3" ,
+                   "December"  = "X4" ,
+                   "January"   = "X5" ,
+                   "February"  = "X6" ,
+                   "March"     = "X7" ,
+                   "April"     = "X8" ,
+                   "May"       = "X9" ,
+                    "June"     = "X10",
+                    "July"     = "X11",
+                    "August"   = "X12",
+                    "September"= "X13" )) %>% 
+    pivot_longer(cols = (2:13)) %>% 
+    arrange(X1, name) %>% 
+    dplyr::group_by(X1) %>% 
+    ungroup() %>% 
+    dplyr::rename("Location" = "X1", "month" = "name") %>% 
+    dplyr::mutate(year = ifelse(month == "October" | month == "November" | month == "December", 1998+page, 1999+page))
+    
+    ill.mon.list[[page]] <- df_page
+}
+
+ill.mon.df <- plyr::rbind.fill(ill.mon.list) %>% 
+  filter(month != "X14" & Location != "Monthly Total" & Location != "Yuma") %>% 
+  mutate(date = as.Date(paste(year, month, 1, sep = "-"), format = "%Y-%b-%d"))
+
+# Monthly illegal apphrensions
+ggplot(data = ill.mon.df, aes(x = date, y = value, group = Location, fill = Location)) +
+  geom_area(position = "stack", stat = "identity", color = "black", size = .1, alpha = .8) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_date(breaks = seq(as.Date("1999-10-01"), as.Date("2018-09-01"), by = "24 months"), labels = date_format("%Y-%b")) +
+  scale_y_continuous(breaks = seq(0, 220000, 20000), labels = comma_format()) +
+  scale_fill_brewer(palette = "Spectral") +
+  labs(x = "Date",
+       y = "Count",
+       title = "Monthly apprehensions by location, FY2000-FY2018",
+       caption = "Data obtained from https://www.cbp.gov/sites/default/files/assets/documents/2019-Mar/bp-total-monthly-apps-sector-area-fy2018.pdf")
+
+
+```
+
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r overall apprehensions}
+#| fig-align: center
+#| out-width: 80% 
+
+
+# Overall apprehensions
+text_apprehensions <- pdf_text(here("../../../Data Files/US Government Files/customs-border-patrol/bp-total-apps-fy1925-fy2018.pdf"))
+
+df.apprehensions <- text_apprehensions %>% 
+  read_lines(skip = 5, skip_empty_rows = TRUE)  %>% 
+  grep('\\s', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.)) %>% 
+  subset(select = c(X1, X2)) %>% 
+  plyr::rename(c("X1" = "Year", "X2" = "Count")) -> df.apprehensions.1 
+  
+df.apprehensions <- text_apprehensions %>% 
+  read_lines(skip = 5, skip_empty_rows = TRUE)  %>% 
+  grep('\\s', ., value = TRUE) %>% 
+  paste(collapse = '\n') %>% 
+  read_fwf(fwf_empty(.)) %>% 
+  subset(select = c(X3, X4)) %>% 
+  plyr::rename(c("X3" = "Year", "X4" = "Count")) -> df.apprehensions.2
+
+ df.apprehensions.com <- rbind(df.apprehensions.1, df.apprehensions.2)
+ 
+# total illegal apprehensions by year 
+ggplot(data = df.apprehensions.com, aes(x = Year, y = Count)) +
+  geom_area(fill = "dodgerblue1", color = "black", size = .1, alpha = .8) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(1925, 2019, 10)) +
+  scale_y_continuous(breaks = seq(0, 1750000, 250000), label = comma_format()) +
+  labs(x = "Year",
+       y = "Count",
+       title = "Total apprehensions by year, 1925-2018",
+       caption = "Data obtained from US Customs and Border Protection\nhttps://www.cbp.gov/sites/default/files/assets/documents/2019-Mar/bp-total-apps-fy1925-fy2018.pdf")
+
+
+
+```
+
+
+
+
+
+## {.blank-slide}
+
+```{r immigration case backlog}
+#| fig-align: center
+#| out-width: 80% 
+
+
+imm.backlog <- readxl::read_xlsx(here("../../../Data Files/syracuse-tracfed/immigration-case-backlog.xlsx"), skip = 381) %>% 
+  plyr::rename(c("All Nationalities" = "country", "855807" = "cases"))
+
+ggplot(data = subset(imm.backlog, cases>=2000), aes(x = reorder(country, cases), y = cases)) +
+  geom_bar(stat = "identity", fill = "dodgerblue1", color = "black", size = .1, alpha = .8) +
+  coord_flip() +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_y_continuous(breaks = seq(0, 200000, 25000), limits = c(0,200000), label = comma_format(), expand = c(0, 1)) +
+  labs(x = "",
+       y = "Count",
+       title = "Immigration case backlog by country of origin, FY2019",
+       caption = "Only countries with backlogs exceeding 2,000 shown.\nhttps://tracfed.syr.edu/index/index.php?layer=admin&ds=immigration")
+
+
+
+```
+
+
+
+
+
+
+
+## {.blank-slide}
+
+```{r immigration backlog histogram}
+#| fig-align: center
+#| out-width: 80% 
+
+
+# Imigration court case delay
+imm.delay <- readxl::read_xlsx(here("../../../Data Files/syracuse-tracfed/immigration-case-backlog-20201111.xlsx"))
+colnames(imm.delay)[1] <- "location"
+colnames(imm.delay)[2] <- "delay"
+
+la.value <- imm.delay$delay[imm.delay$location == "Los Angeles, California"]
+
+ggplot(data = imm.delay, aes(x = as.numeric(delay))) +
+  geom_histogram(fill = "dodgerblue1", binwidth = 30 , color = "black", size = .1, alpha = .8) +
+  annotate("segment", x = as.numeric(la.value), xend = as.numeric(la.value), y = 18, yend = 7, colour = "red", size=1.5, alpha = 1.0, arrow=arrow(length = unit(0.25, "cm"), type = "closed")) +  
+  annotate("text", x = as.numeric(la.value), y = 21, hjust = 0, size = 5, label = paste("Court location:\nLos Angeles, CA\nDelay: ", la.value, " Days")) +
+  theme_flynn(base_family = "oswald", base_size = 11) +
+  scale_x_continuous(breaks = seq(0, 8000, 1000)) +
+  scale_y_continuous() +
+  labs(x = "Days",
+       y = "Count",
+       title = "Immigration case hearing average length of wait by court location, FY2020",
+       caption = "Data obtained from: https://tracfed.syr.edu/index/index.php?layer=admin&ds=immigration")
+
+
+```
+
+
+
+
+## Human Rights and Immigration, Asylum, and Refugees
+
+::::{.columns}
+:::{.column width=50%}
+Mass Deportations
+
+- Federal enforcement has targeted a wide range of groups
+- Deportation to third-party countries
+- Due process violations
+- Torture
+
+:::
+
+:::{.column width=50%}
+
+![](../images/el-salvador-cecot.jpg){width=700px height=500px fig-align="center"}
+:::
+::::
+
+:::{.notes}
+Notes
+
+- Federal enforcement has been sweeping, often targeting everyone from alleged gang members to day laborers, to white collar workers.
+
+- Spring of 2025 Trump Administration began sending people it claimed to be violent gang members to El Salvador's Terrorism Confinement Center (CECOT). Capacity to hold approximatey 40,000 inmates. No recreation, no visitation, no education, etc., are allowed. 
+
+- Trump invoked the Alien Enemies Act, only invoked three times in the country's history, as the basis for deporting people they argued were dangerous gang-affiliated individuals. 
+
+- Trump also agreed to pay El Salvador's government \$6 million USD to house deportees from the United States. 
+
+- Deported individuals were often arrested and quickly transported out of the country without hearings or trials. No opportunity to establish the veracity of the claims that they were citizens or legally present.
+
+- Individuals detained at CECOT describe a range of abuses, including beatings, sexual abuse, denied necessary medications for ailments like diabetes, poor food, unsanitary conditions, and more. 
+
+Sources:
+
+- [NPR article on CECOT](https://www.npr.org/2025/03/17/g-s1-54206/el-salvador-mega-prison-cecot)
+- [Human Rights Watch](https://www.hrw.org/report/2025/11/12/you-have-arrived-in-hell/torture-and-other-abuses-against-venezuelans-in-el)
+:::
+
+
+
+## Human Rights and Immigration, Asylum, and Refugees
+
+Child separations
+
+- First Trump Administration instituted policy to separate children from their parents when they're apprehended
+
+- Did previous presidents do this, too?
+
+- Yes, though Not as a systematic policy tool:
+
+  - Children *could* be separated from parents when parents were criminally charged after apprehension or where officers suspected human trafficking
+  - Trump administration instituted a "zero-tolerance" policy, meaning all unlawful entrants will be systematically subject to criminal prosecution. 
+  - Systematically charging unlawful entrants with a crime means children are then treated as unaccompanied minors
+  - This meant that individuals would be detained, and if they were accompanied by children, those children would be detained separately from parents. 
+  - Obama Administration housed women and children together while cases were pending. Families could be detained indefinitely.
+
+
+:::{.notes}
+
+Notes
+
+Family separations: 
+
+- Policy really spearheaded by then Attorney General Jeff Sessions and Deputy Attorney General Rod Rosenstein (see https://www.vox.com/2020/10/7/21506059/trump-family-separations-sessions-rosenstein)
+
+- Explicitly directed US Attorneys to prosecute families with children as young as infants
+
+- Trump administration began to actively prosecute anyone who crossed the border illegally—even if they had children. 
+
+- This meant that individuals would be detained, and if they were accompanied by children, those children would be detained separately. 
+
+- Obama Administration has previously expanded detention facilities for families, housing women and children together while cases were pending. this was explicitly intended to deter other migrants from attempting to come up to the US. Families could be detained indefinitely. 
+
+- So what’s different?
+    -  the 1997 Flores agreement, unaccompanied children could be held only for a specified period of time. A 2016 court ruling determined that this time limit applied to families, too. 
+    - Obama Administration detained families in ICE detention facilities, which were not technically prisons. This differed from the Trump Administration'ss approach which referred adults caught crossing the border for criminal prosecution. 
+    - Obama Administration also did not prosecute first-time offenders for crossing the border illegally. 
+    
+- Note that detentions under Obama Administration could still be a violation of human rights. Indefinite detention violations Constitutional principles AND human rights law. 
+
+    - From NYT: Technically, there is no Trump administration policy stating that illegal border crossers must be separated from their children. But the “zero tolerance policy” results in unlawful immigrants being taken into federal criminal custody, at which point their children are considered unaccompanied alien minors and taken away…Unlike Mr. Obama’s administration, Mr. Trump’s is treating all people who have crossed the border without authorization as subject to criminal prosecution, even if they tell the officer apprehending them that they are seeking asylum based on fear of returning to their home country, and whether or not they have their children in tow. See: (https://www.nytimes.com/2018/06/16/us/politics/family-separation-trump.html)
+
+    - Attorney General Sessions framed the issue as smuggling: ““If you are smuggling a child then we will prosecute you, and that child will be separated from you as required by law,” Sessions said at a law enforcement event in Scottsdale, Ariz. “If you don’t like that, then don’t smuggle children over our border.” See: http://time.com/5314769/family-separation-policy-donald-trump/
+
+    - From NYT: “The situation was even more complicated when children were involved. A 2008 law meant to combat the trafficking of minors places strict requirements on how unaccompanied migrant children from Central America are to be treated. Minors from Mexico or Canada — countries contiguous with the United States — can be quickly sent back to their home countries unless it is deemed dangerous to do so. But those from other nations cannot be quickly returned; they must be transferred within 72 hours to the Office of Refugee Resettlement at the Department of Health and Human Services, and placed in the least restrictive setting possible. And the Flores ruling meant that children and families could not be held for more than 20 days.” See: https://www.nytimes.com/2018/06/16/us/politics/family-separation-trump.html
+
+    - In 2018 articles came out discussing how Homeland Security “lost” 1,500 children. Unclear how many were actually lost versus cases where status could not be verified due to someone not answering the phone. 
+
+    - Across all administrations, human rights groups and immigration activists have highlighted the poor conditions within detention facilities. The argument is that even though the government says they’re not prisons, they’re basically prisons. More recently, the family separation policy has 
+
+
+
+
+
+
+
+
+
+
+## Human Rights and Immigration, Asylum, and Refugees
+
+Fallout
+
+::::{.columns}
+:::{.column width=50%}
+
+- Zero-tolerance officially in effect from April 2018-June 2018
+
+- Preceded by an undisclosed "pilot program" in El Paso, Texas in 2017
+
+- Policy affected more than 5,500 children in total
+
+- Many parents have been deported to home countries, and some have opted to leave children in the United States with friends or family members. In many cases US authorities did not keep records of who children's parents were, making reunification difficult or impossible.
+
+- More recently children have been released from US custody into Mexico without an accompanying adult and with no family members residing in Mexico. Most initially end up under the care of Mexican child welfare workers.
+
+- More than 550 children were expelled into Mexico in this way
+
+- Biden administration has worked to reunite children separated from families, but Justice Department has continued to litigate against recognizing rights of separated families to sue and argued that federal government under Trump administration had broad discretion to enforce immigration.
+
+:::
+
+:::{.column width=50%}
+
+![](../images/immigrant-child-picture.jpg){width=500px height=700px fig-align=center}
+
+:::
+::::
+
+
+:::{.notes}
+
+Notes
+
+- [On children expelled into Mexico](https://www.nytimes.com/2020/10/30/us/migrant-children-expulsions-mexico.html) 
+- [On number of children expelled into Mexico](https://www.nytimes.com/2020/10/21/us/migrant-children-separated.html) 
+
+- [On Biden Justice Department lawsuits](https://www.nbcnews.com/news/latino/biden-justice-dept-defends-trump-family-separations-court-rcna87115)
+- [On Biden Justice Department lawsuits](https://www.usatoday.com/story/news/politics/2023/06/26/biden-department-justice-family-separations-border/70358845007/)
+
+:::
