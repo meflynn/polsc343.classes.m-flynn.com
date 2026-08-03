@@ -52,6 +52,10 @@ $week-summary-indent:    $week-marker-span + $week-marker-gap !default;
 // Toolbar ---------------------------------------------------------------
 $week-toolbar-gap:       0.4rem !default;
 
+// Flags (exam star, etc.) -----------------------------------------------
+$week-flag-exam-color:   #185fa5 !default;   // blue star = exam that week
+$week-flag-size:         1.05em !default;
+
 // Type ------------------------------------------------------------------
 $week-title-size:        1.02rem !default;
 $week-dates-size:        1.08rem !default;   // date range in the week header
@@ -181,6 +185,25 @@ details[open] > .week-summary::before {
   font-weight: 600;
   line-height: 1.35;
   color: inherit;
+}
+
+/* Flag badges appended to the week title. `.week-flag--exam` is the blue star;
+   add a rule here for any extra flag you register in the JS CONFIG. */
+.week-flag {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -0.08em;
+  margin-left: 0.15rem;
+  font-size: $week-flag-size;
+  line-height: 1;
+
+  svg {
+    display: block;
+  }
+}
+
+.week-flag--exam {
+  color: $week-flag-exam-color;
 }
 
 /* Date range */

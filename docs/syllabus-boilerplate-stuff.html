@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="library/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="library/bootstrap/bootstrap.min.js"></script>
 <link href="library/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="library/bootstrap/bootstrap-c318f134dbdf9111dc148d204d758775.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="library/bootstrap/bootstrap-e8a0134a0f0ce2381d78297f4a370bcf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -275,7 +275,20 @@ ul.task-list li input[type="checkbox"] {
     rememberState: true,
 
     // Matches the output of advdate(): "Week 01, 08/24 - 08/28: Topic"
-    pattern: /^\s*Week\s+(\d+)\s*,\s*(\d{1,2}\/\d{1,2})\s*[-–—]\s*(\d{1,2}\/\d{1,2})\s*(?::\s*([\s\S]*))?$/
+    pattern: /^\s*Week\s+(\d+)\s*,\s*(\d{1,2}\/\d{1,2})\s*[-–—]\s*(\d{1,2}\/\d{1,2})\s*(?::\s*([\s\S]*))?$/,
+
+    // Badges shown in the week header. `pattern` is tested against the week's
+    // callout titles and ### headings only — never body prose — so a sentence
+    // like "This exam will cover..." cannot trigger a false positive.
+    // Add entries here to flag other weeks (simulation, break, guest lecture).
+    flags: [
+      {
+        name: "exam",
+        pattern: /\bexams?\b/i,
+        label: "Exam this week",
+        icon: "star"
+      }
+    ]
   };
 
   var STORAGE_KEY = "quarto-schedule-open-weeks";
@@ -311,9 +324,46 @@ ul.task-list li input[type="checkbox"] {
     }
   }
 
-  /* Rebuild the <h2> as chip + title + dates, preserving any element children
-     Quarto may have already injected (anchor links, spans, math). */
-  function decorateHeading(h2, match) {
+  var ICONS = {
+    star: '<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" ' +
+          'aria-hidden="true" focusable="false"><path d="M12 17.75l-6.172 3.245' +
+          'l1.179-6.873l-5-4.867l6.9-1L12 1.999l3.086 6.253l6.9 1l-5 4.867' +
+          'l1.179 6.873z"/></svg>'
+  };
+
+  /* Which flags apply to this week?
+     Only callout titles and subsection headings are scanned, so the exam
+     callout's title ("Friday 09/25: Exam 1: Historical Background") triggers
+     the badge while its body text ("This exam will cover...") does not. */
+  function detectFlags(body) {
+    var labels = [];
+    body
+      .querySelectorAll(
+        ".callout-title-container, .callout-caption, .callout-title, h3, h4, h5, h6"
+      )
+      .forEach(function (el) {
+        labels.push(el.textContent);
+      });
+
+    var haystack = labels.join(" \n ");
+    return CONFIG.flags.filter(function (flag) {
+      return flag.pattern.test(haystack);
+    });
+  }
+
+  function flagElement(flag) {
+    var span = document.createElement("span");
+    span.className = "week-flag week-flag--" + flag.name;
+    span.setAttribute("title", flag.label);
+    span.setAttribute("role", "img");
+    span.setAttribute("aria-label", flag.label);
+    span.innerHTML = ICONS[flag.icon] || ICONS.star;
+    return span;
+  }
+
+  /* Rebuild the <h2> as chip + title + flags + dates, preserving any element
+     children Quarto may have already injected (anchor links, spans, math). */
+  function decorateHeading(h2, match, flags) {
     var extras = [];
     Array.prototype.forEach.call(h2.children, function (child) {
       extras.push(child);
@@ -335,6 +385,11 @@ ul.task-list li input[type="checkbox"] {
     titleEl.className = "week-title";
     titleEl.textContent = title || "Course schedule";
     h2.appendChild(titleEl);
+
+    (flags || []).forEach(function (flag) {
+      titleEl.appendChild(document.createTextNode(" "));
+      titleEl.appendChild(flagElement(flag));
+    });
 
     var dates = document.createElement("span");
     dates.className = "week-dates";
@@ -376,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
       node = next;
     }
 
-    decorateHeading(h2, match);
+    decorateHeading(h2, match, detectFlags(body));
 
     if (count > 0) {
       var badge = document.createElement("span");
