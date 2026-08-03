@@ -818,7 +818,7 @@ draws <- marginaleffects::posterior_draws(preds)
 ::::{.columns}
 :::{.column width=50%}
 ```{r cjos-president-output}
-
+#| fig-align: center
 
 kable(chiefstab,
       "html",
@@ -834,6 +834,10 @@ kable(chiefstab,
 :::{.column width=50%}
 
 ```{r cjos-president-plots, fig.width=6, fig.height=4, out.width="90%"}
+#| out-width: 70%
+#| fig-align: center
+
+
 ggplot(draws, aes(x = draw, y = group, fill = Party, color = Party)) +
   ggdist::stat_slabinterval(position = position_dodge(width = 0.2),
                        slab_alpha = 0.6,

@@ -2,8 +2,8 @@
 title: "US Foreign Policy"
 description: "Course syllabus"
 date: "`r Sys.Date()`"
-bibliography: ../../classrefs.bib
-csl: bib/apsr-bibliography.csl
+bibliography: ../../../classrefs.bib
+csl: ../bib/apsr-bibliography.csl
 ---
 
 

@@ -1,0 +1,417 @@
+/*-----------------------------------------------------------------------------
+  schedule-collapsible.scss
+  Quarto theme partial: collapsible week blocks for a course schedule.
+
+  Pairs with schedule-collapsible.html, which wraps each `## Week NN, ...`
+  section in a <details>/<summary> and leaves the ### subsections inside.
+
+  Wire it up in _quarto.yml (or the document front matter):
+
+      format:
+        html:
+          theme:
+            - cosmo
+            - schedule-collapsible.scss
+          include-after-body: schedule-collapsible.html
+          toc: true
+          toc-depth: 3
+
+  Every variable below is `!default`, so you can override any of them in an
+  earlier `scss:defaults` block or in your own theme partial.
+-----------------------------------------------------------------------------*/
+
+/*-- scss:defaults --*/
+
+// Palette ---------------------------------------------------------------
+$week-accent:            #512888 !default;   // K-State purple
+$week-accent-contrast:   #ffffff !default;
+$week-accent-tint:       rgba(81, 40, 136, 0.07) !default;
+$week-accent-tint-hover: rgba(81, 40, 136, 0.12) !default;
+$week-border:            rgba(81, 40, 136, 0.20) !default;
+$week-sub-accent:        rgba(81, 40, 136, 0.30) !default;
+$week-muted:             #6b6b76 !default;
+$week-surface:           #ffffff !default;
+
+// Geometry --------------------------------------------------------------
+$week-radius:            8px !default;
+$week-gap:               0.9rem !default;    // space between week blocks
+$week-pad-y:             0.75rem !default;
+$week-pad-x:             1rem !default;
+$week-body-pad:          1.15rem !default;
+$week-marker-size:       0.62rem !default;
+// Gap between the chevron and the "Week NN" chip. The chevron is a rotated
+// square, so its visual width is ~1.41 x $week-marker-size — the gap below is
+// measured from that diagonal, not from the raw size.
+$week-marker-gap:        1.5rem !default;
+$week-transition:        180ms ease !default;
+
+// Derived: left inset for the summary row so text clears the chevron.
+$week-marker-span:       $week-marker-size * 1.415 !default;
+$week-summary-indent:    $week-marker-span + $week-marker-gap !default;
+
+// Toolbar ---------------------------------------------------------------
+$week-toolbar-gap:       0.4rem !default;
+
+// Type ------------------------------------------------------------------
+$week-title-size:        1.02rem !default;
+$week-dates-size:        1.08rem !default;   // date range in the week header
+$week-chip-size:         0.72rem !default;
+
+/*-- scss:rules --*/
+
+/* ---------------------------------------------------------------------------
+   1. Week block shell
+   The JS keeps Quarto's original <section class="level2"> (so ids, anchors and
+   the sidebar TOC keep working) and nests a <details> inside it.
+--------------------------------------------------------------------------- */
+
+section.level2.week-section {
+  margin: 0 0 $week-gap 0;
+  padding: 0;
+  border: 1px solid $week-border;
+  border-radius: $week-radius;
+  background: $week-surface;
+  overflow: hidden;
+  transition: box-shadow $week-transition, border-color $week-transition;
+
+  &:has(> details[open]) {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    border-color: $week-accent;
+  }
+}
+
+section.level2.week-section > details {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   2. Summary row (the clickable week header)
+--------------------------------------------------------------------------- */
+
+.week-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding: $week-pad-y $week-pad-x $week-pad-y ($week-pad-x + $week-summary-indent);
+  cursor: pointer;
+  list-style: none;                 // kill the default triangle (Firefox)
+  position: relative;
+  background: $week-accent-tint;
+  transition: background $week-transition;
+  user-select: none;
+
+  &::-webkit-details-marker {       // kill the default triangle (WebKit)
+    display: none;
+  }
+
+  &:hover {
+    background: $week-accent-tint-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $week-accent;
+    outline-offset: -2px;
+  }
+
+  /* Custom chevron */
+  &::before {
+    content: "";
+    position: absolute;
+    left: $week-pad-x;
+    top: calc(#{$week-pad-y} + 0.42em);
+    width: $week-marker-size;
+    height: $week-marker-size;
+    border-right: 2px solid $week-accent;
+    border-bottom: 2px solid $week-accent;
+    transform: rotate(-45deg);
+    transform-origin: 60% 60%;
+    transition: transform $week-transition;
+  }
+}
+
+details[open] > .week-summary::before {
+  transform: rotate(45deg);
+}
+
+/* The <h2> lives inside <summary> so its id, anchor link and TOC entry are
+   preserved. Strip its block-level chrome so it sits inline in the row. */
+.week-summary > h2 {
+  display: contents;                // let the spans participate in the flex row
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+}
+
+/* Fallback for engines without `display: contents` on headings */
+@supports not (display: contents) {
+  .week-summary > h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+/* Week number chip */
+.week-number {
+  flex: 0 0 auto;
+  display: inline-block;
+  padding: 0.12em 0.5em;
+  border-radius: 4px;
+  background: $week-accent;
+  color: $week-accent-contrast;
+  font-size: $week-chip-size;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateY(-0.1em);
+}
+
+/* Week topic */
+.week-title {
+  flex: 1 1 auto;
+  min-width: 12rem;
+  font-size: $week-title-size;
+  font-weight: 600;
+  line-height: 1.35;
+  color: inherit;
+}
+
+/* Date range */
+.week-dates {
+  flex: 0 0 auto;
+  font-size: $week-dates-size;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  color: $week-muted;
+  white-space: nowrap;
+}
+
+/* Count of ### subsections inside, e.g. "3 sections" */
+.week-count {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  color: $week-muted;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+details[open] > .week-summary .week-count {
+  visibility: hidden;               // redundant once the block is open
+}
+
+/* Anchor link Quarto injects into the heading — keep it out of the way */
+.week-summary a.anchorjs-link {
+  margin-left: 0.35rem;
+  font-size: 0.85em;
+}
+
+/* ---------------------------------------------------------------------------
+   3. Week body + the ### subsections it indexes
+--------------------------------------------------------------------------- */
+
+.week-body {
+  padding: $week-body-pad;
+  border-top: 1px solid $week-border;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Each `### Readings and Assignments` etc. */
+.week-body section.level3 {
+  margin: 0 0 1.1rem 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid $week-sub-accent;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $week-accent;
+    border: 0;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+  }
+}
+
+/* Callouts (discussion days, exams) sit flush inside the body */
+.week-body .callout {
+  margin: 0.9rem 0;
+}
+
+/* ---------------------------------------------------------------------------
+   4. Expand all / Collapse all toolbar
+--------------------------------------------------------------------------- */
+
+.week-toolbar {
+  display: flex;
+  align-items: center;
+  gap: $week-toolbar-gap;
+  margin: 1.25rem 0 $week-gap 0;
+}
+
+.week-toolbar__btn {
+  appearance: none;
+  border: 1px solid $week-border;
+  border-radius: 5px;
+  background: transparent;
+  color: $week-accent;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background $week-transition, border-color $week-transition;
+
+  &:hover {
+    background: $week-accent-tint;
+    border-color: $week-accent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $week-accent;
+    outline-offset: 2px;
+  }
+}
+
+.week-toolbar__hint {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: $week-muted;
+}
+
+/* ---------------------------------------------------------------------------
+   5. Open/close animation (progressive enhancement)
+   `::details-content` + `interpolate-size` is supported in current Chrome/Edge;
+   everywhere else the block just snaps open, which is fine.
+--------------------------------------------------------------------------- */
+
+@supports selector(::details-content) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  section.level2.week-section > details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size $week-transition, content-visibility $week-transition;
+    transition-behavior: allow-discrete;
+  }
+
+  section.level2.week-section > details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .week-summary,
+  .week-summary::before,
+  section.level2.week-section,
+  section.level2.week-section > details::details-content {
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   6. Small screens
+--------------------------------------------------------------------------- */
+
+@media (max-width: 575.98px) {
+  .week-summary {
+    padding-left: $week-pad-x + $week-summary-indent;
+  }
+
+  .week-dates,
+  .week-count {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+
+  .week-dates {
+    font-size: $week-dates-size * 0.95;
+  }
+
+  .week-title {
+    min-width: 0;
+    font-size: $week-title-size * 0.94;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   7. Print — everything expands, chrome disappears
+   The JS also forces `open` on beforeprint, which is the reliable path; these
+   rules handle the flat-borders side of things.
+--------------------------------------------------------------------------- */
+
+@media print {
+  .week-toolbar {
+    display: none !important;
+  }
+
+  section.level2.week-section {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none !important;
+    margin-bottom: 0.5rem;
+    break-inside: avoid-page;
+  }
+
+  /* Belt and braces: reveal content even if a <details> stayed closed */
+  section.level2.week-section > details > *:not(summary) {
+    display: block !important;
+  }
+
+  .week-summary {
+    background: transparent;
+    padding-left: 0;
+    cursor: auto;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .week-number {
+    background: transparent;
+    color: #000;
+    padding-left: 0;
+    font-size: 0.75rem;
+  }
+
+  .week-count {
+    display: none;
+  }
+
+  .week-body {
+    padding: 0.35rem 0 0 0;
+    border-top: 0;
+  }
+}

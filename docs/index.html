@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>US Foreign Policy</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -37,10 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="library/quarto-html/tippy.umd.min.js"></script>
 <script src="library/quarto-html/anchor.min.js"></script>
 <link href="library/quarto-html/tippy.css" rel="stylesheet">
-<link href="library/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="library/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="library/bootstrap/bootstrap.min.js"></script>
 <link href="library/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="library/bootstrap/bootstrap-d7c20e3b2faa6d341134a08c4516986d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="library/bootstrap/bootstrap-c318f134dbdf9111dc148d204d758775.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="./syllabus-f2025.html">
+    <a class="dropdown-item" href="./syllabus-f2026.html">
  <span class="dropdown-text">Syllabus</span></a>
   </li>  
         <li>
@@ -211,6 +214,287 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
+<script>
+/*-----------------------------------------------------------------------------
+  schedule-collapsible.js
+  Companion to schedule-collapsible.scss.
+
+  Finds every `## Week NN, MM/DD - MM/DD: Topic` section Quarto rendered, wraps
+  it in <details>/<summary>, and leaves the ### subsections (Readings and
+  Assignments, Recommended Readings, day-by-day items) inside the collapsed body.
+
+  Include with:  include-after-body: schedule-collapsible.js
+
+  Nothing here touches headings inside callouts — those become callout titles,
+  not <section> elements, so they are left exactly as they are.
+-----------------------------------------------------------------------------*/
+
+(function () {
+  "use strict";
+
+  var CONFIG = {
+    // "none" = index view, everything collapsed (default)
+    // "all"  = everything expanded
+    // "first"= only the first week expanded
+    startOpen: "none",
+
+    // Show the Expand all / Collapse all buttons
+    toolbar: true,
+
+    // Remember the reader's expanded/collapsed state between visits
+    rememberState: true,
+
+    // Matches the output of advdate(): "Week 01, 08/24 - 08/28: Topic"
+    pattern: /^\s*Week\s+(\d+)\s*,\s*(\d{1,2}\/\d{1,2})\s*[-–—]\s*(\d{1,2}\/\d{1,2})\s*(?::\s*([\s\S]*))?$/
+  };
+
+  var STORAGE_KEY = "quarto-schedule-open-weeks";
+
+  function ready(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  function loadState() {
+    if (!CONFIG.rememberState) return null;
+    try {
+      var raw = window.sessionStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveState() {
+    if (!CONFIG.rememberState) return;
+    try {
+      var open = [];
+      document.querySelectorAll("section.week-section > details[open]").forEach(function (d) {
+        if (d.parentElement.id) open.push(d.parentElement.id);
+      });
+      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(open));
+    } catch (e) {
+      /* private browsing, quota, etc. — degrade silently */
+    }
+  }
+
+  /* Rebuild the <h2> as chip + title + dates, preserving any element children
+     Quarto may have already injected (anchor links, spans, math). */
+  function decorateHeading(h2, match) {
+    var extras = [];
+    Array.prototype.forEach.call(h2.children, function (child) {
+      extras.push(child);
+    });
+
+    var weekNo = match[1];
+    var start = match[2];
+    var end = match[3];
+    var title = (match[4] || "").trim();
+
+    h2.textContent = "";
+
+    var chip = document.createElement("span");
+    chip.className = "week-number";
+    chip.textContent = "Week " + weekNo;
+    h2.appendChild(chip);
+
+    var titleEl = document.createElement("span");
+    titleEl.className = "week-title";
+    titleEl.textContent = title || "Course schedule";
+    h2.appendChild(titleEl);
+
+    var dates = document.createElement("span");
+    dates.className = "week-dates";
+    dates.textContent = start + " – " + end;
+    h2.appendChild(dates);
+
+    extras.forEach(function (child) {
+      h2.appendChild(child);
+    });
+
+    return { weekNo: weekNo, title: title };
+  }
+
+  function subsectionCount(section) {
+    return section.querySelectorAll(":scope > section.level3, :scope > .callout").length;
+  }
+
+  function collapse(section, index, restored) {
+    var h2 = section.querySelector(":scope > h2");
+    if (!h2) return false;
+
+    var match = CONFIG.pattern.exec(h2.textContent);
+    if (!match) return false;               // not a week block — leave it alone
+
+    var count = subsectionCount(section);
+
+    var details = document.createElement("details");
+    var summary = document.createElement("summary");
+    summary.className = "week-summary";
+
+    var body = document.createElement("div");
+    body.className = "week-body";
+
+    // Move everything after the h2 into the body, in order.
+    var node = h2.nextSibling;
+    while (node) {
+      var next = node.nextSibling;
+      body.appendChild(node);
+      node = next;
+    }
+
+    decorateHeading(h2, match);
+
+    if (count > 0) {
+      var badge = document.createElement("span");
+      badge.className = "week-count";
+      badge.textContent = count + (count === 1 ? " section" : " sections");
+      h2.appendChild(badge);
+    }
+
+    summary.appendChild(h2);
+    details.appendChild(summary);
+    details.appendChild(body);
+
+    var shouldOpen;
+    if (restored) {
+      shouldOpen = restored.indexOf(section.id) !== -1;
+    } else if (CONFIG.startOpen === "all") {
+      shouldOpen = true;
+    } else if (CONFIG.startOpen === "first") {
+      shouldOpen = index === 0;
+    } else {
+      shouldOpen = false;
+    }
+    if (shouldOpen) details.setAttribute("open", "");
+
+    section.classList.add("week-section");
+    section.appendChild(details);
+    details.addEventListener("toggle", saveState);
+
+    return true;
+  }
+
+  function buildToolbar(firstSection) {
+    if (!CONFIG.toolbar || !firstSection) return;
+
+    var bar = document.createElement("div");
+    bar.className = "week-toolbar";
+    bar.setAttribute("role", "group");
+    bar.setAttribute("aria-label", "Course schedule controls");
+
+    function button(label, open) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "week-toolbar__btn";
+      b.textContent = label;
+      b.addEventListener("click", function () {
+        document.querySelectorAll("section.week-section > details").forEach(function (d) {
+          if (open) {
+            d.setAttribute("open", "");
+          } else {
+            d.removeAttribute("open");
+          }
+        });
+        saveState();
+      });
+      return b;
+    }
+
+    bar.appendChild(button("Expand all", true));
+    bar.appendChild(button("Collapse all", false));
+
+    var hint = document.createElement("span");
+    hint.className = "week-toolbar__hint";
+    hint.textContent = "Select a week to see readings and assignments";
+    bar.appendChild(hint);
+
+    firstSection.parentNode.insertBefore(bar, firstSection);
+  }
+
+  /* Open any collapsed week that contains the element a link points at, so
+     TOC links and shared #anchors always land somewhere visible. */
+  function revealTarget(hash) {
+    if (!hash || hash.length < 2) return;
+    var target;
+    try {
+      target = document.querySelector(hash);
+    } catch (e) {
+      return;
+    }
+    if (!target) return;
+
+    var opened = false;
+    var el = target;
+    while (el) {
+      if (el.tagName === "DETAILS" && !el.hasAttribute("open")) {
+        el.setAttribute("open", "");
+        opened = true;
+      }
+      el = el.parentElement;
+    }
+    if (opened) {
+      saveState();
+      var scroll = function () {
+        if (typeof target.scrollIntoView === "function") {
+          target.scrollIntoView({ block: "start" });
+        }
+      };
+      if (typeof window.requestAnimationFrame === "function") {
+        window.requestAnimationFrame(scroll);
+      } else {
+        window.setTimeout(scroll, 0);
+      }
+    }
+  }
+
+  ready(function () {
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll("section.level2")
+    );
+
+    var restored = loadState();
+    var made = [];
+
+    sections.forEach(function (section, i) {
+      if (collapse(section, made.length, restored)) made.push(section);
+    });
+
+    if (!made.length) return;
+
+    buildToolbar(made[0]);
+    revealTarget(window.location.hash);
+
+    window.addEventListener("hashchange", function () {
+      revealTarget(window.location.hash);
+    });
+
+    // Backup for same-page TOC clicks that do not change the hash.
+    document.addEventListener("click", function (evt) {
+      var link = evt.target.closest && evt.target.closest('a[href^="#"]');
+      if (link) revealTarget(link.getAttribute("href"));
+    });
+
+    // Printing expands everything, then restores what the reader had open.
+    var printState = [];
+    window.addEventListener("beforeprint", function () {
+      printState = [];
+      document.querySelectorAll("section.week-section > details").forEach(function (d) {
+        printState.push(d.hasAttribute("open"));
+        d.setAttribute("open", "");
+      });
+    });
+    window.addEventListener("afterprint", function () {
+      document.querySelectorAll("section.week-section > details").forEach(function (d, i) {
+        if (!printState[i]) d.removeAttribute("open");
+      });
+    });
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -262,13 +546,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
