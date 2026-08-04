@@ -352,12 +352,6 @@ Readings from Historical Background lectures:
 - [The Truman Doctrine](https://www.archives.gov/milestone-documents/truman-doctrine)
 
 
-:::{.callout-important}
-
-## `r discussiondate(mon, 3)`
-
-- @Norris2021
-:::
 
 
 
@@ -367,14 +361,17 @@ Readings from Historical Background lectures:
 
 ### Readings and Assignments:
 
-- [The Truman Doctrine](https://www.archives.gov/milestone-documents/truman-doctrine)
 - @Dudziak2004
 - @Fordham2007
 
-### Recommended Readings:
 
-- @NSC68
-- @Kennan1947
+:::{.callout-important}
+
+## `r discussiondate(mon, 4)`
+
+- @Norris2021
+:::
+
 
 
 
@@ -429,6 +426,7 @@ This exam will cover the historical background content from Weeks 1--4.
 ### Readings and Assignments:
 
 - [Council on Foreign Relations: Revitalizing the State Department](https://assets.cfr.org/images/csr89_final/csr89_final.pdf)
+- [New York Times: How Marco Rubio Is Running Venezuela From Afar](https://www.nytimes.com/2026/07/11/us/politics/how-marco-rubio-runs-venezuela.html)
 
 :::{.callout-important}
 
@@ -577,7 +575,7 @@ This exam will cover material on the actors and institutions material from weeks
 
 - @Power2001
 - [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
-- [Integrating Human Rights in US Foreign Policy](https://www.brookings.edu/wp-content/uploads/2016/06/04_human_rights_cohen.pdf)
+- [‘You Are All Terrorists’: Four Months in a Salvadoran Prison](https://www.nytimes.com/2025/11/08/world/americas/el-salvador-prison-migrants.html)
 
 :::{.callout-important}
 
