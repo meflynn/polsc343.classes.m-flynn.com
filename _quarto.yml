@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   lib-dir: library
+  pre-render: cp ../../classrefs.bib bib/classrefs.bib
   render:
     - "*.qmd"
     - "!lectures/"
@@ -51,6 +52,9 @@ format:
     toc: true
     page-layout: article
 
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
 
 editor: source
 

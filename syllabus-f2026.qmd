@@ -6,8 +6,28 @@ semester: "Fall 2026"
 meeting-time: "MWF 12:30–1:20 PM"
 meeting-location: "116 Calvin Hall"
 instructor: "Michael Flynn"
-bibliography: ../../classrefs.bib
+bibliography: bib/classrefs.bib
 csl: bib/apsr-bibliography.csl
+format:
+  html:
+    theme:
+      - cosmo
+      - schedule-collapsible.scss
+    css: styles.css
+    include-after-body: schedule-collapsible.html
+    toc: true
+    page-layout: article
+  typst:
+    toc: false
+    papersize: us-letter
+    citeproc: true
+    margin:
+      x: 1in
+      y: 1in
+format-links:
+  - format: typst
+    text: "Download syllabus (PDF)"
+    icon: file-pdf
 ---
 
 
@@ -206,6 +226,7 @@ D: 60–69.99
 F: 0–59.99
 
 
+
 *Tentative course schedule begins on next page*
 
 
@@ -213,7 +234,7 @@ F: 0–59.99
 
 ## Tentative Course Schedule
 
-```{r course-calendar, dpi = 400, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.align="center"}
+```{r course-calendar, dpi = 400, warning = FALSE, echo = FALSE, message = FALSE, fig.height=7, fig.width=6, fig.align="center"}
 
 pacman::p_load(
   "ggplot2",
@@ -293,7 +314,7 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
   
   
   
-\clearpage
+{{< pagebreak >}}
 
 
 ## `r advdate(mon, 1)`: Course Introduction and Historical Background
@@ -374,17 +395,6 @@ Readings from Historical Background lectures:
 
 
 
-
-:::{.callout-important}
-## **`r discussiondate(mon, 4)`**
-
-Readings from Cold War lectures:
-
-- [The Truman Doctrine](https://www.archives.gov/milestone-documents/truman-doctrine)
-- @Dudziak2004
-- @Fordham2007
-
-:::
 
 
 
@@ -666,3 +676,8 @@ This exam will cover all of the special topics material from weeks 9-13.
 - What worked?
 - What didn't work?
 - What about the process surprised you?
+
+
+
+
+## References
