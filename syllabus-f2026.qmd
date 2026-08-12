@@ -8,6 +8,15 @@ meeting-location: "116 Calvin Hall"
 instructor: "Michael Flynn"
 bibliography: ../../classrefs.bib
 csl: bib/apsr-bibliography.csl
+format:
+  html: default
+  pdf:
+    toc: true
+    geometry: margin=1in
+format-links:
+  - format: pdf
+    text: "Download syllabus (PDF)"
+    icon: file-pdf
 ---
 
 
@@ -64,7 +73,7 @@ examdate <- function(obj, adv, num){
 
 ## Course Summary
  
-This course focuses on the development of US foreign policy over the course of the twentieth and twenty-first centuries. It will provide a brief background on the history of US foreign policy since th late 1700s, but will focus primarily on the developments and issues occurring from 1900 through the present. The course will focus on three primary sections: 1) Historical background information, 2) actors and institutions that shape foreign policy, and 3) a discussion of selected topics in US foreign policy, like economic policy, the use of military force, and more.  
+This course focuses on the development of US foreign policy over the course of the twentieth and twenty-first centuries. It will provide a brief background on the history of US foreign policy since the late 1700s, but will focus primarily on the developments and issues occurring from 1900 through the present. The course will focus on three primary sections: 1) Historical background information, 2) actors and institutions that shape foreign policy, and 3) a discussion of selected topics in US foreign policy, like economic policy, the use of military force, and more.  
 
 
 
@@ -208,12 +217,12 @@ F: 0–59.99
 
 *Tentative course schedule begins on next page*
 
-\clearpage
 
+{{< pagebreak >}}
 
 ## Tentative Course Schedule
 
-```{r course calendar, dpi = 400, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.pos="center"}
+```{r course-calendar, dpi = 400, warning = FALSE, echo = FALSE, message = FALSE, fig.height=9, fig.width=7, fig.align="center"}
 
 pacman::p_load(
   "ggplot2",
