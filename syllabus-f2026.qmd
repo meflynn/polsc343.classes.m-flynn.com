@@ -8,15 +8,6 @@ meeting-location: "116 Calvin Hall"
 instructor: "Michael Flynn"
 bibliography: ../../classrefs.bib
 csl: bib/apsr-bibliography.csl
-format:
-  html: default
-  pdf:
-    toc: true
-    geometry: margin=1in
-format-links:
-  - format: pdf
-    text: "Download syllabus (PDF)"
-    icon: file-pdf
 ---
 
 
