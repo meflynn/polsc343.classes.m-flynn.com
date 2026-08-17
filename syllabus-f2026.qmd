@@ -30,7 +30,6 @@ format-links:
     icon: file-pdf
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -81,137 +80,111 @@ examdate <- function(obj, adv, num){
 
 **Meeting Location**: {{< meta meeting-location >}}
 
-
 ## Course Summary
- 
-This course focuses on the development of US foreign policy over the course of the twentieth and twenty-first centuries. It will provide a brief background on the history of US foreign policy since the late 1700s, but will focus primarily on the developments and issues occurring from 1900 through the present. The course will focus on three primary sections: 1) Historical background information, 2) actors and institutions that shape foreign policy, and 3) a discussion of selected topics in US foreign policy, like economic policy, the use of military force, and more.  
 
+Does politics really stop at the water's edge? Why does the US use military force, and when? Do voters really not care about foreign policy? What tools does the US use to advance its foreign policy goals? And who determines those goals? This semester we'll try to tackle all of these questions, and more, as we develop a better understanding of US foreign policy, its causes, and its consequences.
 
+While it can seem removed from our every day lives, foreign policy has an enormous impact on how we experience the world. From the booming sounds of Ft. Riley to the prices we pay at the grocery store, foreign policy is, in fact, a very local thing! And while we'll be focuses on "big" issues concerning the US and how it relates to the world, we'll also try to make connections between those big issues and more local concerns to help students appreciate the impact of foreign policy on their everyday lives.
 
+Our goal is to ultimately develop a better understanding of the actors, institutions, interests, and issues that have defined US foreign policy since the 1700s. To that end, this course begins with a general historical overview of US foreign policy since the 1700s. We then move into a discussion of the central actors and institutions that affect foreign policymaking. Finally, we transition to a focus on selected topics in US foreign policy, including the use of military force, security cooperation, trade, monetary policy, and more.
 
 ## Course Objectives
 
-1. The overarching goal is to develop an understanding
-of the issues and systematic forces that shape US foreign policymaking. Please note that this is different than prescribing what policy *should* be (though this is also an important consideration when considering our motivations for studying the topic and reading course materials).
-2. Identify the key actors that influence foreign policy.
-3. Understand how and when the influence of actors varies (e.g. across time, issue area, etc.).
-4. Identify the key issues confronting policymakers and society. 
-5. Identify general trends in US foreign policy over time. 
-    - What's changed? 
+1.  The overarching goal is to develop an understanding of the actors, institutions, interests, and issues and systematic forces that shape US foreign policymaking. Please note that this is different than prescribing what policy should be (though this is also an important consideration when considering our motivations for studying the topic and reading course materials).
+2.  Identify the key actors that influence foreign policy.
+3.  Understand how and when the influence of actors varies (e.g. across time, issue area, etc.).
+4.  Identify the key issues confronting policymakers and society.
+5.  Identify general trends in US foreign policy over time.
+    - What's changed?
     - What stays the same?
     - When and why do we see changes in behavior or policies?
-6. Students should develop a familiarity with social science research processes, practices. Specifically, students should have:
-    - A basic understanding of how to read social scientific research articles. 
+6.  Students should develop a familiarity with social science research processes, practices. Specifically, students should have:
+    - A basic understanding of how to read social scientific research articles.
     - A basic understanding of research design considerations
-    - A basic understanding of what the scope and limitations of research articles
+    - A basic understanding of the scope and limitations of research articles
 
+If you have any additional questions please don't hesitate to ask! Thanks!
 
-
-
-
-## Course Format 
+## Course Format
 
 The course will be part lecture and part student participation. I encourage students to ask questions if the readings of lecture materials are unclear. In addition to class lectures students will be responsible for keeping up with readings and other class-related material as the semester progresses.
 
+## Required Books
 
-
-
-
-## Required Books 
-
-There are two required books and several required articles (listed below in the course schedule).  You can view the full citation in the reference list at the end of hover your cursor over the citation below for a preview of the full title.
+There are two required books and several required articles (listed below in the course schedule). You can view the full citation in the reference list at the end of hover your cursor over the citation below for a preview of the full title.
 
 - @Cook2024
 - @Norris2021
-
-
-
-
 
 ## Additional Readings
 
 There are a number of additional readings that students are accountable for over the duration of the semester. The readings are listed in the course schedule below.
 
-Please note that students are accountable for retrieving the articles themselves. Some articles are accessible via hyperlink in the course schedule. Others may require accessing through the K-State Libraries. Please ensure you are familiar with these resources and how to access them. 
-
-
-
-
+Please note that students are accountable for retrieving the articles themselves. Some articles are accessible via hyperlink in the course schedule. Others may require accessing through the K-State Libraries. Please ensure you are familiar with these resources and how to access them.
 
 ## Current Events
 
 Students should also make an effort to stay informed on current events. Below are a some examples of good sources for keeping up with global events. Please note that some of these publications may be pay-walled, but you should have access through the university library.
 
-  - [BBC News](www.bbc.com/news)
-  - [Good Authority](https://goodauthority.org/)
-  - [The Monkey Cage (No longer active)](www.washingtonpost.com/news/monkeycage)
-  - [Political Violence @ a Glance](www.politicalviolenceataglance.org)
-  - [Foreign Affairs](www.foreignaffairs.com)
-  - [Foreign Policy Magazine](www.foreignpolicy.com)
-  - [The Conversation](https://theconversation.com/us)
-  - [The Washington Post](www.washingtonpost.com)
-  - [The New York Times](www.nytimes.com)
-  - [The Economist](www.economist.com)
-  - [The Financial Times](www.ft.com)
-  
-  
-  
-  
-  
+- [BBC News](www.bbc.com/news)
+- [Good Authority](https://goodauthority.org/)
+- [The Monkey Cage (No longer active)](www.washingtonpost.com/news/monkeycage)
+- [Political Violence \@ a Glance](www.politicalviolenceataglance.org)
+- [Foreign Affairs](www.foreignaffairs.com)
+- [Foreign Policy Magazine](www.foreignpolicy.com)
+- [The Conversation](https://theconversation.com/us)
+- [The Washington Post](www.washingtonpost.com)
+- [The New York Times](www.nytimes.com)
+- [The Economist](www.economist.com)
+- [The Financial Times](www.ft.com)
 
 ## Course Requirements
 
-1. _Attendance: 15%_
+1.  *Attendance: 15%*
 
 A major component to being successful in this class is just showing up. Every topic we cover will build upon ideas, lessons, themes, etc., that we covered in previous weeks. To do well you must be present.
 
 Life also happens, and so students will be given three class periods to miss without penalty. After that, students will be given an attendance grade based on the proportion of classes attended relative to the total number of classes.
 
-2. _Collaborative Discussion: 25%_
+2.  *Collaborative Discussion: 20%*
 
 While the course has a heavy lecture component students will also spend time reflecting on class materials and discussing that material with classmates. We will use a combination of open discussion and small group discussions. Students will be required to submit 2 discussion questions to Canvas prior to the class discussion meeting for a given topic. Students will be graded on a combination of the quality of the questions they submit, but also on the quality of their in-class contributions.
 
+I drop the lowest grade for the collaborative discussion entries. Accordingly there will be no makeup assignments.
 
-3. _Exams: 30%_
+3.  *Exams: 35%*
 
-There will be three short exams as a part of this course. These will be closed note and closed book in-class exams. Each exam will cover one of the three parts of the course, including historical background content, actors and institutions, and selected topics. 
+There will be three short exams as a part of this course. These will be closed note and closed book in-class exams. Each exam will cover one of the three parts of the course, including historical background content, actors and institutions, and selected topics.
 
+4.  *Crisis Simulation: 30%*
 
-4. _Crisis Simulation: 30%_
+During the final two weeks of the semester students will participate in a crisis simulation. The goal of this simulation is to provide students with an opportunity to apply the knowledge that they have acquired throughout the semester to a simulated crisis requiring the attention of US foreign policymakers.
 
-During the final two weeks of the semester students will participate in a crisis simulation. The goal of this simulation is to provide students with an opportunity to apply the knowledge that they have acquired throughout the semester to a simulated crisis requiring the attention of US foreign policymakers. 
-
-Prior to the simulation students will be assigned a particular role for the simulation activity. For example, one student will be the President, another will be the Secretary of State, another will be the Secretary of Defense, etc. Students will be expected to prepare for the simulation by reading background materials and preparing a briefing for the President on their assigned topic. Each student should have a list of questions and proposals for the president to consider. 
+Prior to the simulation students will be assigned a particular role for the simulation activity. For example, one student will be the President, another will be the Secretary of State, another will be the Secretary of Defense, etc. Students will be expected to prepare for the simulation by reading background materials and preparing a briefing for the President on their assigned topic. Each student should have a list of questions and proposals for the president to consider.
 
 Students will ultimately be evaluated on their contributions during the simulation meetings, as well as on the basis of a reflection paper that will be due at the conclusion of the simulation.
 
-One final note---depending on the size of the class students may be assigned roles and responsibilities on an individual basis, or in pairs. These decisions will be finalized once the class roster has settled for the semester. 
+One final note---depending on the size of the class students may be assigned roles and responsibilities on an individual basis, or in pairs. These decisions will be finalized once the class roster has settled for the semester.
 
-
-  
 ## Classroom Policies
 
-1. Be kind. College can be stressful. Many of you are working jobs in addition to attending class. Some of you may also be responsible for the care of family members. Whatever your situation, let's work together to make this semester as educational and enjoyable as possible. 
+1.  Be kind. College can be stressful. Many of you are working jobs in addition to attending class. Some of you may also be responsible for the care of family members. Whatever your situation, let's work together to make this semester as educational and enjoyable as possible.
 
-2. Be professional. We're all here to learn, and many of the issues that we discuss have real-world impacts that affect people we know, or in our broader community. We're here to work together to develop a better understanding of these issues. 
+2.  Be professional. We're all here to learn, and many of the issues that we discuss have real-world impacts that affect people we know, or in our broader community. We're here to work together to develop a better understanding of these issues.
 
-3. Study guides and extra credit. The class is the study guide. I do not offer extra credit.
+3.  Study guides and extra credit. The class is the study guide. I do not offer extra credit.
 
-4. Grade Appeals. If you believe that I have given you an incorrect grade on an exam, you may submit a written appeal. All appeals must be in writing (they may not be made in person) and must contain an explanation for why the grade is incorrect. I will also require you to wait 24 hours after receiving a grade to submit a written appeal. Please note that even if your appeal is granted, I reserve the right to regrade the assignment in its entirety, meaning that your grade may go up or down depending on my reevaluation of the assignment.
+4.  Because students are given three free missed classes and their lowest discussion grade is dropped, I do not offer makeup assignments for these grade components. Exams and Crisis Simulation materials may only be made up as a result of a University Excused Absence.
 
-5. The Syllabus. The syllabus is a living document that can and will be altered throughout the duration of the course based both on need and design. Generally, this may mean readings will be removed or added as needed. All changes will be announced in class and via email. Additionally, I maintain the right to all of my own intellectual property presented in this course, whether it is the course lectures or this syllabus. Materials from this course may not to be reproduced without my expressed permission. Please see the additional copyright notification statement on the University Syllabus Statements page.
+5.  Grade Appeals. If you believe that I have given you an incorrect grade on an exam, you may submit a written appeal. All appeals must be in writing (they may not be made in person) and must contain an explanation for why the grade is incorrect. I will also require you to wait 24 hours after receiving a grade to submit a written appeal. Please note that even if your appeal is granted, I reserve the right to regrade the assignment in its entirety, meaning that your grade may go up or down depending on my reevaluation of the assignment.
 
-6. Classroom conduct. All student activities in the University, including this course, are governed by the Student Judicial Conduct Code as outlined in the Student Governing Association By Laws, Article V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may be asked to leave the class.
-  
-  
+6.  The Syllabus. The syllabus is a living document that can and will be altered throughout the duration of the course based both on need and design. Generally, this may mean readings will be removed or added as needed. All changes will be announced in class and via email. Additionally, I maintain the right to all of my own intellectual property presented in this course, whether it is the course lectures or this syllabus. Materials from this course may not to be reproduced without my expressed permission. Please see the additional copyright notification statement on the University Syllabus Statements page.
 
+7.  Classroom conduct. All student activities in the University, including this course, are governed by the Student Judicial Conduct Code as outlined in the Student Governing Association By Laws, Article V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may be asked to leave the class.
 
 ## Contacting the Instructor
 
 The best way to get in touch with me is through email. Please do not hesitate to contact me if you have any questions about course content or your ability to complete the assigned material.
-
-
-
 
 ## Final Grades
 
@@ -225,10 +198,7 @@ D: 60–69.99
 
 F: 0–59.99
 
-
-
 *Tentative course schedule begins on next page*
-
 
 {{< pagebreak >}}
 
@@ -311,11 +281,8 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
        y = "Week #",
        fill = "Assignment")
 ```
-  
-  
-  
-{{< pagebreak >}}
 
+{{< pagebreak >}}
 
 ## `r advdate(mon, 1)`: Course Introduction and Historical Background
 
@@ -332,17 +299,14 @@ ggplot(dfr, aes(x = day, y = reorder(week, -week), fill = comment)) +
 
 
 
-
 ## `r advdate(mon, 2)`: Historical background (cont.)
 
-### Readings and Assignments: 
+### Readings and Assignments:
 
 - [The Significance of the Frontier in American History](https://www.usmcu.edu/Portals/218/Turner%20Thesis%2C%20Frederick%20Jackson%20Turner.pdf)
 - [Wilson's 14 Points](https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points)
 
-
-
-:::{.callout-important}
+::: callout-important
 # **`r discussiondate(mon, 2)`**
 
 Readings from Historical Background lectures:
@@ -353,7 +317,6 @@ Readings from Historical Background lectures:
 - [Anti-Federalist Papers: Brutus X](https://teachingamericanhistory.org/document/brutus-x/)
 - [The Significance of the Frontier in American History](https://www.usmcu.edu/Portals/218/Turner%20Thesis%2C%20Frederick%20Jackson%20Turner.pdf)
 - [Wilson's 14 Points](https://www.archives.gov/milestone-documents/president-woodrow-wilsons-14-points)
-
 :::
 
 
@@ -366,17 +329,11 @@ Readings from Historical Background lectures:
 
 - Read @Norris2021
 
-
 ### Recommended Readings
+
 - @NSC68
 - @Kennan1947
 - [The Truman Doctrine](https://www.archives.gov/milestone-documents/truman-doctrine)
-
-
-
-
-
-
 
 ## `r advdate(mon, 4)`: The Cold War and Domestic Politics
 
@@ -385,22 +342,11 @@ Readings from Historical Background lectures:
 - @Dudziak2004
 - @Fordham2007
 
-
-:::{.callout-important}
-
-## `r discussiondate(mon, 4)`
+::: callout-important
+## **`r discussiondate(mon, 4)`**
 
 - @Norris2021
 :::
-
-
-
-
-
-
-
-
-
 
 ## `r advdate(mon, 5)`: The Presidency and Congress
 
@@ -409,27 +355,17 @@ Readings from Historical Background lectures:
 - @Lupton2017
 - @Weissman2017
 
-:::{.callout-important}
+::: callout-important
 ## `r examdate(mon, 5, 1)`: Historical Background
 
 This exam will cover the historical background content from Weeks 1--4.
-
 :::
-
-
-
-
 
 ## `r advdate(mon, 6)`: The Policymaking Process
 
 ### Readings and Assignments:
 
 - @Miller2016
-
-
-
-
-
 
 ## `r advdate(mon, 7)`: The Bureaucracy / The State Department
 
@@ -438,19 +374,12 @@ This exam will cover the historical background content from Weeks 1--4.
 - [Council on Foreign Relations: Revitalizing the State Department](https://assets.cfr.org/images/csr89_final/csr89_final.pdf)
 - [New York Times: How Marco Rubio Is Running Venezuela From Afar](https://www.nytimes.com/2026/07/11/us/politics/how-marco-rubio-runs-venezuela.html)
 
-:::{.callout-important}
-
-### `r discussiondate(mon, 7)`
+::: callout-important
+### **`r discussiondate(mon, 7)`**
 
 - [Council on Foreign Relations: Revitalizing the State Department](https://assets.cfr.org/images/csr89_final/csr89_final.pdf)
 - @Miller2016
-
-
 :::
-
-
-
-
 
 ## `r advdate(mon, 8)`: The Defense Department and the Military
 
@@ -460,25 +389,13 @@ This exam will cover the historical background content from Weeks 1--4.
 - [The Recruiting Surge Was Engineered. Can It Last in a War with Iran?](https://www.military.com/feature/2026/03/24/recruiting-surge-was-engineered-can-it-last-war-iran.html-0)
 - [Could the US Bring Back the Draft? Who Would Be Called First — and Who Qualifies](https://www.military.com/daily-news/2026/03/11/could-us-bring-back-draft-who-would-be-called-first-and-who-qualifies.html)
 
-
-:::{.callout-important}
-
-### `r discussiondate(mon, 8)`
+::: callout-important
+### **`r discussiondate(mon, 8)`**
 
 - [The War Horse: Women Have Served in Combat Roles for a Decade. The Pentagon is Reopening the Debate](https://thewarhorse.org/military-standards-women-in-combat/)
 - [The Recruiting Surge Was Engineered. Can It Last in a War with Iran?](https://www.military.com/feature/2026/03/24/recruiting-surge-was-engineered-can-it-last-war-iran.html-0)
 - [Could the US Bring Back the Draft? Who Would Be Called First — and Who Qualifies](https://www.military.com/daily-news/2026/03/11/could-us-bring-back-draft-who-would-be-called-first-and-who-qualifies.html)
-
 :::
-
-
-
-
-
-
-
-
-
 
 ## `r advdate(mon, 9)`: The Use of Military Force
 
@@ -487,57 +404,37 @@ This exam will cover the historical background content from Weeks 1--4.
 - @Cook2024
 - Podcast: [War on the Rocks: Reopening the Strait of Hormuz & Saving Downed Pilots](https://warontherocks.com/reopening-the-strait-of-hormuz-saving-downed-pilots/)
 - [As the US pauses the war with Iran, is Trump really running out of weapons?](https://bbc.com/news/articles/c0qvnk2ezp7o)
+- [The US Missile Stockpile is Dangerously Low](https://open.spotify.com/episode/4xQrMjsuB5R2NU2LYXFsNq?si=Csz4z1zPT-Wpxqa2KgsxEg)
 - Podcast: [Modern War Institute Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
-
 
 ### Additional selected readings:
 
 - Watch [Restrepo](https://watchdocumentaries.com/restrepo/)
 - Read @sigar2019
 
-
-:::{.callout-important}
-
-## `r discussiondate(mon, 9)`
+::: callout-important
+## **`r discussiondate(mon, 9)`**
 
 - Read @Cook2024
 - [Modern War Institute Podcast: Bunker Busters and B-2s](https://mwi.westpoint.edu/mwi-podcast-bunker-busters-and-b-2s/)
-
 :::
-
-
-
-
-
-
-
-
-
-
 
 ## `r advdate(mon, 10)`: Security Cooperation
 
 ### Readings and Assignments:
+
 - [Council on Foreign Relations: U.S. Aid to Israel in Four Charts](https://www.cfr.org/article/us-aid-israel-four-charts)
-- [Council on Foreign Relations: Here’s How Much Aid the United States Has Sent Ukraine ](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
+- [Council on Foreign Relations: Here’s How Much Aid the United States Has Sent Ukraine](https://www.cfr.org/article/how-much-us-aid-going-ukraine)
 - [Center for Strategic and International Studies: Can Ukraine Fight Without U.S. Aid? Seven Questions to Ask](https://www.csis.org/analysis/can-ukraine-fight-without-us-aid-seven-questions-ask)
 - [Congressional Research Service: Transfer of Defense Articles: U.S. Sale and Export of U.S.-Made Arms to Foreign Entities](https://www.congress.gov/crs-product/R46337)
 - [The Conversation: Why does the US pay so much for the defense of its allies? 5 questions answered](https://theconversation.com/why-does-the-us-pay-so-much-for-the-defense-of-its-allies-5-questions-answered-127683)
 - [The Conversation: The US military presence in Europe has been declining for 30 years – the current crisis in Ukraine may reverse that trend](https://theconversation.com/the-us-military-presence-in-europe-has-been-declining-for-30-years-the-current-crisis-in-ukraine-may-reverse-that-trend-175595)
 
-
-
-
-
-:::{.callout-important}
+::: callout-important
 ## `r examdate(mon, 10, 2)`: Actors and Institutions
 
 This exam will cover material on the actors and institutions material from weeks 5–9.
-
 :::
-
-
-
 
 
 
@@ -546,34 +443,24 @@ This exam will cover material on the actors and institutions material from weeks
 
 ### **No Class on Friday**
 
-### Readings and Assignments: 
-- [Trade Talks: What happened on Trump's tariff day? ](https://tradetalkspodcast.com/podcast/207-what-happened-on-trumps-tariff-day/)
+### Readings and Assignments:
+
+- [Trade Talks: What happened on Trump's tariff day?](https://tradetalkspodcast.com/podcast/207-what-happened-on-trumps-tariff-day/)
 - [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
-
-
-
-
-
 
 ## `r advdate(mon, 12)`: Trade, Finance, and Monetary Policy (cont.)
 
-### Readings and Assignments: 
+### Readings and Assignments:
 
 - [CRS: Introduction to U.S. Economy: Monetary Policy](https://www.congress.gov/crs_external_products/IF/PDF/IF11751/IF11751.12.pdf)
 
-:::{.callout-important}
+::: callout-important
+## **`r discussiondate(mon, 12)`**
 
-## `r discussiondate(mon, 12)`
-
-- [Trade Talks: What happened on Trump's tariff day? ](https://tradetalkspodcast.com/podcast/207-what-happened-on-trumps-tariff-day/)
+- [Trade Talks: What happened on Trump's tariff day?](https://tradetalkspodcast.com/podcast/207-what-happened-on-trumps-tariff-day/)
 - [Paul Musgrave: Oh no, I betrayed America](https://musgrave.substack.com/p/oh-no-i-betrayed-america)
 - [CRS: Introduction to U.S. Economy: Monetary Policy](https://www.congress.gov/crs_external_products/IF/PDF/IF11751/IF11751.12.pdf)
-
-
 :::
-
-
-
 
 
 
@@ -581,37 +468,26 @@ This exam will cover material on the actors and institutions material from weeks
 
 ## `r advdate(mon, 13)`: Human Rights Issues
 
-### Readings and Assignments: 
+### Readings and Assignments:
 
 - @Power2001
 - [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
 - [‘You Are All Terrorists’: Four Months in a Salvadoran Prison](https://www.nytimes.com/2025/11/08/world/americas/el-salvador-prison-migrants.html)
 
-:::{.callout-important}
-
+::: callout-important
 ## `r examdate(mon, 13, 3)`: Selected Topics
 
 This exam will cover all of the special topics material from weeks 9-13.
-
 :::
-
-
-
-
-
-
 
 ## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
 
 ### Readings and Assignments:
 
-1. Get some rest
-2. Enjoy yourselves
-3. Eat good food
-4. Take a good nap
-
-
-
+1.  Get some rest
+2.  Enjoy yourselves
+3.  Eat good food
+4.  Take a good nap
 
 ## `r advdate(mon, 15)`: Crisis Simulation Week 1
 
@@ -632,7 +508,7 @@ This exam will cover all of the special topics material from weeks 9-13.
 - Narrow the options
 - Provide time for groups to discuss changes with one another
 
-
+```{=html}
 <!---
 - [Congressional Research Service: Democracy and Human Rights in US Foreign Policy: Evolution, Tools, and Considerations for Congress](https://www.congress.gov/crs-product/R47890)
 - @Power2001
@@ -647,37 +523,28 @@ This exam will cover all of the special topics material from weeks 9-13.
 
 
 --->
-
-
-
-
- 
-
-
+```
 
 ## `r advdate(mon, 16)`: Crisis Simulation Week 2
 
-### Monday, December 8, 2025
+### Monday, December 8
 
 - Introduce crisis simulation
 - Provide overview of the crisis scenario
 - Students present initial positions to the President
 
-### Wednesday, December 10, 2025
+### Wednesday, December 10
 
 - Review proposals
 - Clarify obstacles, risks, benefits, opportunities, threats, etc.
 - Evaluate positions
 
-### Friday, December 12, 2025
+### Friday, December 12
 
 - Reflection Day
 - Complete reflection memo
 - What worked?
 - What didn't work?
 - What about the process surprised you?
-
-
-
 
 ## References
