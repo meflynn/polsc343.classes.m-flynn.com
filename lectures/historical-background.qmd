@@ -6,7 +6,7 @@ author:
 institute:
   - Professor
   - Department of Political Science
-  - 011C Calvin Hall
+  - 115 Calvin Hall
   - meflynn@ksu.edu
 date: last-modified
 resources: 
@@ -761,6 +761,12 @@ California
   - American emigration to California increases over time
 
   - British and French claims?
+
+::: {.notes}
+Mexican-American War
+
+- Slave own
+:::
 
 
 

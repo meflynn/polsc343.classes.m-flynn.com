@@ -15,6 +15,7 @@ resources:
 format:
   revealjs:
     theme: [quarto-lecture-theme.scss, default]
+    embed-resources: false
     auto-stretch: false # Needed to stop figures from stretching and ignoring figure size
     slide-number: true
     chalkboard: true
@@ -45,8 +46,17 @@ library(ggdag)
 library(tidyverse)
 library(viridis)
 library(scales) # For muted() function for colors
+library(flynnprojects)
+library(peacesciencer)
+
+sysfonts::font_add_google("Oswald", "oswald")
+showtext::showtext_auto()
+showtext::showtext_opts(dpi = 400)
 
 ```
+
+
+
 
 ## Welcome!
 
@@ -59,6 +69,13 @@ Why this class matters:
 - War and conflict
 
 - Global governance 
+
+
+
+
+
+
+
 
 
 
@@ -82,6 +99,41 @@ Notes
 
 
 
+
+
+## {.blank-slide}
+
+```{r}
+#| out-width: 75%
+#| fig-align: center
+
+data <- peacesciencer::cow_nmc |> 
+  dplyr::filter(ccode == 2) |> 
+  dplyr::mutate(milper = milper * 1000)
+
+ggplot(data, aes(x = year, y = milper)) +
+  geom_line(linewidth = 1) +
+  flynnprojects::theme_flynn(base_family = "oswald",
+                             base_size = 11) +
+  scale_x_continuous(breaks = seq(1815, 2025, 20)) +
+  scale_y_continuous(labels = scales::comma_format()) +
+  labs(x = "Year",
+       y = "Count",
+       title = "US Military Personnel by Year",
+       caption = "Data taken from the Correlates of War Project (COW)\nNational Material Capabilities dataset and {peacesciencer} R package.")
+
+```
+
+
+
+
+
+
+
+
+
+
+
 ## {.blank-slide}
 
 ::::{.columns}
@@ -91,9 +143,11 @@ Notes
 :::
 
 :::{.column width=50%}
-![Palestinians walk on a road lined with destroyed buildings in the Shujaiya neighborhood of Gaza City in October 2004. Photograph Omar Al-Wattaa/AFP/Getty Images](https://i.guim.co.uk/img/media/09d3bb71d2d860f964ee03b48d53692a43ce0e2e/83_0_2653_1742/master/2653.jpg?width=1900&dpr=1&s=none&crop=none){width=700px height=400px}
+![Palestinians walk on a road lined with destroyed buildings in the Shujaiya neighborhood of Gaza City in October 2024. Photograph Omar Al-Wattaa/AFP/Getty Images](https://i.guim.co.uk/img/media/09d3bb71d2d860f964ee03b48d53692a43ce0e2e/83_0_2653_1742/master/2653.jpg?width=1900&dpr=1&s=none&crop=none){width=700px height=400px}
 :::
 ::::
+
+
 
 
 
@@ -118,6 +172,10 @@ Notes
 
 
 
+
+## {.blank-slide}
+
+![Dillons' Westloop location in Manhattan, KS! A hub of international politics in your own backyard.](https://brixmor.com/api/download/4141/image/West%20Loop%20Shopping%20Center-3996.jpg){width=50%}
 
 
 
@@ -342,7 +400,7 @@ Class info:
 
 - Time: MWF 12:30-1:20
 
-- Office hours: By Appointment
+- Office hours: By Appointment (Calvin 115)
 
 - Email! [meflynn@ksu.edu](mailto:meflynn@ksu.edu)
 
@@ -418,7 +476,7 @@ requirements <- tibble(`Grade Item` = c("Attendance",
                                         "Discussion", 
                                         "Exams", 
                                         "Crisis Simulation"),
-                       `Percent` = c("15%", "25%", "30%", "30%")) |> 
+                       `Percent` = c("15%", "20%", "35%", "30%")) |> 
   tinytable::tt() |> 
   tinytable::style_tt(
     header = list(
@@ -471,7 +529,7 @@ On the use of AI and Chatbots:
 
 - Do not use AI or chatbots to complete assignments
 
-- The use of AI and chatbots constitutes plagiarism and will result in the failure on the assignment
+- The use of AI and chatbots constitutes plagiarism and will result in failure on the assignment
 
 - Other reasons not to use AI and chatbots:
 
@@ -480,6 +538,8 @@ On the use of AI and Chatbots:
   - They are not reliable
   
   - They are not consistent 
+  
+  - They are not transparent
   
 
 

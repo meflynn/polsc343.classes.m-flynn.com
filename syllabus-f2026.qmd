@@ -6,6 +6,8 @@ semester: "Fall 2026"
 meeting-time: "MWF 12:30–1:20 PM"
 meeting-location: "116 Calvin Hall"
 instructor: "Michael Flynn"
+instructor-email: "meflynn@ksu.edu"
+instructor-office: "115 Calvin Hall"
 bibliography: bib/classrefs.bib
 csl: bib/apsr-bibliography.csl
 format:
@@ -79,6 +81,12 @@ examdate <- function(obj, adv, num){
 **Meeting Time**: {{< meta meeting-time >}}
 
 **Meeting Location**: {{< meta meeting-location >}}
+
+**Instructor Email**: {{< meta instructor-email >}}
+
+**Instructor Office**: {{< meta instructor-office >}}
+
+
 
 ## Course Summary
 
@@ -385,6 +393,7 @@ This exam will cover the historical background content from Weeks 1--4.
 
 ### Readings and Assignments:
 
+- @KrebsRalston2022
 - [The War Horse: Women Have Served in Combat Roles for a Decade. The Pentagon is Reopening the Debate](https://thewarhorse.org/military-standards-women-in-combat/)
 - [The Recruiting Surge Was Engineered. Can It Last in a War with Iran?](https://www.military.com/feature/2026/03/24/recruiting-surge-was-engineered-can-it-last-war-iran.html-0)
 - [Could the US Bring Back the Draft? Who Would Be Called First — and Who Qualifies](https://www.military.com/daily-news/2026/03/11/could-us-bring-back-draft-who-would-be-called-first-and-who-qualifies.html)
