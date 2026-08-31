@@ -2,7 +2,10 @@ project:
   type: website
   output-dir: docs
   lib-dir: library
-  pre-render: cp ../../classrefs.bib bib/classrefs.bib
+  pre-render:
+    - cp ../../classrefs.bib bib/classrefs.bib
+    - bash dropbox-ignore.sh
+  post-render: bash dropbox-ignore.sh
   render:
     - "*.qmd"
     - "!lectures/"
