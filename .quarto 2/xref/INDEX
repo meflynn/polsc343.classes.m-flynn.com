@@ -1,59 +1,33 @@
 {
   "about.qmd": {
-    "about.html": "48d48b0e",
-    "about.typ": "ab16021a"
+    "about.html": "9c16d654"
   },
   "index.qmd": {
-    "index.html": "639245ee",
-    "index.typ": "b19c5b93"
+    "index.html": "4d5cbda3"
   },
   "lectures.qmd": {
-    "lectures.html": "17425d20",
-    "lectures.typ": "766a3d81"
-  },
-  "posts.qmd": {
-    "posts.html": "b4dffae8"
-  },
-  "posts/a-note-on-terminology/a-note-on-terminology.qmd": {
-    "a-note-on-terminology.html": "2b04b5fe"
-  },
-  "posts/whats-the-difference/whats-the-difference.qmd": {
-    "whats-the-difference.html": "5cd509c6"
+    "lectures.html": "4dc66668"
   },
   "syllabi-archive.qmd": {
-    "syllabi-archive.html": "c9bc18ec",
-    "syllabi-archive.typ": "3cb63cdd"
-  },
-  "syllabus-s2023.qmd": {
-    "syllabus-s2023.html": "f534eb55"
-  },
-  "syllabus-f2023.qmd": {
-    "syllabus-f2023.html": "a2972d14"
-  },
-  "syllabi-archive/syllabus-f2023.qmd": {
-    "syllabus-f2023.html": "93116565"
-  },
-  "syllabus-boilerplate-stuff.qmd": {
-    "syllabus-boilerplate-stuff.html": "63610a8a"
+    "syllabi-archive.html": "74ba1e81"
   },
   "syllabi-archive/syllabus-f2022.qmd": {
-    "syllabus-f2022.html": "4c6fdcbb"
+    "syllabus-f2022.html": "fd2338d1"
   },
-  "syllabus-f2024.qmd": {
-    "syllabus-f2024.html": "9977bb0e"
-  },
-  "syllabus-f2025.qmd": {
-    "syllabus-f2025.html": "4d8c1e96"
+  "syllabi-archive/syllabus-f2023.qmd": {
+    "syllabus-f2023.html": "42f18be9"
   },
   "syllabi-archive/syllabus-f2024.qmd": {
-    "syllabus-f2024.html": "1d9afc9c"
-  },
-  "syllabus-f2026.qmd": {
-    "syllabus-f2026.html": "e1c10db4",
-    "syllabus-f2026.tex": "28872d93",
-    "syllabus-f2026.typ": "9c0fd805"
+    "syllabus-f2024.html": "09c8a529"
   },
   "syllabi-archive/syllabus-f2025.qmd": {
-    "syllabus-f2025.html": "415f7010"
+    "syllabus-f2025.html": "5d283680"
+  },
+  "syllabus-boilerplate-stuff.qmd": {
+    "syllabus-boilerplate-stuff.html": "aa4f2506"
+  },
+  "syllabus-f2026.qmd": {
+    "syllabus-f2026.html": "64a800ba",
+    "syllabus-f2026.typ": "9b76ae98"
   }
 }
