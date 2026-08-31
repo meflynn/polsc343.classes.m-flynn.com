@@ -31,6 +31,8 @@ $presentation-body-font: "Roboto", sans-serif, !default;
 $body-font-size: 34px;
 $title-author-font-size: 24px;
 
+// figures
+$figure-max-height: 70vh; // definite height so fit-content can collapse onto the image
 
 
 /*-- scss:rules --*/
@@ -228,35 +230,66 @@ p.date {
 
 
 
-// These three chunks make sure that figure captions are left-aligned, but also that the figures remain centered within the figure environment space or column space.
+// FIGURES AND CAPTIONS
+// The goal: captions start at the left edge of the *image*, while the image itself
+// stays centered in its column or layout cell. To get that, the <figure> has to
+// shrink-wrap the rendered image, and the image must not center itself inside the
+// figure -- otherwise the caption hangs out to the left by half the leftover space.
 
-figure {
-  display: table;
-  max-width: max-content;
-  max-height: max-content;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
+// General image sizing for bare (non-figure) images. Note: no !important here, so
+// the .reveal figure img rules below can override it.
 .reveal img {
-  max-width: 100% !important;
-  max-height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
-figcaption {
-  display: table-caption;
-  caption-side: bottom;
-  padding-left: 5px;
-  //min-width: 95%;
+// The figure box collapses onto the image, then centers itself as a unit.
+.reveal figure,
+.reveal .quarto-figure figure,
+.reveal .quarto-layout-cell figure {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+// Pandoc sometimes wraps the <img> in a <p> -- don't let it stretch the figure.
+.reveal figure > p {
+  margin: 0;
+  width: fit-content;
+  max-width: 100%;
+}
+
+// The key change: the image must NOT center itself inside the figure.
+// $figure-max-height is a viewport unit (definite) rather than a percentage, so the
+// browser can transfer the aspect ratio and give the box the *rendered* width.
+.reveal figure img {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  max-height: $figure-max-height;
+  width: auto;
+  height: auto;
+}
+
+// Caption spans the image width and is left-aligned against its left edge.
+.reveal figcaption,
+.reveal .quarto-figure figcaption {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  padding-left: 0;
+  margin-top: 0.25em;
+  overflow-wrap: break-word;
+}
 
 
 .quarto-layout-cell {
@@ -264,31 +297,6 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
 }
-
-//This is the magic one to get everything aligned properly in tables/grids!
-.quarto-layout-cell figure {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.quarto-figure .quarto-figure-center figure {
-  display: table;
-  max-width: max-content;
-  max-height: max-content;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.quarto-figure figcaption {
-  display: table-caption;
-  caption-side: bottom;
-  padding-left: 5px;
-}
-
 
 
 .center {

@@ -385,6 +385,8 @@ This exam will cover the historical background content from Weeks 1--4.
 ::: callout-important
 ### **`r discussiondate(mon, 7)`**
 
+** Discussion Questions will be submitted online only. No class meetings due to Wildcat Pause Day.**
+
 - [Council on Foreign Relations: Revitalizing the State Department](https://assets.cfr.org/images/csr89_final/csr89_final.pdf)
 - @Miller2016
 :::
