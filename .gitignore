@@ -6,3 +6,4 @@
 .quarto
 /.quarto/
 **/*.quarto_ipynb
+syllabus-f2026_files/*
