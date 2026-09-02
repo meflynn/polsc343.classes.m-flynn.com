@@ -650,6 +650,14 @@ knitr::include_graphics("https://jollycontrarian.com/images/a/ab/Dramatic_Look_G
   - Access to foreign markets and shipping rights
   
   
+
+
+## The Early Years
+
+> **Mercantilism**: An economic doctrine based on a belief that military power and economic influence complemented each other; applied especially to colonial empires in the sixteenth through eighteenth centuries. Mercantilist policies favored the mother country over its colonies and over its competitors. 
+
+> Zero-sum game: The idea that for one player or group to gain something another player or group must lose something. 
+
   
 ## The Early Years
 
