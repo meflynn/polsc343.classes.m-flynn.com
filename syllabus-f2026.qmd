@@ -399,6 +399,7 @@ This exam will cover the historical background content from Weeks 1--4.
 - [The War Horse: Women Have Served in Combat Roles for a Decade. The Pentagon is Reopening the Debate](https://thewarhorse.org/military-standards-women-in-combat/)
 - [The Recruiting Surge Was Engineered. Can It Last in a War with Iran?](https://www.military.com/feature/2026/03/24/recruiting-surge-was-engineered-can-it-last-war-iran.html-0)
 - [Could the US Bring Back the Draft? Who Would Be Called First — and Who Qualifies](https://www.military.com/daily-news/2026/03/11/could-us-bring-back-draft-who-would-be-called-first-and-who-qualifies.html)
+- [House Passes Plan to Officially Rename the Department of Defense to 'Department of War.' Here's Why It Matters](https://www.military.com/house-passes-plan-to-officially-rename-the-department-of-defense-to-department-of-war-heres-why-it-matters)
 
 ::: callout-important
 ### **`r discussiondate(mon, 8)`**
