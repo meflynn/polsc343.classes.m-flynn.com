@@ -330,7 +330,7 @@ ggplot(data = subset(spend, Year >= 1870 & Year <= 1914 & group == "navy.per" |
 
 Inter-War Period
 
-- The Interwar period falls between 1919 and 1945
+- The Interwar period falls between 1919 and 1940 (-ish)
 
 - Heavy emphasis on commercial engagement (until 1929, that is)
 
