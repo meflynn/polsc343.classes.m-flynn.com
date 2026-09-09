@@ -693,6 +693,74 @@ Notes
 
 ## Bipartisan Consensus
 
+::::{.columns}
+:::{.column width=50%}
+Domestic tradeoffs
+
+- US seeking to promote democracy abroad
+
+- Much of this is rooted in opposition to communism
+
+- Much of this effort conflicts with treatment of minority Americans at home
+
+- Many fear that US efforts to promote democracy and the rule of law will be applied unevenly across the international landscape
+
+To right: James Byrnes, Secretary of State 1945-1947
+:::
+
+:::{.column width=50%}
+![](../images/james-byrnes.jpg){width=500px fig-align="center"}
+:::
+::::
+
+
+:::{.notes}
+Notes on Byrnes, Multilateralism, and Human Rights:
+
+- Secretary of State. Also a staunch segregationist.
+
+- Brynes served in the House, Senate, and briefly as an associate justice on the US supreme court (though his tenure is the shortest on record). He played an important role in blocking anti-lynching legislation, blocking support for black colleges and universities, and also in maintaining white control over Democratic Party politics in South Carolina.
+
+- The State Department and various US officials worried that the Untied Nations Commission on Human Rights might have the power to investigate human rights abuses within the US. Also worried that it might be able to compel the US to impose equal protections for blacks and other minority groups. Also sought to prevent the commission from having the power to investigate petitions brought by various minority groups.
+
+- US immediately sought to weaken these institutions for fear that they would be used against the US. They also sought to limit petitions to come only from member states (i.e. not from individuals or non-governmental organizations).
+
+- This is exactly what happened---the National Negro Congress brought a petition to the UN on June 6, 1946 that outlined the oppression of black Americans (See Anderson 2003, 80-81).
+
+:::
+
+
+
+
+## {.blank-slide}
+
+::::{.columns}
+:::{.column width=50%}
+![Walter White](../images/walter-white.jpg){width=5in height=6in fig-align="center"}
+:::
+
+:::{.column width=50%}
+![Thurgood Marshall](../images/thurgood-marshall.jpg){width=5in height=6in fig-align="center"}
+:::
+::::
+
+:::{.notes}
+Notes on NAACP
+
+- We typically think of NAACP as a domestic civil rights organization
+- Historian Carol Anderson discusses how the concept of "civil rights" grew out of an effort to avoid red-baiting. 
+- The goal was initially to pursue a more general global agenda of human rights.
+- Walter White and Thurgood Marshall were two leading figures in the NAACP and were closely engaged with the early formulation of US human rights policy and stance re the United Nations.
+
+:::
+
+
+
+
+
+
+## Bipartisan Consensus
+
 Economic factors
 
 - Move to free trade
