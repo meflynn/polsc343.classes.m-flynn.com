@@ -132,13 +132,24 @@ Notes
 
 ## Early 20th Century Foreign Policy
 
-Latin America and the Caribbean
+### Latin America and the Caribbean
 
+::::{.columns}
+:::{.column width=50%}
 - Dollar Diplomacy and Intervention
 
 - The US begins to more actively enforce the Monroe Doctrine in Western Hemisphere (Roosevelt Corollary) 
 
 - Often this involved using military intervention to ensure financial stability
+
+:::
+
+
+:::{.column width=50%}
+!["The Big Stick in the Caribbean Sea" A cartoon depicting President Theodore Roosevelt leading a string of battleships around to Caribbean islands to collect debt payments.](https://upload.wikimedia.org/wikipedia/commons/1/1f/Tr-bigstick-cartoon.JPG){width=90%}
+:::
+
+::::
 
 
 :::{.notes}
@@ -508,21 +519,13 @@ ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
 
 ## Early 20th Century Foreign Policy
 
-### Inter-War Period: German domesic politics
+### Inter-War Period: Germany
 
 - Germany recovering from initial economic woes, but hit hard by the depression
 
 - Radical political parties benefit from economic crisis
 
 - Hitler rises to power in 1933
-
-
-
-
-
-## Early 20th Century Foreign Policy
-
-### Inter-War Period: German foreign policy actions
 
 - Germany, Italy, and Japan sign a series of treaties between 1936 and 1937
 
@@ -537,7 +540,7 @@ ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
 
 ## Early 20th Century Foreign Policy
 
-### Inter-War Period: Steps to war
+### Inter-War Period: Steps to war in Europe
 
 - September 3, 1939 Germany invades Poland
 
@@ -553,7 +556,7 @@ ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
 
 ## Early 20th Century Foreign Policy
 
-### Inter-War Period: Japanese foreign policy actions
+### Inter-War Period: Japan and Asia-Pacific
 
 - Japanese military occupied Manchuria in 1931
 
@@ -596,13 +599,33 @@ kable(resources,
 
 - US resists-ish steps to mobilize for war
 
-- Congress imposes arms embargo on belligerent nations
-
-- Congress passes Neutrality Acts 1935-1939
+- Congress passes several Neutrality Acts 1935-1939
 
 - December 7, 1941 Japanese bomb Pearl Harbor naval base
 
+- December 8, 1941 Japanese begin bombing US presence in the Philippines
 
+- Congress gradually loosens restritions
+
+  - Cash and Carry
+  - Destroyers for bases
+  - Lend-Lease
+
+:::{.notes}
+
+Notes
+
+- Neutrality Acts ban the export of weapons to belligerent nations.
+
+- They also ban loans to countries fighting in a war
+
+- Neutrality Act of 1937 loosened restrictions slightly and allowed for cash and carry. This was a concession to FDR who sought to aid the allies against Germany, Italy, and Spain. Cash and Carry allowed sales to belligerents provided they paid up front and transported goods themselves. 
+
+- September 1940 Destroyers for bases granted England 50 destroyers provided the US gained land rights in British territories
+
+- March 1941 Lend-Lease Act allowed US to "lend" war materials to nations. Nobody really expected to get stuff back. 
+
+:::
 
 
 
@@ -1476,3 +1499,101 @@ Other Countries:
   - Peacekeeping
   - Conflict stabilization
   - Expanding trade liberalization
+  
+  
+  
+  
+  
+## Post-Cold War
+
+### Gulf War
+
+::::{.columns}
+:::{.column width=50%}
+- Saddam Hussein invades Kuwait, August 2 1990
+
+- Kuwait was formerly a part of Iraq 
+
+- Iraq depleted from 8-year war with Iran, accused Kuwait of manipulating (read suppressing) oil prices
+
+- Controlling Kuwait gave Saddam Hussein control of 20% of world's oil supplies
+
+- George H.W. Bush assembles a global coalition to expel Iraq
+
+- UN Security Council grants approval on November 29, 1990
+
+- Deadline for withdrawal is set for January 15, 1991
+
+:::
+
+:::{.column width=50%}
+![U.S. Army Gen. Norman H. Schwarzkopf, commander of U.S. Central Command, speaks to U.S. soldiers inside a hangar while visiting a base camp during Operation Desert Shield, April 1, 1992.(Defense Department). Courtesy of Military.com](https://static0.mltimages.com/wordpress/wp-content/uploads/2018-01/schwarzkopf-1800.jpg?q=70&fit=crop&w=1600&h=900&dpr=1){width=90%}
+:::
+::::
+
+:::{.notes}
+
+Notes
+
+- US does not pursue Iraqi forces into Iraq and lets large portions of Saddam's military remain largely intact, albeit with substantial portions destroyed
+
+- Concerns over regional power vacuums and expanded conflict if they toppled Saddam
+
+- Saddam used remnants to murder thousands of Kurds and Shia Iraqis who rose up against him.
+
+
+:::
+
+
+
+
+
+## Post Cold War
+
+### Trade Liberalization
+
+::::{.columns}
+:::{.column width=50%}
+
+- China begins making market-oriented reforms in the 1980s under Deng Xiaoping
+
+- The GATT becomes the WTO in 1995
+
+- In 2001 China joins the WTO, after 14 years of negotiations
+
+- The agreement requires China and other WTO countries to reduce tariffs on a range of goods
+
+:::
+
+:::{.column width=50%}
+![Mr. Shi Guangshen, Minister of Foreign Trade and Economic Cooperation of China, signs, subject to ratification, China's Protocol on the Accession to the WTO at the 4th Ministerial Conference in Doha in November 2001. Photo: Copyright WTO.](https://saisreview.sais.jhu.edu/wp-content/uploads/2024/03/ChinaWTOFull-1024x683.jpg)
+:::
+::::
+
+
+
+## Post Cold War
+
+### September 11 Attacks
+
+::::{.columns}
+:::{.column width=50%}
+
+- 19 members of al Qaeda hijack four passenger jets
+
+- Two jets hit the World Trade Center towers, one hit the Pentagon, and one crashed in rural Pennsylvania after the hijackers were overpowered by passengers
+
+- Largest single terror attack with 2,977 immediate fatalities and injuries to thousands more from long-term health consequences
+
+- Bush Administration declares a "War on Terror"
+
+- Invasion of Afghanistan in October of 2001 
+
+- Invasion of Iraq in March of 2003
+
+:::
+
+:::{.column width=50%}
+![Front page of the New York Times from Wednesday, September 12, 2001.](https://static01.nyt.com/images/2021/07/30/learning/00911AnniversaryA1LN/00911AnniversaryA1LN-articleLarge-v3.png)
+:::
+::::
