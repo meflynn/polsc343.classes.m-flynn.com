@@ -158,7 +158,7 @@ Notes
 
 - Roosevelt Corollary: Roosevelt said the US would intervene "as a last resort" to ensure Latin American countries upheld their financial and debt obligations or do anything to invite European intervention in the Western Hemisphere. 
 
-- US intervened in Nicaragua, Dominican Republic, and Haiti. Marines went in, customs hhouses seized, teams of economists would help to put countries on a gold standard. 
+- US intervened in Nicaragua, Dominican Republic, and Haiti. Marines went in, customs houses seized, teams of economists would help to put countries on a gold standard. 
 
 :::
 
@@ -181,6 +181,13 @@ United States enters the war in 1917
 
 - Stalemate in Europe as war drags on
 
+:::{.notes}
+Notes
+
+- Often times events that are referenced as "sparks" that start wars are significant moments against a more general backdrop of escalation.
+- Assassination of Archduke Franz Ferdinand was used to rationalize war, but it took a long time after he was killed for Austria to move to war.
+- The Lusitania was sunk, but it took a long time for Wilson to declare war. 
+:::
 
 
 
@@ -233,6 +240,15 @@ ggplot(data = systemdata, aes(x = Year, y = Countries)) +
 
 ```
 
+:::{.notes}
+Notes
+
+- Not as big a jump as after WWII, but this marks a pretty rapid increase in the size of the international system.
+- Also note that while the Paris peace conference is unfolding in 1919 there is still significant fighting amongst various groups throughout central and eastern Europe. 
+:::
+
+
+
 
 
 ## Early 20th Century Foreign Policy
@@ -270,7 +286,7 @@ US and League
 
 - Debates over US involvement continue throughout the 1920s
 
-- Senate Republicans repeatedly object to participating in League organizations like the International Court of Justice.
+- Senate Republicans repeatedly object to participating in League organizations like the International Court of Justice. There's a strong opposition within the Republican Party to multilateral engagement in ways that would subordinate US sovereignty to international bodies. They're wary of possibilities like US military forces being committee to conflicts that might not be in the US' interests. 
 :::
 
 
@@ -335,6 +351,17 @@ ggplot(data = subset(spend, Year >= 1870 & Year <= 1914 & group == "navy.per" |
 :::
 ::::
 
+:::{.notes}
+Notes
+
+- Henry Cabot Lodge was strongly opposed to multilateralism and wary of US loss of sovereignty. 
+- He also hated Woodrow Wilson. Political Scientists often look for more generalizable explanations of events, but sometimes specific cases can hinge on individual personalities and relationships. 
+- Stimson was more pro-internationalism and represented a different wing of the Republican Party. Teddy Roosevelt and Elihu Root were very much in favor of arbitration and applying legal mechanisms to solving international problems. 
+- One key point here is that individuals who control key positions, like Henry Cabot Lodge, are in a position to determine which positions and policies are advanced. 
+:::
+
+
+
 
 
 ## Early 20th Century Foreign Policy
@@ -358,6 +385,8 @@ Notes
 - London Naval Conference in 1930: Expanded upon the Washington conference. 
 
 - Both focused on limiting the number of ships and the total tonnage of ships. 
+
+- Both serve as example of US pursuring international engagement, but avoiding multilateral commitments. 
 
 :::
 
@@ -390,7 +419,13 @@ ggplot(data = subset(trade, year >= 1900 & year <= 1940), aes(x = year, y = tota
 
 ```
 
+:::{.notes}
+Notes
 
+- These slides illustrate the severity of the depression on US economy and trade.
+- Also important is that the US started to recover from the depression before WWII.
+- The idea that the war got the US out of the depression is both inaccurate and also creates some dangerous beliefs regarding the role of war in stimulating economic growth.
+:::
 
 
 ## {.blank-slide}
@@ -534,6 +569,13 @@ ggplot(data = unemp, aes(x = Time, y = Rate/100)) +
 - September 1938 Germany annexes Sudentenland (part of Czechoslovakia)
 
 
+:::{.notes}
+Notes
+
+- This is effectively a new wave of colonialism/imperialism. 
+- Germany is taking territory in central and eastern Europe. Italy in Africa. 
+- Japan is doing this in the Pacific too. Partly to secure resources. 
+:::
 
 
 
@@ -605,7 +647,7 @@ kable(resources,
 
 - December 8, 1941 Japanese begin bombing US presence in the Philippines
 
-- Congress gradually loosens restritions
+- Congress gradually loosens restrictions
 
   - Cash and Carry
   - Destroyers for bases
@@ -624,6 +666,8 @@ Notes
 - September 1940 Destroyers for bases granted England 50 destroyers provided the US gained land rights in British territories
 
 - March 1941 Lend-Lease Act allowed US to "lend" war materials to nations. Nobody really expected to get stuff back. 
+
+- Henry Stimson works to build support for Roosevelt's mobilization efforts. 
 
 :::
 
@@ -730,7 +774,12 @@ To right: Replica of “Fat Man”, bomb dropped on Nagasaki
 :::
 ::::
 
+:::{.notes}
+Notes
 
+- Today's nuclear weapons are far more devastating. 
+- Multiple Independently Targetable Reentry Vehicles are multiple warheads on a single missile, each with far more destructive capacity than these bombs. 
+:::
 
 
 
@@ -818,6 +867,8 @@ Shows allied occupation zones
 
 - Cream areas are annexed by Poland and USSR, respectively.
 - Cream area to left was effectively control by France (Saar Protectorate) but was reintegrated into Germany in 1957.
+
+- Example of how burden sharing works in coalition warfare. Each ally took responsibility for portions of Germany. 
 :::
 
 
@@ -886,6 +937,7 @@ Marshall Plan
 direct Soviet intervention.
 - Calls for massive economic assistance to help rebuild Europe (European Recovery
 Program).
+- Doesn't call out the Soviets specifically. US actually invites Soviets to participate at first, but Stalin rejects these invitations. 
 - Excerpt from Marshall's speech: "Aside from the demoralizing effect on the world
 at large and the possibilities of disturbances arising as a result of the desperation
 of the people concerned, the consequences to the economy of the United States
@@ -942,6 +994,7 @@ George Kennan
 - Containment emphasized less militarized resistance to USSR.
 - Kennan argued that Soviet rulers justified their rule on the idea that the West was trying to destroy the USSR/Russian people. The use of military force to counter them would only play into their narrative, helping to justify the Soviet regime's harsh domestic policies.
 - Kennan opposed NATO for this reason. He believed the formation of an alliance excluding the USSR would serve as the proof Soviet leaders needed
+- Kennan still believes the US should deter the Soviets, but doesn't think it should seek out active military conflict with them. 
 :::
 
 
@@ -977,6 +1030,7 @@ Paul Nitze
 - One of the principal authors of NSC-68
 - Set out a vision of a more militarized approach to containment
 - Kennan opposed this view. 
+- A good example of how policies can have many creators and the end result doesn't necessarily look like any one person's vision. 
 :::
 
 
@@ -1005,12 +1059,13 @@ Later events:
 Other events pave the way for the cold war:
 
 - 1948: Stalin approves communist coup in Czechoslovakia. Had retained democratic government after the war. Czech foreign minister found dead on the ground.Suspicions that communists pushed him.
-- 1948: Tito splits with Stalin. US begins giving aid to Tito's regime. Dean Acheson
-famously says "he might be a son of a bitch, but he's our son of a bitch."
+- 1948: Tito splits with Stalin. US begins giving aid to Tito's regime. Secretary of State Dean Acheson
+famously says "he might be a son of a bitch, but he's our son of a bitch." Shows that Acheson tried to be pragmatic and wanted to exploit the spit emerging in the Soviet sphere. 
 - Communist Chinese win Civil War in 1949. Nationalists retreat to Taiwan
 - Chinese and Soviets form alliance in 1950. Perpetuates idea that there is a monolithic transnational communism bloc
 - Korean War. Reinforced idea that USSR would use force to advance communism around the world.
-- Economic devastation after WWI also leads to rise in support for communist parties. US worries that communists will gain power through legitimate electoral channels, and will be subservient to USSR.
+- Economic devastation after WWII also leads to rise in support for communist parties. US worries that communists will gain power through legitimate electoral channels, and will be subservient to USSR.
+- Notably the communist movement was not monolithic but US policymakers often described it as such and underestimated divisions in the Communist bloc. 
 :::
 
 
@@ -1054,6 +1109,9 @@ US foreign policy focuses on three goals:
 
 :::{.notes}
 Goal of promoting integration is a reaction to World War I and Western liberal political thought (e.g. Adam Smith, Immanuel Kant, etc.)
+
+- Deterrence: Trying to discourage another actor or actors from taking certain actions by making the negative consequences of those actions clear.
+- Notably the threat and consequences have to be credible. The opponent has to believe that the threatener will actually go through with the action, and/or believe that there is some chance they will occur apart from the threatening state's willingness to implement those consequences. Schelling talks about this as the "threat that leaves something to chance".
 :::
 
 
@@ -1109,7 +1167,7 @@ Initial Alternatives
   - FDR's Four Policemen: US, England, USSR, and China (Also members of
 UN Security Council). Emphasized leadership of great powers in spheres of
 influence
-  - US initially opposed to greater military involvement, but the situation eventually required it, and Europeans requested it. FDR told stalin troops would
+  - US initially opposed to greater military involvement, but the situation eventually required it, and Europeans requested it. FDR told Stalin troops would
 be out of Europe within 2 years.
 :::
 
@@ -1152,12 +1210,13 @@ Security affairs:
 
 - United Nations (UN)
 
-- Southeast Asia Treaty  Organization (SEATO)
+- Southeast Asia Treaty Organization (SEATO)
 
 
 :::{.notes}
 - US leaders insisted Europeans had to take the lead in forming NATO
 - US has to be asked to join partly to secure domestic support.
+- US very concerned that it will foot the bill financially and in terms of military force/action.
 :::
 
 
@@ -1221,9 +1280,9 @@ Notes on economic affairs
 - Policymakers believed that the move to autarky caused WWII.
 - What do we mean? Lower tariff barriers is the big thing. Lowering taxes on imports. Think Smoot Hawley Tariff.
 - Also inspired by classical liberal thinking. Roosevelt and Truman administrations are filled with people from the Northeastern business and banking sectors. They very much buy into the idea that commerce can create peace.
-- They also stand to benefit economically. European economies are in ruins, and the US is the only advanced industrial economy running at full steam. They canstand to gain a lot by getting other states to lower trade barriers, thus making
+- They also stand to benefit economically. European economies are in ruins, and the US is the only advanced industrial economy running at full steam. They can stand to gain a lot by getting other states to lower trade barriers, thus making
 US goods cheaper to buyers in other countries.
-- Foreign aid viewed as an extension of the Western welfare state.
+- Foreign aid viewed as an extension of the Western welfare state. The idea that the government can place a more active role in alleviating suffering and improving standards of living is relatively new. 
 
 :::
 
@@ -1246,6 +1305,7 @@ Economic affairs:
 
 Early institutions
 
+- Series of institutions designed to put economic liberalization into action. 
 - GATT becomes WTO in 1995. Provides a forum for international trade law, tariff negotiations, and dispute resolution.
 - World Bank: Originally focused on reconstruction after WWII. Later shifts to focus on development and poverty reduction. 
 - IMF: Originally intended to help maintain stable exchange rates and address
@@ -1467,7 +1527,7 @@ Other Countries:
  - US aid is a necessity to rebuild. Europeans can't manufacture basic goods.
  - US leadership in military affairs will help ease the burdens on recovering economies, allowing Europeans to divert resources to other ends.
 - Intra-European competition
- - US involvement helps to alleviate fears of a security dilemma
+ - US involvement helps to alleviate fears of a security dilemma in which some European countries recovering and arming could be a threat to others (e.g. France and Germany)
  - Reconstruction and rearmament would be uneven, and some countries are more exposed to the USSR than others.
  - US involvement helped to serve as a sort of referee
  - This was particularly important for France and Germany, whose long history made them wary of each other
@@ -1571,6 +1631,17 @@ Notes
 ::::
 
 
+:::{.notes}
+Notes
+
+- Chinese economic reforms begin in 1980s
+- It takes years of negotiations before China agrees to join international economic institutions like WTO
+- This is one of the most important transitions of the post-Cold War era. Chinese membership in the WTO has an enormous impact on the world economy and the US specifically. China becomes a hub for global manufacturing of low-skill goods like basic textiles. 
+:::
+
+
+
+
 
 ## Post Cold War
 
@@ -1597,3 +1668,13 @@ Notes
 ![Front page of the New York Times from Wednesday, September 12, 2001.](https://static01.nyt.com/images/2021/07/30/learning/00911AnniversaryA1LN/00911AnniversaryA1LN-articleLarge-v3.png)
 :::
 ::::
+
+:::{.notes}
+Notes
+
+- War on terror marks a dramatic shift in US foreign policy
+- Interventionism becomes widespread. The focus on Afghanistan quickly spreads to Iraq, the broader Middle East, Central Asia, Southeast Asia, North Africa, and Sub-Saharan Africa. 
+- We see the spread of technologies like drones and cyberwarefare becoming integral to international conflict
+- Early GWOT sees Bush Administration focus on "Rogue States" or the "Axis of Evil" of Iran, Iraq, and North Korea. 
+- In addition to two large scale wars the US emphasizes anti-terrorism more generally and targeted assassinations of terrorist actors. 
+:::

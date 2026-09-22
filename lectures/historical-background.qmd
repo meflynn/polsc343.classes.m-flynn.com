@@ -179,6 +179,14 @@ shape.1900 <- sf::read_sf(here("../../../Data Files/NHGIS/nhgis0004_shape/nhgis0
 - US and global trade were very low through 1970s
 
 
+:::{.notes}
+Notes
+
+- Important to understand that the US is not the major power or superpower that it becomes in the 20th century. It's small and vulnerable. 
+
+:::
+
+
 
 ## {.blank-slide}
 
@@ -274,6 +282,19 @@ ggplot(data = subset(mid.time, name == "usmidcount"), aes(x = year, y = value)) 
 ```
 
 
+:::{.notes}
+Notes
+
+- Although the US is smaller and weaker it is still engaging militarilty in the world
+- Despite the fact that we think of interventionism as a Cold War era issue, the US is still engaging militarilty throughout the world. 
+
+- Emphasis on militarized inter-state disputes and role of nation states. This does not capture the full range of possible actors against whom the US could use military force. Native American tribes, Barbary Pirates, and similar groups don't fall under this measure, so it actually undercounts who the US uses force against. 
+
+
+
+:::
+
+
 ## {.blank-slide}
 
 ```{r map-1790}
@@ -303,6 +324,16 @@ ggplot() +
 
 
 ```
+
+
+:::{.notes}
+Notes
+
+- For all of these maps emphasize that US foreign policy during the 1800s is all about Westward expansion. 
+
+- This is not territory that the US controls. It must compete against British, French, Spanish, (eventually) Mexican, and Native American groups who are also competing to control this territory. 
+
+:::
 
 
 ## {.blank-slide}
@@ -564,6 +595,14 @@ ggplot(data = duration.data, aes(y = reorder(WarAndTheater_Ed196_, startyear), x
 
 ```
 
+:::{.notes}
+Notes
+
+- Tie into Brutus X and Washington's Farewell address
+- Founders wary of standing armies. Think they should be focused on defense and not internal policing
+- US Army's role throughout 1800s is fighting native american groups
+
+:::
 
 
 ## {.blank-slide}
@@ -590,6 +629,14 @@ ggplot(data = duration.data, aes(y = reorder(WarAndTheater_Ed196_, startyear),
 
 ```
 
+
+:::{.notes}
+Notes
+
+- Looking at campaign duration highlights this
+- Aside from GWOT and WWII, "Indian Wars" are the longest collective campaigns in US Army records
+
+:::
 
 
 # The Early Years {.inverse}
@@ -649,6 +696,17 @@ knitr::include_graphics("https://jollycontrarian.com/images/a/ab/Dramatic_Look_G
 
   - Access to foreign markets and shipping rights
   
+
+:::{.notes}
+Notes
+
+- Emphasize again, the US is weak
+- It's allies in the war for independence immediately abandon it
+- France starts blocking trade with US
+- Their goal was to hurt England, not set up a new regional power
+- Also emphasize role of strategic choke points, like New Orleans. Similar to Strait of Hormuz today. Vital for controlling trade from Mississippi to global markets. 
+
+:::  
   
 
 
@@ -657,6 +715,16 @@ knitr::include_graphics("https://jollycontrarian.com/images/a/ab/Dramatic_Look_G
 > **Mercantilism**: An economic doctrine based on a belief that military power and economic influence complemented each other; applied especially to colonial empires in the sixteenth through eighteenth centuries. Mercantilist policies favored the mother country over its colonies and over its competitors. Frieden, Lake, and Schultz p. A-4.
 
 > **Zero-sum game**: The idea that for one player or group to gain something another player or group must lose something. 
+
+:::{.notes}
+Notes
+
+- Emphasize that this is not a free market economy.
+- Leaders view things fundamentally different. For one state to gain from trade someone else must lose. 
+- Leaders are wary of enriching adversaries through trade. 
+- Adam Smith and David Ricardo's thinking changes this, but it takes decades/centuries. 
+
+:::
 
   
 ## The Early Years
@@ -674,7 +742,15 @@ knitr::include_graphics("https://jollycontrarian.com/images/a/ab/Dramatic_Look_G
 :::
 ::::
 
-  
+
+:::{.notes}
+Notes
+
+- Washington doesn't emphasize isolation. This is a bad term.
+- He calls for trade and commercial exchange, but wary of political entanglements. 
+- Americans are long wary of European court politics. Example: The title of ambassador is avoided for a long time, with minister being the highest rank, partly because Americans are focused on rejecting old monarchical systems and traditions. 
+
+:::
 
 
 
@@ -691,6 +767,17 @@ knitr::include_graphics("https://jollycontrarian.com/images/a/ab/Dramatic_Look_G
 :::
 ::::
 
+:::{.notes}
+Notes
+
+- There are still factional disputes, despite Washington's warnings. 
+- Hamilton and Jefferson are stand-ins for very different regional and factional visions of how the country could/should evolve.
+- Hamilton supports industrialization and manufacturing, a strong central government, and strong monetary and fiscal capacity.
+- Jefferson supports more agrarian vision and a weaker central government. 
+- Also keep in mind that Jefferson is responsible for dramatically expanding executive power by deploying military personnel to fight Barbary Pirates and by buying the Louisiana Purchase. 
+- Jefferson is a good example of how someone's ideals and principles can conflict with the material interests of the country and/or their individual position/office. Jefferson envisioned a more agrarian society and less powerful central government but he did a lot to increase executive power. 
+
+:::
 
 
 ## The Early Years
@@ -746,6 +833,8 @@ Monroe Doctrine excerpt
 
 We owe it, therefore, to candor and to the amicable relations existing between the United States and those powers to declare that we should consider any attempt on their part to extend their system to any portion of this hemisphere as dangerous to our peace and safety. With the existing colonies or dependencies of any European power we have not interfered and shall not interfere. But with the Governments who have declared their independence and maintain it, and whose independence we have, on great consideration and on just principles, acknowledged, we could not view any interposition for the purpose of oppressing them, or controlling in any other manner their destiny, by any European power in any other light than as the manifestation of an unfriendly disposition toward the United States. In the war between those new Governments and Spain we declared our neutrality at the time of their recognition, and to this we have adhered, and shall continue to adhere, provided no change shall occur which, in the judgement of the competent authorities of this Government, shall make a corresponding change on the part of the United States indispensable to their security.
 
+- Not initially something the US can enforce. The US lacks the navy to do anything about it for another century.
+
 :::
 
 
@@ -781,6 +870,8 @@ We owe it, therefore, to candor and to the amicable relations existing between t
  - Slavers raise US flag on their ships to try to avoid British inspections, but British Navy begins boarding US flagged ships at sea to locate people who are still attempting to enslave, or buy and sell, people. 
  
  - Creole Mutiny:  In 1841 a US slave ship traveling down the coast with 135 enslaved African-Americans headed for New Orleans. 18 of the Enslaved passengers revolted. One slave trader and one of the enslaved individuals died. They then directed the ship to the Bahamas, a British colony, where they would be set free. Incidents like these caused tensions between the US and Britain as there was no extradition agreement at the time. 
+ 
+ - Example of an issue that's often presented as a strictly domestic issue but one that has really important implications for international politics and foreign affairs. Slavery was a source of tension between the US and Great Britain. Slavery was also a source of tension between the US, Texas, and Mexico in the lead up to the Mexican-American War. 
 
 :::
 
@@ -809,6 +900,8 @@ We owe it, therefore, to candor and to the amicable relations existing between t
 - South Carolina believes that the tariffs are unfairly targeting them and that they have the right to nullify federal laws that they believe are unconstitutional (but courts have repeatedly struck down nullification). 
 
 - President Jackson threatens to send troops to enforce the tariffs. Congress passes a compromise tariff in 1833 that lowers rates over time. South Carolina repeals the Ordinance of Nullification but also passes a new ordinance nullifying the Force Act, which allows the president to use force to enforce federal laws.
+
+- The tariff was used as a source of revenue. We didn't have an income tax for another hundred years. But there's no clear line between a tariff for revenue and a tariff that's punitive towards the South. Another example of an issue that was a significant domestic issue, and a source of domestic conflict, but ultimately related to foreign policy because it hingest on international trade and punishes some parts of the country that rely more on imported goods. 
 :::
 
 
@@ -835,6 +928,14 @@ We owe it, therefore, to candor and to the amicable relations existing between t
 
 ::::
 
+:::{.notes}
+
+Notes
+
+- Ultimately a small conflict.
+- Good example of how militarized disuptes don't always involve the actual use of force. 
+- Also a good example of how not all disputes are the result of direct state action/policy, but sometimes from vague standards or laws and an angry citizenry. 
+:::
 
 
 ## The Early Years
@@ -902,7 +1003,7 @@ Mexican-American War
 
 Notes
 
-- Communications are hard! 
+- Communications are hard! Technology isn't there to faciltiate rapid and accurate communication of information. 
 
 - Delegating power to commanders is risky. They can improvise where needed, but they might also spark an international incident!
 
@@ -923,7 +1024,11 @@ Notes
 - Deployed in different ways by different coalitions, but ultimately used as a slogan to justify various policies associated with Westward expansion. 
 
 
+:::{.notes}
+Notes
 
+- Manifest Destiny is used to justify or rationalize lots of different policies. 
+:::
 
 
 
@@ -935,11 +1040,17 @@ Notes
 
 - North-South split very deep (slavery, economics, expansion, trade, etc)
 
-- In reality, these are all very closely connected
+- In reality, these issues are all very closely connected
 
 - Economic interests of the North and South were fundamentally different
 
 
+:::{.notes}
+Notes
+- Many of these economic divides go back to the founding
+- Washington's farewell address specifically notes that factions can arise along geographic lines and calls out the North and South, as well as the interior and coasts. 
+- But the North South split is an enduring source of conflict. 
+:::
 
 
 ## The Early Years
@@ -954,7 +1065,13 @@ Notes
 
 - Independent Southern states would change dynamics of international trade in Britain’s favor
 
+:::{.notes}
+Notes
 
+- Again, these issues are present 50 years earlier
+- Also a good example of how ideals and principles often run up against interests. 
+- British have to choose how to balance between anti-slavery principles and their interests in seeing a weakened US.
+:::
 
 
 
@@ -977,6 +1094,15 @@ Notes
 - Spain loses; US walks away with the Philippines, Guam, Puerto Rico, and Cuba (sort of)
 
 
+:::{.notes}
+Notes
+
+- Turner thesis really focuses on this moment in time. How can the US deal with the end of the frontier?
+- Can colonies fill this gap?
+- Should the US pursue empire?
+- Technological change (i.e. ironclads) revolutionize naval warfare. Mark a strong turn from old sail powered vessels to steam powered ironclads. Steam was used before, but it took several decades for it to become more widespread. 
+:::
+
 
 ## Transition
 
@@ -996,6 +1122,14 @@ Opponents of expansion cite:
 - Monroe Doctrine
 - Religion
 
+
+:::{.notes}
+Notes
+
+- This is a contested issue. 
+- Some people support more military spending, but try to steer the US towards monitor-style ships to protect the coast while making it impossible to venture abroad to intervene. 
+- Others want a genuine blue water Navy. 
+:::
 
 
 
@@ -1043,3 +1177,9 @@ ggplot(data = subset(spend, Year >= 1870 & Year <= 1914 & group == "spend.navy" 
 ```
 
 
+:::{.notes}
+Notes
+
+- The Civil War and the Spanish American War mark a change in military spending. Budget surpluses in the era meant the government could finance more veterans benefits. Spanish American War and the occupation of new territories meant more spending on the Navy and Army to hold these new territories and secure ocean routes. 
+- Move to steam and ironclads meant countries also need new sources of fuel and fueling and repair depots overseas. That means overseas military basing. 
+:::

@@ -555,7 +555,7 @@ Notes
 
 ## {.blank-slide}
 
-![A photo of President Truman signing the European Recovery Act, also known as the Marshall Plan, into law. To Truman's right are Senator Vandenberg and Undersecretary of State Robert Lovett.](../images/marshall-plan-sign.jpg){width=900px height=600px fig-align="center"}
+![A photo of President Truman signing the European Recovery Act, also known as the Marshall Plan, into law. To Truman's right are Senator Vandenberg and Undersecretary of State Robert Lovett.](../images/marshall-plan-sign.jpg){width=80% fig-align="center"}
 
 
 
@@ -709,7 +709,7 @@ To right: James Byrnes, Secretary of State 1945-1947
 :::
 
 :::{.column width=50%}
-![](../images/james-byrnes.jpg){width=500px fig-align="center"}
+![](../images/james-byrnes.jpg){width=80% fig-align="center"}
 :::
 ::::
 
@@ -793,21 +793,31 @@ Note:
 
 
 
+
 # Note this uses Consumer Price Index for All Urban Consumers: All Items in U.S. City Average
-cpi <- tq_get("CPIAUCNS",
-              get = "economic.data",
-              from = "1913-01-01",
-              to = "2019-01-01") |> 
-  mutate(year = as.numeric(format(date, "%Y")),
-         basevalue = mean(price[year==2018]),
-         cpi = price/basevalue)
+# If code gets hung up here try installing quantmod package.
+cpi_path <- here("../../../Data Files/US Government Files/FRED/CPIAUCNS.csv")
+if (!file.exists(cpi_path)) {
+  download.file("https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCNS",
+                cpi_path, quiet = TRUE)
+}
+
+cpi <- read_csv(cpi_path) |>
+  setNames(c("date", "price")) |>
+  subset(date >= "1913-01-01" & date <= "2019-01-01") |>
+  dplyr::mutate(year = format(as.Date(date), "%Y")) |>
+  dplyr::group_by(year) |>
+  dplyr::summarise(cpi = mean(price)) |>
+  dplyr::mutate(basevalue = cpi[year == 2018],
+                cpi = cpi / basevalue,
+                year = as.numeric(year))
 
 manufacturing <- readxl::read_xlsx(here("../../../Data Files/US_Exports_Finished_Manufactures_1905-1956.xlsx"), sheet = 1) |> 
   rename(manufacturing = 3, year = 1, month = 2) |> 
   mutate(time = paste(year, month, 1, sep = "-"),
          manufacturing = as.numeric(manufacturing),
          time2 = as.Date(time, format = "%Y-%m-%d")) |> 
-  left_join(cpi) |> 
+  left_join(cpi, by = ) |> 
   mutate(manufacturing = manufacturing/cpi)
 
 ggplot(manufacturing |> filter(year >= 1910 & year <= 1950), aes(x = time2, y = manufacturing)) +
@@ -841,9 +851,9 @@ Notes
 :::{.notes}
 Notes
 
-- From Hiscox (1999) this goes to show how important WWII was in changing Republican positions on trade
-- Also note how Democrat positions drop in the 1970s and 1980s, but eventually rebound.
-- Also note that this contradicts narratives about institutions ceding authority to the executive.
+- From Hiscox (1999) this goes to show how important WWII was in changing Republican positions on trade. Competition in manufacturing was literally bombed out of existence. This led to a sudden and dramatic change in Republican positions. 
+- Also note how Democrat positions drop in the 1970s and 1980s, but eventually rebound. This reflects their focus on labor in urban manufacturing centers throughout the 1920s and 1930s and how these industries were hit hard by trade liberalization and recovering economies in the 1970s and 1980s.
+- Also note that this contradicts narratives about institutions ceding authority to the executive. Interests changed, not the desire of members of Congress to exercise power over trade policy. 
 :::
 
 
@@ -898,6 +908,14 @@ ggplot(mapdata, aes(geometry = geom, fill = spend.ntile)) +
 
 ```
 
+
+:::{.notes}
+Notes
+
+- Note that one way Roosevelt got the Democrats to sign on to support the war effort was to locate new military bases and facilities in the South. 
+- Bases are kind of sticky—although the data in these maps are newer they still help to show some of the structural changes that we see taking place in the 1940s.
+- States in the South, like Alabama and Mississippi, and Virginia, see defense spending constituting a particularly high percentage of state GDP. 
+:::
 
 
 ## {.blank-slide}
@@ -970,6 +988,15 @@ ggplot(mapdata, aes(geometry = geom, fill = `Spending FY2022`)) +
 ```
 
 
+:::{.notes}
+Notes
+
+- Nowadays we see defense spending spread across a huge number of districts. 
+- This means any possible cuts to defense spending are likely to mobilize a dozen members of Congress whose constituents have interests in defense. 
+:::
+
+
+
 ## {.blank-slide}
 
 
@@ -1006,6 +1033,14 @@ ggplot(mapdata, aes(geometry = geom, fill = total_personnel)) +
        caption = "Data assembled by US Department of Defense Office of Economic Adjustment\nhttps://oldcc.gov/dsbs-fy2022")
 
 ```
+
+:::{.notes}
+Notes
+
+- at the same time, the location of military personnel specifically is much more localized.
+- Also note that these data don't reflect that local concentrations are probably a little more diffuse. Numbers attributed to Riley county are actually spread around a little more into Pottawatomie and Geary counties.
+:::
+
 
 
 
@@ -1082,6 +1117,7 @@ Problems
 
 - Data don't really support this
 - Domestic factors, like partisan realignment, drive more behavior in areas like bipartisanship of presidential appointments
+- We also don't see similar surges in bipartisanship after other external security threats. 
 :::
 
 
@@ -1119,11 +1155,13 @@ Notes:
 summary.1 <- tibble(`Region` = c("North", "South", "West"),
                     `Party` = c("Republican", "Democrat", "Mixed"),
                     `Free Trade` = c("-", "+", "Mixed"),
-                    `Military` = c("+", "-", "-"))
+                    `Military` = c("+", "-", "-"),
+                    `Unilateralism` = c("+", "-", "Mixed"),
+                    `Multilateralism` = c("-", "+", "Mixed"))
 
 kable(summary.1,
       'html',
-      align = c("l", "l", "c", "c"),
+      align = c("l", "l", "c", "c", "c", "c"),
       caption = "Pre-World War II") |>
   kable_styling(full_width = TRUE,
                 bootstrap_options = c("striped", "hover")) |> 
@@ -1145,11 +1183,13 @@ kable(summary.1,
 summary.2 <- tibble(`Region` = c("North", "South", "West"),
                     `Party` = c("Democrat", "Republican", "Republican"),
                     `Free Trade` = c("-", "+", "+"),
-                    `Military` = c("-", "+", "+"))
+                    `Military` = c("-", "+", "+"),
+                    `Unilateralism` = c("-", "+", "+"),
+                    `Mulatilateralism` = c("+", "-", "-"))
 
 kable(summary.2,
       'html',
-      align = c("l", "l", "c", "c"),
+      align = c("l", "l", "c", "c", "c", "c"),
       caption = "Late/Post-Cold War") |>
   kable_styling(full_width = TRUE,
                 bootstrap_options = c("striped", "hover")) |> 
@@ -1161,6 +1201,45 @@ kable(summary.2,
   
 
 ```
+
+
+
+
+## {.blank-slide}
+
+```{r summary table 3, echo = FALSE}
+
+summary.2 <- tibble(`Party` = c("Democrat", "Republican"),
+                    `Free Trade` = c("+", "+/-"),
+                    `Military` = c("-/+", "+"),
+                    `Unilateralism` = c("-", "+"),
+                    `Multilateralism` = c("+", "-"))
+
+kable(summary.2,
+      'html',
+      align = c("l", "c", "c", "c", "c"),
+      caption = "Post-Global War on Terror") |>
+  kable_styling(full_width = TRUE,
+                bootstrap_options = c("striped", "hover")) |> 
+  column_spec(1, width = "5cm") |> 
+  column_spec(2, width = "3cm") |> 
+  column_spec(3, width = "3cm") |> 
+  column_spec(4, width = "3cm") |> 
+  column_spec(5, width = "3cm") |> 
+  row_spec(0, bold = T, background = "#512888", color = "white")
+  
+
+```
+
+
+:::{.notes}
+Notes
+
+- In the present, we just don't know how the parties are going to come down on some of these issues. 
+- Trump may be an aberration in his views of trade as being zero-sum, using tariffs as a weapon to extract concessions, and engaging in aggressive military interventions.
+- If the Republican Party has more broadly come to accept some of these positions we may see some of this become a new normal. 
+- If most of the party rejects these policies then we may see a return to more of a George W. Bush era Republican Party that is more unilateralist but still generally pro-engagement in other areas. 
+:::
 
 
 
@@ -1228,4 +1307,5 @@ ggplot(nom.1, aes(x = nominate_dim1, y = reorder(factor(congress), -congress), f
 #       caption = "Data obtained from Voteview.com")
 #
 ```
+
 

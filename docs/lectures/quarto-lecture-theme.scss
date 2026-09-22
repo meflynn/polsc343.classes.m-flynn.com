@@ -274,17 +274,51 @@ p.date {
   display: block;
   margin: 0;
   max-width: 100%;
+}
+
+// Only auto-size images that were NOT given explicit pixel dimensions. Quarto turns
+// {width=600px height=450px} into HTML width/height attributes, and any CSS width or
+// height rule silently overrides those -- so without the :not() guards, every sized
+// image inside a figure fell back to its native file size. Explicit sizes are used
+// exactly as given; if both width and height are set and don't match the photo's
+// proportions, the photo stretches -- give one dimension to keep proportions.
+.reveal figure img:not([width]):not([height]) {
   max-height: $figure-max-height;
   width: auto;
   height: auto;
 }
 
+// Percentage widths (out-width: "80%" on R chunks, {width=80%} on images). Quarto
+// emits these as inline style="width:80.0%" on the <img>. Because the figure above
+// shrink-wraps its image, the percentage was being taken of the image's own
+// (70vh-capped) size rather than of the slide or column, and the image then sat
+// pinned to the figure's left edge -- smaller than requested and off-center to the
+// left. Fix: move the percentage onto the <figure> itself (so it is a share of the
+// slide/column and the figure centers as a unit) and let the image fill the figure.
+// Captions still start at the image's left edge. Covers whole-number percentages;
+// anything else falls back to the default behavior.
+@supports selector(:has(*)) {
+  @for $i from 1 through 100 {
+    .reveal figure:has(img[style*="width:#{$i}.0%"]) { width: $i * 1%; }
+    .reveal figure:has(img[style*="width:#{$i}.0%"]) > p { width: 100%; }
+    .reveal figure:has(img[style*="width:#{$i}.0%"]) img:not([width]):not([height]) {
+      width: 100% !important;
+      max-height: none;
+    }
+  }
+}
+
 // Caption spans the image width and is left-aligned against its left edge.
+// width: 0 + min-width: 100% keeps the caption from contributing to the figure's
+// shrink-to-fit width. With plain width: 100%, a long caption's one-line length set
+// the figure's width instead of the image -- so the figure grew wider than the image,
+// and the image (pinned to the figure's left edge) sat left of center. The caption
+// now wraps to the image's width.
 .reveal figcaption,
 .reveal .quarto-figure figcaption {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: 0;
+  min-width: 100%;
   text-align: left;
   padding-left: 0;
   margin-top: 0.25em;
