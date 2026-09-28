@@ -519,7 +519,7 @@ Possible problems
   - Relying on Vietnam as a lesson in fighting an insurgency/guerilla war can lead to bad conclusions. Not every insurgency looks like Vietnam.
   
 - Motivated information search
-  - Policymakers know the policies/conclusiosn they want, and so they look for information that fits with that narrative.
+  - Policymakers know the policies/conclusions they want, and so they look for information that fits with that narrative.
   - This is what happened with the Iraq War.
 
 :::
@@ -728,13 +728,15 @@ Second example of motivated information searching: Intelligence evaluations of I
 
 ## Policymaking Pitfalls
 
-Not considering all the options
+Not considering full range of options
 
-- Sometimes politicians might not consider every possible option
+- The decision side
 
-- Some options might be eliminated immediately because they're not politically desirable
+  - Sometimes politicians might not consider every possible option
 
-- Bureaucratic officials or advisers may manipulate the range of options presented 
+  - Some options might be eliminated immediately because they're not politically desirable
+
+  - Bureaucratic officials or advisers may manipulate the range of options presented 
 
 :::{.notes}
 Example: War on terror
@@ -755,6 +757,64 @@ Example: War on terror
 
 ## Policymaking Pitfalls
 
+::::{.columns}
+:::{.column width=50%}
+Not considering full range of options
+
+- The outcome side
+
+  - Politicians might not consider all possible outcomes
+
+  - This applies to both ally behavior and adversary behavior
+
+  - Similar to motivated information search
+
+  - Politicians may have vague goals or overly optimistic assessments of outcomes
+
+Example: 2026 war against Iran. Senior policymakers offered several different explanations for why the US was waging war against Iran and what its war aims were.
+
+:::
+
+:::{.column width=50%}
+
+![Defense Secretary Pete Hegseth and Joint Chiefs of Staff Chairman Gen. Dan Caine take questions from reporters at the Pentagon. Photo: Brendan Smialowski/AFP via Getty Images](https://images.axios.com/5IIwU59jYE_8YvUnUrNctUZxz1w=/0x0:7066x3975/1920x1080/2026/03/02/1772460626593.jpeg)
+
+:::
+::::
+
+
+:::{.notes}
+
+Notes
+
+- Iran War in 2026 provides example of leaders not considering full range of outcomes, even when they're apparent or have been predicted for years
+
+- Defense researchers and military planners predicted Iran would close the Strait of Hormuz for decades before the 2026 war. This has proven difficult to deal with.
+
+- Trump Administration seems to have overestimated the amount of influence it could exert on Netanyahu's government. Multiple times throughout the summer of 2026 Trump claimed to have reached a tentative agreement for a ceasefire only for Israel to claim that it was not bound by that agreement, particularly with respect to its fight against Hezbollah in Lebanon. 
+
+- Trump Administration officials claimed that the 2025 Operation Midnight Hammer eliminated. Iran's nuclear threat. But needed new justification for 2026 war. At least 11 goals were offered, inconsistently, including: 
+
+  - Eliminate ballistic missile capacity	
+  - Destroy Iran's navy	
+  - No nuclear weapons for Iran	
+  - Permanently destroy Iran's military	
+  - Target Military-Industrial Complex	
+  - Eliminate drone production	
+  - Control Airspace	
+  - Eliminate ability to fund proxy forces	
+  - Preemptive Strike to protect from imminent threat	
+  - Iran wants to destroy the US for religious reasons	
+  - Regime Change
+
+:::
+
+
+
+
+
+## Policymaking Pitfalls
+
 Conflicts between policy goals
 
 - Politicians make promises to different constituencies over different issues
@@ -763,6 +823,28 @@ Conflicts between policy goals
 
 - Policymakers then have to make tradeoffs between policy goals
 
+
+
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-1.png){width=870px height=700px fig-align=center}
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-2.png){width=870px height=700px fig-align=center}
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-3.png){width=870px height=700px fig-align=center}
+
+
+## {.blank-slide}
+
+![](../images/tariff-diagram-4.png){width=870px height=700px fig-align=center}
 
 
 
