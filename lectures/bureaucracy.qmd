@@ -769,6 +769,37 @@ State in decline
 
 - Growth of alternative organizations/offices
 
+:::{.notes}
+
+# Notes
+
+- State's fundamental mission is diplomacy. That means talking to and making deals with people. Many of whom may be unpopular with opposition parties and/or the general public.
+
+- State's work is also difficult to see and process for most people. Diplomacy can take a long time to pay off, and the results are often difficult to detect. 
+
+- Military force gives the illusion of "seriousness" and immediate results. But as we see from the 2026 Iran War, force does not always solve problems. 
+
+:::
+
+
+
+## {.blank-slide}
+
+![Figure depicting Iran's stockpile of enriched uranium from 2008 through 2025.](https://cdn.statcdn.com/Infographic/images/normal/23528.jpeg){fig-align="center"}
+
+:::{.notes}
+
+# Notes
+
+- Joint Comprehensive Plan of Action (JCPOA) succeeded in eliminating Iran's capacity to produce nuclear weapons.
+
+- This was generally supported by Gulf States. Saudi Arabia was more skeptical, but still backed the deal publicly. [al Jazeera article on Iran deal](https://www.aljazeera.com/features/2026/6/25/hard-headed-pragmatism-israels-war-backfires-as-gulf-backs-us-iran-mou)
+
+- Republican opposition largely stemmed from domestic opposition to the deal, not from allied opposition. 
+
+:::
+
+
 
 
 ## The State Department

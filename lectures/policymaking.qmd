@@ -847,6 +847,21 @@ Conflicts between policy goals
 ![](../images/tariff-diagram-4.png){width=870px height=700px fig-align=center}
 
 
+:::{.notes}
+
+Notes
+
+- Trump Administration has offered three explanations for tariffs. First, tariffs are to raise revenues. Presents this as though foreign countries' citizens are paying the money, but it's US importers. Second, tariffs will help to reshore industries and jobs that have been lost to overseas outsourcing over the last 30 years. Third, tariffs are a bargaining tool to get better trade deals, though what this means in practice is often not defined. 
+
+- In reality these goals conflict with one another. While there is historical precedent for each of these goals, they frequently cause conflict and necessarily work against one another.
+
+- Tariffs have been used to raise revenue, but this means you need people to be buying lots of imported goods. Thus you might not be able to protect domestic industry very well because you need tariffs at a level that will keep them buying imported goods. Reshoring lost industries and jobs means you need to make production within the US more attractive. You need higher tariffs to make imported goods less attractive to do this. If you raise tariff levels too high to chase this goal then people will shift consumption away from imported goods and tariff revenues will drop.
+
+- Similarly, you can't use tariffs as a temporary or short term bargaining tool and expect consistent revenues. You also can't raise and lower tariffs to bargain and expect to create an environment that his conducive to growing domestic industry. 
+
+:::
+
+
 
 ## {.blank-slide}
 
@@ -868,9 +883,9 @@ Trump Administration's conflicting priorities
 
 - Trump campaigned on promises to lower inflation, mass deportations, getting tough on US trade partners, and unleashing DOGE on a wasteful federal bureaucracy
 - These goals frequently conflict with one another
-- Mass deportations threaten the agricultural workforce, which is approximately 40% reliant on undocumented labor. Only 32 percent are US-born and 19% were authorized immigrants. See [USDA information on farmworkers' legal status](https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=63466)
-- Tariffs increase prices for US consumers
-- Trade conflicts with adversaries also lead to retaliation, which often targets US agricultural exports
+- Mass deportations threaten the agricultural workforce, which is approximately 40% reliant on undocumented labor. Only 32 percent are US-born and 19% were authorized immigrants. See [USDA information on farmworkers' legal status](https://www.ers.usda.gov/data-products/chart-gallery/chart-detail?chartId=63466). Seeking to deport large portions of this workforce, and driving others into hiding, will necessarily lead to labor shortages, which will drive up prices.
+- Tariffs increase prices for US consumers. They're taxes.
+- Trade conflicts with adversaries also lead to retaliation, which often targets US agricultural exports. 
 - Eliminating USAID also led to a drop in US demand for US agricultural products which were often shipped overseas.
 - All of these policies contribute to increased prices for consumers and hurt the US agricultural sector.
 
