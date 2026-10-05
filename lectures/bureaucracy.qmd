@@ -58,6 +58,7 @@ sysfonts::font_add_google(name = "Oswald", family = "oswald")
 showtext::showtext_auto()
 showtext::showtext_opts(dpi = 400)
 
+
 ```
 
 
@@ -593,6 +594,7 @@ The Secretary of State is the chief diplomat of the Untied States
 Secretary of State
 
 Current Secretary: Marco Rubio
+
 - Former US Senator from Florida
 - Elected to Senate in 2010
 - Ran for Republican presidential nomination in 2016
@@ -654,7 +656,7 @@ To right: Former US Ambassador to the United Kingdom, Matthew Barzun. Barzun als
 
 :::{.column width=50%}
 
-![Matthew Barzun](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Matthew_Winthrop_Barzun.jpg/1200px-Matthew_Winthrop_Barzun.jpg){width=500px height=600px fig-align="center"}
+![Matthew Barzun](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Matthew_Winthrop_Barzun_%28cropped%29.jpg/500px-Matthew_Winthrop_Barzun_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail){width=500px height=600px fig-align="center"}
 
 :::
 ::::

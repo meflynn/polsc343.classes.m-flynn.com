@@ -6,11 +6,11 @@
 <script src="bureaucracy_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="bureaucracy_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="bureaucracy_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="bureaucracy_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="bureaucracy_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Michael Flynn">
-  <meta name="dcterms.date" content="2025-10-21">
+  <meta name="dcterms.date" content="2026-10-05">
   <title>US Foreign Policy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="bureaucracy_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="bureaucracy_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -30,7 +36,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="bureaucracy_files/libs/revealjs/dist/theme/quarto-45f3e86775ca9c7edce16ceab1f28a31.css">
+  <link rel="stylesheet" href="bureaucracy_files/libs/revealjs/dist/theme/quarto-cb6ca1ac9687debb2c40d347119ad06f.css">
   <link href="bureaucracy_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="bureaucracy_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="bureaucracy_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -136,7 +142,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Michael Flynn 
+Michael Flynn
 </div>
         <p class="quarto-title-affiliation">
             Professor
@@ -153,7 +159,7 @@ Michael Flynn
     </div>
 </div>
 
-  <p class="date">2025-10-21</p>
+  <p class="date">2026-10-05</p>
 </section>
 <section id="lecture-overview" class="slide level2">
 <h2>Lecture Overview</h2>
@@ -512,7 +518,13 @@ Michael Flynn
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Secretary of State</p>
-<p>Current Secretary: Marco Rubio - Former US Senator from Florida - Elected to Senate in 2010 - Ran for Republican presidential nomination in 2016 - Served on the Senate Foreign Relations Committee</p>
+<p>Current Secretary: Marco Rubio</p>
+<ul>
+<li>Former US Senator from Florida</li>
+<li>Elected to Senate in 2010</li>
+<li>Ran for Republican presidential nomination in 2016</li>
+<li>Served on the Senate Foreign Relations Committee</li>
+</ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -569,7 +581,7 @@ Michael Flynn
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Matthew_Winthrop_Barzun.jpg/1200px-Matthew_Winthrop_Barzun.jpg" width="500" height="600"></p>
+<p><img data-src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Matthew_Winthrop_Barzun_%28cropped%29.jpg/500px-Matthew_Winthrop_Barzun_%28cropped%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail" width="500" height="600"></p>
 <figcaption>Matthew Barzun</figcaption>
 </figure>
 </div>
@@ -888,7 +900,7 @@ Michael Flynn
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1000,13 +1012,14 @@ Michael Flynn
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
