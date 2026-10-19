@@ -112,6 +112,15 @@ Executive bureaucracy before World War II
 - Bureaucracy didn't become a "career" until post-1940s
 
 
+:::{.notes}
+
+Notes
+
+- Bureaucratic capacity initially very low. Go back to first lectures---US is small, small population, small tax base, small diplomatic corps, and small military. Can't do much. 
+
+- Growth of bureaucracy is something that accompanies growth of government programs more broadly. Great Depression and WWII are the big drivers. Larger support staff needed to manage growing government programs. 
+
+:::
 
 
 
@@ -136,6 +145,17 @@ B <- readstata13::read.dta13(here("../../../Projects/Dissertation/Dissertation D
          caption = "Data obtained from Michael Flynn 'Those Halcyon Days: The Evolution of the American Foreign Policy Establishment'. Dissertation. Binghamton University.")
 
 ```
+
+
+:::{.notes}
+Notes
+
+- Most people didn't spend a lot of time in federal government before WWII
+- This changes as the average number of years of bureaucratic experience individual appointees have prior to their current appointment increases steadily over the Cold War period. 
+- Government is becoming a more viable career path. 
+- This looks at secretaries, deputy, under, and assistant secretaries in State, Defense, and Treasury, as well as National Security Advisors and Directors of the CIA.
+
+:::
 
 
 
@@ -164,6 +184,13 @@ ggplot(data = B) +
 
 
 
+:::{.notes}
+Notes
+
+- Not only do people have more experience in government, but a higher proportion of appointees have previously served. 
+- Government experience is becoming deeper, but also more widespread. 
+
+:::
 
 
 
@@ -188,6 +215,13 @@ ggplot(data = B) +
 ```
 
 
+:::{.notes}
+Notes
+
+- Along with more experience, education levels are rising, too.
+- The modal educational attainment increases from BA to PhD.
+
+:::
 
 
 
@@ -213,6 +247,13 @@ ggplot(data = B) +
 ```
 
 
+:::{.notes}
+Notes
+
+- At the same time, time spent in the private sector is declining in the first few years of the Cold War.
+- This never goes away, and Republican presidents tend to appoint people with slightly higher levels of prior private sector experience. 
+
+:::
 
 
 
@@ -247,6 +288,17 @@ Functional Differentiation:
   - Navy vs Army
   
   - Artillery vs Armor
+  
+  
+:::{.notes}
+Notes
+
+- This is key to the modern state, not just the US
+- The idea that the government has become composed of offices that are more important than the individual office-holder, and that each part of the government specializes in certain tasks.
+- Goes along with broader emphasis on professionalization of various fields during the early 20th century. 
+- Every organization is composed of smaller organizations that specialize in certain tasks. 
+
+:::
   
   
   
@@ -286,6 +338,15 @@ Different bureaucratic agencies
 :::
 ::::
 
+
+
+:::{.notes}
+Notes
+
+- Bureaucracy is everywhere. 
+- 
+
+:::
 
 
 
@@ -381,6 +442,15 @@ They're responsible for a lot...
   
   - Subordinates?
   
+
+:::{.notes}
+
+Notes
+
+- Presidents get a lot of the attention, but they are the head of the entire executive branch. 
+- Members of the executive branch 
+
+:::
   
   
   

@@ -793,6 +793,8 @@ Notes
 
 - Trump Administration seems to have overestimated the amount of influence it could exert on Netanyahu's government. Multiple times throughout the summer of 2026 Trump claimed to have reached a tentative agreement for a ceasefire only for Israel to claim that it was not bound by that agreement, particularly with respect to its fight against Hezbollah in Lebanon. 
 
+- Having unclear or inconsistent goals and not understanding potential outcomes makes it difficult to assess progress.
+
 - Trump Administration officials claimed that the 2025 Operation Midnight Hammer eliminated. Iran's nuclear threat. But needed new justification for 2026 war. At least 11 goals were offered, inconsistently, including: 
 
   - Eliminate ballistic missile capacity	
@@ -825,21 +827,6 @@ Conflicts between policy goals
 
 
 
-
-
-## {.blank-slide}
-
-![](../images/tariff-diagram-1.png){width=870px height=700px fig-align=center}
-
-
-## {.blank-slide}
-
-![](../images/tariff-diagram-2.png){width=870px height=700px fig-align=center}
-
-
-## {.blank-slide}
-
-![](../images/tariff-diagram-3.png){width=870px height=700px fig-align=center}
 
 
 ## {.blank-slide}
