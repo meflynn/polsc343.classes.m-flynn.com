@@ -90,8 +90,7 @@ showtext::showtext_opts(dpi = 400)
 ## {.blank-slide}
 
 
-<iframe width="1120" height="630"  src="https://www.youtube.com/embed/y2TLJmIF220?si=4oa3MLbMGYGOrW1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; text-align: center; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y2TLJmIF220?si=1jo8TDRCOft52jLV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
@@ -812,10 +811,6 @@ Notes
 
 
 
-## {.blank-slide}
-
-![Figure 1 from Clark, Fordham, and Nordstrom (2011) showing the relationship between unemployment and US conflict behavior, broken down by president's party.](../images/clark-2003-figure.png){width=900 height=600}
-
 
 
 
@@ -854,41 +849,6 @@ Diversionary logic can help us here:
 
 
 
-## {.blank-slide}
-
-```{r target table}
-
-target <- tibble(`Outcome/Variable` = c("US conflict behavior",
-                              "US Unemployment rate",
-                              "Democratic president",
-                              "Communist state",
-                              "State power",
-                              "Communist regime"),
-                 Effect = c("+", "-", "+", "+", "+","+"))
-
-kable(target,
-      "html",
-      align = c("l", "c"),
-      caption = "Correlates of foreign conflict behavior towards the United States, 1946-1992") |> 
-  kable_styling(full_width = TRUE,
-                font_size = 20) |> 
-  row_spec(0, color = "white", background = "#512888", bold = TRUE) |> 
-  column_spec(1, width = "7cm") |> 
-  column_spec(2, width = "4cm") |> 
-  pack_rows("Conflict Intensity", 1, 4) |> 
-  pack_rows("Variation in State Behavior", 5, 6) |> 
-  footnote("Dave Clark, Ben Fordham, and Tim Nordstrom. 2011. Preying on the Misfortune of Others: When do states exploit their opponents' domestic troubles? Journal of Politics. 73(1):248-264.")
-
-```
-
-
-:::{.notes}
-
-Notes
-
-- Focuses mostly on the Cold War period, so some of these effects may be more or less relevant today.
-
-:::
 
 
 
@@ -1002,10 +962,7 @@ Notes
   - [See BBC News article](https://www.bbc.com/news/articles/c0ex94eeljeo)
 
 - SEC. 3. The President in every possible instance shall consult with
-Congress before introducing United States Armed Forces into hostilities or into situations where imminent involvement in hostilities is
-clearly indicated by the circumstances, and after every such introduction shall consult regularly with the Congress until United States
-Armed Forces are no longer engaged in hostilities or have been removed
-from such situations.
+Congress before introducing United States Armed Forces into hostilities or into situations where imminent involvement in hostilities is clearly indicated by the circumstances, and after every such introduction shall consult regularly with the Congress until United States Armed Forces are no longer engaged in hostilities or have been removed from such situations.
 
 - SEC. 4. (a) In the absence of a declaration of war, in any case in which United States Armed Forces are introduced into 1) hostilities or situations where imminent involvement in hostilities in indicated, 2) into the territory, airspace, or waters of a foreign nation while equipped for combat, or 3) in numbers which substantially enlarge the United States Armed Forces equipped for combat already located in a foreign nation, the President shall submit within 48 hours a report to the Speaker of the House and the President Pro Tempore of the Senate.
 
@@ -1013,7 +970,7 @@ from such situations.
   
   - Requires continuous reporting while troops are in harm's way.
 
-- Requires the President to terminate the use of force within 60 days from the submission of the report as dicated by SEC 4.1.
+- Requires the President to terminate the use of force within 60 days from the submission of the report as dictated by SEC 4.1.
 
 :::
 
@@ -1136,6 +1093,10 @@ What will allies do?
 
 
 
+## {.blank-slide}
+
+![Reuters report from April 13, 2026 discussing NATO allies' refusal to lend naval forces to support Trump Administration's planned blockade of Iranian ports.](../images/nato-iran-blockade.jpg){width=500px height=600px}
+
 
 
 
@@ -1160,8 +1121,15 @@ What will rivals do?
 
 
 
+## {.blank-slide}
 
+:::{#fig-opeds layout-ncol=2}
 
+![Map of the Strait of Hormuz](../images/strait-of-hormuz-map.png){width=700px height=500px margin-top=auto}
+
+![Significant oil chokepoints](../images/strait-of-hormuz-oil.jpg){width=700px height=500px margin-top=auto}
+
+:::
 
 
 ## Constraints on the Use of Force

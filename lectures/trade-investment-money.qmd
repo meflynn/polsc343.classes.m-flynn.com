@@ -69,7 +69,58 @@ showtext::showtext_auto()
 showtext::showtext_opts(dpi = 400)
 
 
+
+# get_fred(): FRED downloads with a local cache.
+# Downloads each series separately; a successful download is saved to
+# lectures/fred-cache/. If FRED doesn't respond during a render, the saved
+# copy is used instead. Returns symbol, date, price like tq_get().
+
+get_fred <- function(series, from, to = Sys.Date(),
+                     cache_dir = here::here("lectures", "fred-cache")) {
+  dir.create(cache_dir, recursive = TRUE, showWarnings = FALSE)
+
+  # Cache name leaves out the default end date (today), so a copy saved
+  # on one day can still be found on a later render.
+  to_tag <- if (missing(to)) "" else paste0("_", to)
+
+  fetch_one <- function(s) {
+    cache_file <- file.path(cache_dir, paste0(s, "_", from, to_tag, ".rds"))
+    warns <- character()
+
+    dat <- withCallingHandlers(
+      tryCatch(tidyquant::tq_get(s, get = "economic.data", from = from, to = to),
+               error = function(e) { warns <<- c(warns, conditionMessage(e)); NA }),
+      warning = function(w) { warns <<- c(warns, conditionMessage(w))
+                              invokeRestart("muffleWarning") }
+    )
+
+    if (is.data.frame(dat) && nrow(dat) > 0) {
+      dat <- dplyr::select(dat, date, price)
+      saveRDS(dat, cache_file)
+    } else if (file.exists(cache_file)) {
+      cat("[get_fred] download failed for ", s, "; using cached copy from ",
+          format(file.mtime(cache_file), "%Y-%m-%d"), "\n", sep = "", file = stderr())
+      dat <- readRDS(cache_file)
+    } else {
+      return(list(data = NULL,
+                  error = paste0(s, ": ", paste(unique(warns), collapse = "; "))))
+    }
+    list(data = dplyr::mutate(dat, symbol = s, .before = 1), error = NULL)
+  }
+
+  results <- lapply(series, fetch_one)
+  errors  <- unlist(lapply(results, `[[`, "error"))
+
+  if (length(errors) > 0) {
+    stop("Could not download these FRED series and no cached copy exists:\n",
+         paste(errors, collapse = "\n"), call. = FALSE)
+  }
+
+  dplyr::bind_rows(lapply(results, `[[`, "data"))
+}
+
 ```
+
 
 
 
@@ -400,13 +451,13 @@ ggplot(data = subset(us.trade.gdp, name == "Exports" | name == "Imports"), aes(x
 
 Theoretical
 
-- Realism/Mercantilism
+- **Realism/Mercantilism**
 
   - Trade as a source of national power
   
   - Trade is a zero-sum game
   
-- Liberal theory
+- **Liberal Theory**
 
   - Trade can be positive-sum (both/multiple players can "win")
   
@@ -481,7 +532,7 @@ But how?
 
 ## Trade as a Policy Instrument
 
-Revenue generation
+**Revenue**
 
 - Trade represents the flow of goods and services across borders
 
@@ -499,10 +550,8 @@ Revenue generation
 #| out-width: 80%
 #| fig-align: center
 
-tariff.revenue <- tq_get("B235RC1Q027SBEA", 
-                             get = "economic.data", 
-                             from = "1960-01-01", 
-                             to = "2025-11-01")
+tariff.revenue <- get_fred("B235RC1Q027SBEA",
+                             from = "1960-01-01")
 
 ggplot(data = tariff.revenue, aes(x = date, y = price)) +
   geom_area(fill = "deepskyblue", colour = "black", size = .2, alpha = .8) +
@@ -511,7 +560,7 @@ ggplot(data = tariff.revenue, aes(x = date, y = price)) +
   scale_y_continuous(labels = dollar_format()) +
   labs(x = "Year",
        y = "Billions of USD",
-       title = "US Tariff Revenue, 1960-2024",
+       title = "US Tariff Revenue, 1960-2026",
        subtitle = "Taxes on imports generate revenue for the federal government",
        caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series B235RC1Q027SBEA")
 
@@ -538,10 +587,8 @@ Notes
 #| out-width: 80%
 #| fig-align: center
 
-tariff.revenue <- tq_get(c("B235RC1Q027SBEA", "W006RC1Q027SBEA"),
-                             get = "economic.data", 
-                             from = "1960-01-01", 
-                             to = "2025-11-01") |> 
+tariff.revenue <- get_fred(c("B235RC1Q027SBEA", "W006RC1Q027SBEA"),
+                             from = "1960-01-01") |> 
   dplyr::mutate(symbol = case_when(
     symbol == "B235RC1Q027SBEA" ~ "Tariff Revenue",
     symbol == "W006RC1Q027SBEA" ~ "Total Federal Tax Receipts"
@@ -561,7 +608,7 @@ ggplot(data = tariff.revenue, aes(x = date, y = price, fill = symbol)) +
   labs(x = "Year",
        y = "Trillions of USD",
        fill = "Revenue Type",
-       title = "US tariff revenue and total federal tax revenues, 1960-2024",
+       title = "US tariff revenue and total federal tax revenues, 1960-2026",
        subtitle = "Taxes on imports generally account for a small proportion of federal revenues",
        caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series B235RC1Q027SBEA")
 
@@ -579,10 +626,8 @@ ggplot(data = tariff.revenue, aes(x = date, y = price, fill = symbol)) +
 #| out-width: 80%
 #| fig-align: center
 
-tariff.revenue <- tq_get(c("B235RC1Q027SBEA", "W006RC1Q027SBEA"),
-                             get = "economic.data", 
-                             from = "1960-01-01", 
-                             to = "2025-11-01") |> 
+tariff.revenue <- get_fred(c("B235RC1Q027SBEA", "W006RC1Q027SBEA"),
+                             from = "1960-01-01") |> 
   dplyr::mutate(symbol = case_when(
     symbol == "B235RC1Q027SBEA" ~ "Tariff Revenue",
     symbol == "W006RC1Q027SBEA" ~ "Total Federal Tax Receipts"
@@ -597,7 +642,7 @@ ggplot(data = tariff.revenue, aes(x = date, y = tariff_percent)) +
   scale_y_continuous(labels = percent_format()) +
   labs(x = "Year",
        y = "Percent",
-       title = "US tariff revenue as a percent of total federal tax revenues, 1960-2024",
+       title = "US tariff revenue as a percent of total federal tax revenues, 1960-2026",
        subtitle = "Taxes on imports generally account for a small proportion of federal revenues",
        caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series B235RC1Q027SBEA")
 
@@ -618,10 +663,8 @@ ggplot(data = tariff.revenue, aes(x = date, y = tariff_percent)) +
 #| out-width: 80%
 #| fig-align: center
 
-coffee.prices <- tq_get(c("WPU026301", "CUSR0000SEFP01", "PCOFFOTMUSDM"), 
-                        get = "economic.data", 
-                        from = "2010-01-01", 
-                        to = "2025-11-01") |> 
+coffee.prices <- get_fred(c("WPU026301", "CUSR0000SEFP01", "PCOFFOTMUSDM"),
+                        from = "2010-01-01") |> 
   dplyr::mutate(Index = case_when(
     symbol == "WPU026301" ~ "PPI",
     symbol == "CUSR0000SEFP01" ~ "CPI",
@@ -640,7 +683,7 @@ ggplot(data = coffee.prices, aes(x = date, y = price, color = Index, linetype = 
   viridis::scale_color_viridis(discrete = TRUE, option = "magma", begin = 0.1, end = 0.9) +
   labs(x = "Year",
        y = "Index",
-       title = "US Coffee Prices, 2010-2024",
+       title = "US Coffee Prices, 2010-2026",
        subtitle = "Tariffs on imported coffee can raise prices for consumers and change consumption habits",
        caption = "Data obtained from the Federal Reserve Economic Data (FRED) data series WPU026301, CUSR0000SEFP01, and PCOFFOTMUSDM")
     
@@ -672,7 +715,7 @@ Notes
 
 ## Trade as a Policy Instrument
 
-Control over vital resources
+**Control over vital resources**
 
 - What types of resources?
 
@@ -755,7 +798,7 @@ Notes
 
 ## Trade as a Policy Instrument
 
-Market access and bargaining
+**Market access and bargaining**
 
 - Producers need markets. Scaling up production requires larger markets.
 
@@ -878,7 +921,7 @@ ggplot(data = combined.import.export, aes(x = Year, y = us.imports.of.global.exp
   labs(x = "Year",
        y = "Percent",
        title = "US imports as a percent of global exports, 1948-2024",
-       subtitle = "4.3% of the world's population concums 15-20% of global exports",
+       subtitle = "4.3% of the world's population consumes 15-20% of global exports",
        caption = "Data obtained from IMF DOTS database")
 
 
@@ -966,7 +1009,7 @@ $$GDP_{it} = Consumption_{it} + Investment_{it} + Government_{it} + (Exports_{it
 
 ## Trade as a Policy Instrument
 
-Protectionism and market access
+**Protectionism and market access**
 
 - Trade creates winners and losers
 
@@ -974,6 +1017,7 @@ Protectionism and market access
 
 - Domestic producers who are relatively inefficient tend to favor protectionism (i.e. government intervention)
 
+> Protection: Policies that create barriers to domestic consumers buying imported goods. Examples can include tariffs, quotas, subsidies, and more.
 
 
 
@@ -1033,13 +1077,13 @@ sugar.prices <- read_csv(here("../../../Data Files/US Government Files/USDA/Grou
 ggplot(data = sugar.prices, aes(x = date, y = Value, colour = group, linetype = group)) +
   geom_line(size = 1.2, alpha = 0.8) +
   theme_flynn(base_size = 11, base_family = "oswald") +
-  scale_x_date(breaks = seq(as.Date("1989-01-01"), as.Date("2025-11-01"), by = "5 years"),
-               limits = c(as.Date("1989-01-01"), as.Date("2025-11-01"))) +
+  scale_x_date(breaks = seq(as.Date("1991-01-01"), as.Date("2026-01-01"), by = "5 years"),
+               limits = c(as.Date("1989-01-01"), as.Date("2026-01-01"))) +
   scale_y_continuous(breaks = seq(0,50,10), limits = c(0,50)) +
   viridis::scale_color_viridis(discrete = 1, option = "magma", begin = 0.1, end = 0.9) +
   labs(y = "Cents per pound",
        x = "Date",
-       title = "Average raw sugar price on US versus world markets, 1989-2025",
+       title = "Average raw sugar price on US versus world markets, 1989-2026",
        subtitle = "US prices are generally higher than the world market prices due to trade protection", 
        caption = "Data obtained from USDA's Sugar and Sweeteners Yearbook Tables \n https://www.ers.usda.gov/data-products/sugar-and-sweeteners-yearbook-tables.aspx")  
 
@@ -1134,22 +1178,20 @@ What is the benefit to foreign countries?
 library(tidyquant)
 library(rlang)
 
-farm.subsidies <- tq_get("L312041A027NBEA",
-                         get = "economic.data",
-                         from = "1960-01-01",
-                         to = "2025-11-01")
+farm.subsidies <- get_fred("L312041A027NBEA",
+                         from = "1960-01-01")
 
 
 ## Farm subsidies
 ggplot(data = farm.subsidies, aes(x = date, y = price)) +
   geom_area(fill = "deepskyblue", colour = "black", size = .2, alpha = .8) +
   theme_flynn(base_size = 11, base_family = "oswald") +
-  scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2021-01-01"), by = "5 years"), date_labels = "%Y",
+  scale_x_date(breaks = seq(as.Date("1960-01-01"), as.Date("2026-01-01"), by = "5 years"), date_labels = "%Y",
                limits = c(as.Date("1960-01-01"), as.Date("2026-01-01"))) +
   scale_y_continuous(labels = dollar_format()) +
   labs(y = "Billions of Current Dollars",
        x = "Date",
-       title = "US federal agricultural subsidies, 1960-2020",
+       title = "US federal agricultural subsidies, 1960-2026",
        caption = "Data obtained from FRED data series L312041A027NBEA")
 ```
 
@@ -1190,22 +1232,16 @@ More recent example: Manufacturing
 #| fig-align: center
 
 ## CPI to adjust wage data
-cpi <- tq_get("CPILFESL",
-              get = "economic.data",
-              from = "1960-01-01",
-              to = "2025-01-01")
+cpi <- get_fred("CPILFESL",
+              from = "1960-01-01")
 
 ## Manufacturing employment 
-man.emp <- tq_get("MANEMP",
-                         get = "economic.data",
-                         from = "1960-01-01",
-                         to = "2025-01-01")
+man.emp <- get_fred("MANEMP",
+                         from = "1960-01-01")
   
 ## Manufacturing wages data
-man.wage <- tq_get("CES3000000008",
-                         get = "economic.data",
-                         from = "1960-01-01",
-                         to = "2025-01-01")
+man.wage <- get_fred("CES3000000008",
+                         from = "1960-01-01")
 
 
 man.wage <- man.wage %>% 
@@ -1216,10 +1252,8 @@ man.wage <- man.wage %>%
   rename("symbol" = "symbol.x")
 
 ## Manufacturing Production Index
-man.index <- tq_get("IPMAN",
-                         get = "economic.data",
-                         from = "1960-01-01",
-                         to = "2025-01-01")
+man.index <- get_fred("IPMAN",
+                         from = "1960-01-01")
 
 
 ggplot(data = man.index) +
@@ -1228,7 +1262,7 @@ ggplot(data = man.index) +
   scale_x_date(breaks = "5 years") +
   labs(x = "Date",
        y = "Index (2012 = 100)",
-       title = "US Manufacturing Production Index, 1972-2019",
+       title = "US Manufacturing Production Index, 1972-2026",
        subtitle = "Overlall manufacturing production has generally risen over time",
        caption = "Data obtained from FRED data series IPMAN")
 
@@ -1262,7 +1296,7 @@ ggplot(man.com, aes(x = date, y = index, color = group)) +
   labs(x = "Date",
        y = "Index (2012 = 100)",
        color = "Index",
-       title = "Index of manufacturing wages and employment, 1960-2020",
+       title = "Index of manufacturing wages and employment, 1960-2026",
        subtitle = "Consider the case and effect of these changes in the broader historical context",
        caption = "Data obtained from FRED data series MANEMP and CES3000000008.\nWage data adjusted for inflation.")
 
@@ -1279,55 +1313,12 @@ There's really no evidence that Trump's tariffs altered the employment or wage l
 
 ## {.blank-slide}
 
-```{r steel and aluminum production index}
-#| out-width: 80%
-#| fig-align: center
-
-## Manufacturing employment 
-index.steel <- tq_get("IPN3311A2RN",
-                         get = "economic.data",
-                         from = "1960-01-01",
-                         to = "2021-01-01")
-  
-## Manufacturing wages data
-index.alum <- tq_get("IPG3313SQ",
-                         get = "economic.data",
-                         from = "1960-01-01",
-                         to = "2021-01-01")
-
-industry.com <- bind_rows(index.alum, index.steel) %>% 
-  mutate(industry = factor(symbol, labels = c("Aluminum", "Steel"))) %>% 
-  group_by(industry) %>%
-  mutate(index = (price/price[date=="2010-01-01"]) * 100)
-  
-
-
-## Steel and aluminum production
-ggplot(data = industry.com, aes(x = date, y = index, color = industry)) +
-  geom_line(size = 1, alpha = 0.8) +
-  theme_flynn(base_size = 11, base_family = "oswald") +
-  scale_x_date(breaks = seq(as.Date("1972-01-01"), as.Date("2019-01-01"), by = "5 years"), date_labels = "%Y") +
-  scale_y_continuous(breaks = seq(50, 200, 50), limits = c(50, 200)) +
-  scale_color_brewer(palette = "Set1") +
-  labs(x = "Date",
-       y = "Index (2012 = 100)",
-       colour = "Group",
-       title = "Industry Production Index, 1972-2019",
-       subtitle = "Production of both aluminum and steel has been largely stable since the 1980s.",
-       caption = "Data obtained from Federal Reserve of St. Louis data series IPG3313SQ and IPN3311A2RN")
-
-```
-
-
-
-## {.blank-slide}
-
 ```{r soy-futures, echo = FALSE, warning=FALSE}
 #| out-width: 80%
 #| fig-align: center
 
 ## Soy data
-soy.data <- tidyquant::tq_get("ZS=F",
+soy.data <- tq_get("ZS=F",
                               get = "stock.prices",
                               from = "2018-01-01",
                               to = "2019-02-01")
@@ -1401,6 +1392,11 @@ Conflict between goals
 
 
 
+
+
+
+
+
 # Investment and Finance
 
 
@@ -1419,6 +1415,8 @@ What is it?
   
 - Also concerns actors' use of US financial system more broadly
 
+> Foreign Direct Investment: FDI is a type of cross-border investment that occurs when a resident of one country obtains a lasting interest in and degree of influence over the management of a business in another country (commonly 10% or more of voting securities or equivalent interest).
+
 :::{.notes}
 Notes
 
@@ -1427,6 +1425,8 @@ Notes
 - Government control over broader financial system. 
 
 - Financial sanctions can be used to block users from accessing funds and resources.
+
+- Definition comes from [Congressional Research Service](https://www.congress.gov/crs-product/IF10636)
 
 :::
 
@@ -1461,19 +1461,17 @@ Investment and finance in US foreign policy
 #| out-width: 80%
 #| fig-align: center
 
-fdi.us.equity <- tq_get("BOGZ1FL263092141A",
-                         get = "economic.data",
-                         from = "1945-01-01",
-                         to = "2025-11-01")
+fdi.us.equity <- get_fred("BOGZ1FL263092141A",
+                         from = "1945-01-01")
 
 ggplot(data = fdi.us.equity, aes(x = date, y = price/1000)) +
   geom_area(fill = "dodgerblue1", colour = "black", size = .1, alpha = .8) +
   scale_y_continuous(labels = dollar_format()) +
-  scale_x_date(breaks = seq(as.Date("1945-01-01"), as.Date("2025-01-01"), by = "5 years"), date_labels = "%Y",
+  scale_x_date(breaks = seq(as.Date("1945-01-01"), as.Date("2026-01-01"), by = "5 years"), date_labels = "%Y",
                limits = c(as.Date("1945-01-01"), as.Date("2026-01-01"))) +
   labs(x = "Date",
        y = "Billions of Dollars",
-       title = "Foreign Direct Investment in U.S. Equity and Assets, 1945-2020",
+       title = "Foreign Direct Investment in U.S. Equity and Assets, 1945-2026",
        caption = "Data obtained from FRED data series BOGZ1FL263092141A") 
 
 ```
@@ -1519,13 +1517,13 @@ Notes
 
 A couple of approaches to establishing currency and valuation
 
-- Commodity money
+- **Commodity money**
 
   - Currency backed by a physical good (e.g. gold, silver, etc.)
   
   - Historically common, but has limitations (scarcity, divisibility, transportability, etc.)
   
-- Fiat money
+- **Fiat money**
 
   - Currency backed by government decree
   
@@ -1538,17 +1536,21 @@ A couple of approaches to establishing currency and valuation
 
 So how do governments manage their money?
 
-For present purposes, let's focus on two key topics
+Governments affect monetary policy through a few primary mechanisms:
 
-- Money supply
+- **Money supply**: The amount of money that's moving around in the system. We can define this differently, but it often includes physical currency, checking account deposits, short-term savings deposits, etc. Typically governments don't move this directly, but use other mechanisms to influence what's sloshing around out there (gestures widely).
 
-- Interest rates
+- **Interest rates**: The federal funds rate is the interest rate charged by banks to borrow from each other overnight. 
+
+- **Asset Purchases and Sales**: The Federal Reserve can use the buying and selling of bonds to affect liquidity. 
 
 
 :::{.notes}
 Notes
 
 - The "supply" of money can be a tricky concept. It can be used to refer to the total amount of money that exists, but also the amount that's in circulation and available for spending.
+
+- The Federal Reserve steers the federal funds rate into its target range primarily by changing the interest rate paid on reserve balances and the interest rate of its overnight reverse repurchase facility. Changes in these rates influence the borrowing activity of banks and other financial institutions. [Definition and Concepts](https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm).
 
 :::
 
@@ -1562,10 +1564,8 @@ Notes
 #| out-width: 80%
 #| fig-align: center
 
-m2stock <- tq_get("M2",
-                  get = "economic.data",
-                  from = "1970-01-01",
-                  to = "2021-09-01") %>% 
+m2stock <- get_fred("M2",
+                  from = "1970-01-01") %>% 
   mutate(date = as.Date(date, "%Y-%m-%d"))
 
 ggplot(m2stock, aes(x = date, y = price)) +
@@ -1574,7 +1574,7 @@ ggplot(m2stock, aes(x = date, y = price)) +
   scale_y_continuous(labels = dollar_format()) +
   labs(x = "Date", 
        y = "Billions of Dollars",
-       title = "M2 Money Stock, 1980-2020",
+       title = "M2 Money Stock, 1980-2026",
        subtitle = "How much money is sloshing around out there?",
        caption = "Data obtained from FRED M2 series.")
 
@@ -1596,17 +1596,6 @@ Notes
 
 
 
-## Monetary Policy
-
-Mr. (money) manager
-
-- Governments manipulate money and its value through a couple of key mechanisms
-
-  - Setting interest rates
-  
-  - Buying and selling assets
-
-
 
 
 
@@ -1622,19 +1611,17 @@ Mr. (money) manager
 #| out-width: 80%
 
 
-fed.rate.data <- tq_get(c("FEDFUNDS"),
-                            "economic.data",
-                            from = "2000-01-01",
-                            to = "2025-05-01")
+fed.rate.data <- get_fred(c("FEDFUNDS"),
+                            from = "2000-01-01")
 
 ggplot(fed.rate.data, aes(x = date, y = price)) +
   geom_line() +
   theme_flynn(base_family = "oswald", base_size = 11) +
-  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2024-04-01"), by = "2 years"), date_labels = "%b %Y") +
+  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2026-01-01"), by = "2 years"), date_labels = "%b %Y") +
   scale_y_continuous(n.breaks = 10) +
   labs(x = "Date",
        y = "Rate (%)",
-       title = "Effective Federal Funds Rate, 2000-2024",
+       title = "Effective Federal Funds Rate, 2000-2026",
        caption = "Data obtained from https://www.newyorkfed.org/markets/reference-rates/effr")
 
 ```
@@ -1655,11 +1642,11 @@ ggplot(fed.rate.data, aes(x = date, y = price)) +
   geom_text(aes(x = as.Date("2008-09-15"), y = 6), label = "Lehman Brothers\nBankruptcy", size = 3, hjust = 0) +
   geom_text(aes(x = as.Date("2020-03-15"), y = 6), label = "COVID-19 Pandemic", size = 3, hjust = 0) +
   theme_flynn(base_family = "oswald", base_size = 11) +
-  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2024-04-01"), by = "2 years"), date_labels = "%b %Y") +
+  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2026-01-01"), by = "2 years"), date_labels = "%b %Y") +
   scale_y_continuous(n.breaks = 10) +
   labs(x = "Date",
        y = "Rate (%)",
-       title = "Effective Federal Funds Rate, 2000-2024",
+       title = "Effective Federal Funds Rate, 2000-2026",
        caption = "Data obtained from https://www.newyorkfed.org/markets/reference-rates/effr")
 
 
@@ -1690,10 +1677,8 @@ Notes
 #| fig-align: center
 
 
-fed.rate <- tq_get("DISCNTD8",
-                   get = "economic.data",
-                   from = "1900-01-01",
-                   to = "2021-01-01")
+fed.rate <- get_fred("DISCNTD8",
+                   from = "1900-01-01")
 
 fed.rate <- fed.rate %>% 
   mutate(country = "United States",
@@ -1726,7 +1711,7 @@ ggplot(rate.com, aes(x = date, y = rate/100, color = country, linetype = country
 
 ## Monetary Policy
 
-Bonds---How do *they* work?
+**Bonds**---How do *they* work?
 
 - Bonds are loans made to the government with the promise of repayment
 
@@ -1796,16 +1781,14 @@ Notes
 #| out-width: 80%
 #| fig-align: center
 
-yield.curve <- tq_get(c("T10Y2Y", "T10Y3M"),
-                      get = "economic.data",
-                      from = "2000-01-01",
-                      to = "2025-11-01") 
+yield.curve <- get_fred(c("T10Y2Y", "T10Y3M"),
+                      from = "2000-01-01") 
 
 ggplot(yield.curve, aes(x = date, y = price, color = symbol, linetype = symbol)) +
   geom_hline(yintercept = 0, color = "black") +
   geom_line(size = 1) +
   theme_flynn(base_size = 11, base_family = "oswald") +
-  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2025-11-01"), by = "3 years"), date_labels = "%Y") +
+  scale_x_date(breaks = seq(as.Date("2000-01-01"), as.Date("2026-01-01"), by = "2 years"), date_labels = "%Y") +
   viridis::scale_color_viridis(discrete = TRUE,
                                option = "turbo",
                                begin = 0.2,
@@ -1813,7 +1796,7 @@ ggplot(yield.curve, aes(x = date, y = price, color = symbol, linetype = symbol))
   labs(x = "Date",
        y = "Yield Spread",
        color = "Spread",
-       title = "US Treasury Yield Curve Spreads, 2000-2025",
+       title = "US Treasury Yield Curve Spreads, 2000-2026",
        subtitle = "Difference between 10-year and 2-year (T10Y2Y) and 10-year and 3-month (T10Y3M) yields",
        caption = "Data obtained from FRED data series T10Y2Y and T10Y3M")
 
@@ -1875,10 +1858,8 @@ Effects of lowering interest rates
 #| fig-align: center
 #| out-width: 80%
 
-treasury.holdings <- tq_get(c("TREAST", "CPIAUCSL"),
-                            "economic.data",
-                            from = "2000-01-01",
-                            to = "2025-05-01") |> 
+treasury.holdings <- get_fred(c("TREAST", "CPIAUCSL"),
+                            from = "2000-01-01") |> 
   group_by(symbol) |> 
   dplyr::mutate(change = price - lag(price),
                 index = price / price[date == "2003-01-01"],
@@ -2015,10 +1996,10 @@ ggplot(data = subset(forex.data, Currency == "Dollar" | Currency == "Euro" | Cur
 
 
 ## Dollar Index data
-dollar.index <- tidyquant::tq_get("DX-Y.NYB",
+dollar.index <- tq_get("DX-Y.NYB",
                               get = "stock.prices",
                               from = "2024-01-01",
-                              to = "2025-11-01")
+                              to = "2026-11-01")
 
 ## Soybeans
 ## Note: Prices rescaled from cents per bushel in original to dollars per bushel
@@ -2029,12 +2010,12 @@ ggplot(data = dollar.index, aes(x = date, y = close)) +
   geom_vline(xintercept = as.Date("2025-04-02"), linetype = "dotted", size = 1) + ## New US president inaugurated
   annotate("text", x = as.Date("2025-01-30"), y = 112, size = 2.75, hjust = 0, label = "President Trump inaugurated\nJanuary 20, 2025") +
   annotate("text", x = as.Date("2025-04-08"), y = 105, size = 2.75, hjust = 0, label = "Liberation Day Tariffs\nApril 2, 2025") +
-  scale_x_date(breaks = seq(as.Date("2024-01-01"), as.Date("2025-11-01"), by = "3 months"), date_labels = "%b %Y",
-               limits = c(as.Date("2024-01-01"), as.Date("2025-11-01"))) +
+  scale_x_date(breaks = seq(as.Date("2024-01-01"), as.Date("2026-11-01"), by = "3 months"), date_labels = "%b %Y",
+               limits = c(as.Date("2024-01-01"), as.Date("2026-11-01"))) +
   scale_y_continuous(labels = dollar_format()) +
   labs(y = "Index",
        x = "Date",
-       title = "US Dollar Index, January 2024-November 2025",
+       title = "US Dollar Index, January 2024-November 2026",
        caption = "Data obtained from {tidyqant} package, symbol DX-Y.NYB")
 
 ```
@@ -2070,7 +2051,7 @@ ggplot(data = inflation.data) +
   annotate("text", x = as.Date("1935-01-01"), y = 18, label = paste0("Pre-1971 Std. Dev. = ", std.pre$sd, sep = " ")) +
   annotate("text", x = as.Date("1990-01-01"), y = 18, label = paste0("Post-1971 Std. Dev. = ", std.post$sd, sep = " ")) +
   theme_flynn(base_family = "oswald", base_size = 11) +
-  scale_x_date(breaks = seq(as.Date("1914-01-01"), as.Date("2024-01-01"), by = "10 years")) +
+  scale_x_date(breaks = seq(as.Date("1916-01-01"), as.Date("2026-01-01"), by = "10 years")) +
   scale_y_continuous(breaks = seq(-20, 20, 5)) +
   labs(x = "Year",
        y = "Inflation Rate (%)",
@@ -2081,3 +2062,16 @@ ggplot(data = inflation.data) +
 
 ```
 
+
+
+## Monetary Policy
+
+So why do we care about any of that?
+
+- Central goal of post-WWII US foreign policy has been to promote an open and stable financial system
+
+- Much of that involves two issues:
+
+  - Stable-ish exchange rates
+  
+  - Liquidity in the international financial system

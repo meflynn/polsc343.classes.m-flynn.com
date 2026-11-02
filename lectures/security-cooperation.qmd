@@ -424,7 +424,7 @@ treeplot.data <- troopdata %>%
   mutate(countryname = countrycode::countrycode(ccode, "cown", "country.name"),
          countryname = ifelse(iso3c == "PRI", "Puerto Rico", countryname))
 
-treemap.plot <- ggplot(treeplot.data, aes(area = troops_ad, fill = region, label = iso3c)) +
+treemap.plot <- ggplot(treeplot.data, aes(area = troops_ad, fill = region, label = countryname)) +
   geom_treemap() +
   geom_treemap_text() +
   facet_wrap(. ~ year) +
@@ -442,68 +442,6 @@ treemap.plot
 
 
 
-## {.blank-slide}
-
-
-
-```{r alluvial-plot}
-#| out-width: 80%
-#| fig-align: center
-
-
-troopdata <- troopdata::get_troopdata(branch = TRUE) |>  
-  filter(ccode != 2 & year >= 1950) |> 
-  mutate(ccode = ifelse(ccode == 260, 255, ccode),
-         region = countrycode::countrycode(iso3c, "iso3c", "region"),
-         region = case_when(
-           ccode == 1003 ~ "Afloat",
-           ccode == 70 ~ "North America",
-           region == "Latin America & Caribbean" ~ "Central & South America & Caribbean",
-           TRUE ~ region))
-
-alluvial.data <- peacesciencer::cow_alliance %>% 
-  filter(year >= 2006 & ccode1) %>% 
-  left_join(troopdata, by = c("ccode2" = "ccode", "year")) %>% 
-  filter(!is.na(troops_ad)) %>% 
-  group_by(cow_defense, region, year) %>% 
-  mutate(cow_defense = factor(cow_defense, levels = c(0, 1), labels = c("Non-Ally", "Ally"))) %>% 
-  group_by(ccode2, year, cow_defense, region) %>% 
-  pivot_longer(cols = c("army_ad", "navy_ad", "air_force_ad", "marine_corps_ad"),
-               names_to = "branch",
-               values_to = "level") %>% 
-  dplyr::select(-c(ccode1,  cow_neutral, cow_nonagg, cow_entente)) %>% 
-  filter(!is.na(level)) %>% 
-  group_by(region, branch) %>% 
-  dplyr::summarise(level = sum(level)) %>% 
-  mutate(branch = factor(branch, levels = c("army_ad", "air_force_ad", "navy_ad", "marine_corps_ad"), labels = c("Army", "Air Force", "Navy", "Marine Corps")),
-         region = factor(region, levels = c("North America", "Central & South America & Caribbean", "Europe & Central Asia", "Middle East & North Africa", "Sub-Saharan Africa", "East Asia & Pacific", "South Asia")))
-
-
-alluvialplot <- ggplot(alluvial.data, aes(y = level, weight = level, axis1 = branch, axis2 = region, fill = branch)) +
-  geom_alluvium(alpha = 0.5, width = 1/14) +
-  geom_stratum(width = 1/12, fill = "gray80", color = "black", size = 0.1) +
-  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 1, after_stat(as.character(stratum)), NA), fill = branch, fontface = "bold"), size = 5, hjust = "left", nudge_x = -0.25, direction = "x", point.padding = 0, box.padding = 0.1, label.padding = 0.15, max.iter = Inf, show.legend = FALSE, alpha = 0.6) +
-  geom_label_repel(stat = "stratum", aes(label = ifelse(x == 2, after_stat(as.character(stratum)), NA), fontface = "bold"), fill = "white", size = 5, hjust = "right", nudge_x = 0.38, direction = "y", point.padding = 0, box.padding = 0.1, label.padding = 0.15,  max.iter = Inf, min.segment.length = 0.15)+
-  scale_y_continuous(expand = c(0.0, 0.0)) + 
-  scale_x_continuous(expand = c(0.15, 0.25)) + 
-  scale_fill_manual(values = c("#00308f", "#ffd530","#CC0000", "#088199")) +
-  theme(legend.position = "bottom", 
-        axis.text.x = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank(),
-        axis.ticks = element_blank(),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.border = element_blank(),
-        plot.background = element_blank()) +
-  guides(label = FALSE) +
-  labs(fill = "Service Branch",
-       title = "Distribution of service branch personnel by region, 2006-2020")
-
-
-alluvialplot
-```
-
 
 
 
@@ -514,6 +452,16 @@ alluvialplot
 
 ![US, German, Spanish and Polish troops of the NATO enhanced Forward Presence battle groups with their tanks get ready for exercises in Adazi, Latvia. These 2018 exercises involved approximately 50,000 military personnel from 31 countries.](../images/nato-exercise-2018.jpg){width=700 height=400}
 
+:::{.notes}
+Notes
+
+- Larger scale exercises are important for coordinating warfighting capabilities.
+
+- Even though states might be allied that doesn't mean they know how to fight together or work together. Sometimes states have very different capabilities, sometimes they overlap to varying degrees. 
+
+- Even where capabilities are similar, doctrine and strategy might be very different. This might also depend on geography and environmental factors. 
+
+:::
 
 
 
@@ -523,6 +471,14 @@ alluvialplot
 ![U.S. Marines from 3rd Marine Expeditionary force deployed from Okinawa, Japan, participate in the winter military training exercise with South Korean soldiers on January 28, 2016 in Pyeongchang-gun, South Korea. U.S. and South Korean marines participate in the endurance exercise in temperature below minus 20 degrees celsius under a scenario to defend the country from any possible attacks from North Korea. (Photo by Chung Sung-Jun/Getty Images)](../images/us-military-exercise-korea.jpg){width=700 height=400}
 
 
+:::{.notes}
+Notes
+
+- Socialization between personnel is also really important.
+
+- Exercises allow personnel to build social networks and contacts that transcend their individual militaries. 
+
+:::
 
 
 
@@ -532,6 +488,19 @@ alluvialplot
 ![U.S. High Mobility Artillery Rocket System (HIMARS) firing inside Ukraine. Photo obtained from Ukrainian Ministry of Defense/Twitter via Task and Purpose https://taskandpurpose.com/news/us-military-sending-atacms-missiles-to-ukraine-reports/](../images/himars-ukraine-2023.jpg){width=700 height=400}
 
 
+:::{.notes}
+Notes
+
+- US-made HIMARS can fire rockets that can range anywhere from approximately 30 miles to 300+ miles. Depends on the munitions used.
+
+- US eventually gave these systems to Ukraine after Russia's invasion, but was reluctant at first.
+
+- Biden Administration was initially reluctant to do so because they were worried about giving Ukraine capabilities that could expand the scope of the conflict. It didn't want to give Ukraine weapons systems that it would use to attack targets deep inside of Russia lest that provoke more Russian escalation. 
+
+- US has given these to a limited number of allies, including Australia, Poland, Estonia, Romania, Taiwan, UAE,
+
+:::
+
 
 
 
@@ -540,7 +509,15 @@ alluvialplot
 
 ![LAGUNA DEL RINCON, Honduras - Army Staff Sgt. Robyn Porter of the 478th Civil Affairs Battalion of Miami, Florida and Army Reserve Sgt. Mitzi Porter of the 993rd Medical Detachment (Veterinary Services) of Aurora, Colo. administer medication to a dog during their visit to this rural town. Veterinarians, like the two Porters, provided basic medical and dental care to dogs, cats and livestock during daylong visits to this and other remote Honduran villages. U.S. military medical personnel are in Honduras for the joint training exercise Beyond the Horizon. The event provides medical attention, as well as infrastructure renovation, to rural areas in this Central American country. (Photo by Sgt. Claude W. Flowers, 304th Public Affairs Detachment.)](../images/beyond-the-horizon-vet.jpg){width=800 height=600}
 
+:::{.notes}
 
+Notes
+
+- The US conducts lots of other exercises, too.
+
+- Medical Readiness training exercises put physicians, nurses, veterinarians, and other support personnel into other environments and provide them with real-world opportunities to provide care for host residents. Often these are lower income populations. 
+
+:::
 
 
 
@@ -560,6 +537,7 @@ Lots of reasons:
 - Increase security
 - Signal credibility
 - Signal resolve
+- Control scope of conflict
 - Facilitate power projection capabilities
 - Crisis intervention
 - Train host-state personnel
@@ -1014,15 +992,23 @@ Notes
 
 library(tidyquant)
 
-cpi <- tq_get("CPIAUCNS",
-              get = "economic.data",
-              from = "1913-01-01",
-              to = "2019-01-01") %>% 
-  mutate(year = as.numeric(format(date, "%Y")),
-         basevalue = mean(price[year==2018]),
-         cpi = price/basevalue) %>% 
-  group_by(year) %>% 
-  summarise(cpi = mean(cpi))
+# Note this uses Consumer Price Index for All Urban Consumers: All Items in U.S. City Average
+# If code gets hung up here try installing quantmod package.
+cpi_path <- here("../../../Data Files/US Government Files/FRED/CPIAUCNS.csv")
+if (!file.exists(cpi_path)) {
+  download.file("https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCNS",
+                cpi_path, quiet = TRUE)
+}
+
+cpi <- read_csv(cpi_path) |>
+  setNames(c("date", "price")) |>
+  subset(date >= "1913-01-01" & date <= "2019-01-01") |>
+  dplyr::mutate(year = format(as.Date(date), "%Y")) |>
+  dplyr::group_by(year) |>
+  dplyr::summarise(cpi = mean(price)) |>
+  dplyr::mutate(basevalue = cpi[year == 2018],
+                cpi = cpi / basevalue,
+                year = as.numeric(year))
 
 allyid <- read_csv(here("../../../Data Files/ATOP V4.0 Data (csv)/atop4_0ddyr.csv")) %>% 
   subset(stateA == 2 & defense == 1) %>% 
@@ -1359,69 +1345,10 @@ So what's the causal link?
 
 
 
-## {.blank-slide}
-
-
-```{r spending level}
-#| out-width: 80%
-#| fig-align: center
-
-
-spend1 <- read_csv(here("../../../Projects/Minerva grant documents/Papers/Published/Primary Paper - Contact/apsr-replication-files/apsr-data/spending-overseas-20191205.csv"))
-
-library(colorRamps)
-library(RColorBrewer)
-getPalette = colorRampPalette(brewer.pal(9, "Set1"))
-colourCount = length(unique(spend1$country))
-
-# Line chart by country
-# Note I needed a custom Brewer palette here because there were too many countries
-ggplot(data = spend1, aes(x = year, y = total, group = as.factor(country), colour = as.factor(country), linetype = as.factor(country))) +
-  geom_line(size = 1.5)+
-  theme_flynn(base_family = "oswald", base_size = 12) +
-  scale_x_continuous(breaks = seq(2013, 2020, 1)) +
-  scale_y_continuous(labels = scales::dollar) +
-  labs(y = "Millions of current dollars",
-       x = "Year",
-       color = "Country",
-       linetype = "Country",
-       title = "Total cost of maintaining US military presence in select countries, 2013-2020",
-       subtitle = "Note that the total cost does not equate to how much the US actually spends",
-       caption = "Data obtained from US Department of Defense Office of the Comptroller.") +
-  scale_colour_manual(values = getPalette(colourCount)) 
-
-
-```
 
 
 
 
-## {.blank-slide}
-
-```{r operations and maintenance 1}
-#| out-width: 80%
-#| fig-align: center
-
-
-library(colorRamps)
-library(RColorBrewer)
-getPalette = colorRampPalette(brewer.pal(9, "Set1"))
-colourCount = length(unique(spend1$country))
-
-opmain.ts <- read_csv("../../../../Projects/Minerva grant documents/Military Spending/operations-and-maintenance/data_spend_geocoded.csv") %>% 
-  mutate(country = countrycode::countrycode(ccode, 'cown', 'country.name')) 
-
-ggplot(opmain.ts, aes(x = factor(year), y = toa.mean, color = country)) +
-  geom_jitter(width = 0.2, height = 2, size = 3, alpha = 0.8) +
-  theme_flynn(base_family = "oswald", base_size = 12) + 
-  scale_y_continuous(labels = dollar_format()) +
-  scale_color_manual(values = getPalette(colourCount)) +
-  labs(x = "Year",
-       y = "Thousands of current dollars",
-       color = "Country",
-       title = "US military construction spending in select countries, 2008-2019")
-
-```
 
 
 
@@ -1433,21 +1360,21 @@ ggplot(opmain.ts, aes(x = factor(year), y = toa.mean, color = country)) +
 #| fig-align: center
 
 
-opmain <- read.csv("../../../../Projects/Minerva grant documents/Military Spending/operations-and-maintenance/data_spend_geocoded.csv") %>% 
-  mutate(country = countrycode::countrycode(ccode, 'cown', 'country.name'))
+opmain <- troopdata::get_builddata(startyear = 2015,
+                                   endyear = 2025)
 
 map <- map_data("world")
 
 # World
 ggplot() + 
   geom_polygon(data = map, aes(x = long, y = lat, group = group), colour = "black", size = .1, fill = "gray90") +
-  geom_point(data = opmain, aes(x = lon, y = lat, size = toa.sum), color = "red3", alpha = .4) +
+  geom_point(data = opmain, aes(x = longitude, y = latitude, size = toa_amount), color = "red3", alpha = .4) +
   theme_flynn(base_family = "oswald", base_size = 12) +
   scale_x_continuous(breaks = seq(-20, 180, 40)) +
   scale_y_continuous(breaks = seq(-40, 80, 40)) +
   coord_fixed(xlim = c(-20, 180), ylim = c(-40, 80)) +
   scale_size_continuous(labels = comma_format()) +
-  labs(title = "US military construction spending, 2008-2018",
+  labs(title = "US military construction spending, 2015-2025",
        x = "Longtitude",
        y = "Latitude") +
   guides(size = FALSE)
@@ -1556,10 +1483,10 @@ ggplot(peru) +
 #| out-width: 83%
 #| fig-align: center
 
-base.data <- troopdata::get_basedata(host = 255)
+base.data <- troopdata::get_basedata(host = 260)
 
 # load troop data
-germany.troop.fig <- troopdata::get_troopdata(host = 255, startyear = 2020, endyear = 2020) %>% 
+germany.troop.fig <- troopdata::get_troopdata(host = 260, startyear = 2020, endyear = 2020) %>% 
   mutate(troops_ad = comma(troops_ad))
 
 load(here::here("../../../Projects/Minerva grant documents/Book/Data/General/opinion.data.RData"))
@@ -1654,3 +1581,8 @@ map.com <- patchwork::wrap_plots(map.troops, map.gov, map.people) +
 map.com
 
 ```
+
+
+## {.blank-slide}
+
+![Tens of thousands of protestors joined together on the island of Okinawa to protest the US military presence there after the rape and murder of 20-year-old Rina Shimabukuro by a US contractor and Marine veteran. Photo courtesey of the BBC. ](https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/11A3C/production/_90025227_mediaitem90025226.jpg)
