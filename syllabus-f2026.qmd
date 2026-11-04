@@ -563,6 +563,8 @@ This exam will cover material on the actors and institutions material from weeks
 ## `r examdate(mon, 13, 3)`: Selected Topics
 
 This exam will cover all of the special topics material from weeks 9-13.
+
+This exam will be open book and open note.
 :::
 
 ## References
