@@ -486,11 +486,7 @@ This exam will cover material on the actors and institutions material from weeks
 - [Council on Foreign Relations: The US Immigration Debate](https://www.cfr.org/backgrounder/us-immigration-debate-0)
 - [‘You Are All Terrorists’: Four Months in a Salvadoran Prison](https://www.nytimes.com/2025/11/08/world/americas/el-salvador-prison-migrants.html)
 
-::: callout-important
-## `r examdate(mon, 13, 3)`: Selected Topics
 
-This exam will cover all of the special topics material from weeks 9-13.
-:::
 
 ## `r advdate(mon, 14)`: Thanksgiving Break (No Class)
 
@@ -558,5 +554,15 @@ This exam will cover all of the special topics material from weeks 9-13.
 - What worked?
 - What didn't work?
 - What about the process surprised you?
+
+
+## `r advdate(mon, 17)`: Finals Week
+
+
+::: callout-important
+## `r examdate(mon, 13, 3)`: Selected Topics
+
+This exam will cover all of the special topics material from weeks 9-13.
+:::
 
 ## References
